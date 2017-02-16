@@ -1,6 +1,6 @@
 $(function(){
     /*验证表单*/
-    $("#form").validate({
+    $("#form,#form1").validate({
 
         errorElement: 'span', //default input error message container
         errorClass: 'help-block help-block-error', // default input error message class
@@ -80,6 +80,12 @@ $(function(){
             },
             dpName: {
                 required: true
+            },
+            dpxp: {
+                required: true
+            },
+            dpIP: {
+                required: true
             }
         },
 
@@ -151,6 +157,12 @@ $(function(){
             },
             dpName: {
                 required: "请输入店铺名称"
+            },
+            dpxp: {
+                required: "请输入小票机IP"
+            },
+            dpIP: {
+                required: "请输入小票抬头"
             }
         },
 

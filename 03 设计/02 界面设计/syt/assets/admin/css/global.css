@@ -984,11 +984,14 @@ input::-webkit-inner-spin-button{
 .conLeftHead input{padding: 11px 2%;width: 75%;font-size: 14px;}
 .conLeftHead button{}
 .conLeftCon{background: #fff;border: 1px solid #dbdbdb;margin-top: 61px;overflow-y: auto;height: 490px;}
+.conLeftCon.style{margin-top: 0;}
+.conLeftCon.style .cashList li{text-align: center;font-size: 16px;padding: 20px 10px;}
+.conLeftCon.style .cashList li.active{color: #fff;}
 .cashList{}
 .cashList li{padding: 6px 10px;border-bottom:1px solid #dbdbdb; }
 .cashList li.active{background: #42c9f2 !important;}
 .cashList li.active p span{color: #fff !important;}
-
+.conRightCon.style .recordContent{margin-top: 0;}
 .cashList li p{display: block;line-height: 26px;}
 .cashList li.on{background: #e8fcfd;}
 .cashList li:hover {  background: #e7f3ff;cursor: pointer;}
@@ -1158,6 +1161,39 @@ label{font-weight: 100;color: #4B525C;}
 
 .switch.style span.qy,.switch.style span.bqy{width: auto;}
 .inputBm,.inputMc{    padding: 12px 0 12px 2%;width: 46%;border: 1px solid #dbdbdb}
+
+
+/*index*/
+.operationMenu{}
+.operationMenu.clearfix{display: block;}
+.operationMenu li{float: left;margin-right: 11%;width: 26%;text-align: center;margin-top: 50px;border-radius: 8px;height: 340px;position: relative;}
+.operationMenu li a{display: block;height: 100%;}
+.operationMenu li.mr0{margin-right: 0;}
+.operationMenu li.first{background: #f17f5a;}
+.operationMenu li.second{background: #f5a528;}
+.operationMenu li.three{background: #49d0f0;}
+.operationMenu li.four{background: #4d89d2;}
+.operationMenu li.five{background: #899bef;}
+.operationMenu li.six{background: #4dbfca;}
+
+
+.operationMenu li img{width: 100px;height: 100px;border-radius: 100%;position: absolute;top: 50%;margin-top: -50px;left: 50%;margin-left: -50px;}
+.operationMenu li p.title{font-size: 18px;color: #fff;position: absolute;bottom: 20px;width: 100%;}
+
+.conRightCon.style .recordContent{overflow: hidden;    height: 426px;}
+.formDiv{width: 430px;margin: 70px auto 20px;}
+.formDiv.mt20{margin-top: 20px;}
+.formDiv .input-group{display: inline-block;width: 350px;}
+.formDiv .input-div {margin-bottom: 15px;}
+.formDiv .input-div .nameTitle{display: inline-block;}
+.formDiv input{border: 1px solid #dbdbdb;padding: 10px;width: 100%;}
+.divSelect.style.input-div{margin: 0;font-size: 16px;margin-bottom: 15px;    width: 450px;}
+.input-div a{font-size: 16px;color: #fa7d55;text-decoration: underline;}
+.divSelect.style.input-div select{width: 372px;}
+.shoppingSure.style{border: 0;margin-top: 50px;}
+.conRight.style{height: 490px;background: #fff;border: 1px solid #dbdbdb;}
+.conLeftCon.style .cashList li.active a{color: #FFF;display: block;}
+.input-div .help-block.help-block-error{top: 7px;left: 77px;}
 /*media*/
 @media screen and (max-width: 1850px) {
 
@@ -1177,6 +1213,10 @@ label{font-weight: 100;color: #4B525C;}
     .navMeun2,.navMeun3 {
         right: 540px;
     }
+    .operationMenu li{float: left;margin-right: 11%;width: 26%;text-align: center;margin-top: 50px;border-radius: 8px;height: 210px;position: relative;}
+
+    .operationMenu li img{width: 72px;height: 72px;border-radius: 100%;position: absolute;top: 50%;margin-top: -36px;left: 50%;margin-left: -36px;}
+    .operationMenu li p.title{font-size: 18px;color: #fff;position: absolute;bottom: 20px;width: 100%;}
 }
 @media screen and (max-width: 1250px) {
     .navMeun{margin-left: 0;}
