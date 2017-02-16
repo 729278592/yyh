@@ -149,8 +149,9 @@
                             </div>
                             <div class="input-div">
                                 <span class="nameTitle">　验证码 :</span>
-                                <div class="input-group">
-                                    <input type="text" name="authCode" id="authCode">
+                                <div class="input-group style">
+                                    <input type="text" class="w70" name="authCode" id="authCode">
+                                    <input class="getcode w30"  type="button" id="getting" value="立即获取">
                                 </div>
                             </div>
                             <div class="input-div">
@@ -186,13 +187,47 @@
 
 </div>
 <script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
-<script src="../../assets/admin/plugins/jquery.actual/jquery.actual.js"></script> <!--获取隐藏元素高度-->
 <script src="../../assets/admin/js/common-validate.js"></script> <!--表单验证提示-->
-<script src="../../assets/admin/js/formHeightAuto.js"></script>
 <script src="../../assets/admin/plugins/jquery-validate/jquery.validate.min.js"></script>
 <script src="../../assets/admin/plugins/jquery-validate/messages_zh.js"></script>
 <script src="../../assets/admin/plugins/jquery-validate/setValidation.js"></script>
 <script src="../../assets/admin/js/global.js"></script> <!--通用js-->
 <script src="../../assets/admin/js/tips.js"></script> <!--操作后状态提示-失败或者成功-->
+<script>
+    $(function () {
+
+        /*获取验证码*/
+        var phone = $("#phone");
+        var getting = $('#getting');
+        getting.click(function(){
+            if(isEmpty(phone.val())){
+                tip($(".maskTip"),"请输入有效手机号码",400,"fail");  //失败提示 第一参数为固定参数 第二参数为提示信息自己填写  第二参数为时间自定  第四参数为提示状态，失败为fail，成功为success
+                return ;
+            }
+
+            if(!isPhone(phone.val())){
+                tip($(".maskTip"),"请输入有效手机号码",400,"fail");  //失败提示 第一参数为固定参数 第二参数为提示信息自己填写  第二参数为时间自定  第四参数为提示状态，失败为fail，成功为success
+                return;
+            }
+
+            var btn = $(this);
+            var count = 60;
+            btn.val("60秒后可重新获取");
+            btn.addClass("active");
+            var resend = setInterval(function(){
+                count--;
+                if (count > 0){
+                    btn.val(count+"秒后可重新获取");
+                }else {
+                    clearInterval(resend);
+                    btn.removeClass("active");
+                    btn.val("获取验证码").removeAttr('disabled style');
+                }
+            }, 1000);
+            btn.attr('disabled',true).css('cursor','not-allowed');
+        });
+
+    })
+</script>
 </body>
 </html>

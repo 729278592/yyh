@@ -37,9 +37,7 @@ $(function(){
                 maxlength:6,
                 minlength:6
             },
-            dpName: {
-                required: true
-            },
+
             dpxp: {
                 required: true
             },
@@ -93,7 +91,6 @@ $(function(){
                 error.insertAfter(element); // for other inputs, just perform default behavior
                 error.insertAfter(element.parent());
             }
-            heightAuto()
         },
 
         highlight: function (element) { // hightlight error inputs

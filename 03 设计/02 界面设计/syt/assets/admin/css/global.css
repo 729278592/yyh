@@ -1184,6 +1184,10 @@ label{font-weight: 100;color: #4B525C;}
 .formDiv{width: 430px;margin: 70px auto 20px;}
 .formDiv.mt20{margin-top: 20px;}
 .formDiv .input-group{display: inline-block;width: 350px;}
+.formDiv .input-group.style {position: relative;}
+.formDiv .input-group .w70{width: 60%;}
+.formDiv .input-group .w30{width: 40%;position: absolute;top: 0;right: -22px;background: #fff;border-left: 0;}
+.formDiv .input-group .w30:hover{cursor: pointer;}
 .formDiv .input-div {margin-bottom: 15px;}
 .formDiv .input-div .nameTitle{display: inline-block;}
 .formDiv input{border: 1px solid #dbdbdb;padding: 10px;width: 100%;}
