@@ -1198,6 +1198,12 @@ label{font-weight: 100;color: #4B525C;}
 .conRight.style{height: 490px;background: #fff;border: 1px solid #dbdbdb;}
 .conLeftCon.style .cashList li.active a{color: #FFF;display: block;}
 .input-div .help-block.help-block-error{top: 7px;left: 77px;}
+.shoppingSure .btnSure.style{    background: #fa7d55;
+    color: #fff;
+    margin: 0 auto;
+    display: inherit;
+    position: relative;
+    left: 30px;}
 /*media*/
 @media screen and (max-width: 1850px) {
 
