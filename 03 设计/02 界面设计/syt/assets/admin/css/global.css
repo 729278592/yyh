@@ -1204,6 +1204,7 @@ label{font-weight: 100;color: #4B525C;}
     display: inherit;
     position: relative;
     left: 30px;}
+.shoppingSure a.btnCancel{text-align:center;}
 /*media*/
 @media screen and (max-width: 1850px) {
 

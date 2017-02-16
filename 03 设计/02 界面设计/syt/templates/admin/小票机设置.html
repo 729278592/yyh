@@ -171,9 +171,9 @@
                                 <a class="right">请先下载安装小票机控件</a>
                             </div>
                             <div class="shoppingSure style">
-                                <!--<button type="button" class="btnCancel">取消</button>-->
-                                <!--<input type="submit" class="btnSure"  value="确定">-->
-                                <input type="submit" class="btnSure style"  value="确定">
+                                <a type="button" href="index.html" class="btnCancel">取消</a>
+                                <input type="submit" class="btnSure"  value="确定">
+                                <!--<input type="submit" class="btnSure style"  value="确定">-->
                             </div>
                         </form>
                         <!--<div class="shoppingSure">-->
@@ -198,6 +198,34 @@
 <script src="../../assets/admin/plugins/jquery-validate/setValidation.js"></script>
 <script src="../../assets/admin/js/global.js"></script> <!--通用js-->
 <script>
+    //检测表单是否已经修改过
+    $(window).bind('beforeunload',function(){
+        if( IsModified( $("#form") ) ){
+            return '您输入的内容尚未保存，确定离开此页面吗？';
+        }
+    });
+
+
+    //检测页面表单是否已编辑过  findForm需要检测的form表单
+    function IsModified( form ) //js原版
+    {
+        if( !form ){
+            var form = $("form");
+        }
+
+        var result = false;
+
+        //初始化返回值
+        var colInput = form.find("input");              //获取输入框控件
+        for (var i=0; i<colInput.length; i++){           //逐个判断页面中的input控件
+            var THIS = colInput[i];
+            if ( THIS.value != THIS.defaultValue ){     //判断输入的值是否等于初始值
+                result = true;                          //如果不相等，返回true，表示已经修改
+                //THIS.style.backgroundColor = "#eee";    //改变被修改控件的背景色
+            }
+        }
+        return result;
+    }
 </script>
 </body>
 </html>
