@@ -23,10 +23,6 @@ $(function(){
                 required:true,
                 phone:true
             },
-            email:{
-                required:true,
-                email:true
-            },
             password:{
                 required:true,
                 maxlength:16,
@@ -36,65 +32,30 @@ $(function(){
                 required: true,
                 equalTo: "#password"
             },
-            validateCode:{
-                required:true
-            },
             authCode:{
                 required:true,
                 maxlength:6,
                 minlength:6
             },
-            inviteCode:{
-                minlength:4
-            },
-            person:{
-                required:true
-            },
-            industry:{
-                required:true
-            },
-            d4311:{
-                required:true
-            },
-            code:{
-                required:true
-            },
-            number:{
-                required:true
-            },
-            businessLicense:{
-                required:true
-            },
-            ID:{
-                required:true
-            },
-
-            InvitationCode:{
-                required:true
-            },
-            imgMiss:{
-                required:true
-            },
-            accountId: {
+            dpName: {
                 required: true
             },
-            dpName: {
+            dpxp: {
+                required: true
+            },
+            dpIP: {
                 required: true
             }
         },
 
         messages: {
-            validateCode:{
-                required:"请输入验证码"
-            },
+
             authCode:{
                 required:"请输入验证码",
                 maxlength:"验证码为6位",
                 minlength:"验证码为6位"
             },
-            inviteCode:{
-                minlength:"邀请码至少是4个字符"
-            },
+
             password:{
                 required:"请输入密码",
                 minlength: jQuery.validator.format("密码不能少于 {0} 个字符"),
@@ -105,9 +66,7 @@ $(function(){
                 required: "请再次输入密码",
                 equalTo: "两次输入密码不相同"
             },
-            accountId: {
-                required: "请再账号"
-            },
+
 
             //                    mobile:{
             //                        required:"请输入手机号码",
@@ -117,40 +76,13 @@ $(function(){
                 required:"请输入手机号码",
                 phone:"请输入正确手机号码"
             },
-            email:{
-                required:"请输入邮箱",
-                email:"邮箱格式不对"
-            },
 
-            industry:{
-                required:"请选择您所属行业"
+
+            dpxp: {
+                required: "请输入小票机IP"
             },
-            d4311:{
-                required:"请选择您的生日"
-            },
-            code:{
-                required:"请输入您的组织机构代码"
-            },
-            number:{
-                required:"请输入您的身份证号码"
-            },
-            businessLicense:{
-                required:"请上传您的营业执照图片"
-            },
-            ID:{
-                required:"请上传您的省份证图片"
-            },
-            person:{
-                required:"请输入姓名"
-            },
-            InvitationCode:{
-                required:"请输入邀请码"
-            },
-            imgMiss:{
-                required:"请上传图片"
-            },
-            dpName: {
-                required: "请输入店铺名称"
+            dpIP: {
+                required: "请输入小票抬头"
             }
         },
 
