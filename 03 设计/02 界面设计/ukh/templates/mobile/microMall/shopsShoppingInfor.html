@@ -17,7 +17,57 @@
     <div class="wrapper style">
         <div class="page">
             <div class="bd absolute pb48">
-                <img src="../../../assets/mobile/images/shopsShoppingSlider1.jpg" alt="" class="w100"/>
+                <!--<img src="../../../assets/mobile/images/shopsShoppingSlider1.jpg" alt="" class="w100"/>-->
+                <!--silder开始-->
+                <div id="slider" class="mui-slider style">
+                    <div class="mui-slider-group mui-slider-loop">
+                        <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+                        <div class="mui-slider-item mui-slider-item-duplicate">
+                            <a href="#">
+                                <img src="../../../assets/mobile/plugins/mui/images/yuantiao.jpg">
+                                <!--<p class="mui-slider-title">-->
+                                <!--<img src="../../../assets/mobile/images/heprotite.jpg" class="heprotite" alt="">-->
+                                <!--<span>玻璃房子</span>-->
+                                <!--<img src="../../../assets/mobile/images/phone.png" class="phoneIcon" alt="">-->
+                                <!--</p>-->
+                            </a>
+                        </div>
+                        <div class="mui-slider-item">
+                            <a href="#">
+                                <img src="../../../assets/mobile/plugins/mui/images/shuijiao.jpg">
+                            </a>
+                        </div>
+                        <div class="mui-slider-item">
+                            <a href="#">
+                                <img src="../../../assets/mobile/plugins/mui/images/muwu.jpg">
+
+                            </a>
+                        </div>
+                        <div class="mui-slider-item">
+                            <a href="#">
+                                <img src="../../../assets/mobile/plugins/mui/images/cbd.jpg">
+                            </a>
+                        </div>
+                        <div class="mui-slider-item">
+                            <a href="#">
+                                <img src="../../../assets/mobile/plugins/mui/images/yuantiao.jpg">
+                            </a>
+                        </div>
+                        <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+                        <div class="mui-slider-item mui-slider-item-duplicate">
+                            <a href="#">
+                                <img src="../../../assets/mobile/plugins/mui/images/shuijiao.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mui-slider-indicator mui-text-right">
+                        <div class="mui-indicator mui-active"></div>
+                        <div class="mui-indicator"></div>
+                        <div class="mui-indicator"></div>
+                        <div class="mui-indicator"></div>
+                    </div>
+                </div>
+                <!--silder结束-->
                 <div class="shopsshoppingName w100">
                     [欧莱雅旗舰店]女士护肤化妆品复颜抗皱紧致套装补水保湿面霜水
                 </div>
@@ -66,10 +116,10 @@
                 <div class="applicatioOpetion m">
                     <ul class="applicatioNav clearfix">
                         <li>
-                            <a class="active" href="#tab1">商品介绍</a>
+                            <a class="active" href="#tabInfor">商品介绍</a>
                         </li>
                         <li>
-                            <a href="#tab2">用户评价</a>
+                            <a href="#tabComment">用户评价</a>
                         </li>
                     </ul>
                 </div>
@@ -117,6 +167,16 @@
                 </div>
                 <!--商品图文结束-->
 
+                <div class="wantExtension">
+
+                    <!--我要开店开始-->
+                    <a href="###">
+                        开店
+                    </a>
+                    <!--我要开店结束-->
+
+                </div>
+
             </div>
 
             <!--底部导航开始-->
@@ -142,11 +202,11 @@
             </nav>
             <!--底部导航开始-->
 
-
-
         </div>
     </div>
     <script src="../../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+    <script src="../../../assets/mobile/plugins/mui/js/mui.min.js"></script>
+
     <script src="../../../assets/mobile/plugins/jquery-spinner/js/jquery.spinner.js"></script><!--数量选择-->
     <script src="../../../assets/mobile/js/weui.js"></script>
     <script type="text/javascript" src="../../../assets/mobile/js/addShoppingCar.js"></script><!--加入购物车动画-->
@@ -180,7 +240,13 @@
                     weui.showMsg("收藏成功");
                 }
             })
-        })
+        });
+
+        /*slider动画*/
+        var slider = mui("#slider");
+        slider.slider({
+            interval: 5000
+        });
         /*加入购物车*/
         function shopCartAnimate(obj,e){
             $(obj).shoppingAnimate({

@@ -112,13 +112,13 @@
                                         opts.res = data.datas;
                                         opts.firstLoad = false;
                                         if(opts.startNum>opts.res.length){
-                                            showErrMsg("没有更多数据咯");
+                                            weui.showMsg("没有更多数据咯");
                                             return;
                                         }
                                         Methods.loading(true, opts.res, _this);
                                     }
                                     else {
-                                        showErrMsg("加载失败");
+                                        weui.showMsg("加载失败");
                                     }
                                 }, "json");
                                 setTimeout(function(){opts.timeOutFlag = undefined;},2000);

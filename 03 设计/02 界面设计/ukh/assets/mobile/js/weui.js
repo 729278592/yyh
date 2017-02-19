@@ -57,7 +57,7 @@ var weui = function(){
 						'<div class="weui_mask"></div>'+
 						'<div class="weui_dialog">'+
 							'<div class="weui_dialog_hd"><strong class="weui_dialog_title">'+options.title+'</strong></div>'+
-								'<div class="weui_dialog_bd">'+options.content+'</div>'+
+								'<div class="weui_dialog_bd" style="color: #43b3fb">'+options.content+'</div>'+
 								'<div class="weui_dialog_ft">'+
 								btns +
 							'</div>'+

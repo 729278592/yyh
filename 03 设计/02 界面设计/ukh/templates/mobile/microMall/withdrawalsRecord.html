@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>资金管理</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <link rel="stylesheet" href="../../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="wrapper style">
+    <div class="page">
+        <div class="hd styles">
+            当前余额　
+            <span class="fs20">520.00</span>
+            <div class=" rightBtn">
+                <span class="fs12">请完善银行账户信息</span>
+                <button class="btnRight withdrawals">提现</button>
+            </div>
+        </div>
+        <div class="bd  ">
+            <ul class="shop_menu clearfix">
+                <li class="active">
+                    <span class="left">
+                        提现记录
+                    </span>
+                </li>
+            </ul>
+            <ul class="txRecord">
+                <li>
+                    <p class="clearfix">
+                        <span class="left">4655.00</span>
+                        <span class="right">
+                            <span class="success">提现成功</span>
+                            <span class="fail hide">提现失败</span>
+                            <span class="txGoing hide">提现中</span>
+                        </span>
+                    </p>
+                    <p class="clearfix">
+                        <span class="right fs12">2017-02-01 18:34</span>
+                    </p>
+                </li>
+                <li>
+                    <p class="clearfix">
+                        <span class="left">4655.00</span>
+                        <span class="right">
+                            <span class="success hide">提现成功</span>
+                            <span class="fail ">提现失败</span>
+                            <span class="txGoing hide">提现中</span>
+                        </span>
+                    </p>
+                    <p class="clearfix">
+                        <span class="right fs12">2017-02-01 18:34</span>
+                    </p>
+                </li>
+                <li>
+                    <p class="clearfix">
+                        <span class="left">4655.00</span>
+                        <span class="right">
+                            <span class="success hide">提现成功</span>
+                            <span class="fail hide">提现失败</span>
+                            <span class="txGoing ">提现中...</span>
+                        </span>
+                    </p>
+                    <p class="clearfix">
+                        <span class="right fs12">2017-02-01 18:34</span>
+                    </p>
+                </li>
+            </ul>
+
+        </div>
+
+
+    </div>
+</div>
+<script src="../../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../../assets/mobile/js/global.js"></script>
+<script src="../../../assets/mobile/js/weui.js"></script>
+<script>
+    var withdrawals = $(".withdrawals");
+    withdrawals.on("touchend",function(){
+        var money = $(this).closest(".styles").find(".fs20").text();
+
+        if(money>0){
+            weui.alert("成功提现￥"+money);
+        }else {
+            weui.showMsg("提现失败");
+        }
+    })
+</script>
+</body>
+</html>

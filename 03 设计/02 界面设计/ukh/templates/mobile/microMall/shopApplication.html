@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>添加地址</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <link rel="stylesheet" href="../../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="wrapper style">
+    <div class="page">
+        <div class="bd absolute">
+            <img src="../../../assets/mobile/images/shopsShoppingSlider1.jpg" alt="" class="w100"/>
+            <div class="fillInfor">
+                <form action="##">
+                    <div class="weui_cells mt0 weui_cells_form">
+                        <div class="weui_cell">
+                            <div class="weui_cell__hd">
+                                <label class="weui_label">姓　名 :</label>
+                            </div>
+                            <div class="weui_cell__bd">
+                                <input class="weui_input" type="text" placeholder="请输入姓名" id="personName">
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell__hd"><label class="weui_label">手机号 :</label></div>
+                            <div class="weui_cell__bd">
+                                <input class="weui_input" type="number" pattern="[0-9]*" placeholder="请输入手机号" id="mobile">
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cell_vcode">
+                            <div class="weui_cell__hd">
+                                <label class="weui_label">验证码 :</label>
+                            </div>
+                            <div class="weui_cell__bd">
+                                <input class="weui_input" type="number" id="autoCode" placeholder="请输入验证码">
+                            </div>
+                            <div class="weui_cell__ft">
+                                <!--<button class="weui-vcode-btn">获取验证码</button>-->
+                                <a href="javascript:;" class="weui_vcode_btn" id="getCode">获取验证码</a>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cell_select">
+                            <div class="weui_cell_hd">
+                                <label class="weui_label">
+                                    <!--<span class="addressIcon span_icon"></span>--> 省　份 :
+                                </label>
+                            </div>
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <select class="weui_select" name="select1">
+                                    <option value="四川省">四川省</option>
+                                    <option value="贵州省">贵州省</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cell_select">
+                            <div class="weui_cell_hd">
+                                <label class="weui_label">
+                                    <!--<span class="addressIcon span_icon"></span>--> 城　市 :
+                                </label>
+                            </div>
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <select class="weui_select" name="select1">
+                                    <option value="广安市">广安市</option>
+                                    <option value="贵州市">贵州市</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui_btn_area">
+                        <input type="button"  class="weui_btn  weui_btn_primary saveBasic" id="saveBtn" value="马上开店">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../../assets/mobile/js/global.js"></script>
+<script src="../../../assets/mobile/js/weui.js"></script>
+<script src="../../../assets/mobile/js/common-validate.js"></script>
+<script>
+    $(function () {
+        /*表单提交*/
+        var saveBtn = $("#saveBtn");
+        var mobile = $("#mobile");
+        var personName = $("#personName");
+        var caseDetails = $("#caseDetails");
+        var weui_dialog_confirm = $(".weui_dialog_confirm");
+        var sureBm = $("#sureBm");
+        var autoCode = $("#autoCode");
+        saveBtn.on("touchend",function(){
+
+            if(isEmpty(personName.val())){
+                weui.showMsg("请输入姓名");
+                return ;
+            }
+
+            if(isEmpty(mobile.val())||!isPhone(mobile.val())){
+                weui.showMsg("请输入有效手机号");
+                return ;
+            }
+
+            if(isEmpty(autoCode.val())){
+                weui.showMsg("请输入验证码");
+                return ;
+            }
+//                weui_dialog_confirm.removeClass("hide");
+            window.location = ""
+        });
+
+
+        /*获取验证码*/
+        var getCode = $('#getCode');
+        getCode.on("touchend",function(){
+            if(isEmpty(mobile.val())){
+                weui.showMsg("请输入手机号");
+                return;
+            }
+
+            if(isEmpty(mobile.val())||!isPhone(mobile.val())){
+                weui.showMsg("请输入有效手机号");
+                return;
+            }
+
+            weui.showMsg("验证码发送成功");
+            var that = $(this);
+            var count = 60;
+            that.text(count+"秒后重新获取");
+            that.addClass('disabled');
+            that.attr({disabled:"disabled"});
+            var resend = setInterval(function(){
+                count--;
+                if (count > 0){
+                    that.text(count+"秒后重新获取")
+                }else {
+                    clearInterval(resend);
+                    that.removeClass('disabled');
+                    that.removeAttr("disabled");
+                    that.text("获取验证码");
+                }
+            }, 1000);
+        })
+
+    })
+</script>
+</body>
+</html>

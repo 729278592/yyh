@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>我的记录</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name="format-detection" content="telephone=no">
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="../../../assets/mobile/plugins/mui/css/mui.min.css">
+
+    <!--扩展的字体图标-->
+    <link rel="stylesheet" type="text/css" href="../../../assets/mobile/plugins/mui/css/icons-extra.css">
+    <link rel="stylesheet" href="../../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="content relative">
+    <div class="page relative">
+
+
+        <!--内容开始-->
+        <div class="bd">
+
+            <!--我的记录切换开始-->
+            <ul class="recordMenu">
+                <li>
+                    <a href="###" class="active" data="all">
+                        全部
+                    </a>
+                </li>
+                <li>
+                    <a href="###" data="over">
+                        已结算
+                    </a>
+                </li>
+                <li>
+                    <a href="###" data="going">
+                        进行中
+                    </a>
+                </li>
+            </ul>
+            <!--我的记录切换结束-->
+
+            <!--我的记录开始-->
+            <div id="myExtension" class="margin">
+
+                <!--无数据-->
+                <div class="notConTip hide">
+                    <img src="../../../assets/mobile/images/noDate.png" alt=""/>
+                    <p class="notInfor">
+                        暂无数据！
+                    </p>
+                </div>
+                <!--无数据-->
+            </div>
+            <!--我的记录结束-->
+
+        </div>
+        <!--内容结束-->
+    </div>
+</div>
+<script src="../../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../../assets/mobile/js/weui.js"></script>
+<script src="../../../assets/mobile/js/global.js"></script>
+<script>
+    $(function () {
+
+        /*推广所有*/
+        var active_n = $(".recordMenu li a");
+        var data = active_n.eq(0).attr("data");
+        active_n.eq(0).addClass("active");
+        var extensionOrder = "extensionOrder";
+        var myExtension = $("#myExtension");
+        weui.startLoading();
+        setTimeout(function () {
+            $.ajax({
+                type : "post",
+                url : extensionOrder+"/"+data+".html",
+                dataType : "html",
+                cache : false,
+                success : function(data) {
+                    myExtension.html(data);
+                    weui.stopLoading();
+                }
+            });
+        },500);
+
+        /*推广切换*/
+        active_n.on("touchend",function(){
+            $(this).addClass("active");
+            $(this).closest("li").siblings("li").find("a").removeClass("active");
+            var data = $(this).attr("data");
+            var that = $(this);
+            weui.startLoading();
+            setTimeout(function () {
+                $.ajax({
+                    type : "post",
+                    url : extensionOrder+"/"+data+".html",
+                    dataType : "html",
+                    cache : false,
+                    success : function(data) {
+                        that.closest(".bd").find(myExtension).html(data);
+                        weui.stopLoading();
+                    }
+                });
+            },500)
+        });
+
+
+    })
+</script>
+</body>
+</html>

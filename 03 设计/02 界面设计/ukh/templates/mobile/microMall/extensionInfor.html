@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>推客信息</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <link rel="stylesheet" href="../../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="wrapper style">
+    <div class="page">
+        <div class="bd absolute">
+            <ul class="shop_menu mt0 clearfix">
+                <li class="">
+                    <span>
+                        推客信息
+                    </span>
+                </li>
+            </ul>
+            <div class="fillInfor">
+                <form action="##">
+                    <div class="weui_cells mt0 styles weui_cells_form">
+                        <div class="weui_cell">
+                            <div class="weui_cell__hd">
+                                <label class="weui_label">店铺名称 :</label>
+                            </div>
+                            <div class="weui_cell__bd">
+                                <input class="weui_input" type="text" placeholder="请输入店铺名称" id="shopName">
+                            </div>
+                        </div>
+                        <div class="weui_cell mb15">
+                            <div class="weui_cell__hd">
+                                <label class="weui_label">店铺logo :</label>
+                            </div>
+                            <div class="weui_cell__bd">
+                                <img src="../../../assets/mobile/images/heprotite.jpg" class="heprotite" alt="" id="chooseImage">
+                            </div>
+                        </div>
+                        <div class="weui_cell ">
+                            <div class="weui_cell__hd"><label class="weui_label">开户行 :</label></div>
+                            <div class="weui_cell__bd">
+                                <input class="weui_input" type="number" pattern="[0-9]*" placeholder="请输入开户行" id="mobile">
+                            </div>
+                        </div>
+
+                        <!--<div class="weui_cell weui_cell_select">-->
+                            <!--<div class="weui_cell_hd">-->
+                                <!--<label class="weui_label">-->
+                                    <!--&lt;!&ndash;<span class="addressIcon span_icon"></span>&ndash;&gt; 开户行 :-->
+                                <!--</label>-->
+                            <!--</div>-->
+                            <!--<div class="weui_cell_bd weui_cell_primary">-->
+                                <!--<select class="weui_select" name="select1">-->
+                                    <!--<option value="工商银行">工商银行</option>-->
+                                    <!--<option value="建设银行">建设银行</option>-->
+                                <!--</select>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <div class="weui_cell">
+                            <div class="weui_cell__hd">
+                                <label class="weui_label">开户名 :</label>
+                            </div>
+                            <div class="weui_cell__bd">
+                                <input class="weui_input" type="text" placeholder="请输入开户名" id="khName">
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell__hd">
+                                <label class="weui_label">账　号 :</label>
+                            </div>
+                            <div class="weui_cell__bd">
+                                <input class="weui_input" type="number" placeholder="请输入您的账号" id="account">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui_btn_area">
+                        <input type="button"  class="weui_btn  weui_btn_primary saveBasic" id="saveBtn" value="保存">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../../assets/mobile/js/global.js"></script>
+<script src="../../../assets/mobile/js/weui.js"></script>
+<script src="../../../assets/mobile/plugins/jweixin-1.0.0.js"></script>
+<script src="../../../assets/mobile/js/common-validate.js"></script>
+<script>
+    $(function () {
+        /*表单提交*/
+        var saveBtn = $("#saveBtn");
+        var shopName = $("#shopName");
+        var khName = $("#khName");
+        var sureBm = $("#sureBm");
+        var account = $("#account");
+        saveBtn.on("touchend",function(){
+
+            if(isEmpty(shopName.val())){
+                weui.showMsg("请输入店铺名");
+                return ;
+            }
+
+            if(isEmpty(khName.val())){
+                weui.showMsg("请输入开户名");
+                return ;
+            }
+
+            if(isEmpty(account.val())){
+                weui.showMsg("请输入账号");
+                return ;
+            }
+//                weui_dialog_confirm.removeClass("hide");
+            window.location = ""
+        });
+
+
+
+
+        wx.config({
+            debug: false,
+            appId: 'wxf8b4f85f3a794e77',
+            timestamp: 1478266049,
+            nonceStr: 'NdOpeKuccoaMsQqL',
+            signature: '65cd218663a03295f33e175c4e99103ca95280da',
+            jsApiList: [
+                'chooseImage',
+                'previewImage',
+                'uploadImage'
+            ]
+        });
+
+
+        //ready接口处理成功验证
+        wx.ready(function () {
+
+            // 1 判断当前版本是否支持指定 JS 接口，支持批量判断
+            wx.checkJsApi({
+                jsApiList: [
+                    'getNetworkType',
+                    'previewImage'
+                ],
+                success: function (res) {
+                    alert(JSON.stringify(res));
+                }
+            });
+
+            // 5 图片接口
+            // 5.1 拍照、本地选图
+            var images = {
+                localId: [],
+                serverId: []
+            };
+            $('#chooseImage').on("click",function () {
+                wx.chooseImage({
+                    success: function (res) {
+                        images.localId = res.localIds;
+                        alert('已选择 ' + res.localIds.length + ' 张图片');
+                    },
+                    fail: function (res) {
+                        console.log(JSON.stringify(res));
+                    }
+                });
+            })
+
+
+//            // 5.2 图片预览
+//            $('#previewImage').onclick = function () {
+//                wx.previewImage({
+//                    current: 'http://img5.douban.com/view/photo/photo/public/p1353993776.jpg',
+//                    urls: [
+//                        'http://img3.douban.com/view/photo/photo/public/p2152117150.jpg',
+//                        'http://img5.douban.com/view/photo/photo/public/p1353993776.jpg',
+//                        'http://img3.douban.com/view/photo/photo/public/p2152134700.jpg'
+//                    ]
+//                });
+//            };
+//
+//            // 5.3 上传图片
+//            $('#uploadImage').onclick = function () {
+//                if (images.localId.length == 0) {
+//                    alert('请先使用 chooseImage 接口选择图片');
+//                    return;
+//                }
+//                var i = 0, length = images.localId.length;
+//                images.serverId = [];
+//                function upload() {
+//                    wx.uploadImage({
+//                        localId: images.localId[i],
+//                        success: function (res) {
+//                            i++;
+//                            //alert('已上传：' + i + '/' + length);
+//                            images.serverId.push(res.serverId);
+//                            if (i < length) {
+//                                upload();
+//                            }
+//                        },
+//                        fail: function (res) {
+//                            alert(JSON.stringify(res));
+//                        }
+//                    });
+//                }
+//                upload();
+//            };
+        });
+
+        //error接口处理失败验证
+        wx.error(function (res) {
+            alert(res.errMsg);
+        });
+
+    })
+</script>
+</body>
+</html>
