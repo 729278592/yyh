@@ -53,6 +53,7 @@ a:active{opacity: 0.8;}
 
 /*shops-search*/
 .mask-bg{position: fixed;top: 0;right: 0;left: 0;bottom: 0;background: rgba(0,0,0,0.6);z-index: 9998;}
+.mask{position: fixed;top: 0;right: 0;left: 0;bottom: 0;z-index: 10000;overflow: auto;}
 .mask-bg.hide{display:none;}
 .tabSX{position: fixed;top: 0;width: 100%;height: 100%;z-index: 9999;max-width: 640px;background: #fff;overflow: auto;}
 
@@ -1347,10 +1348,29 @@ img.shopInfor.w100{width: 100%;margin-bottom: 0.625rem;}
     -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;}
-
+.weui_btn_area .weui_btn_primary.bgfff{background: #fff;color: #333;}
+.share-div{position: relative;height: 100%;}
+.shareImg1{position: absolute;right: 1rem;z-index: 100;top: -1.5rem;width: 6rem;}
 .codeBtnBg{width: 100%;border-top: 0.625rem solid #f3f3f3;}
 .codeBtnBg img{width: 100%;}
-
+.share-mask:first-child{margin-top: 2rem;padding-top: 3rem;}
+.share-mask{text-align: center;position: relative;background: #fff;border-radius: 0.5rem;width: 92%;margin: 0 4% 1rem;padding: 1.5rem 4%;}
+.share-mask.taleft p{text-align: left;}
+.share-mask p{color: #333;}
+.saoMa{position: fixed;top: 0;z-index: 10000;left: 0;bottom: 0;background: #fff;}
+.codeList.clearfix{display: block;margin: 1rem 0;}
+.codeList li{float: left;width: 50%;text-align: center;}
+.codeList li:last-child{margin-right: 0;}
+.codeList li>div{width: 100px;height: 100px;display: inline-block;position: relative;padding: 2px;border: 1px solid #51b8fb;border-radius: 0.25rem;}
+.codeList li .tgCode{width: 100%;height: 100%;}
+.codeList li  .pointer{position: absolute;right: 0;bottom: 0;width: 2rem;}
+.codeList li p{text-align: center !important;margin-top: 0.5rem;}
+.share-mask.taleft p.mb10{margin-bottom: 0.5rem;}
+.fs14.b1{padding: 0.5rem 2%;border: 1px solid #dbdbdb;text-align: left;}
+.fs14.b1 .infor{color: #999;}
+.share-mask .fs14{font-size: 0.875rem;}
+.share-mask .fs14 a{color: #51b8fb;}
+.share-mask .fs14 a.efef{color: #999;}
 /*数量的选择*/
 .taRight{text-align: right;}
 a.num {
@@ -1497,7 +1517,7 @@ a.num input {
 .middle-menu li .icon4{background: url("../images/tkIcon4.png") no-repeat;background-size: 100% 100%;}
 .middle-menu li .icon5{background: url("../images/tkIcon5.png") no-repeat;background-size: 100% 100%;}
 .middle-menu li .icon6{background: url("../images/tkIcon6.png") no-repeat;background-size: 100% 100%;}
-.middle-menu li .icon,.middle-menu li .title{font-size: 0.875rem;}
+.middle-menu li .icon,.middle-menu li .title{font-size: 0.875rem;color: #333;}
 .middle-menu li .icon,.middle-menu li .num{color: #f73939;}
 .middle-menu li .rb {
     position: absolute;
@@ -1521,6 +1541,7 @@ a.num input {
     font-size: 50px !important;
     color: #09BB07;
 }
+.weui_btn_primary.b0:not(.weui_btn_disabled):active{background: #27b163;}
 [class^="weui-icon-"], [class*=" weui-icon-"] {
     display: inline-block;
     vertical-align: middle;
