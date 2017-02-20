@@ -782,14 +782,14 @@ button.weui-vcode-btn {
 }
 .entryList>li .couponImg{width: 20%;position: relative;text-align: center;}
 .entryList>li .couponImg img.couponTip{position: absolute;width: 30%;right: -10%;top: -10%;}
-.entryList>li .couponImg img.couponImg1{width: 85px;height: 4.375rem;}
+.entryList>li .couponImg img.couponImg1{width: 4.375rem;height: 4.375rem;}
 .entryList>li .couponImg.style img.couponImg1{width: 5rem;height: 5rem;border-radius: 2px;}
 .entryList>li .inforList{width: 65%;}
 .entryList>li .inforList>span{display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
     overflow: hidden;
-    text-overflow: ellipsis;font-size: 14px;color: #999;}
+    text-overflow: ellipsis;font-size: 1rem;color: #999;}
 .entryList>li .inforList span.money{font-size: 1rem;color: #333;}
 .entryList>li .inforList span.title{font-size: 1rem;color: #333;border: none;}
 .entryList>li .inforList span.title.styles{font-size: 1.125rem;}
@@ -1683,7 +1683,7 @@ a.num input {
 .entryList>li .inforList span.color1{color: #333;font-size: 1rem;}
 .entryList>li .inforList span.color.fs16{font-size: 1rem;}
 .entryList>li .inforList span.teRight.color.fs16{font-size: 1rem;text-align: left;}
-.entryList>li .inforList p.pa{padding: 1%;border: 1px solid #dbdbdb;width: 45%;font-size: 0.625rem;float: left;text-align: center;border-radius: 0.2rem;}
+.entryList>li .inforList p.pa{margin-top: 0.5rem;padding: 1%;border: 1px solid #dbdbdb;width: 45%;font-size: 0.625rem;float: left;text-align: center;border-radius: 0.2rem;}
 .entryList>li .inforList p.pa af{color: #ff3b30;}
 .entryList.top>li .couponImg{vertical-align: top;}
 .entryList>li .inforList p.pa:last-child{float: right;}
