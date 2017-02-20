@@ -1682,7 +1682,13 @@ a.num input {
 .errSpan{color: #fff;}
 .entryList>li .inforList span.color1{color: #333;font-size: 1rem;}
 .entryList>li .inforList span.color.fs16{font-size: 1rem;}
+.entryList>li .inforList span.teRight.color.fs16{font-size: 1rem;text-align: left;}
+.entryList>li .inforList p.pa{padding: 1%;border: 1px solid #dbdbdb;width: 45%;font-size: 0.625rem;float: left;text-align: center;border-radius: 0.2rem;}
+.entryList>li .inforList p.pa af{color: #ff3b30;}
+.entryList.top>li .couponImg{vertical-align: top;}
+.entryList>li .inforList p.pa:last-child{float: right;}
 .page.bgfff{background: #fff;}
+
 .mui-bar-tab .mui-tab-item.mui-active{color: #4cb7fb;}
 .mui-icon .mui-badge{background: #ff3b30;}
 
