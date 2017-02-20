@@ -6,105 +6,115 @@
     <title>分销商品</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
     <meta name="format-detection" content="telephone=no">
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="../../../assets/mobile/plugins/mui/css/mui.min.css">
     <link rel="stylesheet" href="../../../assets/mobile/css/weui.css"/>
     <link rel="stylesheet" href="../../../assets/mobile/css/example.css"/>
     <link rel="stylesheet" href="../../../assets/mobile/css/global.css"/>
 </head>
 <body>
-<div class="content relative">
-    <div class="page relative">
+<div class="content ">
+    <div class="page ">
 
         <!--内容开始-->
-        <div class="bd">
+        <div class="bd absolute" id="pullrefresh">
 
             <!--我的记录开始-->
-            <div id="myExtension" class="margin">
+            <div id="myExtension" class="margin mui-scroll">
                 <!--所有开始-->
-                <ul class="entryList mt0 top">
-                    <li>
-                        <a href="shopsShoppingInfor.html">
+                <ul class="entryList mt0 w100 bt1 top">
 
-                            <div class="couponImg">
-                                <img src="../../../assets/mobile/images/heprotite.jpg" class="couponImg1" alt="">
-                            </div>
-                            <span class="inforList">
-                                <span class="title">
-                                巴黎欧莱雅男士洗面奶水能润泽双效
-                                </span>
+                    <!--<li>-->
+                        <!--<a href="shopsShoppingInfor.html">-->
 
-                                <span >
-                                    <span>
-                                        销量 : 888
-                                    </span>
-                                </span>
+                            <!--<div class="couponImg">-->
+                                <!--<img src="../../../assets/mobile/images/heprotite.jpg" class="couponImg1" alt="">-->
+                            <!--</div>-->
+                            <!--<span class="inforList">-->
+                                <!--<span class="title">-->
+                                <!--巴黎欧莱雅男士洗面奶水能润泽双效-->
+                                <!--</span>-->
 
-                                <span class="teRight color fs16">
-                                    <span>
-                                        ￥888.00
-                                    </span>
+                                <!--<span >-->
+                                    <!--<span>-->
+                                        <!--销量 : 888-->
+                                    <!--</span>-->
+                                <!--</span>-->
 
-                                </span>
-                                <p class="pa">
-                                    一级 <af>￥119.80</af>
-                                </p>
-                                <p class="pa">
-                                    二级 <af>￥119.80</af>
-                                </p>
-                            </span>
+                                <!--<span class="teRight color fs16">-->
+                                    <!--<span>-->
+                                        <!--￥888.00-->
+                                    <!--</span>-->
 
-                        </a>
-                    </li>
-                    <li>
-                        <a href="shopsShoppingInfor.html">
+                                <!--</span>-->
+                                <!--<p class="pa">-->
+                                    <!--一级 <af>￥1191.80</af>-->
+                                <!--</p>-->
+                                <!--<p class="pa">-->
+                                    <!--二级 <af>￥119.180</af>-->
+                                <!--</p>-->
+                            <!--</span>-->
 
-                            <div class="couponImg">
-                                <img src="../../../assets/mobile/images/heprotite.jpg" class="couponImg1" alt="">
-                            </div>
-                            <span class="inforList">
-                                <span class="title">
-                                巴黎欧莱雅男士洗面奶水能润泽双效
-                                </span>
-
-                                <span >
-                                    <span>
-                                        销量 : 888
-                                    </span>
-                                </span>
-
-                                <span class="teRight color fs16">
-                                    <span>
-                                        ￥888.00
-                                    </span>
-
-                                </span>
-                                <p class="pa">
-                                    一级 <af>￥119.80</af>
-                                </p>
-                                <p class="pa">
-                                    二级 <af>￥119.80</af>
-                                </p>
-                            </span>
-
-                        </a>
-                    </li>
+                        <!--</a>-->
+                    <!--</li>-->
                 </ul>
                 <!--所有结束-->
-                <!--无数据-->
-                <div class="notConTip hide">
-                    <img src="../../../assets/mobile/images/noDate.png" alt=""/>
-                    <p class="notInfor">
-                        暂无数据！
-                    </p>
-                </div>
-                <!--无数据-->
+
             </div>
             <!--我的记录结束-->
-
+            <!--无数据-->
+            <div class="notConTip hide">
+                <img src="../../../assets/mobile/images/noDate.png" alt=""/>
+                <p class="notInfor">
+                    暂无数据！
+                </p>
+            </div>
+            <!--无数据-->
         </div>
         <!--内容结束-->
     </div>
 </div>
 <script src="../../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
 <script src="../../../assets/mobile/js/global.js"></script>
+<script src="../../../assets/mobile/js/weui.js"></script>
+<script src="../../../assets/mobile/plugins/mui/js/mui.min.js"></script>
+<script src="../../../assets/mobile/js/pullRefresh.js"></script><!--上滑加载-->
+<script>
+    $(function(){
+        /*滚动加载*/
+        var entryList = $('.entryList');
+        entryList.scrollLoad({
+            interface:"../../../assets/mobile/data/distributionShopping.json" ,//接口
+            pullrefresh:"#pullrefresh",
+            ajaxRecord:function(obj,wajxHtml){
+                //模板片段
+                wajxHtml += '<li>'+
+                                '<a href="shopsShoppingInfor.html">'+
+                                    '<div class="couponImg">'+
+                                        '<img src="'+obj.images+'" class="couponImg1" alt="">'+
+                                    '</div>'+
+                                    '<span class="inforList">'+
+                                        '<span class="title">'+obj.title+'</span>'+
+                                        '<span >'+
+                                            '<span>销量 : '+obj.sale+'</span>'+
+                                        '</span>'+
+                                        '<span class="teRight color fs16">'+
+                                            '<span>￥ '+obj.money+'</span>'+
+                                        '</span>'+
+                                        '<p class="pa">'+
+                                            '一级 <af>￥'+obj.firstLevel+'</af>'+
+                                        '</p>'+
+                                        '<p class="pa">'+
+                                            '二级 <af>￥'+obj.secondLevel+'</af>'+
+                                        '</p>'+
+                                    '</span>'+
+                                '</a>'+
+                            '</li>';
+                return wajxHtml;
+            }
+        })
+    })
+</script>
+
 </body>
 </html>

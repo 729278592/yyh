@@ -383,6 +383,11 @@
                 e.preventDefault();
                 mbm.addClass("hide");
                 saoMa.removeClass("hide");
+            });
+
+            saoMa.on("touchend",function (e) {
+                e.preventDefault();
+                saoMa.addClass("hide");
             })
 
         });

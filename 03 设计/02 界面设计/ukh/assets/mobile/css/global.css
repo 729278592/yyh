@@ -365,6 +365,7 @@ textarea{font-family: "微软雅黑";}
 .weui_cells.bg{background:#f7f7f7}
 .weui_cells.bg .weui_cell{background:#fff}
 .content,.page{position:absolute;top:0;right:0;bottom:0;left:0}
+.content.relative,.page.relative{position: relative;}
 .addressChioce,.advancedSearch{position:fixed;z-index:10;left:0;top:0;right:0;bottom:0;background:#f7f7f7;overflow-y: auto;}
 .weui_cells.style .weui_cell:after{content:" ";display:inline-block;-webkit-transform:rotate(45deg);transform:rotate(45deg);height:0.375rem;width:0.375rem;border-width:0.125rem 0.125rem 0 0;border-color:#C8C8CD;border-style:solid;position:relative;top:-2px;top:-1px;margin-left:.3em}
 .weui_cells.style1{margin-top:0.625rem;}
@@ -1068,7 +1069,7 @@ img.shopInfor.w100{width: 100%;margin-bottom: 0.625rem;}
 .weui_actionsheet_action{margin-top: 0;}
 .weui_actionsheet_action button.btnSure{background: #ff5102;color: #fff;width: 100%;height: 48px;border: 0;outline: 0;line-height: 50px;font-family: "微软雅黑";font-size: 18px;}
 .weui_actionsheet_action button.btnSure.hide{display: none;}
-.weui_cells_form .weui_cell .weui_label{width: 75px;}
+.weui_cells_form .weui_cell .weui_label{width: 5rem;text-align: right;position: relative;right: 5px;}
 .shopShoppingMenu{width: 100%;display: block;}
 .shopShoppingMenu li{height: 3rem;float: left;}
 .shopShoppingMenu li a{height: 100%;display: inline-block;background: #fff;font-size: 0.875rem;width: 100%;color: #333;}
@@ -1354,6 +1355,7 @@ img.shopInfor.w100{width: 100%;margin-bottom: 0.625rem;}
 .codeBtnBg{width: 100%;border-top: 0.625rem solid #f3f3f3;}
 .codeBtnBg img{width: 100%;}
 .share-mask:first-child{margin-top: 2rem;padding-top: 3rem;}
+.share-mask .title{font-size: 1rem;}
 .share-mask{text-align: center;position: relative;background: #fff;border-radius: 0.5rem;width: 92%;margin: 0 4% 1rem;padding: 1.5rem 4%;}
 .share-mask.taleft p{text-align: left;}
 .share-mask p{color: #333;}
@@ -1369,6 +1371,7 @@ img.shopInfor.w100{width: 100%;margin-bottom: 0.625rem;}
 .fs14.b1{padding: 0.5rem 2%;border: 1px solid #dbdbdb;text-align: left;}
 .fs14.b1 .infor{color: #999;}
 .share-mask .fs14{font-size: 0.875rem;}
+.share-mask .fs16{font-size: 1rem;}
 .share-mask .fs14 a{color: #51b8fb;}
 .share-mask .fs14 a.efef{color: #999;}
 /*数量的选择*/
@@ -1683,12 +1686,17 @@ a.num input {
 .entryList>li .inforList span.color1{color: #333;font-size: 1rem;}
 .entryList>li .inforList span.color.fs16{font-size: 1rem;}
 .entryList>li .inforList span.teRight.color.fs16{font-size: 1rem;text-align: left;}
-.entryList>li .inforList p.pa{color: #333;margin-top: 0.5rem;padding: 1%;border: 1px solid #dbdbdb;width: 45%;font-size: 0.625rem;float: left;text-align: center;border-radius: 0.2rem;}
+.entryList>li .inforList p.pa{color: #333;margin-top: 0.5rem;padding: 1%;
+    border: 1px solid #dbdbdb;width: 49%;font-size: 0.875rem;float: left;text-align: center;border-radius: 0.2rem;}
 .entryList>li .inforList p.pa af{color: #ff3b30;}
 .entryList.top>li .couponImg{vertical-align: top;}
 .entryList>li .inforList p.pa:last-child{float: right;}
 .page.bgfff{background: #fff;}
-
+.entryList.w100.bt1>li>a {
+    width: 100%;
+     border-top: 1px solid #efefef;
+}
+.mui-pull-bottom-pocket, .mui-pull-top-pocket{visibility: inherit;}
 .mui-bar-tab .mui-tab-item.mui-active{color: #4cb7fb;}
 .mui-icon .mui-badge{background: #ff3b30;}
 

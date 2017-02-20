@@ -192,7 +192,7 @@
                             </p>
                         </div>
                         <div class="share-mask taleft">
-                            <p class="">其他方式</p>
+                            <p class="fs16">其他方式</p>
                             <p class="fs14">1.二维码推广 <a class="efef">(点击查看)</a></p>
                             <ul class="codeList clearfix">
                                 <li>
@@ -214,7 +214,7 @@
                                     </p>
                                 </li>
                             </ul>
-                            <p class="mb10"> 2.复制链接推广</p>
+                            <p class="mb10 fs14"> 2.复制链接推广</p>
                             <div class="fs14 b1">
                                 <span class="infor">我开了一个小店，来看看有没有你喜欢的宝贝</span>
                                 <br>
@@ -333,6 +333,11 @@
                 e.preventDefault();
                 mbm.addClass("hide");
                 saoMa.removeClass("hide");
+            });
+
+            saoMa.on("touchend",function (e) {
+                e.preventDefault();
+                saoMa.addClass("hide");
             })
 
         });
