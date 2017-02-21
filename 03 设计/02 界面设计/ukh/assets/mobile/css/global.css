@@ -789,6 +789,7 @@ button.weui-vcode-btn {
 .shopList li a img{width: 100%;height: 100%;}
 .shopList li a:active{opacity: 1;}
 .entryList{margin-top: 0.625rem;}
+
 .entryList>li{background: #fff;}
 .entryList.imgStyle{padding-bottom: 10px;}
 .entryList.imgStyle li{display: block;}
@@ -1893,7 +1894,7 @@ p{margin-bottom: 0;}
 .entryList.bt0 li{border-top: 0;}
 .entryList.mb10 li{margin-top: 0.625rem;}
 .entryList li a.tipA{font-size: 0.875rem;color: #ff3b30;padding-right: 1rem;}
-.entryList li .having,.entryList li .over{margin: 0.625rem;width: 85px;height: 1.2rem;line-height: 1.2rem;text-align: center;position: relative;left: 2px;}
+.entryList li .having,.entryList li .over{margin: 0.625rem;width: 85px;height: 1.4rem;line-height: 1.4rem;text-align: center;position: relative;left: 2px;}
 .entryList li .having{background: #bcbcbc;color: #333;}
 .entryList li .over{background: #43b3fb;color: #fff;}
 a>.weui_cell_ft.style:after{right: 12px;}
@@ -1930,8 +1931,8 @@ a>.weui_cell_ft.style:after{right: 12px;}
     opacity: 0.8;
 }
 
-
-
+.entryList.w94>li>div.listHead{width: 94%;border-bottom:0;color: #999;padding: 0.5rem 3% 0;}
+.entryList.w94>li:first-child>a{border-top: 0;}
 
 
 
