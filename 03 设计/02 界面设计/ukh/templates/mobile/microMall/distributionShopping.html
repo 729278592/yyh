@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -82,6 +81,7 @@
 <script>
     $(function(){
         /*滚动加载*/
+
         var entryList = $('.entryList');
         entryList.scrollLoad({
             interface:"../../../assets/mobile/data/distributionShopping.json" ,//接口
@@ -91,7 +91,7 @@
                 wajxHtml += '<li>'+
                                 '<a href="shopsShoppingInfor.html">'+
                                     '<div class="couponImg">'+
-                                        '<img src="'+obj.images+'" class="couponImg1" alt="">'+
+                                        '<img src="'+obj.cover+'" class="couponImg1" alt="">'+
                                     '</div>'+
                                     '<span class="inforList">'+
                                         '<span class="title">'+obj.title+'</span>'+
@@ -113,8 +113,8 @@
                 return wajxHtml;
             }
         })
+
     })
 </script>
-
 </body>
 </html>

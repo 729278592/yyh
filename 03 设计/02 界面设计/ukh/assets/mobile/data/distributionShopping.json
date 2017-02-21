@@ -5,34 +5,34 @@
     {
       "id": 1001,
       "title":"巴黎欧莱雅男士洗面奶水能润泽双效",
-      "images": "../../../assets/mobile/images/heprotite.jpg",
-      "sale":"8885",
-      "money":"888.00",
+      "cover": "../../../assets/mobile/images/shopPingImg.jpg",
+      "sale":"99",
+      "money":"77.00",
       "firstLevel":"119.80",
       "secondLevel":"119.80"
     },
     {
       "id": 1002,
       "title":"巴黎欧莱雅男士洗面奶水能润泽双效",
-      "images": "../../../assets/mobile/images/heprotite.jpg",
-      "sale":"889",
-      "money":"888.00",
+      "cover": "../../../assets/mobile/images/shopPingImg.jpg",
+      "sale":"10",
+      "money":"66.00",
       "firstLevel":"119.80",
       "secondLevel":"119.80"
     },
     {
       "id": 1003,
       "title":"巴黎欧莱雅男士洗面奶水能润泽双效",
-      "images": "../../../assets/mobile/images/heprotite.jpg",
+      "cover": "../../../assets/mobile/images/shopPingImg.jpg",
       "sale":"889",
-      "money":"888.00",
+      "money":"55.00",
       "firstLevel":"119.80",
       "secondLevel":"119.80"
     },
     {
       "id": 1004,
       "title":"巴黎欧莱雅男士洗面奶水能润泽双效",
-      "images": "../../../assets/mobile/images/heprotite.jpg",
+      "cover": "../../../assets/mobile/images/shopPingImg.jpg",
       "sale":"889",
       "money":"888.00",
       "firstLevel":"119.80",
@@ -41,7 +41,7 @@
     {
       "id": 1005,
       "title":"巴黎欧莱雅男士洗面奶水能润泽双效",
-      "images": "../../../assets/mobile/images/heprotite.jpg",
+      "cover": "../../../assets/mobile/images/shopPingImg.jpg",
       "sale":"889",
       "money":"888.00",
       "firstLevel":"119.80",
@@ -50,7 +50,7 @@
     {
       "id": 1006,
       "title":"巴黎欧莱雅男士洗面奶水能润泽双效",
-      "images": "../../../assets/mobile/images/heprotite.jpg",
+      "cover": "../../../assets/mobile/images/shopPingImg.jpg",
       "sale":"889",
       "money":"888.00",
       "firstLevel":"119.80",
@@ -61,7 +61,7 @@
     {
       "id": 1001,
       "title":"巴黎欧莱雅男士洗面奶水能润泽双效",
-      "images": "../../../assets/mobile/images/heprotite.jpg",
+      "cover": "../../../assets/mobile/images/shopPingImg.jpg",
       "sale":"888",
       "money":"888.00",
       "firstLevel":"119.80",
@@ -70,7 +70,7 @@
     {
       "id": 1002,
       "title":"巴黎欧莱雅男士洗面奶水能润泽双效",
-      "images": "../../../assets/mobile/images/heprotite.jpg",
+      "cover": "../../../assets/mobile/images/shopPingImg.jpg",
       "sale":"889",
       "money":"888.00",
       "firstLevel":"119.80",
@@ -79,7 +79,7 @@
     {
       "id": 1003,
       "title":"巴黎欧莱雅男士洗面奶水能润泽双效",
-      "images": "../../../assets/mobile/images/heprotite.jpg",
+      "cover": "../../../assets/mobile/images/shopPingImg.jpg",
       "sale":"889",
       "money":"888.00",
       "firstLevel":"119.80",
@@ -88,7 +88,7 @@
     {
       "id": 1004,
       "title":"巴黎欧莱雅男士洗面奶水能润泽双效",
-      "images": "../../../assets/mobile/images/heprotite.jpg",
+      "cover": "../../../assets/mobile/images/shopPingImg.jpg",
       "sale":"889",
       "money":"888.00",
       "firstLevel":"119.80",
@@ -97,7 +97,7 @@
     {
       "id": 1005,
       "title":"巴黎欧莱雅男士洗面奶水能润泽双效",
-      "images": "../../../assets/mobile/images/heprotite.jpg",
+      "cover": "../../../assets/mobile/images/shopPingImg.jpg",
       "sale":"889",
       "money":"888.00",
       "firstLevel":"119.80",

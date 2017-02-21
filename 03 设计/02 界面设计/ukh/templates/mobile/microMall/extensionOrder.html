@@ -16,12 +16,9 @@
     <link rel="stylesheet" href="../../../assets/mobile/css/global.css"/>
 </head>
 <body>
-<div class="content relative">
-    <div class="page relative">
-
-
-        <!--内容开始-->
-        <div class="bd">
+<div class="content ">
+    <div class="page ">
+        <div class="hd">
 
             <!--我的记录切换开始-->
             <ul class="recordMenu">
@@ -43,8 +40,14 @@
             </ul>
             <!--我的记录切换结束-->
 
+        </div>
+        <!--内容开始-->
+        <div class="bd absolute pt" id="pullrefresh">
+
             <!--我的记录开始-->
-            <div id="myExtension" class="margin">
+            <div id="myExtension" class="margin mui-scroll">
+
+                <ul class="entryList w100"></ul>
 
                 <!--无数据-->
                 <div class="notConTip hide">
@@ -63,6 +66,8 @@
 </div>
 <script src="../../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
 <script src="../../../assets/mobile/js/weui.js"></script>
+<script src="../../../assets/mobile/plugins/mui/js/mui.min.js"></script>
+<script src="../../../assets/mobile/js/pullRefresh.js"></script><!--上滑加载-->
 <script src="../../../assets/mobile/js/global.js"></script>
 <script>
     $(function () {
@@ -73,26 +78,9 @@
         active_n.eq(0).addClass("active");
         var extensionOrder = "extensionOrder";
         var myExtension = $("#myExtension");
-        weui.startLoading();
-        setTimeout(function () {
-            $.ajax({
-                type : "post",
-                url : extensionOrder+"/"+data+".html",
-                dataType : "html",
-                cache : false,
-                success : function(data) {
-                    myExtension.html(data);
-                    weui.stopLoading();
-                }
-            });
-        },500);
+        ajaxLoad(data);
 
-        /*推广切换*/
-        active_n.on("touchend",function(){
-            $(this).addClass("active");
-            $(this).closest("li").siblings("li").find("a").removeClass("active");
-            var data = $(this).attr("data");
-            var that = $(this);
+        function ajaxLoad(data) {
             weui.startLoading();
             setTimeout(function () {
                 $.ajax({
@@ -101,13 +89,20 @@
                     dataType : "html",
                     cache : false,
                     success : function(data) {
-                        that.closest(".bd").find(myExtension).html(data);
+                        myExtension.html(data);
                         weui.stopLoading();
                     }
                 });
-            },500)
-        });
+            },500);
+        }
 
+        /*推广切换*/
+        active_n.on("touchend",function(){
+            $(this).addClass("active");
+            $(this).closest("li").siblings("li").find("a").removeClass("active");
+            var data = $(this).attr("data");
+            ajaxLoad(data)
+        });
 
     })
 </script>

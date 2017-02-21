@@ -82,7 +82,7 @@
                 interfaceNum:"" //数量更新接口
             });
 
-            orderList.on("touchend",".btnRemove",function(){
+            orderList.on("touchend",".btnRemove",function(e){
                 weui.confirm("是否删除该商品?",function(){
                     weui.startLoading();
 
