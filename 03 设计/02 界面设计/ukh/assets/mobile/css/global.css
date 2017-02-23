@@ -1325,7 +1325,7 @@ img.shopInfor.w100{width: 100%;margin-bottom: 0.625rem;}
     bottom: 0;
     left: 0;}
 .shoppingList.flex li a.shop_div{display: flex;position: relative;height: 6rem;}
-.shop_list_bgs.style{ padding-right: 0.35em;width: 40%;height: 100%;}
+.shop_list_bgs.style{ padding-right: 0.35em;width: 47%;height: 100%;}
 .shop_list_bgs.style img{width: 100%;height: 100%;}
 .shop_infors.style{    -webkit-box-flex: 1;
     -webkit-flex: 1;
@@ -1731,7 +1731,7 @@ a.num input {
 .applicatioOpetion.mb0{margin-bottom: 0;}
 .entryList.firstBt0>li:first-child>a{border-top: 0;}
 
-.mui-slider .mui-slider-group .mui-slider-item img {height: 8rem;}
+.mui-slider .mui-slider-group .mui-slider-item img {height: 16rem;}
 .weui_btn_area.m0{margin: 0;}
 .plusAddress{}
 .plusAddress .title,.orderInfor .title{font-size: 1rem;padding: 0.625rem 3%;}
