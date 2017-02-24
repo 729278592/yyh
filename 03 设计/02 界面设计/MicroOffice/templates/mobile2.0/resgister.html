@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>雇主注册</title>
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+        <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+        <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+        <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+        <link rel="stylesheet" href="../../assets/mobile/css/global2.0.css"/>
+
+    </head>
+    <body>
+    <div class="container">
+        <div class="page bgfff">
+            <div class="bd absolute">
+                <form action="#" id="form" onsubmit="return false">
+                    <div class="weui_cells weui_cells_form mt0">
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">
+                                <img src="../../assets/mobile/images/companyIcon.png" alt=""/>公司名称</label></div>
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <input class="weui_input" type="text" id="companyName" placeholder="请输入公司名称"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">
+                                <img src="../../assets/mobile/images/img2.0/phoneIcon.png" style="width: 12%;" alt=""/>手机号码</label></div>
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <input class="weui_input" type="text" id="mobile" placeholder="请输入手机号码"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cell_vcode">
+                            <div class="weui_cell__hd">
+                                <label class="weui_label"><img src="../../assets/mobile/images/img2.0/emailIcon.png" alt=""/>　验证码</label>
+                            </div>
+                            <div class="weui_cell__bd">
+                                <input class="weui_input" type="number" id="autoCode" placeholder="请输入验证码">
+                            </div>
+                            <div class="weui_cell__ft">
+                                <!--<button class="weui-vcode-btn">获取验证码</button>-->
+                                <a class="weui_vcode_btn" id="getCode">获取验证码</a>
+                            </div>
+                        </div>
+
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">
+                                <img src="../../assets/mobile/images/img2.0/passIcon.png" alt=""/>密　　码</label></div>
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <input class="weui_input" type="text" placeholder="请输入密码" id="password"/>
+                            </div>
+                        </div>
+
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">
+                                <img src="../../assets/mobile/images/img2.0/passIcon.png" alt=""/>确认密码</label></div>
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <input class="weui_input" type="text" placeholder="请确认密码" id="confirmPws"/>
+                            </div>
+                        </div>
+                        <label for="weuiAgree" class="weui-agree">
+                            <input id="weuiAgree" type="checkbox" class="weui-agree__checkbox">
+                                <span class="weui-agree__text">
+                                    我已经阅读并接受<a href="javascript:void(0);">《随走雇主品牌用户协议》</a>
+                                </span>
+                        </label>
+                    </div>
+                    <div class="weui_btn_area">
+                        <button type="submit" class="weui_btn  weui_btn_primary sure" id="saveBtn">确认</button>
+                        <a class="weui_btn  weui_btn_primary cancel" href="###">取消</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+    <script src="../../assets/mobile/js/global.js"></script>
+    <script src="../../assets/mobile/js/weui.js"></script>
+    <script src="../../assets/mobile/js/common-validate.js"></script>
+    <script>
+        $(function () {
+            /*表单提交*/
+            var saveBtn = $("#saveBtn");
+            var mobile = $("#mobile");
+            var companyName = $("#companyName");
+            var password = $("#password");
+            var confirmPws = $("#confirmPws");
+            var weui_dialog_confirm = $(".weui_dialog_confirm");
+            var sureBm = $("#sureBm");
+            var autoCode = $("#autoCode");
+            saveBtn.on("touchend",function(){
+
+                if(isEmpty(companyName.val())){
+                    weui.showMsg("请输入公司名");
+                    return ;
+                }
+
+                if(isEmpty(mobile.val())||!isPhone(mobile.val())){
+                    weui.showMsg("请输入有效手机号");
+                    return ;
+                }
+
+                if(isEmpty(autoCode.val())){
+                    weui.showMsg("请输入验证码");
+                    return ;
+                }
+
+                if(isEmpty(password.val())){
+                    weui.showMsg("请输入密码");
+                    return ;
+                }
+
+                if(isEmpty(confirmPws.val())){
+                    weui.showMsg("请确认密码");
+                    return ;
+                }
+
+//                weui_dialog_confirm.removeClass("hide");
+                window.location = ""
+            });
+
+
+            /*获取验证码*/
+            var getCode = $('#getCode');
+            var click = true;
+            getCode.on("touchend",function(){
+
+                if(isEmpty(mobile.val())){
+                    weui.showMsg("请输入手机号");
+                    return;
+                }
+
+                if(isEmpty(mobile.val())||!isPhone(mobile.val())){
+                    weui.showMsg("请输入有效手机号");
+                    return;
+                }
+                if(click){
+                    click = false;
+                    weui.showMsg("验证码发送成功");
+                    var that = $(this);
+                    var count = 60;
+                    that.text(count+"秒后重新获取");
+                    that.addClass('disabled');
+                    that.attr({disabled:"disabled"});
+                    var resend = setInterval(function(){
+                        count--;
+                        if (count > 0){
+                            that.text(count+"秒后重新获取")
+                        }else {
+                            clearInterval(resend);
+                            that.removeClass('disabled');
+                            that.removeAttr("disabled");
+                            that.text("获取验证码");
+                            click = true;
+                        }
+                    }, 1000);
+                }
+
+            })
+        })
+    </script>
+</body>
+</html>

@@ -133,6 +133,7 @@ img.resume{width: 100%;margin-bottom: 15px;border-bottom: 1px solid #efefef;}
 .positionMenu.style li{margin-top: 10px;margin-bottom: 0;border-radius: 0;border: 0;border-top: 1px solid #dbdbdb;border-bottom: 1px solid #dbdbdb;}
 .positionMenu.style li>a{border-bottom: 0;position: relative;}
 .positionMenu.style li>a .zr{position: absolute;top: 0;left: 0;width: 30px;}
+
 .positionMenu.style li>a .positionDiv{padding: 1% 3%;width: 94%;}
 .positionMenu.style li>a .conpanyName{color: #333;}
 .companyMenu.positionMenu.style li>a .lookNum{font-size: 14px;left: 0;}

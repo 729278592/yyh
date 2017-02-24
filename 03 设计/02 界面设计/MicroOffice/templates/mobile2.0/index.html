@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/global/plugins/swiper/dist/css/swiper.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global2.0.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="page">
+        <div class="bd pb48">
+            <div>
+                <div class="companyHinfor">
+                    <img src="../../assets/mobile/images/img2.0/companyh.png" class="comImg" alt="">
+                    <div class="addRess">
+                        <img src="../../assets/mobile/images/img2.0/addRess.png" alt=""><br>
+                        <span>上门观望</span>
+                    </div>
+                    <ul class="eyeList clearfix">
+                        <li>
+                            <img src="../../assets/mobile/images/img2.0/userIcon1.png" class="userIcon1" alt="">
+                            <br>
+                            浏览
+                            <span class="num">50</span>
+                        </li>
+                        <li>
+                            <img src="../../assets/mobile/images/img2.0/shareIcon1.png" class="shareIcon1" alt="">
+                            <br>
+                            转发
+                            <span class="num">50</span>
+                        </li>
+                        <li>
+                            <img src="../../assets/mobile/images/img2.0/heart1.png" class="heart1" alt="">
+                            <br>
+                            点赞
+                            <span class="num">50</span>
+                        </li>
+                    </ul>
+                    <div class="bottomDiv">
+                        <p class="fs20">易优弧有限公司</p>
+                        <p class="fs18">www.yiyuhu.com</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <div class="weui_btn_area fixed">
+            <a href="positionList.html" class="weui_btn b0 bgf6 weui_btn_primary">返回品牌首页</a>
+        </div>
+        <!--<div class="ft">-->
+        <!--powered by <span>suizou</span>-->
+        <!--</div>-->
+    </div>
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/mobile/js/global.js"></script>
+<script src="../../assets/global/plugins/swiper/dist/js/swiper.min.js"></script>
+<script>
+    swiper = new Swiper('#swiper-container1', {
+//        prevButton:'.swiper-button-prev',
+//        nextButton:'.swiper-button-next',
+        slidesPerView: 1,
+        pagination:'.swiper-pagination',
+        paginationClickable: true,
+        spaceBetween: 0,
+        loop:true,
+        autoplay: 5000,
+        autoplayDisableOnInteraction: false
+    });
+
+    swiper = new Swiper('#swiper-container2', {
+//        prevButton:'.swiper-button-prev',
+//        nextButton:'.swiper-button-next',
+        slidesPerView: 1,
+        pagination:'.swiper-pagination',
+        paginationClickable: true,
+        spaceBetween: 0,
+        loop:true,
+        autoplay: 5000,
+        autoplayDisableOnInteraction: false
+    });
+
+    /*查看全部信息*/
+    $(".btnAll").on("click",function(){
+        var moreInfor = $(this).prev().find(".moreInfor");
+        if(moreInfor.css("display")=="none"){
+            moreInfor.slideDown();
+            $(this).text("收起");
+        }else{
+            moreInfor.slideUp();
+            $(this).text("显示全部");
+        }
+    })
+</script>
+</body>
+</html>

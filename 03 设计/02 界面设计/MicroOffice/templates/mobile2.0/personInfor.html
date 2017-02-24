@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>个人简介</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global2.0.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="page">
+        <div class="bd absolute pb48">
+            <div class="personHead">
+                <div class="personHimg">
+                    <img src="../../assets/mobile/images/portrait.png" class="portrait" alt="">
+                    <img src="../../assets/mobile/images/img2.0/modifys.png" class="modifys" alt="">
+                </div>
+                <br>
+                真实头像会给HR留下好印象
+            </div>
+            <form action="#" id="form" onsubmit="return false">
+
+                <div class="weui_cells weui_cells_form mt0">
+                    <div class="weui_cell">
+                        <div class="weui_cell_hd"><label class="weui_label">
+                            <img src="../../assets/mobile/images/nameIcon.png" alt=""/>姓　　名</label></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <input class="weui_input" type="text" id="personName" placeholder="请输入姓名"/>
+                        </div>
+                    </div>
+                    <div class="weui_cell">
+                        <div class="weui_cell_hd">
+                            <label class="weui_label"><img src="../../assets/mobile/images/sexIcon.png" alt=""/>性　　别</label>
+                        </div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <div class="weui_cells weui_cells_checkbox mt0 bt0">
+                                <label class="weui_cell weui_check_label bt0 w30 p0" for="s11">
+                                    <div class="weui_cell_hd">
+                                        <input type="radio" class="weui_check" name="checkbox1" id="s11" checked="checked">
+                                        <i class="weui_icon_checked"></i>
+                                    </div>
+                                    <div class="weui_cell_bd">
+                                        <p>男</p>
+                                    </div>
+                                </label>
+                                <label class="weui_cell weui_check_label bt0 w30 p0" for="s12">
+                                    <div class="weui_cell_hd">
+                                        <input type="radio" name="checkbox1" class="weui_check" id="s12">
+                                        <i class="weui_icon_checked"></i>
+                                    </div>
+                                    <div class="weui_cell_bd weui_cell_primary">
+                                        <p>女</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui_cell weui_cell_select style">
+                        <div class="weui_cell_hd"><label class="weui_label"><img src="../../assets/mobile/images/startTimeIcon.png" alt=""/>出生年月</label></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <select class="weui_select" name="select1">
+                                <option selected="" value="1991-10-4">1991-10-4</option>
+                                <option value="1991-10-4">1991-10-4</option>
+                                <option value="1991-10-4">1991-10-4</option>
+                            </select>
+                            <img src="../../assets/mobile/images/img2.0/caretB.png" class="caretB" alt=""/>
+                        </div>
+                    </div>
+
+                    <!--<div class="weui_cell weui_cell_select style">-->
+                    <!--<div class="weui_cell_hd"><label class="weui_label"><img src="../../assets/mobile/images/address.png" alt=""/>省</label></div>-->
+                    <!--<div class="weui_cell_bd weui_cell_primary">-->
+                    <!--<select class="weui_select" name="select1">-->
+                    <!--<option selected="" value="重庆">重庆</option>-->
+                    <!--<option value="广安">广安</option>-->
+                    <!--<option value="上海">上海</option>-->
+                    <!--</select>-->
+                    <!--<img src="../../assets/mobile/images/img2.0/caretB.png" class="caretB" alt=""/>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="weui_cell weui_cell_select style">-->
+                    <!--<div class="weui_cell_hd"><label class="weui_label"><img src="../../assets/mobile/images/address.png" alt=""/>市</label></div>-->
+                    <!--<div class="weui_cell_bd weui_cell_primary">-->
+                    <!--<select class="weui_select" name="select1">-->
+                    <!--<option selected="" value="成都">成都</option>-->
+                    <!--<option value="成都">成都</option>-->
+                    <!--<option value="成都">成都</option>-->
+                    <!--</select>-->
+                    <!--<img src="../../assets/mobile/images/img2.0/caretB.png" class="caretB" alt=""/>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="weui_cell weui_cell_select style">-->
+                    <!--<div class="weui_cell_hd"><label class="weui_label"><img src="../../assets/mobile/images/address.png" alt=""/>区</label></div>-->
+                    <!--<div class="weui_cell_bd weui_cell_primary">-->
+                    <!--<select class="weui_select" name="select1">-->
+                    <!--<option selected="" value="武胜">武胜</option>-->
+                    <!--<option value="武胜">武胜</option>-->
+                    <!--<option value="武胜">武胜</option>-->
+                    <!--</select>-->
+                    <!--<img src="../../assets/mobile/images/img2.0/caretB.png" class="caretB" alt=""/>-->
+                    <!--</div>-->
+                    <!--</div>-->
+
+                    <div class="weui_cell weui_cell_select style">
+                        <div class="weui_cell_hd"><label class="weui_label"><img src="../../assets/mobile/images/address.png" alt=""/>所在地址</label></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <select class="weui_select" name="select1">
+                                <option selected="" value="重庆市渝中区袁家岗">重庆市渝中区袁家岗</option>
+                                <option value="重庆市渝中区袁家岗">重庆市渝中区袁家岗</option>
+                                <option value="重庆市渝中区袁家岗">重庆市渝中区袁家岗</option>
+                            </select>
+                            <img src="../../assets/mobile/images/img2.0/caretB.png" class="caretB" alt=""/>
+                        </div>
+                    </div>
+
+                    <div class="weui_cell weui_cell_select style">
+                        <div class="weui_cell_hd"><label class="weui_label"><img src="../../assets/mobile/images/jobTImeIcon.png" alt=""/>工作经验</label></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <select class="weui_select" name="select1">
+                                <option selected="" value="1年">1年</option>
+                                <option value="1-3年">1-3年</option>
+                                <option value="4-7年">4-7年</option>
+                            </select>
+                            <img src="../../assets/mobile/images/img2.0/caretB.png" class="caretB" alt=""/>
+                        </div>
+                    </div>
+
+                    <div class="weui_cell">
+                        <div class="weui_cell_hd"><label class="weui_label"><img src="../../assets/mobile/images/img2.0/phoneIcon.png" alt="" style="width: 12%;" class="w"/>联系电话</label></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <input class="weui_input" type="text" id="mobile" placeholder="13677847846" name=""/>
+                        </div>
+                    </div>
+
+                    <div class="weui_cell">
+                        <div class="weui_cell_hd"><label class="weui_label"><img src="../../assets/mobile/images/img2.0/emailIcon.png" alt=""/>联系邮箱</label></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <input class="weui_input" type="text" id="email" placeholder="1131047491@qq.com" name=""/>
+                        </div>
+                    </div>
+
+                    <div class="weui_cell weui_cell_select style">
+                        <div class="weui_cell_hd"><label class="weui_label"><img src="../../assets/mobile/images/jobState.png" alt=""/>工作状态</label></div>
+                        <div class="weui_cell_bd weui_cell_primary">
+                            <select class="weui_select" name="select1">
+                                <option selected="" value="在职">在职</option>
+                                <option value="在职">在职</option>
+                                <option value="离职">离职</option>
+                            </select>
+                            <img src="../../assets/mobile/images/img2.0/caretB.png" class="caretB" alt=""/>
+                        </div>
+                    </div>
+                    <div class="weui_cell">
+                        <div class="weui_cell_hd"><label class="weui_label"><img src="../../assets/mobile/images/caseDetailsIcon.png" alt=""/>自我介绍</label></div>
+
+                    </div>
+                    <div class="weui_cell bt0">
+                        <textarea name="" id="caseDetails" class="weui_textarea" placeholder="描述只有兴趣爱好等,只有400字" cols="30" rows="5"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="weui_btn_area">
+                    <button type="submit" class="weui_btn  weui_btn_primary sure" id="saveBtn">保存</button>
+                    <a class="weui_btn  weui_btn_primary cancel" href="###">取消</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/mobile/js/global.js"></script>
+<script src="../../assets/mobile/js/weui.js"></script>
+<script src="../../assets/mobile/js/common-validate.js"></script>
+<script>
+    $(function () {
+        var $saveBtn = $("#saveBtn");
+        var $personName = $("#personName");
+        var $mobile = $("#mobile");
+        var $email = $("#email");
+        var $caseDetails = $("#caseDetails");
+        $saveBtn.on("touchend",function(){
+
+            if(isEmpty($personName.val())){
+                weui.showMsg("请输入姓名");
+                return ;
+            }
+
+            if(isEmpty($mobile.val())||!isPhone($mobile.val())){
+                weui.showMsg("请输入有效手机号");
+                return ;
+            }
+
+            if(isEmail($email.val())){
+                weui.showMsg("请输入有效邮箱");
+                return ;
+            }
+
+            if(isEmail($caseDetails.val())){
+                weui.showMsg("请输入自我介绍");
+                return ;
+            }
+
+
+        });
+    });
+
+</script>
+</body>
+</html>

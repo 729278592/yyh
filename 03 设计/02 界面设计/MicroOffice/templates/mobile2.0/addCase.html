@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>项目经历</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global2.0.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="page">
+        <div class="bd absolute pb48">
+            <form action="#" id="form" onsubmit="return false">
+                <div class="workList">
+                    <div class="weui_cells weui_cells_form mt0">
+
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label"><img src="../../assets/mobile/images/startTimeIcon.png" alt=""/>项目时间</label></div>
+                            <div class="wSstyle">
+                                <div class="weui_cell_bd weui_cell_primary">
+                                    <input class="weui_input" type="date" placeholder="2015-2-2">
+                                    <img src="../../assets/mobile/images/img2.0/caretB.png" class="caretB" alt=""/>
+                                </div>
+                                <div class="weui_cell_bd weui_cell_primary">
+                                    <input class="weui_input" type="date" placeholder="2015-2-2">
+                                    <img src="../../assets/mobile/images/img2.0/caretB.png" class="caretB" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label">
+                                <img src="../../assets/mobile/images/companyIcon.png" alt=""/>项目名称</label></div>
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <input class="weui_input" type="text" placeholder="易优弧有限公司管网设计"/>
+                            </div>
+                        </div>
+
+                        <div class="weui_cell">
+                            <div class="weui_cell_hd"><label class="weui_label"><img src="../../assets/mobile/images/caseDetailsIcon.png" alt=""/>项目描述</label></div>
+                        </div>
+                        <div class="weui_cell bt0">
+                            <textarea name="" id="caseDetails" class="weui_textarea" placeholder="描述专业及成绩等,限400字" cols="30" rows="5"></textarea>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="weui_btn_area styleBgff">
+                    <a class="weui_btn weui_btn_primary" id="addWork">+添加项目经历</a>
+                </div>
+
+                <div class="weui_btn_area">
+                    <button type="submit" class="weui_btn  weui_btn_primary sure" id="saveBtn">保存</button>
+                    <a class="weui_btn  weui_btn_primary cancel" href="###">取消</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/mobile/js/global.js"></script>
+<script src="../../assets/mobile/js/weui.js"></script>
+<script src="../../assets/mobile/js/common-validate.js"></script>
+<script>
+    $(function () {
+        var $addWork = $("#addWork");
+        var $workList = $(".workList");
+        $addWork.on("touchend",function () {
+            var workHtml = '<div class="weui_cells pt weui_cells_form ">'+
+                '<div class="close">'+
+                '<img src="../../assets/mobile/images/img2.0/removei.png" alt="">'+
+                '</div>'+
+                '<div class="weui_cell bt0">'+
+                '<div class="weui_cell_hd"><label class="weui_label"><img src="../../assets/mobile/images/startTimeIcon.png" alt=""/>项目时间</label></div>'+
+                '<div class="wSstyle">'+
+                '<div class="weui_cell_bd weui_cell_primary">'+
+                '<input class="weui_input" type="date" placeholder="2015-2-2">'+
+                '<img src="../../assets/mobile/images/img2.0/caretB.png" class="caretB" alt=""/>'+
+                '</div>'+
+                '<div class="weui_cell_bd weui_cell_primary">'+
+                '<input class="weui_input" type="date" placeholder="2015-2-2">'+
+                '<img src="../../assets/mobile/images/img2.0/caretB.png" class="caretB" alt=""/>'+
+                '</div>'+
+                '</div>'+
+                '</div>'+
+
+                '<div class="weui_cell">'+
+                '<div class="weui_cell_hd"><label class="weui_label">'+
+                '<img src="../../assets/mobile/images/companyIcon.png" alt=""/>项目名称</label></div>'+
+               '<div class="weui_cell_bd weui_cell_primary">'+
+                '<input class="weui_input" type="text" placeholder="易优弧有限公司管网设计"/>'+
+                '</div>'+
+                '</div>'+
+
+                '<div class="weui_cell">'+
+                '<div class="weui_cell_hd"><label class="weui_label"><img src="../../assets/mobile/images/caseDetailsIcon.png" alt=""/>项目描述</label></div>'+
+                '</div>'+
+                '<div class="weui_cell bt0">'+
+                '<textarea name="" id="caseDetails" class="weui_textarea" placeholder="描述专业及成绩等,限400字" cols="30" rows="5"></textarea>'+
+                '</div>'+
+
+                '</div>';
+            if($workList.find('.weui_cells_form ').size()>4){
+                weui.showMsg("最多添加5条");
+                return ;
+            }
+            $workList.append(workHtml);
+        });
+        $workList.delegate(".close","touchend",function () {
+            weui.confirm("确定删除?",function () {
+                weui.startLoading();
+                $.ajax({
+                    url:"",
+                    dataType:'jsonp',
+                    data:'',
+                    jsonp:'callback',
+                    success:function(data) {
+                        weui.stopLoading();
+                        weui.showMsg("取消商品删除");
+                    }
+                });
+            });
+        })
+    });
+
+</script>
+</body>
+</html>
