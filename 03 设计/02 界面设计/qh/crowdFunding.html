@@ -11,9 +11,12 @@
     <link rel="stylesheet" href="plugins/font/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/global.css"/>
     <link rel="stylesheet" href="css/mobile.css"/>
+    <!--<style>-->
+        <!--.bj{position: fixed;top: 80px;left: 0;right: 0;bottom: 0;background: url(images/jm.jpg) no-repeat;background-size: 100% 100%;}-->
+    <!--</style>-->
 </head>
 <body class="overflow">
-<div class="wrapper">
+<div class="wrapper" style="position: fixed;top: 0;bottom: 0;right: 0;left: 0;">
     <div class="head">
         <div class="head_main clearfix">
             <div class="logo left">
@@ -49,15 +52,22 @@
 
         </div>
     </div>
+    <div class="bj">
 
-    <div class="zc">
-        <img src="images/jm.jpg" alt="" class="jm">
-        <img src="images/jm1.png" alt="" class="jm1">
     </div>
 </div>
 <script src="plugins/jquery/jquery-1.11.3.min.js"></script>
 <script src="plugins/swiper/dist/js/swiper.min.js"></script>
 <script src="js/gloabl.js"></script>
-
+<script src="js/jquery.ez-bg-resize.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    $(document).ready(function() {
+        $("body").ezBgResize({
+            img     : "images/jm.jpg", // Relative path example.  You could also use an absolute url (http://...).
+            opacity : 1, // Opacity. 1 = 100%.  This is optional.
+            center  : true // Boolean (true or false). This is optional. Default is true.
+        });
+    });
+</script>
 </body>
 </html>

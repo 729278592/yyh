@@ -51,7 +51,7 @@ embed{height: 600px;}
 .fm{position: fixed;top: 0;left: 0;right: 0;bottom: 0;z-index: 100;}
 .fm>.fmImg{width: 100%;height: 100%;}
 .fm>.fmTuImg{position: absolute;z-index: 10;width: 50%;margin-left: -25%;left: 50%;top: 10%;}
-.gotoIndex{width: 275px;height: 47px;position: absolute;top: 80%;left: 50%;margin-left: -136px;background: transparent;}
+.gotoIndex{width: 230px;height: 124px;position: absolute;top: 70%;left: 50%;margin-left: -115px;background: transparent;}
 .gotoIndex>img{width: 100%;height: 100%;}
 
 /*众筹*/
@@ -202,6 +202,9 @@ html {
 .btn_td{display: inline-block;background: transparent;outline: none;border: none;width: 100px;text-align: center;height: 36px;line-height: 36px;border-radius: 4px;background: #ce2020;color: #fff;margin: 15px 0;}
 .l_talent_menu li .l_talent_infor{display: none;}
 .l_talent_menu li.on .l_talent_infor{display: block;}
+.swiper-slide a img{width: 244px;border: 1px solid #dbdbdb;}
+
+
 
 /*foot*/
 .foot{width: 100%;}

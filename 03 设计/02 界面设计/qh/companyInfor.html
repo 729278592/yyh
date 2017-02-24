@@ -5,6 +5,7 @@
     <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <title>联系我们</title>
     <link rel="stylesheet" href="plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="plugins/swiper/dist/css/swiper.min.css"/>
     <link rel="stylesheet" href="css/global.css"/>
     <link rel="stylesheet" href="css/mobile.css">
 </head>
@@ -57,6 +58,65 @@
                     重庆全航食品有限公司是一家通过食品生产许可（SC）认证的，专业从事健康休闲食品研发、生产、销售的综合性现代食品企业；由研发团队
                 </div>
                 <br>
+                <div class="swiper-container swiper-container-horizontal" id="swiper-container">
+                    <div class="swiper-wrapper" style="transition-duration: 0ms; ">
+                        <div class="swiper-slide">
+                            <a href="###">
+                                <img src="plugins/swiper/dist/images/c1.jpg" alt="" class="w100"/>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="###">
+                                <img src="plugins/swiper/dist/images/c2.jpg" alt="" class="w100"/>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="###">
+                                <img src="plugins/swiper/dist/images/c3.jpg" alt="" class="w100"/>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="###">
+                                <img src="plugins/swiper/dist/images/c4.jpg" alt="" class="w100"/>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="###">
+                                <img src="plugins/swiper/dist/images/c5.jpg" alt="" class="w100"/>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="###">
+                                <img src="plugins/swiper/dist/images/c6.jpg" alt="" class="w100"/>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="###">
+                                <img src="plugins/swiper/dist/images/c7.jpg" alt="" class="w100"/>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="###">
+                                <img src="plugins/swiper/dist/images/c8.jpg" alt="" class="w100"/>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="###">
+                                <img src="plugins/swiper/dist/images/c9.jpg" alt="" class="w100"/>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="###">
+                                <img src="plugins/swiper/dist/images/c10.jpg" alt="" class="w100"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination style"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+
+
                 <div class="c_type">
                     联系方式
                 </div>
@@ -118,6 +178,7 @@
     </div>
 </div>
 <script src="plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="plugins/swiper/dist/js/swiper.min.js"></script>
 <script src="js/gloabl.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=q0lvjEUGF5AOzHtbjn9YFtwl"></script>
 <script type="text/javascript">
@@ -135,6 +196,37 @@
             map.addOverlay(new BMap.Marker(point));
         }
     }, "重庆市");
+</script>
+<script>
+    new Swiper('#swiper-container', {
+        prevButton:'.swiper-button-prev',
+        nextButton:'.swiper-button-next',
+        slidesPerView: 4,
+//        pagination:'.swiper-pagination',
+        paginationClickable: true,
+        spaceBetween: 10,
+        loop:true,
+        autoplay: 5000,
+        autoplayDisableOnInteraction: false
+    });
+
+    if($(window).width()<640){
+     new Swiper('#swiper-container', {
+            prevButton:'.swiper-button-prev',
+            nextButton:'.swiper-button-next',
+            slidesPerView: 1,
+            paginationClickable: true,
+            spaceBetween: 0,
+            loop:true,
+            autoplay: 5000,
+            autoplayDisableOnInteraction: false
+        });
+    }
+
+    $(".swiper-button-next, .swiper-button-prev").css({"width":"44px"});
+    $(".swiper-button-next").css({"background":"url(https://www.wqiyu.com/fric/upload/next.png)"});
+    $(".swiper-button-prev").css({"background":"url(https://www.wqiyu.com/fric/upload/prev.png)"})
+
 </script>
 </body>
 </html>

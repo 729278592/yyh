@@ -139,7 +139,7 @@
             <img src="images/fmTu.png" class="fmTuImg" alt="">
             <img src="images/fm.jpg" class="fmImg" alt="">
             <button  class="gotoIndex">
-                <img src="images/gotoIndex.png" alt="">
+                <img src="images/logo1.png" alt="">
             </button>
         </div>
     </div>
@@ -157,11 +157,18 @@
                 paginationClickable: true,
                 spaceBetween: 0,
                 loop:true,
-                autoplay: 500000,
+                autoplay: 5000,
                 autoplayDisableOnInteraction: false
             });
 
             var gotoIndex = $(".gotoIndex");
+            gotoIndex.hover(function () {
+                    $(this).find("img").attr({"src":"images/logo2.png"})
+                },
+                function () {
+                    $(this).find("img").attr({"src":"images/logo1.png"})
+                }
+            );
             gotoIndex.on("click",function () {
                $(this).closest(".fm").fadeOut(200);
                 $("body").removeClass("overflow");
