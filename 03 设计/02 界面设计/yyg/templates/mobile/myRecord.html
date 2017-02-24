@@ -13,11 +13,11 @@
     <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
 </head>
 <body>
-    <div class="content">
-        <div class="page">
+    <div class="content relative">
+        <div class="page relative">
 
             <!--头部开始-->
-            <div class="hd">
+            <div class="hd fixed">
                 <a class="left relative">
                     <i class="fa fa-angle-left"></i>
                 </a>
@@ -31,7 +31,7 @@
             <!--头部结束-->
 
             <!--内容开始-->
-            <div class="bd absolute pt">
+            <div class="bd pt">
 
                 <!--我的记录切换开始-->
                 <ul class="recordMenu">
@@ -61,17 +61,27 @@
                 <!--我的记录开始-->
                 <div id="myRecord" class="margin">
 
+
                 </div>
                 <!--我的记录结束-->
+
+                <!--无数据提示开始-->
+                <div class="notConTip hide">
+                    <img src="../../../assets/mobile/images/noShopping.png" alt=""/>
+                    <p class="notInfor hide">
+                        购物车什么都没有哦! <br/>
+                        <a href="index.html" style="color: #ff0004">去看看>></a>
+                    </p>
+                </div>
+                <!--无数据提示结束-->
+
             </div>
             <!--内容结束-->
         </div>
     </div>
     <script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
-    <script src="../../assets/mobile/plugins/swiper/dist/js/swiper.min.js"></script>
     <script src="../../assets/mobile/js/progress.js"></script>
-    <script src="../../assets/mobile/js/tips.js"></script>
-    <script src="../../assets/mobile/js/spinner.js"></script>
+    <script src="../../assets/mobile/js/weui.js"></script>
     <script src="../../assets/mobile/js/global.js"></script>
     <script>
         $(function(){
@@ -80,15 +90,19 @@
             var active_n = $(".recordMenu li a");
             var data = active_n.eq(0).attr("data");
             active_n.eq(0).addClass("active");
-            $.ajax({
-                type : "post",
-                url : "myRecord/"+data+".html",
-                dataType : "html",
-                cache : false,
-                success : function(data) {
-                    $("#myRecord").html(data);
-                }
-            });
+            weui.startLoading();
+            setTimeout(function () {
+                $.ajax({
+                    type : "post",
+                    url : "myRecord/"+data+".html",
+                    dataType : "html",
+                    cache : false,
+                    success : function(data) {
+                        $("#myRecord").html(data);
+                        weui.stopLoading();
+                    }
+                });
+            },500);
 
             /*我的记录状态切换*/
             active_n.on("touchend",function(){
@@ -96,17 +110,22 @@
                 $(this).closest("li").siblings("li").find("a").removeClass("active");
                 var data = $(this).attr("data");
                 var that = $(this);
-                $.ajax({
-                    type : "post",
-                    url : "myRecord/"+data+".html",
-                    dataType : "html",
-                    cache : false,
-                    success : function(data) {
-                        that.closest(".bd").find("#myRecord").html(data);
-                    }
-                });
+                weui.startLoading();
+                setTimeout(function () {
+                    $.ajax({
+                        type : "post",
+                        url : "myRecord/"+data+".html",
+                        dataType : "html",
+                        cache : false,
+                        success : function(data) {
+                            that.closest(".bd").find("#myRecord").html(data);
+                            weui.stopLoading();
+                        }
+                    });
+                },500)
             });
-        })
+        });
+
     </script>
 </body>
 </html>

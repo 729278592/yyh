@@ -176,98 +176,94 @@
 
         </div>
     </div>
-<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
-<script src="../../assets/mobile/plugins/swiper/dist/js/swiper.min.js"></script>
-<script src="../../assets/mobile/js/loading.js"></script>
-<script src="../../assets/mobile/js/progress.js"></script>
-<script src="../../assets/mobile/js/tips.js"></script>
-<script src="../../assets/mobile/js/global.js"></script>
-<script>
+    <script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+    <script src="../../assets/mobile/plugins/swiper/dist/js/swiper.min.js"></script>
+    <script src="../../assets/mobile/js/loading.js"></script>
+    <script src="../../assets/mobile/js/progress.js"></script>
+    <script src="../../assets/mobile/js/tips.js"></script>
+    <script src="../../assets/mobile/js/global.js"></script>
+    <script>
 
-    $(function(){
+        $(function(){
 
-        /*slider滑动*/
-       var swiper = new Swiper('#swiper-container', {
-            //prevButton:'.swiper-button-prev',
-            //nextButton:'.swiper-button-next',
-            slidesPerView: 1,
-            pagination:'.swiper-pagination',
-            paginationClickable: true,
-            spaceBetween: 0,
-            loop:true,
-            autoplay: 5000,
-            autoplayDisableOnInteraction: false
-        });
+            /*slider滑动*/
+           var swiper = new Swiper('#swiper-container', {
+                //prevButton:'.swiper-button-prev',
+                //nextButton:'.swiper-button-next',
+                slidesPerView: 1,
+                pagination:'.swiper-pagination',
+                paginationClickable: true,
+                spaceBetween: 0,
+                loop:true,
+                autoplay: 5000,
+                autoplayDisableOnInteraction: false
+            });
 
-        /*收藏*/
-        var pross_h =$(".pross_h");
-        pross_h.on("touchend",function(){
-            if($(this).is(".active")){
-                $(this).removeClass("active");
-                tipMsg("已取消收藏");
-            }else {
-                $(this).addClass("active");
-                tipMsg("收藏成功");
-            }
-        });
-
-        /*滚动加载*/
-        $(document).ready(function(){
-            $.post("",{},function(data){
-            },"json");
-        });
-
-        var timeOutFlag = undefined;
-
-        $(window).scroll(function () {
-
-            var scrollTop = $(this).scrollTop()//354
-            var scrollHeight = $(document).height()//834
-            var windowHeight = $(this).height();//480
-
-            console.log(windowHeight)
-
-
-            if (scrollTop + windowHeight == scrollHeight) {
-
-
-                if(timeOutFlag){
-
-                    return;
+            /*收藏*/
+            var pross_h =$(".pross_h");
+            pross_h.on("touchend",function(){
+                if($(this).is(".active")){
+                    $(this).removeClass("active");
+                    tipMsg("已取消收藏");
+                }else {
+                    $(this).addClass("active");
+                    tipMsg("收藏成功");
                 }
-                timeOutFlag = setTimeout(function () {
+            });
 
-                    $.post("",{},function(data){
-                        if(data.code == 0){//查询成功
+            /*滚动加载*/
+            $(document).ready(function(){
+                $.post("",{},function(data){
+                },"json");
+            });
 
-                        }
-                        else{//没有更多
-                        }
-                        timeOutFlag = undefined;
-                    },"json");
+            var timeOutFlag = undefined;
 
-                    setTimeout(function(){timeOutFlag = undefined;},2000);
-                }, 100);
-            }
-        });
+            $(window).scroll(function () {
 
-        /*进度条*/
-        $('.pross').progress({});
+                var scrollTop = $(this).scrollTop()//354
+                var scrollHeight = $(document).height()//834
+                var windowHeight = $(this).height();//480
 
-        /*关注*/
-        var addressIcon = $(".addressIcon");
-        addressIcon.each(function(){
-            $(this).on("touchend",function(){
-                $(this).addClass("hide");
-                tipMsg("关注成功");
-            })
-        });
+                console.log(windowHeight)
 
-    })
-</script>
-<script>
 
-</script>
+                if (scrollTop + windowHeight == scrollHeight) {
 
+
+                    if(timeOutFlag){
+
+                        return;
+                    }
+                    timeOutFlag = setTimeout(function () {
+
+                        $.post("",{},function(data){
+                            if(data.code == 0){//查询成功
+
+                            }
+                            else{//没有更多
+                            }
+                            timeOutFlag = undefined;
+                        },"json");
+
+                        setTimeout(function(){timeOutFlag = undefined;},2000);
+                    }, 100);
+                }
+            });
+
+            /*进度条*/
+            $('.pross').progress({});
+
+            /*关注*/
+            var addressIcon = $(".addressIcon");
+            addressIcon.each(function(){
+                $(this).on("touchend",function(){
+                    $(this).addClass("hide");
+                    tipMsg("关注成功");
+                })
+            });
+
+        })
+    </script>
 </body>
 </html>

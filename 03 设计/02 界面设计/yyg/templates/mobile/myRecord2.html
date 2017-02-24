@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>我的记录</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name="format-detection" content="telephone=yes">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/plugins/swiper/dist/css/swiper.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+    <style>
+        .weui_mask_transparent{background: #fff;}
+    </style>
+</head>
+<body>
+    <div class="content relative">
+        <div class="page relative">
+
+            <!--头部开始-->
+            <div class="hd fixed">
+                <a class="left relative">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <ul class="h_menu">
+                    <li>
+                        <a>我的记录</a>
+                    </li>
+                </ul>
+
+            </div>
+            <!--头部结束-->
+
+            <!--内容开始-->
+            <div class="bd pt">
+
+                <!--我的记录切换开始-->
+                <ul class="recordMenu" data-bind="foreach:myRecordData.datas,css:{ 'hide': myRecordData.display }" >
+                    <li data-bind="attr:{'data-submenu-id':$data.id}">
+                        <a data-bind="text:$data.name,click: function() { $root.currentPageIndex($data) }, css: { selected: $data == $root.currentPageIndex() },click: addActive.bind($data,$index)"></a>
+                    </li>
+                </ul>
+                <!--我的记录切换结束-->
+
+                <!--我的记录开始-->
+                <div id="myRecord" class="margin">
+                    <ul class="entryList mt0 block bt0 mb10" data-bind="foreach:myRecordData.datas[myRecordData.num].children">
+                        <li>
+                            <a href="activeInfor.html">
+                                <div class="couponImg">
+                                    <img data-bind="attr: { 'src': $data.cover}" class="couponImg1" alt="">
+                                </div>
+                                <span class="inforList">
+                                    <span class="title clearfix">
+                                        <span class="left" data-bind="text:$data.name"></span>
+                                        <div class="k_j p0">
+
+                                                <!-- ko if: $data.winningState==0 -->
+                                                <div class="k_j_j">进行中</div>
+                                            <!-- /ko -->
+
+                                            <!-- ko if: $data.winningState==1 -->
+                                                    <div class="k_j_y bg1">未中奖</div>
+                                            <!-- /ko -->
+
+                                            <!-- ko if: $data.winningState==2 -->
+                                                    <div class="k_j_k bg2">中奖了</div>
+                                            <!-- /ko -->
+                                        </div>
+                                    </span>
+                                    <div class="pross mt0 style">
+                                        <div class="pross_i">
+                                            <p>
+                                                期号 : 001 共
+                                                <!--ko text: $data.winningPeriod--><!--/ko-->
+                                                期
+                                            </p>
+                                            <div class="fatherNum">
+                                                <span class="sonNum" data-bind="style: { width:$data.prevent}"></span>
+                                            </div>
+                                            <p class="style clearfix">
+                                                <span class="left">总需: <span class="fatherSpan">
+                                                    <!--ko text: $data.totalPeploeNum--><!--/ko-->
+                                                </span>人</span>
+                                                <span class="right">剩余: <span class="other">
+                                                    <!--ko text: $data.surplusPeploeNum--><!--/ko-->
+                                                </span>人</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </span>
+                            </a>
+                            <div class="infor p0 style">
+                                <a href="###">
+                                    <span class="icon icon_address"></span>
+                                    <span class="b_s">任务地址：
+                                        <!--ko text: $data.address--><!--/ko-->
+                                        </span>
+                                    <span class="weui_cell_ft"></span>
+                                </a>
+                            </div>
+                            <p class="clearfix">
+                                我的幸运号 : 10000188
+                            </p>
+                            <!-- ko if: $data.winningState==2 -->
+                            <div class="infor p0 style">
+                                <a href="###" class="tipA">
+                                    请7个工作日内登录app完善真实地址，否则视为放弃
+                                    <span class="weui_cell_ft"></span>
+                                </a>
+                            </div>
+                            <!-- /ko -->
+                        </li>
+
+                    </ul>
+                </div>
+                <!--我的记录结束-->
+
+            </div>
+
+        </div>
+    </div>
+    <script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+    <script src="../../assets/mobile/js/weui.js"></script>
+    <script src="../../assets/global/plugins/knockout/knockout.js"></script>
+    <script src="../../assets/mobile/js/global.js"></script>
+    <script>
+        $(function(){
+            var loadData = {
+                InfiniteScroll:"../../assets/mobile/data/myRecord.json",
+                init:function () {
+                    weui.startLoading();
+                    var that = this;
+                    setTimeout(function () {
+                        that.loadData(0);
+                    },500);
+                },
+                loadData:function (num) {
+                    var that = this;
+                    $.ajax({
+                        type : "get",
+                        url : this.InfiniteScroll,
+                        dataType : "json",
+                        cache : false,
+                        success : function(data) {
+                            if(data.status == "ok"){
+                                var res = data;
+    //                            function ViewModel() {
+    //                                var self = this;
+    //                                //使用observableArray进行绑定可以动态变更option选项
+    //                                self.selectOptions = ko.observableArray([
+    //                                    res
+    //                                ]);
+    //                                self.result = ko.observable("0");//添加result监控属性，初始绑定值为0
+    //                            }
+                                var resData = data.datas;
+                                var len = resData.length;
+                                that.clickLoadData(num,res);
+
+                                res.num = num;
+                                for(var i = 0;i<len;i++){
+                                    resData[i].on = false;
+                                    var lenChild = resData[i].children;
+                                    for(var j = 0;j<lenChild.length;j++){
+                                        lenChild[j].prevent = (parseInt(lenChild[j].totalPeploeNum) - parseInt(lenChild[j].surplusPeploeNum))/parseInt(lenChild[j].totalPeploeNum)*100+"%" ;
+                                    }
+                                }
+                                //console.log(JSON.stringify(res));
+                                resData[res.num].on = true;
+
+                                ko.applyBindings({myRecordData:res});
+                                ko.cleanNode(myRecordData);
+                                weui.stopLoading();
+                            }
+                        }
+                    });
+
+                },
+                clickLoadData:function (num,res) {
+                    var that = this;
+                    addActive = function (index,datas) {
+                        num = index();
+                        res.num = num;
+                        //console.log(res.num)
+                        for(var i = 0;i<res.length;i++){
+                            res.datas[i].on = false;
+                        }
+                        res.datas[res.num].on = true;
+                        that.loadData(res.num);
+                       console.log(JSON.stringify(res));
+                    }
+                }
+            };
+            loadData.init();
+        });
+
+    </script>
+</body>
+</html>
