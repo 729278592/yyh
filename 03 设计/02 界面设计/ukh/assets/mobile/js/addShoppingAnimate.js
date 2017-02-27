@@ -82,7 +82,7 @@
                     success: function (res) {
                         if(res.status == "ok"){
                             var wajxHtml = '';
-                            for(let i=0; i<res.datas.length; i++){ //循环规格json数据的,并将规格的价格艺术性的方式添加入相应的规格结构中
+                            for(var i=0; i<res.datas.length; i++){ //循环规格json数据的,并将规格的价格艺术性的方式添加入相应的规格结构中
                                 opts.specifiLi += '<li price="'+res.datas[i].price+'"> '+res.datas[i].specifi+' </li>';
                             }
 
