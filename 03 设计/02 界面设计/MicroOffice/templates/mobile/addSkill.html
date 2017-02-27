@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>技能专长</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global2.0.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="page">
+        <div class="bd absolute">
+
+            <div id="dataHandle">
+                <div class="bgfff bb1">
+                    <div class="skillList">
+                        <p class="title">技能专长</p>
+                        <ul class="skillMenu clearfix">
+                            <!--技能专长列表-->
+                        </ul>
+                    </div>
+                    <div class="oftenSkill">
+                        <p class="title">常用标签</p>
+                        <ul class="oftenSkillList clearfix">
+                            <!--常用标签列表-->
+                        </ul>
+                        <a href="###" id="change">换一批 <i class="fa fa-angle-double-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="describe">
+                    <p class="title">没有适合我的描述</p>
+                    <div class="describeDiv">
+                        <div class="addSkillDiv">
+                            <input type="text" class="describeInput" placeholder="请输入标签名">
+                            <span class="close search_clear hide"></span>
+                        </div>
+                        <button class="describeBtn">+添加</button>
+                    </div>
+                </div>
+
+                <div class="weui_btn_area clearfix">
+                    <button type="submit" class="weui_btn  weui_btn_primary sure" id="saveBtn">保存</button>
+                    <a class="weui_btn  weui_btn_primary cancel" href="###">取消</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/mobile/js/global.js"></script>
+<script src="../../assets/mobile/js/weui.js"></script>
+<script src="../../assets/mobile/js/common-validate.js"></script>
+<script src="../../assets/mobile/js/technicalExpertise.js"></script>
+<script>
+    $(function(){
+        /*滚动加载*/
+
+        var dataHandle = $('#dataHandle');
+        dataHandle.technicalExpertise({
+            skillInterface:"../../assets/mobile/data/skill/skill.json" ,//技能专长接口
+            oftenSkillInterface:"../../assets/mobile/data/skill/oftenSkill.json" ,//技能专长接口
+            objSkillTem:function(obj,skillTem){//技能专长模板片段
+                skillTem += '<li><span>'+obj.title+'</span><i class="fa fa-remove"></i>'+
+                            '</li>';
+                return skillTem;
+            },
+            objOftenSkillTem:function(obj,oftenSkillTem){//常用技能标签模板片段
+                oftenSkillTem += '<li>'+obj.title+''+
+                    '</li>';
+                return oftenSkillTem;
+            }
+        })
+
+    })
+</script>
+</body>
+</html>

@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>项目经历</title>
+    <title>添加项目经历</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
     <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
@@ -70,7 +70,8 @@
     $(function () {
         var $addWork = $("#addWork");
         var $workList = $(".workList");
-        $addWork.on("touchend",function () {
+        $addWork.on("touchend",function (e) {
+            e.preventDefault();
             var workHtml = '<div class="weui_cells pt weui_cells_form ">'+
                 '<div class="close">'+
                 '<img src="../../assets/mobile/images/img2.0/removei.png" alt="">'+

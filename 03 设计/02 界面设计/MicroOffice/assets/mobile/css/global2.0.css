@@ -29,8 +29,10 @@ a:active{opacity: 0.8;}
 .weui-agree a {
     color: #7fcb82;
 }
-
-
+.productLink{color: #60b1f0;}
+.positionMenu.style.limr15 li>a .positionJob{margin-left: 1rem;}
+.positionMenu.style.bb0 li{border-bottom: 0;}
+#content.styles{top: 7.5rem;bottom: 0;}
 .weui-agree:before {
     content: " ";
     position: absolute;
@@ -82,7 +84,7 @@ a:active{opacity: 0.8;}
 .positionMenu.style li>a .positionJob p .name{color:#666 ;}
 .positionMenu.style li>a .positionJob p .time{font-size: 0.625rem;color: #666;}
 .weui_search_inner .weui_search_input {
-
+width: 89%;
     padding: 4px 0 4px 5px;
 }
 
@@ -133,6 +135,7 @@ a:active{opacity: 0.8;}
 .btnFreeDiv .btnFree{position: absolute;width: 8rem;height: 2.2rem;line-height: 2.2rem;font-family: "Microsoft Yahei";text-align: center;background: #fff;color: #61b1f0;border-radius: 0.4rem;left: 50%;top: 50%;margin-left: -4rem;margin-top: -1.1rem;}
 .weui_tab .weui_tabbar{background: #fff;}
 .weui_tab .weui_tabbar a, .weui_tab .weui_tabbar a p{color: #333;}
+.weui_tab .weui_tabbar a{text-align: center;}
 .weui_tab .weui_tabbar a{position: relative;}
 .weui_tab .weui_tabbar:before{border-top: 1px solid #efefef;}
 .weui_tab .weui_tabbar a:after{position: absolute;top: 2px;right: 0;content: "";width: 1px;height: 100%;background: #efefef;}
@@ -192,12 +195,28 @@ a:active{opacity: 0.8;}
 
 
 .companyHinfor{position: relative;background: url(../images/img2.0/compangHeBg.png) no-repeat;background-size: 100% 100%;height: 300px;}
+.companyHinfor a>img.comImg{margin: 20px 0 10px;}
+.companyHinfor a>img {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    display: inline-block;
+    margin: 65px 0 10px;
+}
 .companyHinfor>img.comImg{margin: 20px 0 10px;}
+.companyHinfor>img {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    display: inline-block;
+    margin: 65px 0 10px;
+}
 .addRess{position: absolute;right: 1rem;top: 1rem;font-size: 0.875rem;color: #fff;}
 .addRess img{width: 2rem;}
 .eyeList{display: block;margin: 1rem 2rem 0.5rem;}
 .eyeList li{width: 33.3%;float: left;text-align: center;color: #fff;position: relative;font-size: 0.875rem;}
 .eyeList li img{width: 2rem;height: 2rem;}
+.eyeList li:last-child img{width: 2.6rem;}
 .eyeList li:after{content: "";position: absolute;top: 0.6rem;right: 0;width: 1px;bottom: 0.6rem;background: #dbdbdb;}
 .eyeList li:last-child:after{width: 0;}
 .eyeList li .num{font-size: 1.2rem;}
@@ -305,3 +324,139 @@ a:active{opacity: 0.8;}
 .resumeInfor:last-child .inforTitle{border-bottom: 0;padding: 0 1rem}
 .resumeInfor .inforTitle.bb0{border-bottom: 0;}
 .resumeInfor{border-top: 1px solid #dbdbdb;border-bottom: 1px solid #dbdbdb;}
+
+
+/*index*/
+.indexBg{position: relative;width: 100%;min-height: 30rem;background: url("../../../assets/mobile/images/img2.0/IndexBg.png") no-repeat;background-size: 100% 100%;margin-bottom: 1rem;}
+.tipInfor{position: absolute;font-size: 0.625rem;color: #fff;left: 11%;background: #ff716a;padding: 0.2rem 0.5rem;border-radius: 5rem;top: -0.38rem;}
+.tipInfor .spanIcon{display: inline-block;width: 0.8rem;height: 0.8rem;position: relative;top: 0.1rem;}
+.tipInfor .goodIcon{background: url("../../../assets/mobile/images/img2.0/goodIcon.png") no-repeat;background-size: 100% 100%;}
+.tipInfor .hotIcon{background: url("../../../assets/mobile/images/img2.0/hotIcon.png") no-repeat;background-size: 100% 100%;}
+.peopleInfor{position: relative;left: 10%;top: 1.4rem;display: table;width: 70%;}
+.peopleImg,.peopleIn{display: table-cell;vertical-align: middle;}
+.peopleImg{width: 5rem;height: 5rem;border-radius: 100%;margin-right: 0.4rem;}
+.peopleImg img{width: 100%;height: 100%;border: 0.2rem solid #fff;border-radius: 100%;}
+.peopleIn{position: relative;left: 0.5rem;top: 0rem;}
+.peopleIn p{font-size: 0.875rem;color: #999;}
+.peopleIn .name{font-size: 1rem;color: #61b1f0;}
+.peopleIn .positionJob{color: #666;}
+.peopleIn .personInfor{ display: -webkit-box;   -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;line-height: 1rem;}
+.companyIn{position: relative;left: 18%;top: 2.5rem;width: 54.5%;}
+.companyIn p{font-size: 0.875rem;color: #999;}
+.companyIn p.companyInP{display: -webkit-box;   -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;line-height: 1.2rem;width: 100%;text-align: center;}
+.companyIn .name{font-size: 1rem;color: #666;}
+
+
+.productIn{position: relative;left: 38%;top: 4.8rem;width: 49.5%}
+.productIn p{font-size: 0.875rem;color: #999;}
+.productIn p.companyInP{display: -webkit-box;   -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;line-height: 1.2rem;width: 100%;}
+.productIn .name{font-size: 1rem;color: #666;}
+.productIn .wantJoin{display: block;width: 4rem;height: 1rem;position: absolute;bottom: -1.25rem;right: -0.5rem;
+    font-size: 0.625rem;color: #fff;text-align: center;}
+
+
+.moreInfors{position: relative;left: 22%;top: 8.1rem;width: 49.5%}
+.moreInfors p{font-size: 0.875rem;color: #999;}
+.moreInfors .moreA{color: #666;}
+.moreInfors .jobNum{width: 4rem;height:4rem;line-height: 4rem;text-align:center;
+    position: absolute;top:-0.55rem;right: -25%;
+    color: #fff;font-size: 2rem;border-radius: 100%;}
+
+.knowMore{position: relative;padding: 0.1rem 0.5rem;font-size: 0.875rem;color: #fff;left: 50%;margin-left: -4rem;background: #60b1f0;border-radius: 2rem;display: inline-block;top: 11.5rem;}
+
+
+
+/*technicalExpertise*/
+.skillList{padding: 1rem;}
+.skillList .title{font-size: 1rem;color: #666;text-align: left;padding: 0;}
+.skillMenu{display: block;border-bottom: 1px solid #dbdbdb;padding-bottom: 1rem;}
+.skillMenu li{float: left;margin-right: 3%;text-align: left;padding: 0.2rem 2rem 0.2rem 1rem;position: relative;margin-top: 0.5rem;border: 1px solid #44b549;color: #44b549;font-size: 0.875rem;border-radius: 3rem;}
+.skillMenu li .fa{position: absolute;right: 0.3rem;top: 0.4rem;color: #666;}
+
+.oftenSkill{padding: 0 1rem;padding-bottom: 2rem;}
+.oftenSkill .title{font-size: 1rem;color: #666;text-align: left;padding: 0;}
+.oftenSkillList{display: block;}
+.oftenSkillList li{float: left;padding: 0.5rem;background: #bababa;color: #fff;font-size: 0.875rem;margin: 0.5rem 0.5rem 0 0;}
+.oftenSkillList li.active{background: #44b549;}
+.oftenSkill a{float: right;font-size: 0.875rem;color: #61b1f0;}
+.bgfff{background: #fff;}
+.bgfff.bb1{border-bottom: 1px solid #dbdbdb;}
+.describe{padding: 1rem;}
+.describe .title{font-size: 1rem;color: #666;text-align: left;margin-bottom: 0.5rem;padding: 0;}
+.describeDiv{display: flex;}
+.describeDiv>div.addSkillDiv{width: 70%;position: relative;}
+.addSkillDiv .close{  position: absolute;
+    top: 0.9rem;
+    right: 0.7rem;
+    display: inline-block;
+    width: 0.875rem;
+    height: 0.875rem;
+    background: url("../images/img2.0/clear.png");
+    background-size: 100% 100%;}
+.addSkillDiv .close.hide{display: none;}
+.describeInput{width: 97%;padding: 0.8rem 0 0.8rem 3%;position: relative;border: 1px dashed #dbdbdb;font-family: "微软雅黑";}
+.describeBtn{    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;background: #fff;color: #333;position: relative;border: 1px dashed #dbdbdb;font-family: "微软雅黑";}
+
+.weui_btn_area.clearfix{display: block;margin: 0 1rem;}
+
+
+
+@media screen and (max-width: 320px) {
+    .tipInfor{left: 8.5%;    top: -0.52rem;}
+
+    .peopleImg {
+        width: 4rem;
+        height: 4rem;
+    }
+    .indexBg {
+        min-height: 26rem;
+    }
+    .companyIn {
+        position: relative;
+        left: 19%;
+        top: 2rem;
+        width: 54%;
+    }
+    .productIn {
+        top: 3.5rem;
+    }
+    .productIn .wantJoin {
+        display: block;
+        width: 4rem;
+        height: 1rem;
+        position: absolute;
+        bottom: -0.95rem;
+        right: -0.8rem;
+
+    }
+    .moreInfors {
+        top: 6rem;
+
+        color: #fff;
+    }
+    .moreInfors .jobNum{right: -28%;}
+    .knowMore{top: 9rem;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
