@@ -50,6 +50,7 @@ a:active{opacity: 0.8;}
 .tabMenu li a .fa{font-size: 1.125rem;}
 .tabMenu li.active a{color: #ff6702;}
 
+#dialogRegister .weui_vcode_btn{min-width: auto;}
 
 /*shops-search*/
 .mask-bg{position: fixed;top: 0;right: 0;left: 0;bottom: 0;background: rgba(0,0,0,0.6);z-index: 9998;}
