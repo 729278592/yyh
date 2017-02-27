@@ -179,5 +179,24 @@
     <script src="../../assets/global/plugins/pullUp/js/runner-msk07720d667.js"></script>
     <script src="../../assets/global/plugins/pullUp/js/global.bundle-msk49e83f440.js"></script>
     <script src="../../assets/global/plugins/pullUp/js/main-msk6b35c6e83.js"></script>
+    <script>
+        $(function () {
+            var weui_search_input = $(".weui_search_input");
+            var weui_icon_clear = $(".weui_icon_clear");
+            var weui_search_inner = $(".weui_search_inner");
+            weui_search_input.on('keyup', function () {
+                var clear = $(this).closest(weui_search_inner).find(weui_icon_clear);
+                if($.trim($(this).val())){
+                    clear.removeClass("hide");
+                }else{
+                    clear.addClass("hide");
+                }
+            });
+            weui_icon_clear.on('touchend', function () {
+                $(this).closest(weui_search_inner).find(weui_search_input).val('');
+                $(this).addClass("hide");
+            });
+        })
+    </script>
 </body>
 </html>
