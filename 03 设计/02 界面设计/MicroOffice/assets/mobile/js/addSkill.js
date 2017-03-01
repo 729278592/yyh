@@ -46,9 +46,9 @@
                         //查询成功
                         if (data.status == "ok") {
                             opts.res = data.datas;
-                            for (var i = 0, len = opts.res.length; i < len; i++) {
 
-                                _this.find($(opts.oftenSkillList)).append(options.objOftenSkillTem(opts.res[i],opts.oftenSkillTem));
+                            for (var j = 0; j < opts.res[0].children.length; j++) {
+                                _this.find($(opts.oftenSkillList)).append(options.objOftenSkillTem(opts.res[0].children[j],opts.oftenSkillTem));
                             }
 
                             //添加技能专长
@@ -64,7 +64,6 @@
 
                 Method.ownAddSkill(_this);//手动添加技能专长
                 Method.clearInput(_this);//清除添加技能标签的输入框
-
             },
             removeSkill:function (_this) {//删除技能专长
                 _this.find($(opts.skillMenu)).on("touchend",".fa-remove",function () {
@@ -107,7 +106,7 @@
                     }
 
                     if($.trim(describeInput.val())==''){
-                        weui.showMsg("技能不能为空");
+                        weui.showMsg("标签名不能为空");
                         return ;
                     }
 
