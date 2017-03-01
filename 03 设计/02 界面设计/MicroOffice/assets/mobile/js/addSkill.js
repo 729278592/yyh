@@ -68,6 +68,15 @@
             },
             removeSkill:function (_this) {//删除技能专长
                 _this.find($(opts.skillMenu)).on("touchend",".fa-remove",function () {
+                    var oftenSkill = _this.find($(opts.oftenSkillList));
+                    var text = $(this).closest("li").find("span").text();
+                    for(var i = 0;i<opts.arrSkillMenu.length;i++){
+                        if($.trim(text)==$.trim(opts.arrSkillMenu[i])){
+                            opts.arrSkillMenu.splice(i, 1);
+                            // console.log(oftenSkill.find($(text)).closest("li"))
+                            // oftenSkill.find($(text)).closest("li").removeClass("active");
+                        }
+                    }
                     weui.showMsg("删除成功");
                     $(this).closest("li").remove();
                 })
@@ -78,7 +87,7 @@
                 oftenSkill.on("touchend","li",function () {
                     var trimText = $(this).text();
                     if($.inArray($.trim(trimText), opts.arrSkillMenu) < 0){
-                        $(this).addClass('active');
+                       // $(this).addClass('active');
                         opts.arrSkillMenu.push($.trim(trimText));
                         _this.find($(opts.skillMenu)).append('<li><span>'+$.trim(trimText)+'</span><i class="fa fa-remove"></i></li>');
                         return ;

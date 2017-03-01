@@ -183,7 +183,7 @@
                 <!--<img src="../../assets/mobile/images/gg1.jpg" alt="" class="w100" style="margin-bottom: 10px;"/>-->
                 <div class="btnFreeDiv">
                     <img src="../../assets/mobile/images/img2.0/gg2.jpg" alt="" class="w100"/>
-                    <button type="button" class="btnFree">免费开通</button>
+                    <a href="resgister.html" class="btnFree">免费开通</a>
                 </div>
                 <div class="weui_tab fixed">
                     <div class="weui_tabbar">
@@ -217,14 +217,9 @@
     </div>
     <script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
     <script src="../../assets/mobile/js/global.js"></script>
-    <script src="../../assets/mobile/js/mobileLeft.js"></script>
+    <!--<script src="../../assets/mobile/js/mobileLeft.js"></script>-->
     <script src="../../assets/global/plugins/swiper/dist/js/swiper.min.js"></script>
-    <script>
-        $(function(){
-            /*左边滑动导航*/
-            mobileLeft.init($(".container"))
-        })
-    </script>
+
     <script>
         $(function(){
             $("#share").on("touchend",function(){
@@ -236,7 +231,8 @@
                     $(this).removeClass('shake');
                 });
             });
-            $(".container").delegate(".maskHide","touchend",function(){
+            $(".container").delegate(".maskHide","touchend",function(e){
+                e.preventDefault();
                 $(this).addClass("hide");
                 $(".reward").addClass("hide");
             });

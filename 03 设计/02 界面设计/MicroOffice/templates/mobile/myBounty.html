@@ -21,25 +21,27 @@
             <form action="#" id="form" onsubmit="return false">
                 <div class="weui_cells_form" style="margin-top: 0.625rem;">
                     <div class="weui_cells mt0 weui_cells_access">
-                        <a class="weui_cell" href="presentChioce.html">
-                            <div class="weui_cell_bd weui_cell_primary style">
-                                <p>
-                                    银行卡
-                                    <!--<span class="name hide">交通银行</span>-->
-                                    <!--<span class="red ">请绑定银行卡</span>-->
-                                </p>
-                            </div>
-                            <div class="weui_cell_ft style">
-                                <span class="red" id="nobK" data-Bk="false">未绑定</span>
-                                <span class="ok hide">已绑定</span>
-                            </div>
-                        </a>
+                        <div class="weui_cells mt0 weui_cells_access">
+                            <a class="weui_cell" href="presentChioce.html">
+                                <div class="weui_cell_bd weui_cell_primary style">
+                                    <p>
+                                        银行卡
+                                        <span class="name hide">交通银行</span>
+                                        <span class="red ">请绑定银行卡</span>
+                                    </p>
+                                </div>
+                                <div class="weui_cell_ft style">
+                                    <span class="red">未绑定</span>
+                                    <span class="ok hide">已绑定</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </form>
 
             <div class="presentRecord">提现记录</div>
-            <ul class="positionMenu mt0 style">
+            <ul class="positionMenu fs14 mt0 style">
                 <li>
                     <a>
                         <div class="positionJob">
@@ -58,7 +60,6 @@
                             </p>
                         </div>
                     </a>
-
                 </li>
                 <li>
                     <a>
@@ -102,25 +103,7 @@
                 </li>
             </ul>
         </div>
-        <div class="weui_btn_area fixed">
-            <a href="personCenter.html" class="weui_btn bgf6 b0 weui_btn_primary">返回个人中心</a>
-        </div>
-        <div class="weui_dialog_confirm hide" id="dialog">
-            <div class="weui_mask bg"></div>
-            <div class="weui_dialog">
-                <div class="weui_dialog_hd"><strong class="weui_dialog_title">确认提现?</strong></div>
-                <div class="weui_dialog_bd">
-                    <div>持卡人： <span class="type">张三</span></div>
-                    <div>银行卡： <span class="type">交通银行</span></div>
-                    <div>金　额： <span class="type">￥500</span></div>
-                    <div>卡　号： <span class="type">555555555555555555566</span></div>
-                </div>
-                <div class="weui_dialog_ft">
-                    <a href="javascript:;" class="weui_btn_dialog default btnCancle">取消</a>
-                    <a href="javascript:;" class="weui_btn_dialog primary btnSure">确定</a>
-                </div>
-            </div>
-        </div>
+
     </div>
 </div>
 <script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
@@ -139,7 +122,13 @@
                     weui.showMsg("提现金额不足");
                     return ;
                 }
-                weui.confirm("确认提现?")
+                weui.confirmCashBox({
+                    name:"张三",
+                    title: '交通银行',
+                    money:"500",
+                    cardNumber:"5555",
+                    content: "确认提现?"
+                })
             }else {
                 weui.showMsg("请绑卡")
             }

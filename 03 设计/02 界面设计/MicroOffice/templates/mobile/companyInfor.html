@@ -25,19 +25,19 @@
                         </div>
                         <ul class="eyeList clearfix">
                             <li>
-                                <img src="../../assets/mobile/images/img2.0/userIcon1.png" class="userIcon1" alt="">
+                                <span class="spanIcon userIcon1"></span>
                                 <br>
                                 浏览
                                 <span class="num">50</span>
                             </li>
                             <li>
-                                <img src="../../assets/mobile/images/img2.0/shareIcon1.png" class="shareIcon1" alt="">
+                                <span class="spanIcon shareIcon1"></span>
                                 <br>
                                 转发
                                 <span class="num">50</span>
                             </li>
                             <li>
-                                <img src="../../assets/mobile/images/img2.0/heart1.png" class="heart1" alt="">
+                                <span class="spanIcon heart1" id="follow"></span>
                                 <br>
                                 点赞
                                 <span class="num">50</span>
@@ -251,11 +251,9 @@
                         <!--</li>-->
                     <!--</ul>-->
                 <!--</div>-->
-
-
             </div>
             <div class="weui_btn_area fixed">
-                <a href="index.html" class="weui_btn b0 bgf6 weui_btn_primary">返回品牌首页</a>
+                <a href="myCompany.html" class="weui_btn b0 bgf6 weui_btn_primary">返回品牌首页</a>
             </div>
             <!--<div class="ft">-->
                 <!--powered by <span>suizou</span>-->
@@ -266,40 +264,55 @@
     <script src="../../assets/mobile/js/global.js"></script>
     <script src="../../assets/global/plugins/swiper/dist/js/swiper.min.js"></script>
     <script>
-        swiper = new Swiper('#swiper-container1', {
+
+        $(function () {
+            /*点赞*/
+            var follow = $("#follow");
+            follow.on("touchend",function () {
+                var num = $(this).closest("li").find(".num");
+                if($(this).is(".active")){
+                    $(this).removeClass("active");
+                    num.text(parseInt(num.text())-1);
+                }else {
+                    $(this).addClass("active");
+                    num.text(parseInt(num.text())+1);
+                }
+            });
+            swiper = new Swiper('#swiper-container1', {
 //        prevButton:'.swiper-button-prev',
 //        nextButton:'.swiper-button-next',
-            slidesPerView: 1,
-            pagination:'.swiper-pagination',
-            paginationClickable: true,
-            spaceBetween: 0,
-            loop:true,
-            autoplay: 5000,
-            autoplayDisableOnInteraction: false
-        });
+                slidesPerView: 1,
+                pagination:'.swiper-pagination',
+                paginationClickable: true,
+                spaceBetween: 0,
+                loop:true,
+                autoplay: 5000,
+                autoplayDisableOnInteraction: false
+            });
 
-        swiper = new Swiper('#swiper-container2', {
+            swiper = new Swiper('#swiper-container2', {
 //        prevButton:'.swiper-button-prev',
 //        nextButton:'.swiper-button-next',
-            slidesPerView: 1,
-            pagination:'.swiper-pagination',
-            paginationClickable: true,
-            spaceBetween: 0,
-            loop:true,
-            autoplay: 5000,
-            autoplayDisableOnInteraction: false
-        });
+                slidesPerView: 1,
+                pagination:'.swiper-pagination',
+                paginationClickable: true,
+                spaceBetween: 0,
+                loop:true,
+                autoplay: 5000,
+                autoplayDisableOnInteraction: false
+            });
 
-        /*查看全部信息*/
-        $(".btnAll").on("click",function(){
-            var moreInfor = $(this).prev().find(".moreInfor");
-            if(moreInfor.css("display")=="none"){
-                moreInfor.slideDown();
-                $(this).text("收起");
-            }else{
-                moreInfor.slideUp();
-                $(this).text("显示全部");
-            }
+            /*查看全部信息*/
+            $(".btnAll").on("click",function(){
+                var moreInfor = $(this).prev().find(".moreInfor");
+                if(moreInfor.css("display")=="none"){
+                    moreInfor.slideDown();
+                    $(this).text("收起");
+                }else{
+                    moreInfor.slideUp();
+                    $(this).text("显示全部");
+                }
+            })
         })
     </script>
 </body>

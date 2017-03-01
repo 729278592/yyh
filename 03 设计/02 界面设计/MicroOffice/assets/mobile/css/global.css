@@ -260,6 +260,13 @@ img.resume{width: 100%;margin-bottom: 15px;border-bottom: 1px solid #efefef;}
     overflow: hidden;
     text-overflow: ellipsis;padding: 10px;}
 .comInfors p.pb10{padding-bottom: 0.625rem;}
+.weui_cell.mt10p{padding-top: 1.2rem;}
+.weui_cell.mt10p:before {
+
+    border-top: 1rem solid #efefef;
+
+}
+
 .comInfors p:after{position: absolute;bottom: 0;left: -0px;right: -0px;content: "";height: 1px;background: #EFEFEF;}
 .comInfors p:last-child{border-bottom: 1px solid #dbdbdb;}
 .comInfors p img{width: 20px;margin-right: 5px;}
@@ -280,7 +287,7 @@ img.resume{width: 100%;margin-bottom: 15px;border-bottom: 1px solid #efefef;}
 .positionInfor p>img{width: 18px;}
 .positionInfor .positionName{color: #333;font-size: 16px;display: inline-block;border-radius: 20px;}
 .positionInfor .companyName,.positionInfor .time,.positionInfor .jobRecord{display: table;}
-.positionInfor .jobRecord.w50,.positionInfor .time{float: left;width: 50%;}
+.positionInfor .jobRecord.w50,.positionInfor .time{float: left;width: 50%;color: #999;}
 .positionInfor .time.w50{width: 50%;}
 .positionInfor .jobRecord.w50 span{top: 0;}
 .positionInfor .time img,.positionInfor .companyName img,.positionInfor .companyName span,.positionInfor .time span,.positionInfor .jobRecord img,.positionInfor .jobRecord span{display: table-cell;vertical-align: middle;}
