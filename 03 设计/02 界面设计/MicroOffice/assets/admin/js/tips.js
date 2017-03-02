@@ -31,7 +31,7 @@ function tipsContent(message,obj,staute){
                 obj.removeClass(staute);
                 obj.closest(".maskTip").addClass("hide");
             });
-        },3000)
+        },2000)
     })
 }
 
