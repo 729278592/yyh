@@ -1023,7 +1023,7 @@ a.keyword-button:hover,.keyword-button:active,.keyword-button:focus{color: #fff;
 .common-list.styles .position .staffDiv .modifySpan:hover{color: #333;cursor: pointer;}
 .common-list.styles .position .staffDiv.visilibal{visibility: hidden;}
 .common-list.styles .position.type{background: #e7e7e7;}
-.application .common-list-item.card-item.type:hover{border: 0;outline: none;box-shadow: none;}
+.application .common-list-item.card-item.type:hover{outline: transparent solid 1px;box-shadow: none;}
 .batch-action.remove a,.batch-action.remove{color: #ff3b30;}
 .batch-action.interview-ban,.batch-action.interview-ban a {  color: #66A4F9;  }
 .card-item.data-box-content.style.w50 .data-item{width: 49%;}

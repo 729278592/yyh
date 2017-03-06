@@ -340,7 +340,11 @@ width: 89%;
 .tipInfor .spanIcon{display: inline-block;width: 0.8rem;height: 0.8rem;position: relative;top: 0.1rem;}
 .tipInfor .goodIcon{background: url("../../../assets/mobile/images/img2.0/goodIcon.png") no-repeat;background-size: 100% 100%;}
 .tipInfor .hotIcon{background: url("../../../assets/mobile/images/img2.0/hotIcon.png") no-repeat;background-size: 100% 100%;}
-.peopleInfor{position: relative;left: 10%;top: 1.4rem;display: table;width: 70%;}
+.peopleInfor{position: relative;left: 10%;top: 1.4rem;display: table;width: 70%;min-height: 70px;}
+
+.companyIn{min-height: 80px;}
+.productIn{min-height: 80px;}
+.moreInfors{min-height: 44px;}
 .peopleImg,.peopleIn{display: table-cell;vertical-align: middle;}
 .peopleImg{width: 5rem;height: 5rem;border-radius: 100%;margin-right: 0.4rem;}
 .peopleImg img{width: 100%;height: 100%;border: 0.2rem solid #fff;border-radius: 100%;}
@@ -468,7 +472,18 @@ width: 89%;
     .moreInfors .jobNum{right: -28%;}
     .knowMore{top: 7.2rem;}
 }
-
+@media screen and (min-width: 374px) {
+    .peopleInfor{min-height: 86px;}
+    .companyIn{min-height: 80px;}
+    .productIn{min-height: 80px;}
+    .moreInfors{min-height: 44px;}
+}
+@media screen and (min-width: 413px) {
+    .peopleInfor{min-height: 93px;}
+    .companyIn{min-height: 80px;}
+    .productIn{min-height: 80px;}
+    .moreInfors{min-height: 44px;}
+}
 
 
 
