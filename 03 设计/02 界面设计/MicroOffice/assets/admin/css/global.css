@@ -1117,7 +1117,7 @@ a.keyword-button:hover,.keyword-button:active,.keyword-button:focus{color: #fff;
 .form-group .col-md-4.col-xs-4.col-sm-4.p0,.form-group .col-md-8.col-xs-8.col-sm-8.p0{padding: 0;}
 .form-group .col-md-4.col-xs-4.col-sm-4.relative:after{position: absolute;top: 0;bottom: 0;right: 20%;content: "";width: 1px;background: #dbdbdb;}
 .selectCaret{border: 1px solid #dbdbdb;padding: 6px 0 6px 5%;width: 95%;border-radius: 4px;position: relative;z-index: 1;background: transparent;}
-.form-group .fa-caret-down{position: absolute;right: 10%;top: 10px; z-index: 0;}
+.form-group .p0 .fa-caret-down{position: absolute;right: 10%;top: 10px; z-index: 0;}
 .form-group .col-md-6.col-xs-6.col-sm-6 .removeT{position: absolute;color: #999;right: -15px;display: block;width: 30px;height: 36px;text-align: center;line-height: 36px;}
 .form-group .col-md-6.col-xs-6.col-sm-6 .removeT:hover{cursor: pointer;color: #333;}
 .resumeBq.style li{background: #efefef;color: #46a9ec;}

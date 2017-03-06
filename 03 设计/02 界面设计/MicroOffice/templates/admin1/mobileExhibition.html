@@ -164,18 +164,12 @@
                 .linkGroup{width: 365px;margin: 20px 20px;}
                 .contentText{max-width: 365px;margin-top: 0;}
                 .peopleInfor{width: 68%;}
-                .peopleIn p{
-                    font-size: 0.875rem;
-                    color: #999;
-                    margin-bottom: 0;
-                    position: relative;
-                    top: -5px;
-                }
+                .peopleIn p{font-size: 0.875rem;color: #999;margin-bottom: 0;position: relative;top: -5px;}
                 .companyIn{top: 18px;}
-               .productIn{top: 38px;}
+                .productIn{top: 38px;}
                 .moreInfors{top: 50px;}
                 .companyIn p.name,.productIn .name{  position: relative; margin-bottom: 5px}
-                .form-group .fa-caret-down{right: 5%;}
+
             </style>
             <div class="content-header">
                 <span class="content-title">雇主品牌</span>
@@ -362,7 +356,7 @@
                 $(function(){
                     /*点赞*/
                     var follow = $("#follow");
-                    follow.on("touchend",function () {
+                    follow.on("click",function () {
                         var num = $(this).closest("li").find(".num");
                         if($(this).is(".active")){
                             $(this).removeClass("active");
