@@ -1,0 +1,237 @@
+<form action="#" id="form_sample_1" class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-md-3 col-xs-3 col-sm-3">
+            <span class="required"> * </span>　公司名称
+        </label>
+        <div class="col-md-6 col-xs-6 col-sm-6">
+            <input name="companyName" type="text" class="form-control" placeholder="重庆易优弧有限公司"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-xs-3 col-sm-3">
+            <span class="required"> * </span>　公司简称
+        </label>
+        <div class="col-md-6 col-xs-6 col-sm-6">
+            <input name="companyInfor" type="text" class="form-control" placeholder="易优弧"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-xs-3 col-sm-3">
+            <span class="required"> * </span>　所属行业
+        </label>
+        <div class="col-md-6 col-xs-6 col-sm-6">
+            <select class="form-control" name="">
+                <option value="IT">IT</option>
+                <option value="IT">IT</option>
+                <option value="IT">IT</option>
+                <option value="IT">IT</option>
+                <option value="IT">IT</option>
+                <option value="IT">IT</option>
+                <option value="IT">IT</option>
+                <option value="IT">IT</option>
+            </select>
+            <i class="fa fa-caret-down"></i>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-xs-3 col-sm-3">
+            <span class="required"> * </span>　公司规模
+        </label>
+        <div class="col-md-6 col-xs-6 col-sm-6">
+            <select class="form-control" name="">
+                <option value="请选择">请选择</option>
+                <option value="少于50人">少于50人</option>
+                <option value="50-150人">50-150人</option>
+                <option value="150-500人">150-500人</option>
+                <option value="500-1000人">500-1000人</option>
+                <option value="1000-5000人">1000-5000人</option>
+                <option value="5000-10000人">5000-10000人</option>
+                <option value="10000以人">10000以人</option>
+            </select>
+            <i class="fa fa-caret-down"></i>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-xs-3 col-sm-3">
+            <span class="required"> * </span>　公司地址
+        </label>
+        <div class="col-md-6 col-xs-6 col-sm-6">
+            <input type="text" name="companyAddress" class="form-control acity" placeholder="重庆袁家岗"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-xs-3 col-sm-3">
+            <span class="required"> * </span>　公司官网
+        </label>
+        <div class="col-md-6 col-xs-6 col-sm-6">
+            <input name="url" type="text" class="form-control" placeholder="http://www.eyohu.com"/>
+            <p>
+                <span class="help-block">例: http://www.demo.com 或 http://demo.com </span>
+            </p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-xs-3 col-sm-3 pt0">
+            <span class="required"> * </span>　公司简介
+        </label>
+        <div class="col-md-6 col-xs-6 col-sm-6">
+            <textarea style="resize: none" name="compangDetails" rows="6" class="form-control" placeholder="请输入公司简介"></textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-xs-3 col-sm-3">
+            <span class="required"> * </span>　设置部门
+        </label>
+        <div class="col-md-6 col-xs-6 col-sm-6">
+            <div class="button-label bt0 clearfix">
+                <!--<p class="moreTag"><span class="required">*</span>最多只能添加5个标签</p>-->
+                <a class="keyword-button"><span class="keyword-button-content">技术部</span><i class="fa fa-times-circle-o"></i></a>
+                <a class="keyword-button"><span class="keyword-button-content">产品部</span><i class="fa fa-times-circle-o"></i></a>
+                <a class="keyword-button"><span class="keyword-button-content">销售部</span><i class="fa fa-times-circle-o"></i></a>
+                <a class="keyword-button"><span class="keyword-button-content">保安部</span><i class="fa fa-times-circle-o"></i></a>
+                <a class="keyword-button"><span class="keyword-button-content">财务部</span><i class="fa fa-times-circle-o"></i></a>
+
+                <a href="#" class="keyword-dashed-button">
+                    <span class="add-span">+</span>
+                    添加
+                </a>
+                <div class="keyword-div hide">
+                    <input type="text" class="keyword-input" placeholder="请输入标签名"/>
+                    <i class="fa fa-check-circle"></i>
+                    <i class="fa fa-times-circle-o"></i>
+                </div>
+            </div>
+            <div class="department hide">
+                <p class="departmentTitle">默认部门</p>
+                <ul class="clearfix departmentList">
+                    <li><a href="#">技术部</a></li>
+                    <li><a href="#">产品部</a></li>
+                    <li><a href="#">销售部</a></li>
+                    <li><a href="#">财务部</a></li>
+                    <li><a href="#">保安部</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-xs-3 col-sm-3">
+            <span class="required">  </span>　公司logo
+        </label>
+        <div class="col-md-6 col-xs-6 col-sm-6">
+            <input type="text" class="upLoad" value="上传图片" readonly/>
+            <span class="help-block">图片支持jpg、png、gif格式 ; 图片大小不超过.....</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-xs-3 col-sm-3">
+            <span class="required">  </span>　公众号二维码
+        </label>
+        <div class="col-md-6 col-xs-6 col-sm-6">
+            <input type="text" class="upLoad" value="上传图片" readonly/>
+            <span class="help-block">图片支持jpg、png、gif格式 ; 图片大小不超过.....</span>
+        </div>
+    </div>
+    <hr/>
+    <div class="form-group">
+        <div class="col-sm-6 col-xs-6 col-md-6 col-sm-offset-3 col-xs-offset-3 col-md-offset-3">
+            <button class="btn btnSure" type="submit" id="btnSave">保存</button>
+            <a href="#" class="btn btnReturn">取消</a>
+        </div>
+    </div>
+</form>
+<script>
+
+    /*添加标签*/
+    function keywordButtonHide(){
+        if($(".keyword-button").get(0)){
+            if(($(".keyword-button").size())>4){
+                $(".keyword-dashed-button").addClass("hide");
+                $(".keyword-div").addClass("hide");
+            }
+            else{
+                $(".keyword-div").addClass("hide");
+                $(".keyword-dashed-button").removeClass("hide");
+            }
+        }
+        else{
+            $(".keyword-div").addClass("hide");
+            $(".keyword-dashed-button").removeClass("hide");
+        }
+    }
+    keywordButtonHide();
+    $(".keyword-dashed-button").on("click",function(){
+        $(this).addClass("hide");
+        $(".keyword-div").removeClass("hide");
+        $(".department").removeClass("hide");
+    });
+    var arr = [];
+    $(".keyword-div .fa-check-circle").on("click",function(){
+        var values = $(this).closest(".keyword-div").find(".keyword-input").val();
+        var value = $.trim(values);
+//                        var str = document.createElement("a");
+//                        str.className = "keyword-button";
+//                        var aSpan = document.createElement("span");
+//                        aSpan.className = "keyword-button-content";
+//                        var aI = document.createElement("i");
+//                        aI.className = "fa fa-times-circle-o";
+//                        aSpan.appendChild(document.createTextNode(value));
+//                        str.appendChild(aSpan);
+//                        str.appendChild(aI);
+        var str = '<a class="keyword-button">' +
+            '<span class="keyword-button-content">'+value+'</span>' +
+            '<i class="fa fa-times-circle-o"></i>' +
+            '</a>';
+
+        if(value==''){
+            tipsContent("标签名不能为空",$(".tips"),"fail");
+        }
+        else{
+            if($(".keyword-button").get(0)){
+                $(".keyword-button").each(function(){
+                    arr.push($(this).find(".keyword-button-content").text());
+                });
+
+                if($.inArray(value, arr) < 0){
+                    $(".keyword-dashed-button").before(str);
+                    $(this).closest(".keyword-div").find(".keyword-input").val("");
+                    $(".department").addClass("hide");
+                    arr.push(value);
+                    keywordButtonHide();
+                }
+                else{
+                    tipsContent("标签名已经存在",$(".tips"),"fail");
+                }
+            }
+            else{
+                arr.push(value);
+                $(".keyword-dashed-button").before(str).removeClass("hide");
+                $(this).closest(".keyword-div").addClass("hide");
+                $(this).closest(".keyword-div").find(".keyword-input").val("");
+                $(".department").addClass("hide");
+                return false;
+            }
+        }
+    });
+
+    $(".keyword-div .fa-times-circle-o").on("click",function(){
+        $(".keyword-dashed-button").removeClass("hide");
+        $(this).closest(".keyword-div").addClass("hide");
+        $(".department").addClass("hide");
+        $(this).closest(".keyword-div").find(".keyword-input").val("");
+    });
+
+    $(".departmentList li a").on("click",function(){
+        $(".keyword-input").val($(this).text());
+    });
+
+    $(".button-label").delegate(".keyword-button .fa-times-circle-o",'click',function(){
+        arr.splice($(this).parent(".keyword-button").index(),1);
+        $(this).closest(".keyword-button").remove();
+        $(".department").addClass("hide");
+        keywordButtonHide();
+    });
+
+    /*提交表单*/
+
+</script>
+<script src="../../assets/admin/js/companyForm.js"></script>

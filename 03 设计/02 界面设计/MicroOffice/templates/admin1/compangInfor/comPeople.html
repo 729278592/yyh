@@ -1,0 +1,106 @@
+<form action="#" id="form_sample_1" class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-md-3 col-xs-3 col-sm-3">
+            <span class="required"> * </span>　姓名
+        </label>
+        <div class="col-md-6 col-xs-6 col-sm-6">
+            <input type="text" name="peopleName" class="form-control" placeholder="请输入创始人姓名"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-md-3 col-xs-3 col-sm-3">
+            <span class="required"> * </span>　团队角色
+        </label>
+        <div class="col-md-6 col-xs-6 col-sm-6">
+            <input type="text" class="form-control" name="teamJob" placeholder="请输入在团队中担任角色"/>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3 col-xs-3 col-sm-3 pt0">
+            <span class="required"> * </span>　简介
+        </label>
+        <div class="col-md-6 col-xs-6 col-sm-6">
+            <textarea style="resize: none" name="peopleInfor" rows="6" class="form-control" placeholder="请输入简介"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3 col-xs-3 col-sm-3">
+            <span class="required"> * </span>　标签
+        </label>
+        <div class="col-md-6 col-xs-6 col-sm-6">
+            <div class="col-md-9 col-xs-9 col-sm-9 p0">
+                <input type="text" class="form-control labelInput" placeholder="请输入标签"/>
+            </div>
+            <div class="col-md-3 col-xs-3 col-sm-3 p0">
+                <button type="button" class="addLabel">确定</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3 col-xs-3 col-sm-3">
+        </label>
+        <div class="col-md-6 col-xs-6 col-sm-6">
+            <ul class="resumeBq style clearfix">
+                <li>
+                    5年java开发经验
+                    <img src="../../assets/admin/images/starIcon1.png" alt="">
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-3 col-xs-3 col-sm-3">
+            <span class="required">  </span>　图
+        </label>
+        <div class="col-md-6 col-xs-6 col-sm-6">
+            <input type="text" class="upLoad" value="上传图片" readonly/>
+            <span class="help-block">图片支持jpg、png、gif格式 ; 图片大小不超过.....</span>
+        </div>
+    </div>
+    <hr/>
+
+    <div class="form-group">
+        <div class="col-sm-6 col-xs-6 col-md-6 col-sm-offset-3 col-xs-offset-3 col-md-offset-3">
+            <button class="btn btnSure" type="submit" id="btnSave">保存</button>
+            <a href="#" class="btn btnReturn">取消</a>
+        </div>
+    </div>
+</form>
+<script src="../../assets/admin/js/tips.js"></script>
+<script>
+    $(function () {
+
+        /*添加标签*/
+        var $addLabel = $(".addLabel");
+        var $labelInput = $(".labelInput");
+        var $resumeBq = $(".resumeBq");
+        var labelArr = [];
+        var tip = $(".tips");
+        $addLabel.on("click",function () {
+            var labelVal = $labelInput.val();
+            if($.trim(labelVal)==""){
+                tipsContent("请输入标签",tip,"fail");
+                return;
+            }
+            if(!($.inArray($.trim(labelVal), labelArr) < 0)){
+                tipsContent("标签已存在",tip,"fail");
+                return
+            }
+            labelArr.push(labelVal);
+            addLabelFun(labelVal)
+        });
+
+        function addLabelFun(labelVal) {
+            var labelHtml = '<li>'+
+                                labelVal+
+                                '<img src="../../assets/admin/images/starIcon1.png" alt="">'+
+                            '</li>';
+            $resumeBq.append(labelHtml);
+        }
+    })
+</script>
+<script src="../../assets/admin/js/companyForm.js"></script>

@@ -152,6 +152,7 @@ var maskDailog = function(){
                                                 '</div>'+
                                             '</div>'+
                                         '</div>'+
+                                        '<div class="already">状态 : 已关联</div>'+
                                         '<div class="inforCon">'+
                                         '<p class="inforTitle">月度任务</p>'+
                                         '<div class="div-form active">'+
@@ -159,7 +160,6 @@ var maskDailog = function(){
                                         '<div class="w100">'+
                                         '<span class="type">主页转发 : </span>'+
                                             '<input type="number" class="inputText" placeholder="请输入主页转发" id="zfNum" min="0" max="100" step="1"/>'+
-
                                         '</div>'+
                                         '</div>'+
                                         '<div class="form-group">'+
@@ -351,14 +351,12 @@ var maskDailog = function(){
         $checkZw.on("click",function () {
            if($(this).prop("checked")){
                $(this).find("input").removeAttr("checked");
-               $(this).closest($formGroup).find($inputText).removeAttr("disabled")
+               $(this).closest($formGroup).find($inputText).removeAttr("disabled");
            } else {
                $(this).find("input").prop({checked:"checked"});
-               $(this).closest($formGroup).find($inputText).prop({disabled:"disabled"})
-
+               $(this).closest($formGroup).find($inputText).prop({disabled:"disabled"});
            }
         });
-
 
         for(var i = 0; i < opts.buttons.length; i++){
             $dialogWrap.on('click', '.'+opts.buttons[i].classType, function () {

@@ -429,6 +429,9 @@ width: 89%;
 .completed.hide,.completing.hide{display: none;}
 .completed{background: #46a9ec;}
 .completing{background: #ccc;}
+
+
+
 @media screen and (max-width: 320px) {
     .tipInfor{left: 8.5%;    top: -0.52rem;}
 

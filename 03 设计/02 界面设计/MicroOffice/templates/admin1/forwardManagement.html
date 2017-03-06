@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <link rel="stylesheet" href="../../assets/admin/css/asgo.css"/>
+    <link rel="stylesheet" href="../../assets/admin/css/asgocommon.css"/>
+    <link rel="stylesheet" href="../../assets/admin/css/global.css"/>
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+    <title>内部转发管理</title>
+</head>
+<body>
+<div id="admin-wrapper">
+    <div class="nav">
+        <div class="main-nav">
+            <div class="logo-wrapper">
+                <div class="logo logo-left">
+                    随走
+                </div>
+            </div>
+            <ul class="main-nav-list">
+                <li data="home">
+                    <a href="adminIndex.html" class="clearfix" title="首页">
+                        <div class="main-nav-icon">
+                            <img src="../../assets/admin/images/home1.png" alt=""/>
+                        </div>
+                    </a>
+                </li>
+                <li data="Employer">
+                    <a href="mobileExhibition.html" class="clearfix" title="雇主品牌">
+                        <div class="main-nav-icon">
+                            <img src="../../assets/admin/images/Employer1.png" alt=""/>
+                        </div>
+                    </a>
+                </li>
+                <li data="position">
+                    <a href="application.html" class="clearfix">
+                        <div class="main-nav-icon">
+                            <img src="../../assets/admin/images/position1.png" alt=""/>
+                        </div>
+                    </a>
+                </li>
+                <li data="recruit">
+                    <a href="positionManagement.html" class="clearfix">
+                        <div class="main-nav-icon">
+                            <img src="../../assets/admin/images/recruit1.png" alt=""/>
+                        </div>
+                    </a>
+                </li>
+                <li data="talent">
+                    <a href="talent.html" class="clearfix">
+                        <div class="main-nav-icon">
+                            <img src="../../assets/admin/images/talent1.png" alt=""/>
+                        </div>
+                    </a>
+                </li>
+
+                <li data="special">
+                    <a href="specialList.html" class="clearfix">
+                        <div class="main-nav-icon">
+                            <img src="../../assets/admin/images/special1.png" alt=""/>
+                        </div>
+                    </a>
+                </li>
+                <li data="forward" class="active">
+                    <a href="forwardManagement.html" class="clearfix">
+                        <div class="main-nav-icon">
+                            <img src="../../assets/admin/images/forward.png" alt=""/>
+                        </div>
+                    </a>
+                </li>
+                <li data="statistics">
+                    <a href="jobDataStatistics.html" class="clearfix">
+                        <div class="main-nav-icon">
+                            <img src="../../assets/admin/images/statistics1.png" alt=""/>
+                        </div>
+                    </a>
+                </li>
+
+
+
+                <li data="set" class="last">
+                    <a href="companyInfor.html" class="clearfix">
+                        <div class="main-nav-icon">
+                            <img src="../../assets/admin/images/set1.png" alt=""/>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main-nav-w158">
+            <ul class="main-nav-list">
+                <div class="logoDiv">
+                    <img src="../../assets/admin/images/logo.png" alt="" class="logoIcon"/>
+                </div>
+                <li>
+                    <a href="adminIndex.html" class="clearfix list">
+                        <div class="main-nav-item">
+                            <span class="main-nav-item-name">首页</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="mobileExhibition.html" class="clearfix">
+                        <div class="main-nav-item">
+                            <span class="main-nav-item-name">雇主品牌</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="application.html" class="clearfix">
+                        <div class="main-nav-item">
+                            <span class="main-nav-item-name">职位管理</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="positionManagement.html" class="clearfix">
+                        <div class="main-nav-item">
+                            <span class="main-nav-item-name">招聘管理</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="talent.html" class="clearfix">
+                        <div class="main-nav-item">
+                            <span class="main-nav-item-name">人才库</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="specialList.html" class="clearfix">
+                        <div class="main-nav-item">
+                            <span class="main-nav-item-name">专题管理</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="forwardManagement.html" class="clearfix">
+                        <div class="main-nav-item">
+                            <span class="main-nav-item-name">内部转发管理</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="jobDataStatistics.html" class="clearfix">
+                        <div class="main-nav-item">
+                            <span class="main-nav-item-name">数据统计</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="last">
+                    <a href="companyInfor.html" class="clearfix">
+                        <div class="main-nav-item">
+                            <span class="main-nav-item-name">账号设置</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="admin-content-wrapper">
+        <div class="content-header">
+            <span class="content-title">内部转发管理</span>
+            <div class="company-name right">
+                    <span class="accountSettings">
+                        <a href="#">
+                            <img src="../../assets/admin/images/companyLogo.jpg" alt=""/>
+                        </a>
+                        易优弧
+                    </span>
+                <ul class="account-selection hide">
+                    <li>
+                        <a href="companyInfor.html" class="companyInfor">
+                            <i class="fa fa-gear"></i>
+                            账号设置
+                        </a>
+                    </li>
+                    <li class="signOut">
+                        <a href="#">
+                            <i class="fa fa-power-off"></i>
+                            退出登录
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="content content--side-main">
+                <div class="application content-side">
+                    <div class="card">
+                        <div class="card-item card-title">
+                            筛选员工
+                        </div>
+                        <div class="search card-item">
+                            <div class="search-box-wrapper">
+                                <input type="text" class="search-box" name="application-search-keywords" placeholder="请输入员工姓名"/>
+                                <i class="fa fa-search"></i>
+                            </div>
+                        </div>
+
+                        <div class="card-item g-form-radio-group">
+                            <p class="card-sub-title">所属部门</p>
+                            <div class="position-radio">
+                                <input type="radio" id="pos-work-type-1" value=""  name="133" checked>
+                                <label for="pos-work-type-1" class="">全部</label>
+                            </div>
+                            <div class="position-radio">
+                                <input type="radio" id="pos-work-type-" value=""  name="133">
+                                <label for="pos-work-type-" class="">研发部</label>
+                            </div>
+                            <div class="position-radio">
+                                <input type="radio" id="pos-work-type-0" value="0" name="133">
+                                <label for="pos-work-type-0" class="">测试部</label>
+                            </div>
+                        </div>
+
+                        <div class="card-item g-form-radio-group">
+                            <p class="card-sub-title">转发职位</p>
+                            <div class="position-radio" >
+                                <input type="radio" id="pos-stat1"   value="" class="" name="357" checked>
+                                <label for="pos-stat1" class="">全部</label>
+                            </div>
+                            <div class="position-radio">
+                                <input type="radio" id="pos-recruit-type-0" value="0" name="357">
+                                <label for="pos-recruit-type-0" class="">0次</label>
+                            </div>
+                        </div>
+                        <div class="card-item g-form-radio-group">
+                            <p class="card-sub-title">转发主页</p>
+                            <div class="position-radio">
+                                <input type="radio" id="pos" value=""  name="369" checked>
+                                <label for="pos" class="">全部</label>
+                            </div>
+                            <div class="position-radio">
+                                <input type="radio" id="pos1" value=""  name="369">
+                                <label for="pos1" class="">0次</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="application content-main">
+                    <!-- 数据总览 -->
+                    <div class="card data-box">
+                        <div class="card-item card-title">
+                            数据总览
+                            <a class="card-title-action dataStatistics" href="jobDataStatistics.html">
+                                查看详情》
+                            </a>
+                        </div>
+                        <div class="card-item data-box-content style w50">
+                            <div class="data-item clearfix">
+                                <img src="../../assets/admin/images/forwards1.png" alt="" class="staticImg left"/>
+                                <div class="infor left">
+                                    <p class="data-item-title">
+                                        <span class="s1">品牌主页 <br> 内部转发/总转发</span>
+                                        <span class="data-item-count data-item-count1 color60">
+                                            20/100
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="data-item mr0">
+                                <img src="../../assets/admin/images/forwards2.png" alt="" class="staticImg left"/>
+                                <div class="infor left">
+
+                                    <p class="data-item-title">
+                                        <span class="s1">职位页面 <br> 内部转发/总转发</span>
+                                        <span class="data-item-count data-item-count1 color80">
+                                            10/100
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <!--<div class="data-box-collapse-handle">-->
+                            <!--<i class="fa fa-caret-up"></i>-->
+                            <!--收起-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                    <!-- 简历列表 -->
+                    <div class="card common-list styles">
+                        <div class="card-item card-title">
+                                <span class="common-list-title">
+                                    员工列表
+                                </span>
+                            <a class="card-title-action allHandle show">
+                                批量处理
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <a class="right postOffice fbxzw" id="addStaff">
+                                <i class="fa fa-plus"></i>
+                                <span>
+                                    添加员工
+                                </span>
+                            </a>
+                        </div>
+                        <!-- 批量处理框 -->
+                        <div class="batch card-item card-title hide">
+                            <div class="squaredCheckBox">
+                                <input type="checkbox" id="application-batch-selection">
+                                <label for="application-batch-selection" class="selection">
+                                    全选/取消
+                                </label>
+                            </div>
+                            <div class="batch-action remove" id="remove">
+                                <i class="fa fa-trash batch-action-iconsize"></i>
+                                <a class="draw">
+                                    批量删除
+                                </a>
+                            </div>
+                            <div class="batch-action download" id="mudilModify">
+                                <i class="fa fa-bars batch-action-iconsize"></i>
+                                <a class="draw">
+                                    批量修改任务
+                                </a>
+                            </div>
+                            <div class="batch-action interview-ban" id="batch">
+                                <i class="fa fa-newspaper-o batch-action-iconsize"></i>
+                                <a class="draw">
+                                    批量提醒
+                                </a>
+                            </div>
+                            <div class="batch-action review-ban" id="Import">
+                                <i class="fa fa-users batch-action-iconsize"></i>
+                                <a class="draw">
+                                    批量导入员工
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- 职位列表 -->
+                        <div class="positionList">
+                            <div class="card-item common-list-item styles position">
+                                <div class="squaredCheckBox hide">
+                                    <input type="checkbox" id="checkbox-5715" name="check">
+                                    <label for="checkbox-5715"></label>
+                                </div>
+                                <div class="staffDiv">
+                                    <p>张三</p><br>
+                                    <p>市场部</p>
+                                </div>
+                                <div class="staffDiv">
+                                    <p>转发主页 <span class="fs20">80/100</span></p>
+                                </div>
+
+                                <div class="staffDiv">
+                                    <p>转发主页 <span class="fs20">80/100</span></p>
+                                </div>
+                                <div class="staffDiv">
+                                    <span class="modifySpan modifyInfor">
+                                        <i class="fa fa-pencil"></i> 修改
+                                    </span>
+                                </div>
+                                <div class="staffDiv">
+                                    <span class="btnDb hide">
+                                        <i class="fa fa-angle-down"></i>
+                                        本月任务达标
+                                    </span>
+                                    <span class="btnNoDb ">
+                                        <i class="fa fa-remove"></i>
+                                        本月未达标
+                                    </span>
+                                    <button class="btnTx">
+                                        <i class="fa fa-bell"></i>
+                                        提醒一下
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-item common-list-item styles position">
+                                <div class="squaredCheckBox hide">
+                                    <input type="checkbox" id="checkbox-57156" name="check">
+                                    <label for="checkbox-57156"></label>
+                                </div>
+                                <div class="staffDiv">
+                                    <p>张三</p><br>
+                                    <p>市场部</p>
+                                </div>
+                                <div class="staffDiv">
+                                    <p>转发主页 <span class="fs20">80/100</span></p>
+                                </div>
+
+                                <div class="staffDiv">
+                                    <p>转发主页 <span class="fs20">80/100</span></p>
+                                </div>
+                                <div class="staffDiv">
+                                    <span class="modifySpan modifyInfor">
+                                        <i class="fa fa-pencil"></i> 修改
+                                    </span>
+                                </div>
+                                <div class="staffDiv">
+                                    <span class="btnDb">
+                                        <i class="fa fa-angle-down"></i>
+                                        本月任务达标
+                                    </span>
+                                    <span class="btnNoDb hide">
+                                        <i class="fa fa-remove"></i>
+                                        本月任务未达标
+                                    </span>
+                                    <button class="btnTx">
+                                        <i class="fa fa-bell"></i>
+                                        提醒一下
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-item common-list-item styles position type">
+                                <div class="squaredCheckBox hide">
+                                    <input type="checkbox" id="checkbox-57155" name="check">
+                                    <label for="checkbox-57155"></label>
+                                </div>
+                                <div class="staffDiv">
+                                    <p>张三</p><br>
+                                    <p>市场部</p>
+                                </div>
+                                <div class="staffDiv">
+                                    <p>转发主页 <span class="fs20">80/100</span></p>
+                                </div>
+
+                                <div class="staffDiv">
+                                    <p>转发主页 <span class="fs20">80/100</span></p>
+                                </div>
+                                <div class="staffDiv visilibal">
+                                    <span class="modifySpan modifyInfor ">
+                                        <i class="fa fa-pencil"></i> 修改
+                                    </span>
+                                </div>
+                                <div class="staffDiv visilibal">
+                                    <span class="btnDb">
+                                        <i class="fa fa-angle-down"></i>
+                                        本月任务达标
+                                    </span>
+                                    <span class="btnNoDb hide">
+                                        <i class="fa fa-remove"></i>
+                                        本月任务未达标
+                                    </span>
+                                    <button class="btnTx">
+                                        <i class="fa fa-bell"></i>
+                                        提醒一下
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 空简历提示 -->
+                        <div class="notSpecial">
+                            目前尚无员工
+                            <p style="font-size: 16px;">请添加</p>
+                        </div>
+
+                        <div class="application-new-one__title hide">
+                            <p class="application-new-one__title">
+                                该职位下没有任何相关简历
+                            </p>
+                        </div>
+                        <!--分页-->
+                        <div class="paging clearfix">
+                            <ul class="page-menu clearfix">
+                                <p class="page-pre" data-pagenum="1"><i class="fa fa-angle-left"></i></p>
+                                <li class="active">1</li>
+                                <li class="liPage">2</li>
+                                <li class="liPage">3</li>
+                                <li class="liPage">4</li>
+                                <li class="liPage">5</li>
+                                <li class="liPage">6</li>
+                                <li class="liPage">7</li>
+                            </ul>
+                            <input type="text" class="page-num" id="pageNumTarget">
+                            <button type="button" class="btn-jump" id="targetButton">跳转</button>
+                            <p class="page-next" data-pagenum="2"><i class="fa fa-angle-right"></i></p>
+                            <input type="hidden" value="447" id="totalPages">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="../../assets/admin/js/dailog.js"></script>
+        <script src="../../assets/admin/js/tips.js"></script>
+        <script src="../../assets/global/plugins/common-validate.js"></script>
+        <script>
+            $(function(){
+
+//                maskDailog.confirm({
+//                    title:"提示",
+//                    content:"提醒成功",
+//                    success:function (callback) { //处理操作成功
+//                        //在这里执行点击确定按钮后的一些操作
+//                        alert("这时候处理一些操作");
+//
+//                        //执行回调
+//                        callback()
+//                    },
+//                    fail:function () {   //处理操作失败
+//
+//                    }
+//                })
+
+
+                /*提醒*/
+                var positionList = $(".positionList");
+                positionList.on("click",".btnTx",function(){
+                    maskDailog.alert({
+                        title:"提示",
+                        content:"提醒消息发送成功"
+                    })
+                });
+
+                /*批量提醒*/
+                var batch = $("#batch");
+                batch.on("click",function(){
+                    for (var i = 0; i < $(".squaredCheckBox input").size(); i++) {
+                        if ($(".squaredCheckBox input")[i].checked) {
+                            maskDailog.alert({
+                                title:"提示",
+                                content:"提醒消息发送成功"
+                            });
+                            return
+                        }
+                    }
+                    maskDailog.alert({
+                        title:"提示",
+                        content:"请选择要提醒的选项"
+                    });
+                });
+
+                /*批量删除*/
+                var remove = $("#remove");
+                remove.on("click",function(){
+                    for (var i = 0; i < $(".squaredCheckBox input").size(); i++) {
+                        if ($(".squaredCheckBox input")[i].checked) {
+
+                            maskDailog.confirm({
+                                title:"提示",
+                                content:"确定删除所勾选员工?",
+                                success:function (callback) { //处理操作成功
+                                    //在这里执行点击确定按钮后的一些操作
+                                    alert("这时候删除选中的员工列表");
+
+                                    //执行回调
+                                    setTimeout(function () {
+                                        callback()
+                                    })
+                                },
+                                fail:function () {   //处理操作失败
+
+                                }
+                            });
+                            return
+                        }
+                    }
+
+                    maskDailog.alert({
+                        title:"提示",
+                        content:"请选择要删除的选项"
+                    });
+                });
+
+                /*添加员工*/
+                var addStaff = $("#addStaff");
+                addStaff.on("click",function(){
+                    maskDailog.addStaff({
+                        title:"提示",
+                        success:function (callback) { //处理操作成功
+                            //在这里执行点击确定按钮后的一些操作
+                            var staffName = $("#staffName");
+                            var mobile = $("#mobile");
+                            var zfNum = $("#zfNum");
+                            var jobNum = $("#jobNum");
+                            var tip = $(".tips");
+                            if(isEmpty(staffName.val())){
+                                tipsContent("请输入员工姓名",tip,"fail");
+                                return ;
+                            }
+
+                            if(isEmpty(mobile.val())||!isPhone(mobile.val())){
+                                tipsContent("请输入有效手机号",tip,"fail");
+                                return ;
+                            }
+
+                            if(isEmpty(zfNum.val())||!isPhone(mobile.val())){
+                                tipsContent("请输入主页转发次数",tip,"fail");
+                                return ;
+                            }
+                            if(isEmpty(jobNum.val())||!isPhone(mobile.val())){
+                                tipsContent("请输入职位转发次数",tip,"fail");
+                                return ;
+                            }
+
+                            tipsContent("保存成功",tip,"success");
+
+                            //执行回调
+                            setTimeout(function () {
+                                callback()
+                            },500)
+                        },
+                        fail:function () {   //处理操作失败
+
+                        }
+                    });
+                });
+
+                /*批量导入员工*/
+                var Import = $("#Import");
+                var upFileInput = $(".upFileInput");
+                var tip = $(".tips");
+                Import.on("click",function(){
+                    maskDailog.upFile({
+                        title:"批量导入",
+                        content:"确定删除所勾选员工?",
+                        success:function (callback) { //处理操作成功
+                            //在这里执行点击确定按钮后的一些操作
+                            if(isEmpty(upFileInput.val())){
+                                tipsContent("请输入要上传的文件",tip,"fail");
+
+                                return
+                            }
+
+                            //执行回调
+                            setTimeout(function () {
+                                callback()
+                            })
+                        },
+                        fail:function () {   //处理操作失败
+
+                        }
+                    });
+                });
+
+                /*修改员工信息*/
+                var modifyInfor = $(".modifyInfor");
+                modifyInfor.on("click",function(){
+                    maskDailog.addStaff({
+                        title:"批量转发",
+                        success:function (callback) { //处理操作成功
+
+                            //在这里执行点击确定按钮后的一些操作
+                            var staffName = $("#staffName");
+                            var mobile = $("#mobile");
+                            var zfNum = $("#zfNum");
+                            var jobNum = $("#jobNum");
+                            var tip = $(".tips");
+                            if(isEmpty(staffName.val())){
+                                tipsContent("请输入员工姓名",tip,"fail");
+                                return ;
+                            }
+
+                            if(isEmpty(mobile.val())||!isPhone(mobile.val())){
+                                tipsContent("请输入有效手机号",tip,"fail");
+                                return ;
+                            }
+
+                            if(isEmpty(zfNum.val())||!isPhone(mobile.val())){
+                                tipsContent("请输入主页转发次数",tip,"fail");
+                                return ;
+                            }
+                            if(isEmpty(jobNum.val())||!isPhone(mobile.val())){
+                                tipsContent("请输入职位转发次数",tip,"fail");
+                                return ;
+                            }
+
+                            tipsContent("保存成功",tip,"success");
+
+                            //执行回调
+                            setTimeout(function () {
+                                callback()
+                            },500)
+                        },
+                        fail:function () {   //处理操作失败
+
+                        }
+                    });
+                });
+
+
+                /*批量转发*/
+                var mudilModify = $("#mudilModify");
+                mudilModify.on("click",function(){
+                    maskDailog.forward({
+                        title:"批量转发",
+                        success:function (callback) { //处理操作成功
+
+                            //在这里执行点击确定按钮后的一些操作
+                            var zfNum = $("#zfNum");
+                            var zwNum = $("#zwNum");
+                            var tip = $(".tips");
+                                console.log(zfNum.val());
+                            if(isEmpty(zfNum.val())){
+                                tipsContent("请输入主页转发次数",tip,"fail");
+                                return ;
+                            }
+                            if(isEmpty(zwNum.val())){
+                                tipsContent("请输入职位转发次数",tip,"fail");
+                                return ;
+                            }
+
+                            tipsContent("保存成功",tip,"success");
+
+                            //执行回调
+                            setTimeout(function () {
+                                callback()
+                            },500)
+                        },
+                        fail:function () {   //处理操作失败
+
+                        }
+                    });
+                });
+
+
+
+
+                /*批量处理*/
+                $(".allHandle").on("click",function(){
+                    if($(this).is(".show")){
+                        $(".batch.card-item.card-title").removeClass("hide");
+                        $(".card-item.position .squaredCheckBox").removeClass("hide");
+                        $(this).removeClass("show");
+                    }
+                    else{
+                        $(".batch.card-item.card-title").addClass("hide");
+                        $(".card-item.position .squaredCheckBox").addClass("hide");
+                        $(this).addClass("show");
+                    }
+                });
+
+                $(".lookResume,.dataStatistics,.positionInfor,.specialList").ajaxify({
+                    event: "click",
+                    target: '#admin-content-wrapper'
+                });
+
+                /*全选*/
+                $(".batch.card-item.card-title").find(".squaredCheckBox").on("click",function(){
+                    if($(this).find("input").prop("checked")){
+                        $(this).find("input").removeAttr("checked");
+                        $(".card-item.position .squaredCheckBox").find("input").removeAttr("checked");
+                        return false;
+                    }else if(!($(this).find("input").prop("checked"))){
+                        $(this).find("input").prop({checked:"checked"});
+                        $(".card-item.position .squaredCheckBox").find("input").prop({checked:"checked"});
+                        return false;
+                    }
+                });
+
+                $(".common-list-item .item-actions").on("click",function(e){
+                    e.preventDefault();
+                });
+
+                /*账号操作*/
+                $(".accountSettings").on("click",function(e){
+                    e.stopPropagation();
+                    if($(".account-selection").is(".hide")){
+                        $(".account-selection").removeClass("hide");
+                    }else{
+                        $(".account-selection").addClass("hide");
+                    }
+                });
+
+                /*分页居中*/
+                var ml = $(".paging").width()/2;
+                $(".paging").get(0).style.marginLeft = -ml+"px";
+            });
+        </script>
+    </div>
+    <div class="slide-bar">
+        <div class="slider-bar-l">
+            <i class="fa fa-weixin"></i>
+            <p>聊天</p>
+        </div>
+        <div class="slider-bar-w">
+            <i class="fa">?</i>
+            <p>反馈</p>
+        </div>
+    </div>
+</div>
+<script src="../../assets/global/plugins/ajaxify/jquery.history.js"></script>
+<script src="../../assets/global/plugins/ajaxify/jquery-scrollto.js"></script>
+<script src="../../assets/global/plugins/ajaxify/jquery.ajaxify.js"></script>
+<script src="../../assets/admin/js/globals.js"></script>
+
+</body>
+</html>
