@@ -1110,7 +1110,7 @@ a.keyword-button:hover,.keyword-button:active,.keyword-button:focus{color: #fff;
 
 /*mobileExhibition*/
 .exhibitionModify{background: #fff;padding: 20px;border: 1px solid #dbdbdb;position: relative;margin-top: 40px;min-width: 60%;width: 71%}
-#form_sample_1 .form-group .help-block-error{display: inline;}
+#form_sample_1 .form-group .help-block-error{display: inline;position: relative;top: 5px;}
 .form-group .timeSerch .spanInput{position: relative;  display: block;}
 .form-group .timeSerch .spanInput input{background: #fff;}
 .form-group .timeSerch .spanInput .fa {  position: absolute;  right: 15px;  top: 8px;  color: #69a7f9; }
