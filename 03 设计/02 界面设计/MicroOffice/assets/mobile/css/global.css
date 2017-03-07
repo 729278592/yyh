@@ -509,7 +509,7 @@ a.weui_btn.weui_btn_primary{font-size: 16px;}
 .weui_tab.fixed{position: fixed;bottom: 0;width: 100%;height: 48px;z-index: 10;}
 
 .positionListInfor{margin-top: 10px;}
-.companyBriefIntroduction .comBIContent>span.moreInfor,.moreInfor{display: none;}
+.companyBriefIntroduction .comBIContent>span.moreInfor,.moreInfor{}
 .btnAll{width: 100%;padding: 10px;background: #fff;border-bottom: 1px solid #dbdbdb;font-family: "微软雅黑";}
 .positionListInfor .positionListInforTitle{text-align: left;
     font-size: 16px;
