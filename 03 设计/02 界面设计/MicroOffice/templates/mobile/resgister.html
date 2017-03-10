@@ -19,9 +19,21 @@
                     <div class="weui_cells weui_cells_form mt0">
                         <div class="weui_cell">
                             <div class="weui_cell_hd"><label class="weui_label">
-                                <img src="../../assets/mobile/images/companyIcon.png" alt=""/>公司名称</label></div>
+                                <img src="../../assets/mobile/images/comIcon.png" alt=""/>联系人</label></div>
                             <div class="weui_cell_bd weui_cell_primary">
-                                <input class="weui_input" type="text" id="companyName" placeholder="请输入公司名称"/>
+                                <input class="weui_input" type="text" id="personName" placeholder="请输入联系人"/>
+                            </div>
+                        </div>
+                        <div class="weui_cell weui_cell_select style">
+                            <div class="weui_cell_hd"><label class="weui_label"><img src="../../assets/mobile/images/jobTImeIcon.png" alt=""/>职位</label></div>
+                            <div class="weui_cell_bd weui_cell_primary">
+                                <select class="weui_select" name="select1">
+                                    <option selected="" value="创始人">创始人</option>
+                                    <option value="合伙人">合伙人</option>
+                                    <option value="总监">总监</option>
+                                    <option value="HR">HR</option>
+                                </select>
+                                <img src="../../assets/mobile/images/img2.0/caretB.png" class="caretB" alt=""/>
                             </div>
                         </div>
                         <div class="weui_cell">
@@ -83,7 +95,7 @@
             /*表单提交*/
             var saveBtn = $("#saveBtn");
             var mobile = $("#mobile");
-            var companyName = $("#companyName");
+            var personName = $("#personName");
             var password = $("#password");
             var confirmPws = $("#confirmPws");
             var weui_dialog_confirm = $(".weui_dialog_confirm");
@@ -91,7 +103,7 @@
             var autoCode = $("#autoCode");
             saveBtn.on("touchend",function(){
 
-                if(isEmpty(companyName.val())){
+                if(isEmpty(personName.val())){
                     weui.showMsg("请输入公司名");
                     return ;
                 }
