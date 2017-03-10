@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>支付方式</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="wrapper style bgefe">
+    <!--内容开始-->
+    <div class="dishContent clearfix ">
+
+        <div class="order_infor">
+            <div class="weui-cells mt0">
+
+                <div class="weui-cell weui-cell_select">
+                    <div class="weui-cell__hd">
+                        <label class="weui_label">
+                            桌号
+                        </label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <select class="weui-select" name="select1">
+                            <option selected="" value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        <img src="../../assets/mobile/images/caretB.png" class="caretB" alt=""/>
+                    </div>
+                </div>
+
+                <div class="weui-cell weui-cell_select">
+                    <div class="weui-cell__hd">
+                        <label class="weui_label">
+                            就餐人数
+                        </label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <select class="weui-select" name="select1">
+                            <option selected="" value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                        <img src="../../assets/mobile/images/caretB.png" class="caretB" alt=""/>
+                    </div>
+                </div>
+
+
+                <div class="weui-cell">
+                    <div class="weui-cell__bd style">
+                        <textarea class="weui-textarea" placeholder="备注" rows="3"></textarea>
+                        <!--<div class="weui-textarea-counter"><span>0</span>/200</div>-->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="order_details">
+            <ul class="od_list">
+                <li>
+                    <div class="odl_d">已点</div>
+                </li>
+                <li>
+                    <div class="odl_d">菠萝油</div>
+                    <div class="odl_num"><span class="verdana">2</span>份</div>
+                    <div class="odl_money">￥<span class="verdana">2</span></div>
+                </li>
+                <li>
+                    <div class="odl_d">菠萝油</div>
+                    <div class="odl_num"><span class="verdana">2</span>份</div>
+                    <div class="odl_money">￥<span class="verdana">2</span></div>
+                </li>
+                <li>
+                    <div class="odl_d">菠萝油</div>
+                    <div class="odl_num"><span class="verdana">2</span>份</div>
+                    <div class="odl_money">￥<span class="verdana">2</span></div>
+                </li>
+                <li>
+                    <div class="odl_d"></div>
+                    <div class="odl_money">￥<span class="verdana">2</span></div>
+                </li>
+                <li>
+                    <div class="odl_d">微信支付</div>
+                    <div class="odl_money color">￥<span class="verdana">2</span></div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="weui-cells weui-cells_checkbox">
+            <div class="title">选择支付方式</div>
+            <label class="weui-cell weui-check__label" for="s11">
+                <div class="weui-cell__hd">
+                    <input type="radio" class="weui-check" name="radio" id="s11" checked="checked">
+                    <i class="weui-icon-checked"></i>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>会员卡</p>
+                </div>
+            </label>
+            <label class="weui-cell weui-check__label" for="s12">
+                <div class="weui-cell__hd">
+                    <input type="radio" name="radio" class="weui-check" id="s12">
+                    <i class="weui-icon-checked"></i>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>微信支付</p>
+                </div>
+            </label>
+        </div>
+        <div class="weui-btn_area">
+            <a class="weui-btn weui-btn_primary">立即支付 ￥<span class="verdana">555</span></a>
+        </div>
+    </div>
+    <!--内容结束-->
+
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+</body>
+</html>

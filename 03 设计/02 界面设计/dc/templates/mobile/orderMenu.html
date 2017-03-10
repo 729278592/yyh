@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>菜单列表</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/plugins/swiper/dist/css/swiper.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="wrapper style bgfff">
+    <!--内容开始-->
+    <div class="dishContent clearfix pb48">
+
+        <!--分类开始-->
+        <ul class="left orderMenu">
+            <li class="active">
+                <a>
+                    全部产品
+                </a>
+            </li>
+            <li>
+                <a>
+                    汽车用品
+                </a>
+            </li>
+            <li>
+                <a>
+                    各色饮料
+                </a>
+            </li>
+            <li>
+                <a>
+                    休闲零食
+                </a>
+            </li>
+            <li>
+                <a>
+                    个人护理
+                </a>
+            </li>
+            <li>
+                <a>
+                    休闲零食
+                </a>
+            </li>
+        </ul>
+        <!--分类结束-->
+
+        <!--商品列表开始-->
+        <div class="orderCon left">
+            <ul class="orderList">
+                <li>
+                    <a class="orderLink" href="menuInfor.html">
+                        <img src="../../assets/mobile/images/dishs1.jpg" class="shopImg" alt="">
+                    </a>
+                    <div class="orderInfor style">
+                        <p class="title">英国进口健达开心河马巧克力</p>
+                        <p class="clearfix">
+                            <span class="left style">
+                                口味偏辣，不喜欢辣的朋友请选择其他
+                            </span>
+                        </p>
+                        <p class="clearfix">
+                            <span class="left color verdana ">
+                                ￥<span class="money">333</span>
+                            </span>
+                            <span class="right shopIcon order_menu" onclick="shopCartAnimate(this,event)" data-specifications="true" data-shopppngId="556"></span>
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <a class="orderLink" href="menuInfor.html">
+                        <img src="../../assets/mobile/images/dishs1.jpg" class="shopImg" alt="">
+                    </a>
+                    <div class="orderInfor style">
+                        <p class="title">英国进口健达开心河马巧克力</p>
+                        <p class="clearfix">
+                            <span class="left style">
+                                口味偏辣，不喜欢辣的朋友请选择其他
+                            </span>
+                        </p>
+                        <p class="clearfix">
+                             <span class="left color verdana ">
+                                ￥<span class="money">333</span>
+                            </span>
+                            <span class="right shopIcon order_menu" onclick="shopCartAnimate(this,event)" data-specifications="false" data-shopppngId="556"></span>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+
+            <!--无数据提示开始-->
+            <div class="notConTip hide">
+                <img src="../../assets/mobile/images/notContent.png" alt=""/>
+                <p class="notInfor">
+                    暂无数据
+                </p>
+            </div>
+            <!--无数据提示结束-->
+
+        </div>
+        <!--商品列表结束-->
+
+    </div>
+    <!--内容结束-->
+
+    <div class="foot flex">
+        <a href="###" class="shopCartLink shoopCarBody">
+            <span class="num verdana">0</span>
+            已点
+        </a>
+        <div class="totalMoney">合计 : ￥<span class="verdana">0</span></div>
+        <button class="btnPay">结算</button>
+    </div>
+
+    <div class="weui_dialog_ext hide">
+        <div class="weui-mask"></div>
+        <div class="weui-dialog style">
+            <div class="weui_dialog_hd">
+                <strong class="weui_dialog_title"></strong>
+            </div>
+            <div class="weui_dialog_bd ">
+                <p>请输入您选择的桌号</p>
+                <div class="tableNum">
+                    <input type="text" placeholder="请点击输入桌号" class="tableNumInput">
+                </div>
+                <p class="error hide">没有您输入的桌号,请询问餐厅服务员</p>
+            </div>
+            <div class="weui_dialog_ft">
+                <a href="javascript:;" class="weui_dialog_btn primary" id="sureNum">确认</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../../assets/mobile/js/addShoppingAnimate.js"></script><!--加入购物车动画-->
+<script type="text/javascript" src="../../assets/mobile/js/common-validate.js"></script><!--加入购物车动画-->
+<script>
+    /*加入购物车*/
+    function shopCartAnimate(obj,e){
+        e.preventDefault();
+        $(obj).shoppingAnimate({
+            specifications: $(obj).data("specifications"),
+            shoppingId:$(obj).data("shoppingId"),
+            shoppingList:"../../assets/mobile/data/specifications.json",//商品规格接口
+            interface:"" //加入购物车接口
+        })
+    }
+
+    $(function () {
+        /*分类状态切换*/
+        $(".orderMenu li").on("touchend",function(){
+            $(this).addClass("active");
+            $(this).closest("li").siblings("li").removeClass("active");
+        });
+
+        var $tableNumInput = $(".tableNumInput");
+        var $error = $(".error");
+        var $sureNum = $("#sureNum");
+        $sureNum.on("click",function () {
+            if(isEmpty($.trim($tableNumInput.val()))){
+                $error.removeClass("hide");
+            }
+        })
+    })
+</script>
+</body>
+</html>

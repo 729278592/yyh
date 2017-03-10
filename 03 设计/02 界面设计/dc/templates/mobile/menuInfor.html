@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>菜单详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/plugins/swiper/dist/css/swiper.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="wrapper style bgfff">
+    <div class="dishContent clearfix pb48">
+        <!--silder开始-->
+        <div class="slider">
+            <div class="swiper-container mt0 swiper-container-horizontal" id="swiper-container">
+                <div class="swiper-wrapper" style="transition-duration: 0ms; ">
+                    <div class="swiper-slide">
+                        <a href="###">
+                            <img src="../../assets/mobile/plugins/swiper/dist/images/orderSlider1.jpg" alt="" class="w100"/>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="###">
+                            <img src="../../assets/mobile/plugins/swiper/dist/images/orderSlider2.jpg" alt="" class="w100"/>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="###">
+                            <img src="../../assets/mobile/plugins/swiper/dist/images/orderSlider3.jpg" alt="" class="w100"/>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination "></div>
+                <!--<div class="swiper-button-next"></div>-->
+                <!--<div class="swiper-button-prev"></div>-->
+            </div>
+        </div>
+        <!--silder结束-->
+
+
+        <div class="dishInfor">
+            <p class="dishName">
+                冰火菠萝油【】
+            </p>
+            <p class="clearfix" style="position: relative">
+                <span class="left color">
+                   <span class="verdana">￥ <span class="money">1200.00</span></span>
+                </span>
+                <a class="right shopIcon menu_infor" onclick="shopCartAnimate(this,event)" data-specifications="false" data-shopppngId="555"></a>
+            </p>
+        </div>
+
+        <div class="dishDetails">
+            <p class="title">介绍</p>
+            <p>
+                孜然羊排的原材料取用从兰州空运来的滩羊的小排，用古翰森的独特秘方将羊排煮至八成熟捞出，在碳烤盘上放上豆芽.宽粉.符合厦门人的饮
+            </p>
+        </div>
+    </div>
+
+    <div class="foot flex">
+        <a href="###" class="shopCartLink shoopCarBody">
+            <span class="num">0</span>
+            已点
+        </a>
+        <div class="totalMoney">合计 : ￥<span>0</span></div>
+        <button class="btnPay">结算</button>
+    </div>
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/mobile/plugins/swiper/dist/js/swiper.min.js"></script>
+<script src="../../assets/mobile/js/weui.js"></script>
+<script type="text/javascript" src="../../assets/mobile/js/addShoppingCar.js"></script><!--加入购物车动画-->
+<script type="text/javascript" src="../../assets/mobile/js/addShoppingAnimate.js"></script><!--加入购物车动画-->
+<script src="../../assets/mobile/js/global.js"></script>
+<script>
+    $(function(){
+        /*slider滑动*/
+        var swiper = new Swiper('#swiper-container', {
+            //prevButton:'.swiper-button-prev',
+            //nextButton:'.swiper-button-next',
+            slidesPerView: 1,
+            pagination:'.swiper-pagination',
+            paginationClickable: true,
+            spaceBetween: 0,
+            loop:true,
+            autoplay: 5000,
+            autoplayDisableOnInteraction: false
+        });
+
+    });
+
+
+    /*加入购物车*/
+    function shopCartAnimate(obj,e){
+        $(obj).shoppingAnimate({
+            specifications: $(obj).data("specifications"),
+            shoppingId:$(obj).data("shoppingId"),
+            shoppingList:"../../assets/mobile/data/specifications.json",//商品规格接口
+            interface:"" //加入购物车接口
+        })
+    }
+</script>
+</body>
+</html>

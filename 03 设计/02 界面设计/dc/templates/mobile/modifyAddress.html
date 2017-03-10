@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>修改地址</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/plugins/mobile-plugins/css/sm.min.css">
+    <link rel="stylesheet" href="../../assets/mobile/plugins/mobile-plugins/css/sm-extend.min.css">
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+</head>
+<body class="bgfbf">
+<div class="wrapper">
+    <div class="dishContent clearfix">
+        <form action="#">
+            <div class="weui-cells mt0 weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">
+                            <span class="span_icon spa_address"></span>
+                            所在地
+                        </label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" id='city-picker' value="浙江 杭州 拱墅区">
+                    </div>
+                </div>
+            </div>
+            <div class="weui-btn_area">
+                <a class="weui-btn weui-btn_primary bg" id="sureBtn">确认</a>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../../assets/mobile/plugins/zepto/zepto.min.js"></script>
+<script src='../../assets/mobile/plugins/mobile-plugins/js/sm.js' charset='utf-8'></script>
+<script src='../../assets/mobile/plugins/mobile-plugins/js/sm-extend.js' charset='utf-8'></script>
+<script src='../../assets/mobile/plugins/mobile-plugins/js/sm-city-picker.js' charset='utf-8'></script>
+
+<script src="../../assets/mobile/js/global.js"></script>
+<script>
+    $(function(){
+
+        /*地址选择插件*/
+        $("#city-picker").cityPicker({
+            toolbarTemplate: '<header class="bar bar-nav">\
+                                      <button class="button button-link pull-right close-picker">确定</button>\
+                                      <h1 class="title">选择收货地址</h1>\
+                                  </header>'
+        });
+
+    })
+</script>
+</body>
+</html>

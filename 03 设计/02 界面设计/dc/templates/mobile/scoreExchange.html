@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>积分兑换</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="wrapper style bgfff">
+    <div class="dishContent clearfix">
+        <div class="oilCardHead">
+            <p>
+                <span class="verdana">500.00</span> 积分 换 <span class="verdana">500.00</span> 红包
+            </p>
+        </div>
+        <div class="oilCardCon">
+            <p class="title">请选择兑换额度 : </p>
+            <ul class="oilCardMenu style clearfix">
+                <li class="active">
+                    <div>
+                        <span><span class="verdana">100</span></span>元
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <span><span class="verdana">300</span></span>元
+                    </div>
+                </li>
+                <li class="mr0">
+                    <div>
+                        <span><span class="verdana">500</span></span>元
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <span><span class="verdana">800</span></span>元
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <span><span class="verdana">1000</span></span>元
+                    </div>
+                </li>
+                <li class="mr0">
+                    <input type="text" class="otherMoney" value="其他金额"/>
+                </li>
+                <p class="btnRecharged">
+                    <a href="exchangeRecord.html">
+                        兑换记录 <i class="fa fa-angle-double-right"></i>
+                    </a>
+                </p>
+            </ul>
+
+            <div class="rechargedOption">
+                <a href="javascript:;" class="weui-btn weui-btn_primary">兑换</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/mobile/js/global.js"></script>
+<script>
+    $(function(){
+        $(".oilCardMenu li").on("touchend",function(){
+            $(this).addClass("active");
+            $(this).siblings("li").removeClass("active");
+            if($(this).find("input").is(".otherMoney")){
+                $(this).find("input").removeAttr("readonly");
+                $(this).find("input").val("");
+                $(this).find("input").attr({placeholder:"其他金额"})
+            }else{
+                $(".oilCardMenu li").find("input.otherMoney").attr("readonly");
+                $(".oilCardMenu li").find("input.otherMoney").val("其他金额");
+                $(".oilCardMenu li").find("input.otherMoney").attr({placeholder:" "})
+            }
+        })
+    })
+</script>
+</body>
+</html>

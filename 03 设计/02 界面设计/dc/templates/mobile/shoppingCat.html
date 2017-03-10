@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+</head>
+<body>
+    <div class="wrapper style">
+        <div class="dishContent clearfix">
+            <div id="order">
+
+                <!--商品列表开始-->
+
+                <ul class="shopList style">
+                    <!--<li>-->
+                        <!--<div class="shopCon">-->
+                            <!--<div class="orderImg">-->
+                                <!--<img src="../../assets/mobile/images/order1.jpg" alt=""/>-->
+                            <!--</div>-->
+                            <!--<div class="shopInfor">-->
+                                <!--<p class="clearfix title">-->
+                                    <!--<span class="left">植物油</span>-->
+                                <!--</p>-->
+                                <!--<p class="clearfix f14">-->
+                                    <!--<span class="verdana color2">￥100.00</span>-->
+                                <!--</p>-->
+                                <!--<p class=" clearfix">-->
+                                    <!--<a class="num">-->
+                                        <!--<span class="minus" ></span>-->
+                                        <!--<input type="tel" class="buycount" value="1" maxlength="3"/>-->
+                                        <!--<span class="plus" ></span>-->
+                                    <!--</a>-->
+                                    <!--<button class="right btnRemove">-->
+                                        <!--<i class="fa fa-trash"></i>-->
+                                        <!--删除-->
+                                    <!--</button>-->
+                                <!--</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+
+                </ul>
+                <!--商品列表结束-->
+
+            </div>
+
+            <!--无数据提示开始-->
+            <div class="notConTip hide">
+                <img src="../../assets/mobile/images/notContent.png" alt=""/>
+                <p class="notInfor">
+                    暂无数据
+                </p>
+            </div>
+            <!--无数据提示结束-->
+
+        </div>
+        <div class="foot flex">
+            <a href="orderMenu.html" class="btnReturn">
+                <span class="span_icon span_return"></span>
+                返回菜单
+            </a>
+            <div class="totalMoney">合计 : ￥<span class="verdana"></span></div>
+            <button class="btnPay">结算</button>
+        </div>
+    </div>
+    <script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+    <script src="../../assets/mobile/js/global.js"></script>
+    <script src="../../assets/mobile/js/weui.js"></script>
+    <script src="../../assets/mobile/js/shoppingCart.js"></script>
+    <script>
+        $(function(){
+
+            /*数量选择*/
+            var shopList = $('.shopList');
+//            orderList.spinner({});
+            shopList.shoppingBuy({
+                shopList:"../../assets/mobile/data/shoppingCart.json",
+                interfaceNum:"" //数量更新接口
+            });
+
+            shopList.on("touchend",".btnRemove",function(e){
+                e.preventDefault();
+                weui.confirm("是否删除该商品?",function(){
+                    weui.startLoading();
+                    $.ajax({
+                        url:"",
+                        dataType:'jsonp',
+                        data:'',
+                        jsonp:'callback',
+                        success:function(data) {
+                            weui.stopLoading();
+                            weui.showMsg("取消商品删除");
+                        }
+                    });
+
+                },function(){
+
+                })
+            });
+        })
+    </script>
+</body>
+</html>
