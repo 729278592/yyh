@@ -97,7 +97,7 @@
                         我们让您知道得更多!
                     </div>
                 </div>
-                <div id="container" style="min-width: 310px; max-width: 400px; height: 400px; margin: 0 auto">
+                <div id="container" style="min-width: 30px; max-width: 400px; height: 400px; margin: 0 auto">
 
         </div>
         </div>
@@ -131,10 +131,16 @@
         $(function () {
             $('#container').highcharts({
                 chart: {
-                    polar: true
+                    polar: true,
+                    style: {
+                        fontFamily: "微软雅黑",
+                        fontSize: '16px',
+                        fontWeight: 'bold',
+                        color: '#006cee'
+                    }
                 },
                 title: {
-                    text: '显示名称'
+                    text: null
                 },
                 pane: {
                     startAngle: 0,
@@ -146,7 +152,28 @@
                     max: 360,
                     labels: {
                         formatter: function () {
-                            return this.value + '°';
+                            switch (this.value) {
+                                case 0:
+                                    this.value = "成立时间";
+                                    break;
+                                case 60:
+                                    this.value = "人数";
+                                    break;
+                                case 120:
+                                    this.value = "好感";
+                                    break;
+                                case 180:
+                                    this.value = "公司环境";
+                                    break;
+                                case 240:
+                                    this.value = "投资";
+                                    break;
+                                case 300:
+                                    this.value = "知识产权";
+                                    break;
+
+                            }
+                            return this.value;
                         }
                     }
                 },

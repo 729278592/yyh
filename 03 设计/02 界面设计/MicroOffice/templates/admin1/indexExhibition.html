@@ -165,11 +165,10 @@
             .contentText{max-width: 365px;margin-top: 0;}
             .peopleInfor{width: 68%;}
             .peopleIn p{font-size: 0.875rem;color: #999;margin-bottom: 0;position: relative;top: -5px;}
-            .companyIn{top: 18px;}
-            .productIn{top: 38px;}
-            .moreInfors{top: 50px;}
+            .companyIn{top: 10px;}
+            .productIn{top: 27px;}
+            .moreInfors{top: 37px;}
             .companyIn p.name,.productIn .name{  position: relative; margin-bottom: 5px}
-
         </style>
         <div class="content-header">
             <span class="content-title">雇主品牌</span>
@@ -389,10 +388,16 @@
 
                 $('.containers').highcharts({
                     chart: {
-                        polar: true
+                        polar: true,
+                        style: {
+                            fontFamily: "微软雅黑",
+                            fontSize: '16px',
+                            fontWeight: 'bold',
+                            color: '#006cee'
+                        }
                     },
                     title: {
-                        text: '显示名称'
+                        text: null
                     },
                     pane: {
                         startAngle: 0,
@@ -404,7 +409,28 @@
                         max: 360,
                         labels: {
                             formatter: function () {
-                                return this.value + '°';
+                                switch (this.value) {
+                                    case 0:
+                                        this.value = "成立时间";
+                                        break;
+                                    case 60:
+                                        this.value = "人数";
+                                        break;
+                                    case 120:
+                                        this.value = "好感";
+                                        break;
+                                    case 180:
+                                        this.value = "公司环境";
+                                        break;
+                                    case 240:
+                                        this.value = "投资";
+                                        break;
+                                    case 300:
+                                        this.value = "产权";
+                                        break;
+
+                                }
+                                return this.value;
                             }
                         }
                     },
@@ -431,10 +457,16 @@
 
                 $('.containers1').highcharts({
                     chart: {
-                        polar: true
+                        polar: true,
+                        style: {
+                            fontFamily: "微软雅黑",
+                            fontSize: '16px',
+                            fontWeight: 'bold',
+                            color: '#006cee'
+                        }
                     },
                     title: {
-                        text: '显示名称'
+                        text: null
                     },
                     pane: {
                         startAngle: 0,
@@ -446,7 +478,28 @@
                         max: 360,
                         labels: {
                             formatter: function () {
-                                return this.value + '°';
+                                switch (this.value) {
+                                    case 0:
+                                        this.value = "成立时间";
+                                        break;
+                                    case 60:
+                                        this.value = "人数";
+                                        break;
+                                    case 120:
+                                        this.value = "好感";
+                                        break;
+                                    case 180:
+                                        this.value = "公司环境";
+                                        break;
+                                    case 240:
+                                        this.value = "投资";
+                                        break;
+                                    case 300:
+                                        this.value = "产权";
+                                        break;
+
+                                }
+                                return this.value;
                             }
                         }
                     },
