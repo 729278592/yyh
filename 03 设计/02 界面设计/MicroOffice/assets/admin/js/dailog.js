@@ -102,6 +102,116 @@ var maskDailog = function(){
 
 
 
+    /*
+     * 公司注册雇主品牌弹框
+     * */
+    var addCompany= function (options) {
+        var opts = $.extend({
+            title: "标题",
+            buttons: [
+                {
+                    type: '确定',
+                    classType: 'btnSure',
+                    btnType:true
+                }
+            ]
+        }, options);
+        var btns = '';
+        //var btnArr = [];
+        for(var i = 0; i < opts.buttons.length; i++){
+            btns += '<button class="'+opts.buttons[i].classType+'" type="button" data-type="'+opts.buttons[i].btnType+'">'+opts.buttons[i].type+'</button>';
+            // btnArr.push(opts.buttons[i].btnType);
+        }
+
+        var temp =  '<div class="mask-bg"></div>'+
+            '<div class="mask">'+
+            '<div class="dailog dailogStyle">'+
+            '<div class="dailogHead">'+opts.title+'</div>'+
+            '<div class="dailogContent">'+
+            '<form action="###" class="form">'+
+
+            '<div class="inforCon">'+
+                '<div class="div-form">'+
+                    '<div class="form-group">'+
+                        '<div class="w100">'+
+                            '<span class="type">公司名称 : </span>'+
+                            '<input type="text" class="inputText" placeholder="请输入公司名称" id="companyName">'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="form-group">'+
+                        '<div class="w100">'+
+                            '<span class="type">公司规模 : </span>'+
+                            '<select name="" class="selectText" style="width: 380px;">'+
+                                '<option value="100人">100人</option>'+
+                                '<option value="大">大</option>'+
+                                '<option value="大">大</option>'+
+                                '<option value="大">大</option>'+
+                            '</select>'+
+                            '<span style="top: 13px;">'+
+                                                    '<i class="fa fa-caret-down"></i>'+
+                                                '</span>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="form-group">'+
+                        '<div class="w100">'+
+                            '<span class="type">所属行业 : </span>'+
+                            '<select name="" class="selectText" style="width: 380px;">'+
+                                '<option value="餐饮业">餐饮业</option>'+
+                                '<option value="餐饮业">餐饮业</option>'+
+                                '<option value="餐饮业">餐饮业</option>'+
+                                '<option value="餐饮业">餐饮业</option>'+
+                            '</select>'+
+                            '<span style="top: 13px;">'+
+                                                    '<i class="fa fa-caret-down"></i>'+
+                                                '</span>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="form-group">'+
+                        '<div class="w100">'+
+                            '<span class="type">公司官网 : </span>'+
+                            '<input type="text" class="inputText" placeholder="请输入公司官网" id="companyUrl">'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+            '</div>'+
+
+            '<div class="opreateBtn">'+
+            btns+
+            '</div>'+
+
+            '</form>'+
+            '</div>'+
+            '</div>'+
+            '</div>';
+
+        var $dialogWrap = $(temp);
+        var $dialog = $dialogWrap.find('.mask');
+        var $mask = $dialogWrap.find('.mask-bg');
+
+        $('.content-wrapper').append($dialogWrap);
+        $mask.fadeIn('normal');
+        $dialog.fadeIn('normal');
+
+        for(var i = 0; i < opts.buttons.length; i++){
+            $dialogWrap.on('click', '.'+opts.buttons[i].classType, function () {
+                var dataType = $(this).data("type");
+                if(dataType){
+                    opts.success(function () {
+                        $mask.fadeOut('normal');
+                        $dialog.fadeOut('normal');
+                        $dialogWrap.remove();
+                    });
+                    return ;
+                }
+                if(!dataType){
+                    $dialogWrap.remove();
+                    return ;
+                }
+            });
+        }
+    };
+
+
 
     /*
     * 添加员工弹框
@@ -184,7 +294,7 @@ var maskDailog = function(){
         var $dialog = $dialogWrap.find('.mask');
         var $mask = $dialogWrap.find('.mask-bg');
 
-        $('.common-list').append($dialogWrap);
+        $('.content-wrapper').append($dialogWrap);
         $mask.fadeIn('normal');
         $dialog.fadeIn('normal');
 
@@ -381,6 +491,7 @@ var maskDailog = function(){
         confirm : confirmDailog,
         alert   : alertDailog,
         addStaff:addStaffDailog,
+        addCompany:addCompany,
         upFile:upFileDailog,
         forward:forwardDailog
     }

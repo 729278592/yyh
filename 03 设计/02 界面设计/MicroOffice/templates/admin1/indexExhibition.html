@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <link rel="stylesheet" href="../../assets/global/plugins/bootstrap-3.3.5/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../assets/admin/css/asgo.css"/>
+    <link rel="stylesheet" href="../../assets/admin/css/asgocommon.css"/>
+    <link rel="stylesheet" href="../../assets/admin/css/global.css"/>
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link href="../../assets/global/plugins/My97DatePicker/skin/WdatePicker.css" rel="stylesheet" type="text/css">
+    <script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+    <title>品牌手机展示</title>
+</head>
+<body>
+<div id="admin-wrapper">
+    <div class="nav">
+        <div class="main-nav">
+            <div class="logo-wrapper">
+                <div class="logo logo-left">
+                    随走
+                </div>
+            </div>
+            <ul class="main-nav-list">
+                <li data="home">
+                    <a href="adminIndex.html" class="clearfix" title="首页">
+                        <div class="main-nav-icon">
+                            <img src="../../assets/admin/images/home1.png" alt=""/>
+                        </div>
+                    </a>
+                </li>
+                <li class="active" data="Employer">
+                    <a href="mobileExhibition.html" class="clearfix" title="雇主品牌">
+                        <div class="main-nav-icon">
+                            <img src="../../assets/admin/images/Employer.png" alt=""/>
+                        </div>
+                    </a>
+                </li>
+                <li data="position">
+                    <a href="application.html" class="clearfix">
+                        <div class="main-nav-icon">
+                            <img src="../../assets/admin/images/position1.png" alt=""/>
+                        </div>
+                    </a>
+                </li>
+                <li data="recruit">
+                    <a href="positionManagement.html" class="clearfix">
+                        <div class="main-nav-icon">
+                            <img src="../../assets/admin/images/recruit1.png" alt=""/>
+                        </div>
+                    </a>
+                </li>
+                <li data="special">
+                    <a href="specialList.html" class="clearfix">
+                        <div class="main-nav-icon">
+                            <img src="../../assets/admin/images/special1.png" alt=""/>
+                        </div>
+                    </a>
+                </li>
+                <li data="statistics">
+                    <a href="jobDataStatistics.html" class="clearfix">
+                        <div class="main-nav-icon">
+                            <img src="../../assets/admin/images/statistics1.png" alt=""/>
+                        </div>
+                    </a>
+                </li>
+                <li data="set" class="last">
+                    <a href="companyInfor.html" class="clearfix">
+                        <div class="main-nav-icon">
+                            <img src="../../assets/admin/images/set1.png" alt=""/>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main-nav-w158">
+            <ul class="main-nav-list">
+                <div class="logoDiv">
+                    <img src="../../assets/admin/images/logo.png" alt="" class="logoIcon"/>
+                </div>
+                <li>
+                    <a href="adminIndex.html" class="clearfix list">
+                        <div class="main-nav-item">
+                            <span class="main-nav-item-name">首页</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="mobileExhibition.html" class="clearfix">
+                        <div class="main-nav-item">
+                            <span class="main-nav-item-name">雇主品牌</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="application.html" class="clearfix">
+                        <div class="main-nav-item">
+                            <span class="main-nav-item-name">职位管理</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="positionManagement.html" class="clearfix">
+                        <div class="main-nav-item">
+                            <span class="main-nav-item-name">招聘管理</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="specialList.html" class="clearfix">
+                        <div class="main-nav-item">
+                            <span class="main-nav-item-name">专题管理</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="jobDataStatistics.html" class="clearfix">
+                        <div class="main-nav-item">
+                            <span class="main-nav-item-name">数据统计</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="last">
+                    <a href="companyInfor.html" class="clearfix">
+                        <div class="main-nav-item">
+                            <span class="main-nav-item-name">账号设置</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="admin-content-wrapper">
+        <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+        <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+        <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+        <link rel="stylesheet" href="../../assets/mobile/css/global2.0.css"/>
+        <link rel="stylesheet" href="../../assets/global/plugins/swiper/dist/css/swiper.min.css"/>
+        <link rel="stylesheet" href="../../assets/global/plugins/webuploader/css/webuploader.css"/>
+        <link rel="stylesheet" href="../../assets/global/plugins/bootstrap-3.3.5/css/bootstrap.min.css"/>
+        <style>
+            html{font-size: 16px;}
+            .indexBg{min-height: 27rem;}
+            .peopleInfor{top: 1.6rem;margin-bottom: 0.6rem;}
+            .companyIn{top: 1rem;}
+            .productIn{top: 2rem;width: 44%;}
+            .moreInfors {top: 2.5rem;}
+            .moreInfors .jobNum{right: -29%;top: -0.6rem;}
+            .knowMore{top: 5rem;padding: 5px;}
+            body{font-family: "微软雅黑",Arial, Helvetica, sans-serif;overflow-x: hidden;-webkit-font-smoothing: antialiased;-moz-font-smoothing: antialiased;;}
+            a:hover{text-decoration: none;}
+            .webuploader-pick{padding: 5px 10px;}
+            .file-item {float: left; position: relative;margin: 0 10px 10px 0;padding: 4px;}
+            .uploader-list {width: 100%;overflow: hidden;}
+            .file-item .info {
+                position: absolute;left: 4px;bottom: 4px;right: 4px;
+                height: 20px;line-height: 20px;text-indent: 5px;
+                background: rgba(0, 0, 0, 0.6);color: white;overflow: hidden;
+                white-space: nowrap;text-overflow: ellipsis;font-size: 12px;z-index: 10;}
+            .weui_btn_area.fixed{position: relative;}
+            .maxw640{height: 680px;margin: 0 20px;}
+            .maxw640 .container{height: 530px;top: 69px;}
+            .linkGroup>div{margin-bottom: 0;}
+            .linkGroup{width: 365px;margin: 20px 20px;}
+            .contentText{max-width: 365px;margin-top: 0;}
+            .peopleInfor{width: 68%;}
+            .peopleIn p{font-size: 0.875rem;color: #999;margin-bottom: 0;position: relative;top: -5px;}
+            .companyIn{top: 18px;}
+            .productIn{top: 38px;}
+            .moreInfors{top: 50px;}
+            .companyIn p.name,.productIn .name{  position: relative; margin-bottom: 5px}
+
+        </style>
+        <div class="content-header">
+            <span class="content-title">雇主品牌</span>
+            <div class="company-name right">
+                    <span class="accountSettings">
+                        <a href="#">
+                            <img src="../../assets/admin/images/companyLogo.jpg" alt=""/>
+                        </a>
+                        易优弧
+                    </span>
+                <ul class="account-selection hide">
+                    <li>
+                        <a href="companyInfor.html" class="companyInfor">
+                            <i class="fa fa-gear"></i>
+                            账号设置
+                        </a>
+                    </li>
+                    <li class="signOut">
+                        <a href="#">
+                            <i class="fa fa-power-off"></i>
+                            退出登录
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="clearfix" style="display: block;margin-top: 80px;margin-bottom: 20px;border:1px solid #dbdbdb;padding: 20px 0 10px;min-width: 1400px;background: #f7f7f7;">
+                <div class="left">
+                    <div class="maxw640 ">
+                        <div class="container">
+                            <div class="page">
+                                <div class="bd">
+                                    <div class="companyHinfor">
+                                        <a href="companyInfor.html" class="companyInfor">
+                                            <img src="../../assets/mobile/images/img2.0/companyh.png" class="comImg" alt="">
+                                        </a>
+                                        <div class="addRess">
+                                            <img src="../../assets/mobile/images/img2.0/addRess.png" alt=""><br>
+                                            <span>上门观望</span>
+                                        </div>
+                                        <ul class="eyeList clearfix">
+                                            <li>
+                                                <span class="spanIcon userIcon1"></span>
+                                                <br>
+                                                浏览
+                                                <span class="num">50</span>
+                                            </li>
+                                            <li>
+                                                <span class="spanIcon shareIcon1"></span>
+                                                <br>
+                                                转发
+                                                <span class="num">50</span>
+                                            </li>
+                                            <li>
+                                                <span class="spanIcon heart1" id="follow"></span>
+                                                <br>
+                                                点赞
+                                                <span class="num">50</span>
+                                            </li>
+                                        </ul>
+                                        <div class="bottomDiv">
+                                            <p class="fs20">易优弧有限公司</p>
+                                            <p class="fs18">www.yiyuhu.com</p>
+                                        </div>
+                                    </div>
+                                    <div class="indexBg">
+                                        <div class="tipInfor">
+                                            <span class="spanIcon goodIcon"></span> 支持　
+                                            <span class="spanIcon hotIcon"></span> 热度 300
+                                        </div>
+                                        <div class="peopleInfor">
+                                            <a>
+                                                <div class=" peopleImg">
+                                                    <img src="../../assets/mobile/images/personPortrait.png" class="portrait" alt="">
+                                                </div>
+                                                <div class=" peopleIn">
+                                                    <p>
+                                                        <span class="name">陈洁</span>　
+                                                        <span class="positionJob">产品经理</span>
+                                                    </p>
+                                                    <p class="personInfor">
+                                                        我希望每一天都是开兴的一天!
+                                                        我希望每一天都是开兴的一天!
+                                                    </p>
+                                                </div>
+                                            </a>
+
+                                        </div>
+                                        <div class="companyIn">
+                                            <a>
+                                                <p class="name">公司介绍</p>
+                                                <p class="companyInP">球160多个国家和地区的电信运营商和企业网客户提供3.创新技术方,国家和地区的电信运营国家和地区的电信运营</p>
+                                            </a>
+
+                                        </div>
+                                        <div class="productIn">
+                                            <a>
+                                                <p class="name">产品介绍</p>
+                                                <p class="companyInP">球160多个国家和地区的电信运营商和企业网客户提供3.创新技术方企业网客户提供创新技术方企业网客户提供</p>
+                                                <!--<a href="productInfor.html" class="wantJoin">点击加入</a>-->
+                                            </a>
+
+                                        </div>
+
+                                        <div class="moreInfors">
+                                            <a>
+                                                <p>想了解更多的职位?</p>
+                                                <p><a class="moreA">更多职位</a></p>
+                                                <span class="jobNum">20</span>
+                                            </a>
+                                        </div>
+                                        <div class="knowMore">
+                                            我们让您知道得更多!
+                                        </div>
+                                    </div>
+                                    <div class="containers" style="min-width: 310px; max-width: 400px; height: 400px; margin: 0 auto">
+
+                                    </div>
+                                </div>
+                                <div class="weui_btn_area fixed">
+                                    <a href="enterpriseList.html" class="weui_btn b0 bgf6 weui_btn_primary">返回企业广场</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="left exhibitionModify" style="background: transparent;border: 0;">
+                    <div class="application content-main">
+                        <!-- 数据总览 -->
+                        <div class="card data-box" style="background: #fff;">
+                            <div class="card-item card-title">
+                                数据总览
+                                <!--<a class="card-title-action dataStatistics" href="jobDataStatistics.html">-->
+                                    <!--查看详情》-->
+                                <!--</a>-->
+                            </div>
+                            <div class="card-item data-box-content style">
+                                <div class="data-item clearfix">
+                                    <!--<img src="../../assets/admin/images/positionImg1.png" alt="" class="staticImg left"/>-->
+                                    <div class="infor l38 left">
+                                        <span class="data-item-count data-item-count1 color6">
+                                            2
+                                        </span>
+                                        <p class="data-item-title">招聘中职位</p>
+                                    </div>
+                                </div>
+                                <div class="data-item">
+                                    <!--<img src="../../assets/admin/images/positionImg2.png" alt="" class="staticImg left"/>-->
+                                    <div class="infor l38 left">
+                                        <span class="data-item-count data-item-count2 color7">
+                                            42
+                                        </span>
+                                        <p class="data-item-title">
+                                            职位浏览量
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="data-item mr0">
+                                    <!--<img src="../../assets/admin/images/positionImg3.png" alt="" class="staticImg left"/>-->
+                                    <div class="infor l38 left">
+                                        <span class="data-item-count data-item-count3 color8">
+                                            1
+                                        </span>
+                                        <p class="data-item-title">
+                                            招聘转发量
+                                        </p>
+                                    </div>
+                                </div>
+                                <!--<div class="data-box-collapse-handle">-->
+                                <!--<i class="fa fa-caret-up"></i>-->
+                                <!--收起-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                        <!-- 简历列表 -->
+                        <div class="card common-list styles">
+                            <div class="card-item card-title">
+                                <span class="common-list-title">
+                                    品牌实力分析
+                                </span>
+                                <a class="card-title-action allHandle show" href="mobileExhibition.html" style="color: #00a0e9;">
+                                    编辑
+                                </a>
+                            </div>
+                            <div class="containers1" style="width: 100%;  height: 400px; margin: 0 auto">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../assets/global/plugins/swiper/dist/js/swiper.min.js"></script>
+        <script src="../../assets/global/plugins/swiper/dist/js/swiperPlugins.js"></script>
+        <script src="../../assets/global/plugins/highCharts/js/highcharts.js"></script>
+        <script src="../../assets/global/plugins/highCharts/js/highcharts-more.js"></script>
+        <script src="../../assets/global/plugins/highCharts/js/exporting.js"></script>
+        <script src="../../assets/global/plugins/jquery-validate/jquery.validate.min.js"></script>
+        <script src="../../assets/global/plugins/jquery-validate/messages_zh.js"></script>
+        <script>
+            $(function(){
+                /*点赞*/
+                var follow = $("#follow");
+                follow.on("click",function () {
+                    var num = $(this).closest("li").find(".num");
+                    if($(this).is(".active")){
+                        $(this).removeClass("active");
+                        num.text(parseInt(num.text())-1);
+                    }else {
+                        $(this).addClass("active");
+                        num.text(parseInt(num.text())+1);
+                    }
+                });
+
+
+                $('.containers').highcharts({
+                    chart: {
+                        polar: true
+                    },
+                    title: {
+                        text: '显示名称'
+                    },
+                    pane: {
+                        startAngle: 0,
+                        endAngle: 360
+                    },
+                    xAxis: {
+                        tickInterval: 60,
+                        min: 0,
+                        max: 360,
+                        labels: {
+                            formatter: function () {
+                                return this.value + '°';
+                            }
+                        }
+                    },
+                    yAxis: {
+                        min: 0
+                    },
+                    plotOptions: {
+                        series: {
+                            pointStart: 0,
+                            pointInterval: 60
+                        },
+                        column: {
+                            pointPadding: 0,
+                            groupPadding: 0
+                        }
+                    },
+                    series: [{
+                        type: 'area',
+                        name: 'Area',
+                        data: [6, 1, 3, 6, 4, 5]
+                    }]
+                });
+
+
+                $('.containers1').highcharts({
+                    chart: {
+                        polar: true
+                    },
+                    title: {
+                        text: '显示名称'
+                    },
+                    pane: {
+                        startAngle: 0,
+                        endAngle: 360
+                    },
+                    xAxis: {
+                        tickInterval: 60,
+                        min: 0,
+                        max: 360,
+                        labels: {
+                            formatter: function () {
+                                return this.value + '°';
+                            }
+                        }
+                    },
+                    yAxis: {
+                        min: 0
+                    },
+                    plotOptions: {
+                        series: {
+                            pointStart: 0,
+                            pointInterval: 60
+                        },
+                        column: {
+                            pointPadding: 0,
+                            groupPadding: 0
+                        }
+                    },
+                    series: [{
+                        type: 'area',
+                        name: 'Area',
+                        data: [6, 1, 3, 6, 4, 5]
+                    }]
+                });
+
+                $(".nav a,.brandInfor").ajaxify({
+                    event: "click",
+                    target:'#admin-content-wrapper'
+                });
+
+                /*账号操作*/
+                $(".accountSettings").on("click",function(e){
+                    e.stopPropagation();
+                    if($(".account-selection").is(".hide")){
+                        $(".account-selection").removeClass("hide");
+                    }else{
+                        $(".account-selection").addClass("hide");
+                    }
+                });
+            })
+        </script>
+
+    </div>
+    <div class="slide-bar">
+        <div class="slider-bar-l">
+            <i class="fa fa-weixin"></i>
+            <p>聊天</p>
+        </div>
+        <div class="slider-bar-w">
+            <i class="fa">?</i>
+            <p>反馈</p>
+        </div>
+    </div>
+</div>
+<script src="../../assets/admin/js/askMask.js"></script>
+<script src="../../assets/global/plugins/webuploader/js/webuploader.js"></script>
+<script src="../../assets/global/plugins/webuploader/js/upLoadfk.js"></script>
+<script src="../../assets/global/plugins/ajaxify/jquery.history.js"></script>
+<script src="../../assets/global/plugins/ajaxify/jquery-scrollto.js"></script>
+<script src="../../assets/global/plugins/ajaxify/jquery.ajaxify.js"></script>
+<script src="../../assets/admin/js/globals.js"></script>
+
+</body>
+</html>
