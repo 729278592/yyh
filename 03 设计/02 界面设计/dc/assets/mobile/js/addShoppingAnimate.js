@@ -51,7 +51,6 @@
                     X = $num.offset().left,
                     Y = $num.offset().top ;
 
-
                 if ($('#floatOrder').length <= 0) {
                     $('body').append('<div id="floatOrder"></div>');
                 }
@@ -151,6 +150,8 @@
                     }
                 });
             },
+
+            //判断有无规格
             judgmentStandard:function (_this) {
                 if(!opts.specifications){ //无规格
                     Methods.shopAnimate(_this); //加入购物车动画
@@ -165,15 +166,12 @@
                 //     Methods.removeMask(that)
                 // },800)
             },
-
             chioceGg:function (that) { //点击选择规格
                 that.addClass("active");
                 that.siblings().removeClass("active");
                 Methods.jsInfor(that); ////获取选中规格
             },
-
             removeMask:function (that) {//删除规格弹框
-
                 $(opts.weuiTransition).remove();
                 that.closest(".weui-actionsheet").remove();
             }
