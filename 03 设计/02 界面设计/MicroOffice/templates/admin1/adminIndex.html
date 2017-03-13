@@ -367,7 +367,7 @@
                                 return ;
                             }
 
-                            if(isURL(companyUrl.val())||isEmpty(companyUrl.val())){
+                            if(!isURL(companyUrl.val())||isEmpty(companyUrl.val())){
                                 tipsContent("网址无效",tip,"fail");
                                 return ;
                             }
