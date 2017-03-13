@@ -559,7 +559,7 @@ a.keyword-button:hover,.keyword-button:active,.keyword-button:focus{color: #fff;
 .data-box-content{padding: 38px 0;}
 .wrappers{border: 1px solid #dbdbdb;border-radius: 4px;margin-top: 5px;}
 .data-item .infor{text-align: center;width: 70px;margin-left: 5px;position: absolute;left: 50%;}
-.data-item.l38 .infor{left: 38%;}
+.data-item .infor.l38{left: 38%;}
 .selectType{width: 150px;padding: 5px 0 5px 10px;}
 span.relative{position: relative;}
 .selectFa{position: absolute;right: 5px;z-index: 100;top: 3px;}
