@@ -166,7 +166,7 @@ body{background: #fcf9f4;}
 .person_head{background: #fff;text-align: center;}
 .defaultImg{margin: 1rem auto;width: 5rem;height: 5rem;border-radius: 100%;}
 .weui_label span.text{position: relative;top: -0.3rem;}
-.spa_mobile{background: url(../images/phoneIcon.png) no-repeat;background-size: 100% 100%;height: 1.2rem;top: 0.3rem;}
+.spa_mobile{background: url(../images/phoneIcon.png) no-repeat;background-size: 100% 100%;height: 1.2rem;top: 0.3rem;width: 0.8rem;}
 .spa_address{background: url(../images/addressIcon.png) no-repeat;background-size: 100% 100%;}
 .spa_code{background: url(../images/codeIcon.png) no-repeat;background-size: 100% 100%;height: 1.2rem;top: 0.3rem;width: 1.05rem;}
 .weui-cells.mt0{margin-top: 0;}
@@ -179,7 +179,7 @@ body{background: #fcf9f4;}
 .weui-cell{font-size: 0.875rem;}
 .weui-vcode-btn{font-size: 0.875rem;}
 .weui-vcode-btn.disabled{background: #ddd;color: #fff;}
-.weui-label{width: 5rem;}
+.weui-label{width: 6rem;}
 #smile-icon{margin-top: 1.5rem;}
 .weui-toast_content{font-size: 0.875rem;}
 .picker-item{font-size: 0.875rem;}
