@@ -73,40 +73,64 @@
             <a href="#" class="btn btnReturn">取消</a>
         </div>
     </div>
+    <div class="hide" id="know">
+        <div class="konwList clearfix">
+            <label class="control-label col-md-3 col-xs-3 col-sm-3"></label>
+            <div class="col-md-6 col-xs-6 col-sm-6 relative">
+                <div class="col-md-4 col-xs-4 col-sm-4 relative p0">
+                    <select name="" class="selectCaret" aria-invalid="false">
+                        <option value="专利权">专利权</option>
+                        <option value="专利权">专利权</option>
+                    </select>
+                    <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="col-md-8 col-xs-8 col-sm-8 p0">
+                    <input type="text" class="form-control" name="konwInfor" placeholder="请输入知识产权储备信息">
+                </div>
+            </div>
+            <div class="removeT">
+                <i class="fa fa-trash"></i>
+            </div>
+        </div>
+    </div>
 </form>
 <script src="../../assets/global/plugins/My97DatePicker/WdatePicker.js"></script>
 <script>
-    /*添加知识产权*/
-    var $addKnow = $(".addKnow");
-    var $konw = $(".knows");
-    var $konwList = $(".konwList");
-    var konwHtml = '<div class="knowList clearfix" style="margin-bottom: 10px;">'+
-        '<label class="control-label col-md-3 col-xs-3 col-sm-3">'+
-        '</label>'+
-        '<div class="col-md-6 col-xs-6 col-sm-6 relative">'+
-        '<div class="col-md-4 col-xs-4 col-sm-4 relative p0">'+
-        '<select name="" id="" class="selectCaret">'+
-        '<option value="专利权">专利权</option>'+
-        '<option value="专利权">专利权</option>'+
-        '</select>'+
-        '<i class="fa fa-caret-down"></i>'+
-        '</div>'+
-        '<div class="col-md-8 col-xs-8 col-sm-8 p0">'+
-        '<input type="text" class="form-control" placeholder="请输入知识产权储备信息"/>'+
-        '</div>'+
-        '<div class="removeT">'+
-        '<i class="fa fa-trash"></i>'+
-        '</div>'+
-        '</div>'+
-        '</div>';
-    $addKnow.on("click",function () {
-        $konw.append(konwHtml);
-    });
+
+//    var konwHtml = '<div class="knowList clearfix" style="margin-bottom: 10px;">'+
+//        '<label class="control-label col-md-3 col-xs-3 col-sm-3">'+
+//        '</label>'+
+//        '<div class="col-md-6 col-xs-6 col-sm-6 relative">'+
+//        '<div class="col-md-4 col-xs-4 col-sm-4 relative p0">'+
+//        '<select name="" id="" class="selectCaret">'+
+//        '<option value="专利权">专利权</option>'+
+//        '<option value="专利权">专利权</option>'+
+//        '</select>'+
+//        '<i class="fa fa-caret-down"></i>'+
+//        '</div>'+
+//        '<div class="col-md-8 col-xs-8 col-sm-8 p0">'+
+//        '<input type="text" class="form-control" placeholder="请输入知识产权储备信息"/>'+
+//        '</div>'+
+//        '<div class="removeT">'+
+//        '<i class="fa fa-trash"></i>'+
+//        '</div>'+
+//        '</div>'+
+//        '</div>';
+
 
     $(function () {
+        
+        /*添加知识产权*/
+        var $addKnow = $(".addKnow");
+        var $konw = $(".knows");
+        var $konwList = $("#know .konwList");
+        $addKnow.on("click",function () {
+            $konw.append($konwList.clone());
+        });
+
         /*删除知识产权*/
         $konw.on("click",".fa-trash",function () {
-            $(this).parent().parent().parent().remove();
+            $(this).parent().parent().remove();
         })
     })
 </script>
