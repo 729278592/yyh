@@ -170,6 +170,17 @@
                 .moreInfors{top: 37px;}
                 .companyIn p.name,.productIn .name{  position: relative; margin-bottom: 5px}
 
+                .webuploader-pick{padding: 5px 10px;}
+                .file-item {float: left; position: relative;margin: 0 15px 10px 0;padding: 4px;top: 10px;}
+                .uploader-list {width: 100%;overflow: hidden;margin-bottom: 10px;}
+                .file-item .closes:hover{cursor: pointer;}
+                .file-item .closes{display: inline-block;border: 1px solid #dbdbdb;color: #333;font-size: 16px;border-radius: 100%;position: absolute;right: -10px;top: -10px;width: 25px;height: 25px;background: url(../../assets/admin/images/close.gif) no-repeat;background-size: 100% 100%;}
+                .file-item .info {
+                    position: absolute;left: 4px;bottom: 4px;right: 4px;
+                    height: 20px;line-height: 20px;text-indent: 5px;
+                    background: rgba(0, 0, 0, 0.6);color: white;overflow: hidden;
+                    white-space: nowrap;text-overflow: ellipsis;font-size: 12px;z-index: 10;}
+
             </style>
             <div class="content-header">
                 <span class="content-title">雇主品牌</span>
@@ -370,7 +381,7 @@
 
                     /*切换*/
                     var active_n = $(".companyTitle li");
-                    var data = active_n.eq(1).attr("data");
+                    var data = active_n.eq(0).attr("data");
                     active_n.eq(0).addClass("active");
                     var compangInfor = "compangInfor";
                     var comZs = $("#comZs");

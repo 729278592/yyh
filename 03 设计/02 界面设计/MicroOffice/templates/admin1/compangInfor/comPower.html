@@ -1,3 +1,4 @@
+
 <form action="#" id="form_sample_1" class="form-horizontal">
 
     <div class="form-group">
@@ -58,11 +59,16 @@
     </div>
     <div class="form-group">
         <label class="control-label col-md-3 col-xs-3 col-sm-3">
-            <span class="required">  </span>　图
+            <span class="required">  </span>　公司
         </label>
         <div class="col-md-6 col-xs-6 col-sm-6">
-            <input type="text" class="upLoad" value="上传图片" readonly/>
-            <span class="help-block">图片支持jpg、png、gif格式 ; 图片大小不超过.....</span>
+            <!--<input type="text" class="upLoad" value="上传图片" readonly/>-->
+            <div class="uploader-demo">
+                <!--用来存放item-->
+                <div id="fileList" class="uploader-list "></div>
+                <div id="filePicker">上传图片</div>
+            </div>
+            <span class="help-block">图片支持jpg、png、gif格式 ; 图片大小不超过.....,图片尺寸宽和高最好为320px,140px,比例为16:7,以免出现图片变型;</span>
         </div>
     </div>
     <hr/>
@@ -95,6 +101,8 @@
     </div>
 </form>
 <script src="../../assets/global/plugins/My97DatePicker/WdatePicker.js"></script>
+<script src="../../assets/global/plugins/webuploader/js/webuploader.js"></script>
+<script src="../../assets/global/plugins/webuploader/js/upLoad.js"></script>
 <script>
 
 //    var konwHtml = '<div class="knowList clearfix" style="margin-bottom: 10px;">'+
@@ -119,7 +127,6 @@
 
 
     $(function () {
-        
         /*添加知识产权*/
         var $addKnow = $(".addKnow");
         var $konw = $(".knows");
