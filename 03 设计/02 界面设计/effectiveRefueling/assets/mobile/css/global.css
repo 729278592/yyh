@@ -110,6 +110,11 @@ a:active{opacity: 0.6;}
 .spa_jilu{background: url(../images/listIcon.png) no-repeat;background-size: 100% 100%;}
 .spa_piao{background: url(../images/piaoIcon.png) no-repeat;background-size: 100% 100%;}
 .spa_users{background: url(../images/usersIcon.png) no-repeat;background-size: 100% 100%;}
+.spa_sq{background: url(../images/sq-icon.png) no-repeat;background-size: 100% 100%;}
+.text{position: relative;top:-0.3rem;}
+.new{display: inline-block;width: 1.6rem;height: 1.6rem;background: url("../images/new.png") no-repeat;background-size: 100% 100%;position: absolute;top: -0.7rem;}
+
+
 
 .carIcon1{background: url(../images/regardIcon.png) no-repeat;background-size: 100% 100%;}
 .carIcon2{background: url(../images/listIcon.png) no-repeat;background-size: 100% 100%;}
@@ -119,7 +124,111 @@ a:active{opacity: 0.6;}
 
 
 
-/*底部按钮交互和颜色*/
+/*apply*/
+.height100{width: 100%;height: 100%;background: url("../images/apply.png") no-repeat;background-size: 100% 100%;}
+.applyMenu{background: #fff;}
+.applyMenu li{display: flex;padding: 0.625rem 1rem;font-size: 0.875rem;color: #999;border-bottom: 1px solid #dbdbdb;}
+
+.applyMenu li.chioceApply.on{background: #ffe0cd;}
+.applyMenu li .chioce{font-size: 0.625rem;color: #ff6604;}
+.applyMenu li .flex{flex: 1;text-align:left;color: #333;}
+.applyMenu li .flex.color{flex: 1;text-align: right;color: #ff7217;}
+.weui_dialog.style {
+
+    font-size: 0.875rem;
+    color: #999;
+}
+.weui_dialog .weui_dialog_hd{font-size: 0.875rem;}
+.weui_dialog_confirm .weui_dialog.style .weui_dialog_hd{text-align: left;padding-top: 0.6rem;}
+.weui_dialog_hd .closeImg {
+    font-size: 1.5rem;
+    color: #333;
+    position: absolute;
+    right: 0.5rem;
+    top: 0;
+}
+.weui_dialog_con {
+    text-align: left;
+    padding: 0 20px 0;
+}
+.inputGroup {
+    position: relative;
+
+}
+.weui_dialog_con .weui_input {
+    font-size: 0.875rem;
+    color: #333;
+    line-height: 21px;
+    width: 94%;
+
+
+    padding: 10px 3%;
+    -webkit-user-select: text;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: 3px;
+    outline: 0;
+    background-color: #fff;
+    -webkit-appearance: none;
+}
+
+.weui_cell.styles:before{border-top: 0;}
+.weui_cell.styles{padding: 0;display: flex; margin: 0.875rem 0;}
+
+.weui_cell.styles .weui_cell__bd {
+    flex: 1;
+}
+.weui_cell.styles .weui_cell__ft {
+    border: 1px solid #dbdbdb;
+    border-left: 0;
+
+    text-align: center;
+
+}
+.weui_cell.styles .weui_cell__ft a {
+    display: block;
+    font-size: 0.75rem;
+    color: #3CC51F;
+    padding: 10px 0.6rem;
+}
+.weui_cell.styles .weui_cell__ft a.disabled{background: #ccc;color: #fff;}
+
+.weui_dialog_ft.mt0 {
+    margin-top: 0;
+}
+.weui_btn_dialog.style {
+    background: #ff6604;
+    color: #fff;
+    margin: 0.625rem 20px;
+    border-radius: 0.24rem;
+}
+
+.invoiceList.style li{margin-top: 0;border-top: 0;border-bottom: 0;}
+.invoiceList.style.bg li{background: transparent;}
+.invoiceList.style li .invoiceCon.style{display: none;}
+.invoiceList.style.bg li .vcList,.invoiceList.style li .invoiceHead {background: #fff;}
+.vcList{margin-bottom: 0.625rem;border-bottom: 1px solid #dbdbdb;}
+.vcList:last-child{margin-bottom: 0;}
+.vcLihead{padding: 0.625rem;}
+.vcLihead>div{display: flex;font-size: 0.875rem;}
+.vcLihead>div>div{flex: 1;text-align: left;display: inline-block;color: #999;}
+.vcLihead>div>div.wauto{width: 100px;flex: inherit;}
+.vcLihead>div>div.colors{color: #333;}
+.vcLihead>div>div.colors .c999{color: #999;}
+.vcLihead>div>div:last-child{text-align: right;}
+.vcLibottom{padding: 0.4rem 0.625rem;border-top: 1px solid #dbdbdb;font-size: 0.875rem;color: #999;display: flex;vertical-align: middle;}
+.vcLibottom>div{flex: 1;text-align: right;}
+.vcLibottom>div:last-child{width: 121px;font-size: 1rem;color: #333;flex: inherit;}
+.vcLibottom>div:last-child .block{display: inline-block;padding: 0.1rem 0.4rem;border-radius: 0.2rem;background: #fe685b;color: #fff;font-size: 0.875rem;}
+.mui-pull-bottom-pocket, .mui-pull-top-pocket {
+    visibility: inherit;
+}
+.vkHead{background: #fff;padding: 0.5rem 1rem;}
+.vhh{font-size: 0.875rem;color: #333;}
+.vhc{font-size: 1rem;color: #FB6C62;text-align: center;}
+.vhb{font-size: 0.875rem;color: #333;text-align: right;}
+.vhb .color{font-size: 1rem;color: #FB6C62;}
+#pullrefresh{margin-top: 0.625rem;}
+    /*底部按钮交互和颜色*/
 .weui_btn_area .weui_btn_primary{background: #ff6702}
 .weui_btn_primary:not(.weui_btn_disabled):active{background: #ff6702;opacity: 0.8;}
 
@@ -136,7 +245,7 @@ a:active{opacity: 0.6;}
 /*提示弹窗*/
 .weui_mask_transparent.fixed{position:fixed;z-index:10000}
 .errDailog .weui_mask_transparent{position:absolute;left:0;right:0;top:0;bottom:0;background:0 0}
-.errDailog .weui_toast{position:absolute;width:8em;min-height:7.5em;margin-left:-4em;margin-top:-3.75em;top: 40%;}
+.errDailog .weui_toast{position:absolute;z-index: 1000000000000;width:8em;min-height:7.5em;margin-left:-4em;margin-top:-3.75em;top: 40%;}
 .weui_toast{z-index:300;}
 
 .weui_toast_content{text-align:center;font-size:0.875rem;}
