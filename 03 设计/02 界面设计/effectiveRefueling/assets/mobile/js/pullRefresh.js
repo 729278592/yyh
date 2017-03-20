@@ -48,7 +48,6 @@
                 $.post(options.interface, {}, function (data) {
                     if (data.status == "ok") {//查询成功
                         opts.res = data.datas;
-
                         opts.startNum = data.startNum; //最开始显示条数
 
                         opts.limit = data.limit;//每次上拉时加载条数
@@ -71,7 +70,7 @@
                                 opts.startNum = opts.res.orderList.length;
                             }
                             else if (opts.startNum * opts.count > opts.res.orderList.length ) {
-                                opts.startNum = opts.res.orderList.length - opts.startNum * opts.count;
+                                opts.startNum = opts.res.orderList.length - opts.startNum * (opts.count-1);
                             }
 
                             for (var i = cells.length, len = i + opts.startNum; i < len; i++) {
