@@ -56,32 +56,24 @@
                         if (opts.res.orderList.length < 1) { //没数据提示
                             opts.notConTip.removeClass("hide");
                          }
-// console.log(JSON.stringify(opts.res.orderList))
-//                         console.log(opts.res.orderList.length)
-                        for (var i = 0; i < opts.res.orderList.length; i++) { //保留有效数字
 
-                            var num = new Number(opts.res.orderList[i].sf);
-                            var num1 = new Number(opts.res.orderList[i].yf);
-
-                            opts.res.orderList[i].sf = num.toFixed(2);
-                            opts.res.orderList[i].yf = num1.toFixed(2);
-
-                        }
+                        var num = new Number(opts.res.sf);
+                        var num1 = new Number(opts.res.yf);
+                        opts.res.sf = num.toFixed(2);
+                        opts.res.yf = num1.toFixed(2);
 
                         setTimeout(function () {
                             mui(opts.pullrefresh).pullRefresh().endPullupToRefresh((++opts.count > opts.num )); //参数为true代表没有更多数据了。
 
                             var table = $('.invoice');
                             var cells = table.find('.vcList');
-
                             if (opts.startNum > opts.res.orderList.length) {
                                 opts.startNum = opts.res.orderList.length;
                             }
-                            else if (opts.startNum * opts.count > opts.res.orderList.length && opts.startNum < opts.res.orderList.length) {
-                                opts.startNum = opts.res.orderList.length - opts.startNum;
+                            else if (opts.startNum * opts.count > opts.res.orderList.length ) {
+                                opts.startNum = opts.res.orderList.length - opts.startNum * opts.count;
                             }
-                            console.log(cells.length)
-                            console.log(opts.startNum)
+
                             for (var i = cells.length, len = i + opts.startNum; i < len; i++) {
 
                                 table.append(options.ajaxRecord(opts.res, opts.res.orderList[i], opts.wajxHtml));
