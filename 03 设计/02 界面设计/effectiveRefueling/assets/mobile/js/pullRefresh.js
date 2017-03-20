@@ -48,45 +48,52 @@
                 $.post(options.interface, {}, function (data) {
                     if (data.status == "ok") {//查询成功
                         opts.res = data.datas;
+
                         opts.startNum = data.startNum; //最开始显示条数
+
                         opts.limit = data.limit;//每次上拉时加载条数
-                        opts.num = opts.res.length/opts.startNum;
-                        if(opts.res.length<1){ //没数据提示
+                        opts.num = opts.res.orderList.length / opts.startNum;
+                        if (opts.res.orderList.length < 1) { //没数据提示
                             opts.notConTip.removeClass("hide");
+                         }
+// console.log(JSON.stringify(opts.res.orderList))
+//                         console.log(opts.res.orderList.length)
+                        for (var i = 0; i < opts.res.orderList.length; i++) { //保留有效数字
+
+                            var num = new Number(opts.res.orderList[i].sf);
+                            var num1 = new Number(opts.res.orderList[i].yf);
+
+                            opts.res.orderList[i].sf = num.toFixed(2);
+                            opts.res.orderList[i].yf = num1.toFixed(2);
+
                         }
-                        console.log(opts.res.length)
-                        for(var i = 0;i<opts.res.length;i++){ //保留有效数字
 
-                            var num = new Number(opts.res[i].sf);
-                            var num1 = new Number(opts.res[i].yf);
-
-                            opts.res[i].sf = num.toFixed(2);
-                            opts.res[i].yf = num1.toFixed(2);
-
-                        }
-
-                        setTimeout(function() {
+                        setTimeout(function () {
                             mui(opts.pullrefresh).pullRefresh().endPullupToRefresh((++opts.count > opts.num )); //参数为true代表没有更多数据了。
 
-                            var table = $('.invoiceList');
-                            var cells = table.find('li');
+                            var table = $('.invoice');
+                            var cells = table.find('.vcList');
 
-                            if(opts.startNum>opts.res.length){
-                                opts.startNum = opts.res.length;
-                            }else if(opts.startNum*opts.count>opts.res.length && opts.startNum<opts.res.length){
-                                opts.startNum = opts.res.length-opts.startNum;
+                            if (opts.startNum > opts.res.orderList.length) {
+                                opts.startNum = opts.res.orderList.length;
                             }
-
+                            else if (opts.startNum * opts.count > opts.res.orderList.length && opts.startNum < opts.res.orderList.length) {
+                                opts.startNum = opts.res.orderList.length - opts.startNum;
+                            }
+                            console.log(cells.length)
+                            console.log(opts.startNum)
                             for (var i = cells.length, len = i + opts.startNum; i < len; i++) {
-                                table.append(options.ajaxRecord(opts.res[i],opts.wajxHtml));
+
+                                table.append(options.ajaxRecord(opts.res, opts.res.orderList[i], opts.wajxHtml));
                                 opts.wajxHtml = '';
                             }
                         }, 500);
-                    }
+                        }
+
                     else {
                        // weui.showMsg("加载失败");
                     }
-                }, "json");
+                },"json")
 
 
             }

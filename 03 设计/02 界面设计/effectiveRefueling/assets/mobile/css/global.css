@@ -202,10 +202,12 @@ a:active{opacity: 0.6;}
     border-radius: 0.24rem;
 }
 
+.invoiceHead.style .inline_block.style.pl15{padding:0.625rem 3%;width: 94%;}
+
 .invoiceList.style li{margin-top: 0;border-top: 0;border-bottom: 0;}
 .invoiceList.style.bg li{background: transparent;}
 .invoiceList.style li .invoiceCon.style{display: none;}
-.invoiceList.style.bg li .vcList,.invoiceList.style li .invoiceHead {background: #fff;}
+.vcList,.invoiceList.style li .invoiceHead {background: #fff;}
 .vcList{margin-bottom: 0.625rem;border-bottom: 1px solid #dbdbdb;}
 .vcList:last-child{margin-bottom: 0;}
 .vcLihead{padding: 0.625rem;}
@@ -221,7 +223,10 @@ a:active{opacity: 0.6;}
 .vcLibottom>div:last-child .block{display: inline-block;padding: 0.1rem 0.4rem;border-radius: 0.2rem;background: #fe685b;color: #fff;font-size: 0.875rem;}
 .mui-pull-bottom-pocket, .mui-pull-top-pocket {
     visibility: inherit;
+    position: absolute;
+    bottom: 0;
 }
+.invoice.style{padding-bottom: 50px;}
 .vkHead{background: #fff;padding: 0.5rem 1rem;}
 .vhh{font-size: 0.875rem;color: #333;}
 .vhc{font-size: 1rem;color: #FB6C62;text-align: center;}

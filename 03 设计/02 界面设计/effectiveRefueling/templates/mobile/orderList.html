@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>V客中心</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/plugins/mui/css/mui.min.css">
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="content">
+    <div class="page">
+        <div class="hd">
+            <a>
+                <i class="fa fa-angle-left"></i>
+            </a>
+            智油惠
+            <div class="right nav_block">
+                <a href="shoppingCat.html" class="shop_cat"></a>
+                <a class="dot_block"></a>
+                <ul class="nav_link">
+                    <li>
+                        <a href="index.html">
+                            主页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="shopMall.html">
+                            精选商城
+                        </a>
+                    </li>
+                    <li>
+                        <a href="gasStationInfor.html">
+                            马上加油
+                        </a>
+                    </li>
+                    <li>
+                        <a href="personCenter.html">
+                            会员中心
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bd absolute pt" id="pullrefresh" style="overflow: hidden;">
+            <div class="invoice style" id="">
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/mobile/plugins/mui/js/mui.min.js"></script>
+<script src="../../assets/mobile/js/pullRefresh.js"></script><!--上滑加载-->
+<script src="../../assets/mobile/js/global.js"></script>
+<script>
+    $(function(){
+
+        /*滚动加载*/
+        var invoice = $('.invoice');
+        invoice.scrollLoad({
+            interface:"../../assets/mobile/data/vhtml.json" ,//接口
+            pullrefresh:"#pullrefresh",
+            ajaxRecord:function(obj,orderList,wajxHtml){
+                //模板片段
+                wajxHtml+= '<div class="vcList">'+
+                    '<div class="vcLihead">'+
+                    '<div>'+
+                    '<div>订单号 : '+orderList.orderNum+'</div>'+
+                    '<div class="wauto">'+orderList.payType+'</div>'+
+                    '</div>'+
+                    '<div>'+
+                    '<div class="colors">'+
+                    ''+orderList.oliNum+'# <span class="c999">(油枪 : '+orderList.oliQ+')</span>'+
+                    '</div>'+
+                    '<div class="colors">￥'+orderList.money+'</div>'+
+                    '</div>'+
+                    '<div>'+
+                    '<div>'+orderList.address+'</div>'+
+                    '<div>'+orderList.time+'</div>'+
+                    '</div>'+
+                    '</div>'+
+                    '<div class="vcLibottom">'+
+                    '<div>应付'+obj.yf+'</div>'+
+                    '<div><span class="block">实付</span>￥'+obj.sf+'</div>'+
+                    '</div>'+
+                    '</div>';
+                return wajxHtml;
+            }
+        })
+
+    })
+</script>
+</body>
+</html>

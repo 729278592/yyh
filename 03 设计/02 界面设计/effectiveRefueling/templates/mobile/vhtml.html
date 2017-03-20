@@ -5,7 +5,6 @@
     <title>V客中心</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
     <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="../../assets/mobile/plugins/mui/css/mui.min.css">
     <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
@@ -59,6 +58,23 @@
                     <div class="invoice style" id="invoice">
                         <ul class="invoiceList bg style">
 
+                          <li>
+                              <a class="clearfix invoiceHead style" href="orderList.html">
+                                  <div class="inline_block style pl15">
+                                      <span class="left">本月 </span>
+                                      <span class="right"><i class="fa fa-angle-right"></i></span>
+                                  </div>
+                              </a>
+                          </li>
+                            <li>
+                                <a class="clearfix invoiceHead style" href="orderList.html">
+                                    <div class="inline_block style pl15">
+                                        <span class="left">上月 </span>
+                                        <span class="right"><i class="fa fa-angle-right"></i></span>
+                                    </div>
+                                </a>
+                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -66,8 +82,6 @@
         </div>
     </div>
     <script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
-    <script src="../../assets/mobile/plugins/mui/js/mui.min.js"></script>
-    <script src="../../assets/mobile/js/pullRefresh.js"></script><!--上滑加载-->
     <script src="../../assets/mobile/js/global.js"></script>
     <script>
         $(function(){
@@ -84,57 +98,6 @@
                     $(this).find(".fa-angle-down").removeClass("fa-angle-down").addClass("fa-angle-right");
                 }
             });
-
-            /*滚动加载*/
-            var invoiceList = $('.invoiceList');
-            invoiceList.scrollLoad({
-                interface:"../../assets/mobile/data/vhtml.json" ,//接口
-                pullrefresh:"#pullrefresh",
-                ajaxRecord:function(obj,wajxHtml){
-                    //模板片段
-                    wajxHtml += '<li>'+
-                                    '<div class="clearfix invoiceHead style">'+
-                                    '<div class="inline_block style" style="padding-left: 15px;width: 97%;">'+
-                                    '<span class="left">'+obj.title+' </span>'+
-                                    '<span class="right">'+
-                                    '<i class="fa fa-angle-right"></i>'+
-                                    '</span>'+
-                                    '</div>'+
-                                    '</div>'+
-                                    '<div class="invoiceCon style" >';
-                    for(var i=0; i<obj.orderList.length; i++){
-
-                    wajxHtml+= '<div class="vcList">'+
-                                '<div class="vcLihead">'+
-                                '<div>'+
-                                    '<div>订单号 : '+obj.orderList[i].orderNum+'</div>'+
-                                    '<div class="wauto">'+obj.orderList[i].payType+'</div>'+
-                                '</div>'+
-                                '<div>'+
-                                    '<div class="colors">'+
-                                        ''+obj.orderList[i].oliNum+'# <span class="c999">(油枪 : '+obj.orderList[i].oliQ+')</span>'+
-                                    '</div>'+
-                                    '<div class="colors">￥'+obj.orderList[i].money+'</div>'+
-                                '</div>'+
-                                '<div>'+
-                                    '<div>'+obj.orderList[i].address+'</div>'+
-                                    '<div>'+obj.orderList[i].time+'</div>'+
-                                '</div>'+
-                            '</div>'+
-                            '<div class="vcLibottom">'+
-                                '<div>应付'+obj.yf+'</div>'+
-                                '<div><span class="block">实付</span>￥'+obj.sf+'</div>'+
-                            '</div>'+
-                            '</div>';
-                    }
-
-
-                     wajxHtml+='</div>'+
-                                '</li>';
-
-                    return wajxHtml;
-                }
-            })
 
         })
     </script>
