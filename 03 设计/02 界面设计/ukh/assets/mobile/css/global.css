@@ -621,7 +621,7 @@ textarea{font-family: "微软雅黑";}
 
 
 /*index*/
-.telLink{display: inline-block;border: 1px solid #43b3fb;font-size: 0.875rem;color: #43b3fb;position: absolute;right: 1rem;top: 0.5rem;width: 5rem;height: 2rem;line-height: 2rem;border-radius: 0.4rem;}
+.telLink{display: inline-block;font-size: 0.875rem;color: #43b3fb;position: absolute;right: 1rem;top: 0.5rem;height: 2rem;line-height: 2rem;border-radius: 0.4rem;}
 .mui-slider-title .phoneIcons{width: 1.1rem;height: 1.1rem;}
 
 .tips{display: inline-block;width: 1rem;height: 1rem;background: url("../images/tipIcon.png") no-repeat;background-size: 100% 100%;position: relative;top: 0.2rem;}
@@ -719,9 +719,13 @@ textarea{font-family: "微软雅黑";}
 .shoppingList.style{display: block;padding-bottom: 1rem;}
 .shoppingList.style li{float: left;width: 49%;margin-right: 2%;}
 .shoppingList.style li.mr0{margin-right: 0;}
-.shoppingList li a p.smallTile,.shoppingList li a p.tile{display: -webkit-box;
+.shoppingList li a p.smallTile{display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;}
+.shoppingList li a p.tile{-webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;}
 .shopsShopping{padding: 0.5rem;background: #fff;margin-top: 0.625rem;border-top: 1px solid #dbdbdb;}
@@ -852,7 +856,7 @@ button.weui-vcode-btn {
 /*classification*/
 .shoppingMenu{position: fixed;left: 0;top: 2.5rem;bottom: 3rem;min-height: 24.25rem;background: #fff;}
 .shoppingMenu li{border-bottom: 1px solid #efefef;}
-.shoppingMenu li a{display: inline-block;text-align: center;padding:0.5rem 1rem;border-left: 2px solid transparent;font-size: 0.875rem;color: #666;background: #fff;min-width: 3.625rem;}
+.shoppingMenu li a{display: inline-block;width: 100%;text-align: center;padding:0.5rem 1rem;border-left: 2px solid transparent;font-size: 0.875rem;color: #666;background: #fff;min-width: 3.625rem;}
 .shoppingMenu.style li a{padding: 2rem 1rem;}
 .shoppingMenu li.active{}
 .shoppingMenu li.active a{border-left-color: #fe695c;color: #ff0404;}
@@ -1071,7 +1075,7 @@ img.shopInfor.w100{width: 100%;margin-bottom: 0.625rem;}
 .shopsshoppingInfor p span.color1 .fa{font-size: 1.2rem;}
 .shopsShoppings{}
 .shopsShopping-infor{display: none;}
-.shopsShopping-infor img{width: 100%;margin-bottom: 0.625rem;}
+.shopsShopping-infor img{width: 100%;}
 .shopsShopping-infor img:last-child{margin-bottom: 0;}
 .shopsShopping-infor.active{display: inline-block;}
 .commentList{width: 100%;}
@@ -1256,7 +1260,7 @@ img.shopInfor.w100{width: 100%;margin-bottom: 0.625rem;}
     padding-left: 4%;
     text-overflow: ellipsis;}
 .news-item td .hot{padding: 3px 0.3rem;color: #ff2d55;border: 1px solid #ff3b30;width: 19%;border-radius: 4px;margin-right: 0.2rem;}
-.shop_menu li a{color: #666;line-height: 2.5rem;display: inline-block;width: 100%;height: 2.5rem;text-align: center;font-size: 0.875rem;}
+.shop_menu li a{color: #666;line-height: 3rem;display: inline-block;width: 100%;height: 3rem;text-align: center;font-size: 0.875rem;}
 .shop_menu li:first-child a{border-left: 4px solid #43b3fb;font-size: 1rem;}
 .shop_menu li a:active {
     opacity: 1;
@@ -1758,7 +1762,7 @@ a.num input {
 .payStyle li{background: #fff;padding: 0.625rem 2%;width: 96%;font-size: 0.875rem;}
 .payStyle li.active{background: #ff9900;}
 .tj{padding: 0.625rem 3%;}
-.tj textarea{width: 96%;border: 1px solid #dbdbdb;resize: none;padding: 2%;font-size: 1rem;}
+.tj textarea{width: 96%;resize: none;padding: 2%;font-size: 1rem;}
 .weui_btn_area .weui_btn_primary.bg1 {background: #ff9900;  }
 .orderList>li .orderCon span.color2{color: #D40000;}
 .mui-bar .mui-icon{font-size: 1.5rem;}
@@ -1809,16 +1813,17 @@ a.num input {
 .useMenu li span{font-size: 0.875rem;color: #999;}
 .useMenu li span.number{color: #333;}
 .useMenu li span.type{color: #333;}
-a.shopIcon {
-    background: url("../images/shopIcon.png") no-repeat;
-    background-size: 100% 100%;
-}
-a.shopIcon {
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 100%;
-}
-
+/*a.shopIcon {*/
+    /*background: url("../images/shopIcon.png") no-repeat;*/
+    /*background-size: 100% 100%;*/
+/*}*/
+/*a.shopIcon {*/
+    /*width: 1.5rem;*/
+    /*height: 1.5rem;*/
+    /*border-radius: 100%;*/
+/*}*/
+a.shopIcon{position: absolute;z-index: 1000;right: 0;top: -0.2rem;padding: 0.2rem 0.5rem;border-radius: 0.3rem;font-size: 0.875rem;background: #42b3fb;color: #fff;outline: none;border: 0;font-family: 微软雅黑;display: inline-block;}
+a.shopIcon:active{opacity: 0.8;background: #42b3fb;}
 .weui_dialog_hd{position: relative;}
 .weui_dialog_hd .closeImg{font-size: 1.5rem;position: absolute;right: 0.5rem;top: 0;}
 .weui_toast_content{color: #fff;}
@@ -1986,7 +1991,7 @@ a>.weui_cell_ft.style:after{right: 12px;}
     .couponMoneyList.style li p.money{position: absolute;bottom: 0.5rem;color: #fff;font-size: 1rem;text-align: center;}
 }
 @media screen and (min-width: 374px) {
-    .weui_vcode_btn{padding: 0 1rem;}
+    .weui_vcode_btn{padding: 0;}
 
 }
 
