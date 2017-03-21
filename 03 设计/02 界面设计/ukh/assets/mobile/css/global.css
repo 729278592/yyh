@@ -1761,8 +1761,8 @@ a.num input {
 .checkout li .mbprice{color: #ff6600;}
 .payStyle li{background: #fff;padding: 0.625rem 2%;width: 96%;font-size: 0.875rem;}
 .payStyle li.active{background: #ff9900;}
-.tj{padding: 0.625rem 3%;}
-.plusAddress .weui_btn_area.m0{margin: 0 0.625rem;}
+.tj{padding: 0.625rem 2%;}
+.plusAddress .weui_btn_area.m0{margin: 0 2%;}
 .weui_btn_primary:not(.weui_btn_disabled):active {
     background: #27b163;
     opacity: 0.8;
