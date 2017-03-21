@@ -26,7 +26,7 @@ $(function () {
                 alert(JSON.stringify(res));
             }
         });
-        
+
 
         // 5 图片接口
         // 5.1 拍照、本地选图

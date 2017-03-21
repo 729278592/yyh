@@ -5,7 +5,7 @@
     <title>V客中心</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
     <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="../../assets/mobile/plugins/mui/css/mui.min.css">
+    <link rel="stylesheet" href="../../assets/mobile/plugins/mui/css/muiPull.css">
     <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
@@ -49,11 +49,17 @@
             <div class="invoice style" id="">
 
             </div>
+            <div class="notConTip hide">
+                <img src="../../assets/mobile/images/notContent.png" alt=""/>
+                <p class="notInfor">
+                    暂无数据
+                </p>
+            </div>
         </div>
     </div>
 </div>
 <script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
-<script src="../../assets/mobile/plugins/mui/js/mui.min.js"></script>
+<script src="../../assets/mobile/plugins/mui/js/mui.js"></script>
 <script src="../../assets/mobile/js/pullRefresh.js"></script><!--上滑加载-->
 <script src="../../assets/mobile/js/global.js"></script>
 <script>
@@ -64,8 +70,11 @@
         invoice.scrollLoad({
             interface:"../../assets/mobile/data/vhtml.json" ,//接口
             pullrefresh:"#pullrefresh",
-            ajaxRecord:function(obj,orderList,wajxHtml){
+            firstLoad:true,
+            ajaxRecord:function(opts,obj,orderList,wajxHtml){
                 //模板片段
+
+
                 wajxHtml+= '<div class="vcList">'+
                     '<div class="vcLihead">'+
                     '<div>'+
@@ -88,7 +97,9 @@
                     '<div><span class="block">实付</span>￥'+obj.sf+'</div>'+
                     '</div>'+
                     '</div>';
+
                 return wajxHtml;
+
             }
         })
 

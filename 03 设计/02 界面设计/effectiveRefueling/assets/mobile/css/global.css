@@ -221,11 +221,7 @@ a:active{opacity: 0.6;}
 .vcLibottom>div{flex: 1;text-align: right;}
 .vcLibottom>div:last-child{width: 121px;font-size: 1rem;color: #333;flex: inherit;}
 .vcLibottom>div:last-child .block{display: inline-block;padding: 0.1rem 0.4rem;border-radius: 0.2rem;background: #fe685b;color: #fff;font-size: 0.875rem;}
-.mui-pull-bottom-pocket, .mui-pull-top-pocket {
-    visibility: inherit;
-    position: absolute;
-    bottom: 0;
-}
+
 .invoice.style{padding-bottom: 50px;}
 .vkHead{background: #fff;padding: 0.5rem 1rem;}
 .vhh{font-size: 0.875rem;color: #333;}

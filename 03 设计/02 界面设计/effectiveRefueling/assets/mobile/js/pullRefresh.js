@@ -10,12 +10,12 @@
             startNum:1, //初始化显示条数
             count:0,
             notConTip:$(".notConTip"),
+            muiPull:".mui-pull",
             num:0,
             wajxHtml:''
         };
 
         var opts = $.extend({}, defaults, options);
-
         var Methods = {
             inits: function (_this) {
                 mui.init({
@@ -30,19 +30,9 @@
                 Methods.loading();
             },
             loading:function () {
-              if(mui.os.plus){//上拉时加载
-                  mui.plusReady(function() {
-                      setTimeout(function() {
-                          mui(opts.pullrefresh).pullRefresh().pullupLoading();
-                      }, 1000);
-
-                  });
-              }else {//第一次加载
-                  mui.ready(function() {
-
-                      mui(opts.pullrefresh).pullRefresh().pullupLoading();
-                  });
-              }
+                mui.ready(function() {
+                    mui(opts.pullrefresh).pullRefresh().pullupLoading();
+                });
             },
             pullupRefresh:function() {
                 $.post(options.interface, {}, function (data) {
@@ -54,14 +44,18 @@
                         opts.num = opts.res.orderList.length / opts.startNum;
                         if (opts.res.orderList.length < 1) { //没数据提示
                             opts.notConTip.removeClass("hide");
+                            $(opts.muiPull).addClass("hide");
+                            return ;
                          }
-
-                        var num = new Number(opts.res.sf);
-                        var num1 = new Number(opts.res.yf);
-                        opts.res.sf = num.toFixed(2);
-                        opts.res.yf = num1.toFixed(2);
+                        $(opts.muiPull).removeClass("hide");
+                        opts.res.sf = Number(opts.res.sf).toFixed(2);
+                        opts.res.yf = Number(opts.res.yf).toFixed(2);
 
                         setTimeout(function () {
+
+                            if(opts.firstLoad){
+
+                                opts.firstLoad = false;
                             mui(opts.pullrefresh).pullRefresh().endPullupToRefresh((++opts.count > opts.num )); //参数为true代表没有更多数据了。
 
                             var table = $('.invoice');
@@ -71,14 +65,19 @@
                             }
                             else if (opts.startNum * opts.count > opts.res.orderList.length ) {
                                 opts.startNum = opts.res.orderList.length - opts.startNum * (opts.count-1);
+
                             }
 
                             for (var i = cells.length, len = i + opts.startNum; i < len; i++) {
 
-                                table.append(options.ajaxRecord(opts.res, opts.res.orderList[i], opts.wajxHtml));
+                                table.append(options.ajaxRecord(opts,opts.res, opts.res.orderList[i], opts.wajxHtml));
                                 opts.wajxHtml = '';
                             }
-                        }, 500);
+
+                            }
+                        }, 1000,setTimeout(function () {
+                            opts.firstLoad = true;
+                        },1000));
                         }
 
                     else {
