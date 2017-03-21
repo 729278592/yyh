@@ -847,7 +847,8 @@ button.weui-vcode-btn {
     position: relative;
     margin-left: .3em;}
 .entryList.mainstyle li>div{width: 85%;padding: 0.625rem 5% 0.625rem 10%;}
-.wantExtension a{display: block;position: fixed;width: 10rem;padding: 0.8rem 1rem;border-radius: 2rem;color: #fff;font-size: 0.875rem;right: -6rem;bottom: 5rem;z-index: 10;background: #4cb7fb;}
+.wantExtension{position: fixed;right: -6rem;bottom: 5rem;}
+.wantExtension a{display: block;width: 10rem;padding: 0.8rem 1rem;border-radius: 2rem;color: #fff;font-size: 0.875rem;z-index: 10;background: #4cb7fb;}
 .wantExtension a.active{right: -2rem;}
 .wantExtension a.hide{display: none;}
 
