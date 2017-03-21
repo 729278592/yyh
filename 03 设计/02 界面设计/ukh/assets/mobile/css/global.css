@@ -1762,7 +1762,12 @@ a.num input {
 .payStyle li{background: #fff;padding: 0.625rem 2%;width: 96%;font-size: 0.875rem;}
 .payStyle li.active{background: #ff9900;}
 .tj{padding: 0.625rem 3%;}
-.tj textarea{width: 96%;resize: none;padding: 2%;font-size: 1rem;}
+.plusAddress .weui_btn_area.m0{margin: 0 0.625rem;}
+.weui_btn_primary:not(.weui_btn_disabled):active {
+    background: #27b163;
+    opacity: 0.8;
+}
+.tj textarea{width: 96%;resize: none;padding: 2%;font-size: 1rem;border: none;outline: none;}
 .weui_btn_area .weui_btn_primary.bg1 {background: #ff9900;  }
 .orderList>li .orderCon span.color2{color: #D40000;}
 .mui-bar .mui-icon{font-size: 1.5rem;}
