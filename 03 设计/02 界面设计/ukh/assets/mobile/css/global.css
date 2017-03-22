@@ -1252,7 +1252,7 @@ img.shopInfor.w100{width: 100%;margin-bottom: 0.625rem;}
 .gaTip{font-size: 0.875rem;width: 30%;position: relative;height: 100%;line-height: 2.5rem;color: #43b3fb;padding: 0 0 0 2%;}
 .gaTip .mui-icon-extra{position: relative;font-size: 1.2rem;}
 .gaTip:after{position: absolute;right: 0;top: 0;bottom: 0;border-right: 1px solid #dbdbdb;content: "";}
-.guScroll{width: 62%;height: 2.5rem;line-height: 2.5rem;padding: 0 0 0 2%;}
+.guScroll{width: 68%;height: 2.5rem;line-height: 2.5rem;padding: 0 0 0 2%;}
 .news-item td{display: -webkit-box;font-size: 0.875rem;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;color: #666;
@@ -1739,7 +1739,10 @@ a.num input {
 .applicatioOpetion.mb0{margin-bottom: 0;}
 .entryList.firstBt0>li:first-child>a{border-top: 0;}
 
-.mui-slider .mui-slider-group .mui-slider-item img {height: 16rem;}
+
+.mui-content .mui-slider .mui-slider-group .mui-slider-item img {height: auto;}
+
+.mui-slider .mui-slider-group .mui-slider-item img {height: 20rem;}
 .weui_btn_area.m0{margin: 0;}
 .plusAddress{}
 .plusAddress .title,.orderInfor .title{font-size: 1rem;padding: 0.625rem 3%;}
