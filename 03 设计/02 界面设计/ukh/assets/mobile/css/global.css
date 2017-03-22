@@ -1967,6 +1967,7 @@ a>.weui_cell_ft.style:after{right: 12px;}
 .shoppingList li a p span.shopIcon{width: 1.5rem;height: 1.5rem;border-radius: 100%;position: relative;right: 0.2rem;}
 .shoppingList li a p span.shopIcon{background: url("../images/shopIcon.png") no-repeat;background-size: 100% 100%;}
 .shoppingList li a p span.shopIcon.dis-click{background: url("../images/shopIcon-1.png") no-repeat;background-size: 100% 100%;}
+.bd>img.w100{height: auto;width: 100%;}
 
 
 @media screen and (max-width: 768px) {
