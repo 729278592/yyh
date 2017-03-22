@@ -1113,7 +1113,7 @@ span.relative{position: relative;}
 
 
 /*mobileExhibition*/
-.exhibitionModify{background: #fff;padding: 20px;border: 1px solid #dbdbdb;position: relative;margin-top: 40px;min-width: 60%;width: 71%}
+.exhibitionModify{background: #fff;padding: 20px;border: 1px solid #dbdbdb;position: relative;margin-top: 40px;width: 71%}
 #form_sample_1 .form-group .help-block-error{display: inline;position: relative;top: 5px;}
 .form-group .timeSerch .spanInput{position: relative;  display: block;}
 .form-group .timeSerch .spanInput input{background: #fff;}
@@ -1170,6 +1170,7 @@ span.relative{position: relative;}
 }
 @media screen and (max-width: 1400px) {
     .position.talent .squaredCheckBox{top: 27px;}
+    .exhibitionModify{width: 48%;}
 
     .form-group .btnReturn{left: -160px;}
     .btn.btnSure{left: 160px;}
