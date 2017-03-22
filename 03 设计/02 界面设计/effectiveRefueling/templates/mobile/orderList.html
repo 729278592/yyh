@@ -49,12 +49,7 @@
             <div class="invoice style" id="">
 
             </div>
-            <div class="notConTip hide">
-                <img src="../../assets/mobile/images/notContent.png" alt=""/>
-                <p class="notInfor">
-                    暂无数据
-                </p>
-            </div>
+
         </div>
     </div>
 </div>
@@ -71,33 +66,42 @@
             interface:"../../assets/mobile/data/vhtml.json" ,//接口
             pullrefresh:"#pullrefresh",
             firstLoad:true,
-            ajaxRecord:function(opts,obj,orderList,wajxHtml){
+            ajaxRecord:function(obj,wajxHtml){
                 //模板片段
+
+                var payWay = obj.payMethod;
+                if(payWay == '0') payWay = '会员卡';
+                if(payWay == '1') payWay = '微信支付';
+                if(payWay == '2') payWay = '红包抵扣';
+                if(payWay == '3') payWay = '车队余额';
+                var num = Number(obj.num).toFixed(2);
+                var totalFee = Number(obj.totalFee).toFixed(2);
+                var beforeDisFee = Number(obj.beforeDisFee).toFixed(2);
+                var payFee = Number(obj.payFee).toFixed(2);
 
 
                 wajxHtml+= '<div class="vcList">'+
                     '<div class="vcLihead">'+
                     '<div>'+
-                    '<div>订单号 : '+orderList.orderNum+'</div>'+
-                    '<div class="wauto">'+orderList.payType+'</div>'+
+                    '<div>订单号 : '+obj.id+'</div>'+
+                    '<div class="wauto">'+payWay+'</div>'+
                     '</div>'+
                     '<div>'+
                     '<div class="colors">'+
-                    ''+orderList.oliNum+'# <span class="c999">(油枪 : '+orderList.oliQ+')</span>'+
+                    ''+num+'# <span class="c999">(油枪 : '+obj.oilGun+')</span>'+
                     '</div>'+
-                    '<div class="colors">￥'+orderList.money+'</div>'+
+                    '<div class="colors">￥'+totalFee+'</div>'+
                     '</div>'+
                     '<div>'+
-                    '<div>'+orderList.address+'</div>'+
-                    '<div>'+orderList.time+'</div>'+
+                    '<div>'+obj.gasStationName+'</div>'+
+                    '<div>'+obj.createTime+'</div>'+
                     '</div>'+
                     '</div>'+
                     '<div class="vcLibottom">'+
-                    '<div>应付'+obj.yf+'</div>'+
-                    '<div><span class="block">实付</span>￥'+obj.sf+'</div>'+
+                    '<div>应付'+beforeDisFee+'</div>'+
+                    '<div><span class="block">实付</span>￥'+payFee+'</div>'+
                     '</div>'+
                     '</div>';
-
                 return wajxHtml;
 
             }
