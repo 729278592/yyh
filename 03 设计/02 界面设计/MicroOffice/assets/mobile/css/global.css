@@ -501,12 +501,12 @@ a.weui_btn.weui_btn_primary{font-size: 16px;}
 .weui_cells.style{width: 8%;display: inline-block;position:relative;top: -18px;}
 
 
-.weui_btn_area.fixed{margin:0;width:100%;z-index:10;position:fixed;left:0;right:0;height:48px;text-align:center;line-height:48px;bottom: 0;}
+.weui_btn_area.fixed{position:fixed;margin:0;left: 0;right:0;z-index:10;height:48px;text-align:center;line-height:48px;bottom: 0;}
 .bd.absolute{position:absolute;top:0;bottom:0;overflow-y:scroll;-webkit-overflow-scrolling:touch;width:100%}
 .weui_btn_area .weui_btn.b0{border: 0;border-radius: 0;height: 48px;line-height: 48px;}
 
 
-.weui_tab.fixed{position: fixed;bottom: 0;width: 100%;height: 48px;z-index: 10;}
+.weui_tab.fixed{position: fixed;bottom: 0;left:0;right:0;height: 48px;z-index: 10;}
 
 .positionListInfor{margin-top: 10px;}
 .companyBriefIntroduction .comBIContent>span.moreInfor,.moreInfor{}
