@@ -504,7 +504,27 @@ a.weui_btn.weui_btn_primary{font-size: 16px;}
 .weui_btn_area.fixed{position:fixed;margin:0;left: 0;right:0;z-index:10;height:48px;text-align:center;line-height:48px;bottom: 0;}
 .bd.absolute{position:absolute;top:0;bottom:0;overflow-y:scroll;-webkit-overflow-scrolling:touch;width:100%}
 .weui_btn_area .weui_btn.b0{border: 0;border-radius: 0;height: 48px;line-height: 48px;}
-
+.weui_cell_vcode {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+}
+.weui_vcode_btn.disabled {
+    background: #ccc;
+    color: #fff;
+}
+.weui_vcode_btn {
+    display: block;
+    min-width: 100px;
+    text-align: center;
+    height: 44px;
+    padding: 0 0.2rem;
+    border-left: 1px solid #E5E5E5;
+    line-height: 44px;
+    vertical-align: middle;
+    font-size: 0.875rem;
+    color: #3CC51F;
+}
 
 .weui_tab.fixed{position: fixed;bottom: 0;left:0;right:0;height: 48px;z-index: 10;}
 
