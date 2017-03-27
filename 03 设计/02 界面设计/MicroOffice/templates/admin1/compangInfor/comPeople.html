@@ -47,8 +47,10 @@
                 <li>
                     5年java开发经验
                     <img src="../../assets/admin/images/starIcon1.png" alt="">
+                    <span class="closeTab"></span>
                 </li>
             </ul>
+            <p class="bqTip hide">暂无标签请添加</p>
         </div>
     </div>
 
@@ -80,6 +82,7 @@
         var $resumeBq = $(".resumeBq");
         var labelArr = [];
         var tip = $(".tips");
+        var $bqTip = $(".bqTip");
         $addLabel.on("click",function () {
             var labelVal = $labelInput.val();
             if($.trim(labelVal)==""){
@@ -90,17 +93,33 @@
                 tipsContent("标签已存在",tip,"fail");
                 return
             }
+
             labelArr.push(labelVal);
-            addLabelFun(labelVal)
+            addLabelFun(labelVal);
+
         });
 
         function addLabelFun(labelVal) {
             var labelHtml = '<li>'+
                                 labelVal+
                                 '<img src="../../assets/admin/images/starIcon1.png" alt="">'+
+                                '<span class="closeTab"></span>'+
                             '</li>';
             $resumeBq.append(labelHtml);
+            if(($resumeBq).find("li").size()==0){
+                $bqTip.removeClass("hide");
+            }else {
+                $bqTip.addClass("hide");
+            }
         }
+        $resumeBq.on("click",".closeTab",function () {
+            $(this).closest("li").remove();
+            if(($resumeBq).find("li").size()==0){
+                $bqTip.removeClass("hide");
+            }else {
+                $bqTip.addClass("hide");
+            }
+        })
     })
 </script>
 <script src="../../assets/admin/js/companyForm.js"></script>

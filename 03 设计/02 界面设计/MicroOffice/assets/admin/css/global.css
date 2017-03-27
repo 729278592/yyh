@@ -1137,9 +1137,9 @@ span.relative{position: relative;}
 
 .linkGroup>div .interA a{width: 235px;background: #eee;padding: 6px;display: block;word-wrap: break-word;position: relative;top: 8px;}
 .linkGroup>div{border: 1px solid #dbdbdb;}
-
-
-
+.closeTab{display: inline-block;width: 15px;height: 15px;background: url("../images/clear.png") no-repeat;background-size: 100% 100%;position: absolute;right: 10px;top: 8px;}
+.closeTab:hover{cursor: pointer;}
+.bqTip{color: #ff716a}
 @-webkit-keyframes top {
     0% {
         top: -3px;
@@ -1178,7 +1178,7 @@ span.relative{position: relative;}
     .hoveran{width: 390px;}
     .annotation{width: 500px;}
     .headName span.phones{position: relative;left: 180px;}
-    .resumeBq li{padding: 5px 20px;}
+    .resumeBq li{padding: 5px 30px 5px 15px;}
     .basicDiv{width: 385px;}
     .linkGroup{margin: 50px 0;width: 400px;}
     .workList li.bottom .time {
