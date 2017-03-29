@@ -86,7 +86,7 @@ a:active{opacity: 0.8;}
 .positionMenu.style li>a .positionJob p .name{color:#666 ;}
 .positionMenu.style li>a .positionJob p .time{font-size: 0.625rem;color: #999;}
 .weui_search_inner .weui_search_input {
-width: 89%;
+    width: 89%;
     padding: 4px 0 4px 5px;
 }
 
@@ -224,9 +224,10 @@ width: 89%;
 .eyeList li .shareIcon1{background: url("../images/img2.0/shareIcon1.png") no-repeat;background-size: 100% 100%;}
 .eyeList li .heart1{background: url("../images/img2.0/heart1.png") no-repeat;background-size: 100% 100%;width: 2.6rem;}
 .eyeList li .heart1.active{background: url("../images/img2.0/heart2.png") no-repeat;background-size: 100% 100%;width: 2.6rem;}
-.eyeList.style{margin: 1rem 0 0.5rem 6rem;}
-.eyeList.style li{color: #333;width: 49%;}
-.eyeList.style li .userIcon1.style{background: url("../images/img2.0/userIcon1-1.png") no-repeat;background-size: 100% 100%;}
+.eyeList.style{margin: 2rem 0 0.5rem 11rem;}
+.eyeList.style li{color: #333;width: 49%}
+.eyeList.style li .userIcon1{background: url("../images/img2.0/userIcon1-1.png") no-repeat;background-size: 100% 100%;}
+
 .eyeList li:after{content: "";position: absolute;top: 0.6rem;right: 0;width: 1px;bottom: 0.6rem;background: #dbdbdb;}
 .eyeList li:last-child:after{width: 0;}
 .eyeList li .num{font-size: 1.2rem;}
