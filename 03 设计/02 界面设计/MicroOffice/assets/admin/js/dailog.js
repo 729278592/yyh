@@ -357,7 +357,7 @@ var maskDailog = function(){
                     '<div class="upFile clearfix">'+
                     '<span class="left">文件名</span>'+
                     '<label class="upFileBtn right" for="xFile">上传文件</label>'+
-                    '<input type="file" name="file" class="upFileInput" id="xFile" multiple="multiple" accept="application/msword">'+
+                    '<input type="file" name="file" class="upFileInput" id="xFile" multiple="multiple" accept="image/png,image/gif">'+
                     '</div>'+
                     '</div>'+
                     '<div class="opreateBtn">'+
@@ -379,6 +379,7 @@ var maskDailog = function(){
         for(var i = 0; i < opts.buttons.length; i++){
             $dialogWrap.on('click', '.'+opts.buttons[i].classType, function () {
                 var dataType = $(this).data("type");
+
                 if(dataType){
                     opts.success(function () {
                         $mask.fadeOut('normal');

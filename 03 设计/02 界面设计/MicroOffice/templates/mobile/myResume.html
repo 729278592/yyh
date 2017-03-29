@@ -28,14 +28,29 @@
                 <div class="portraitDiv">
                     <img src="../../assets/mobile/images/portrait.png" alt="">
                 </div>
-                <ul class="interactionNum clearfix">
+                <!--<ul class="interactionNum clearfix">-->
+                    <!--<li>-->
+                        <!--<span class="nums">30</span><br>-->
+                        <!--<span>来访次数</span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<span class="nums">30</span><br>-->
+                        <!--<span>浏览次数</span>-->
+                    <!--</li>-->
+                <!--</ul>-->
+                <ul class="eyeList style clearfix">
                     <li>
-                        <span class="nums">30</span><br>
-                        <span>来访次数</span>
+                        <span class="spanIcon userIcon1 style"></span>
+                        <br>
+                        浏览
+                        <span class="num">50</span>
                     </li>
+
                     <li>
-                        <span class="nums">30</span><br>
-                        <span>浏览次数</span>
+                        <span class="spanIcon heart1" id="follow"></span>
+                        <br>
+                        点赞
+                        <span class="num">50</span>
                     </li>
                 </ul>
             </div>
@@ -312,6 +327,18 @@
             moreInfor.slideUp();
             $(this).text("显示全部");
         }
+        /*点赞*/
+        var follow = $("#follow");
+        follow.on("touchend",function () {
+            var num = $(this).closest("li").find(".num");
+            if($(this).is(".active")){
+                $(this).removeClass("active");
+                num.text(parseInt(num.text())-1);
+            }else {
+                $(this).addClass("active");
+                num.text(parseInt(num.text())+1);
+            }
+        });
     })
 </script>
 </body>
