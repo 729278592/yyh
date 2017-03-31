@@ -728,6 +728,7 @@ textarea{font-family: "微软雅黑";}
     -webkit-line-clamp: 2;
     overflow: hidden;
     text-overflow: ellipsis;}
+.shoppingList.p0 li a p.tile{-webkit-line-clamp: 1;}
 .shopsShopping{padding: 0.5rem;background: #fff;margin-top: 0.625rem;border-top: 1px solid #dbdbdb;}
 .shopsShopping .shoppingList.style{margin-bottom: 0;}
 
@@ -738,6 +739,9 @@ button.weui-vcode-btn {
     border-bottom: 0;
     outline: 0;
 }
+
+
+
 .weui-vcode-btn {
     display: inline-block;
     height: 44px;
