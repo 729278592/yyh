@@ -22,6 +22,8 @@ Vue.http.options.emulateJSON = true
 Vue.http.options.credentials = true
 Vue.http.headers.common['authorization'] = authService.getAuthHeader();
 
+console.log(Vue.http.headers)
+
 Vue.http.interceptors.push((request, next)=>{
   // 这里对请求体进行处理
   request.headers = request.headers || {}

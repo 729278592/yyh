@@ -433,7 +433,8 @@ export default {
       } else {
         alert(res.message);
       }
-    }, function(response){
+    },
+      function(response){
       context.$progress.failed()
 
     })

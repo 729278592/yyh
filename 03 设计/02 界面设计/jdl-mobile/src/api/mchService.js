@@ -12,7 +12,8 @@ export default {
   //商家个人中心
   personCenter(context) {
     context.$progress.start();
-    context.$http.post(API_ROOT + "mobile/mch/personCenter.do").then(function (response) {
+    context.$http.post(API_ROOT + "mobile/mch/personCenter.do").then(
+      function (response) {
       context.$progress.finish();
       var res = response.json();
       if (res.status == "ok") {
@@ -24,7 +25,8 @@ export default {
       } else {
         alert(res.message);
       }
-    }, function (response) {
+    },
+      function (response) {
       context.$progress.failed()
       // 响应错误回调
     })

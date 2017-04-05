@@ -165,11 +165,9 @@
         }
       },
       ready () {
-        document.title = '商铺主页'
-
-        mchService.personCenter(this)
+        document.title = '商铺主页';
+        mchService.personCenter(this);
         this.imageUrl = mchService.imgUrlFric
-
       },
        methods: {
            onShow: function () {
