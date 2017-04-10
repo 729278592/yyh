@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="../../assets/mobile/plugins/swiper/dist/css/swiper.min.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+    <style>
+
+        .notData{font-size: 0.875rem;color: #333;text-align: center;height: 3rem;line-height: 3rem;background: #f7f7f7;border-top: 1px solid #dbdbdb;}
+    </style>
 </head>
 <body>
     <div class="content relative">
@@ -29,7 +32,7 @@
             <!--头部结束-->
 
             <!--内容开始-->
-            <div class="bd pt">
+            <div class="bd pt bb">
 
                 <!--参与记录开始-->
                 <ul class="entryList mt0 block" id="thelist">
@@ -63,12 +66,16 @@
                 </div>
                 <!--无参与记录结束-->
 
+                <div class="notData hide">
+                    无更多数据
+                </div>
+
             </div>
             <!--内容结束-->
         </div>
     </div>
     <script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
-    <script src="../../assets/mobile/js/removeTip.js"></script>
+    <script src="../../assets/mobile/js/weui.js"></script>
     <script src="../../assets/mobile/js/participationRecord.js"></script>
     <script src="../../assets/mobile/js/global.js"></script>
     <script>
@@ -77,7 +84,28 @@
             var thelist = $('#thelist');
             thelist.scrollLoad({
                 limit: 6, //限制条数
-                startNum:5 //初始化显示条数
+                startNum:8, //初始化显示条数
+                infers:"../../assets/mobile/data/participationRecord.json", //接口
+                ajaxRecord:function(obj,wajxHtml){ //数据结构
+                    wajxHtml += '<li>'+
+                                    '<div>'+
+                                        '<div class="couponImg style">'+
+                                            '<img src="'+obj.headImg+'" class="couponImg1" alt="">'+
+                                        '</div>'+
+                                        '<span class="inforList">'+
+                                            '<span class="title clearfix">'+
+                                                '<span class="left">'+obj.lotteryName+'</span>'+
+                                                '<span class="right color1">参与'+obj.freNum+'次</span>'+
+                                            '</span>'+
+                                            '<span class="clearfix">'+
+                                                '<span class="left">ID:'+obj.id+'</span>'+
+                                                '<span class="right">'+obj.lotteryTime+'</span>'+
+                                            '</span>'+
+                                        '</span>'+
+                                    '</div>'+
+                                '</li>';
+                    return wajxHtml;
+                }
             })
         })
     </script>

@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
     <style>
-        .weui_mask_transparent{background: #fff;}
+        .bd.pt {padding-top: 5.2rem;}
+        .notData{font-size: 0.875rem;color: #333;text-align: center;height: 3rem;line-height: 3rem;background: #f7f7f7;border-top: 1px solid #dbdbdb;}
     </style>
 </head>
 <body>
@@ -34,40 +35,41 @@
             <!--头部结束-->
 
             <!--内容开始-->
-            <div class="bd pt">
+            <div class="bd pt bt">
 
                 <!--我的记录切换开始-->
-                <ul class="recordMenu" data-bind="foreach:myRecordData.datas,css:{ 'hide': myRecordData.display }" >
-                    <li data-bind="attr:{'data-submenu-id':$data.id}">
-                        <a data-bind="text:$data.name,click: function() { $root.currentPageIndex($data) }, css: { selected: $data == $root.currentPageIndex() },click: addActive.bind($data,$index)"></a>
+                <ul class="recordMenu" data-bind="foreach:recordCategory" >
+                    <li >
+                        <a data-bind="click: $parent.loadRecord,text:$data"></a>  <!--,css:{ 'active': myRecordData.active }-->
                     </li>
                 </ul>
                 <!--我的记录切换结束-->
 
                 <!--我的记录开始-->
-                <div id="myRecord" class="margin">
-                    <ul class="entryList mt0 block bt0 mb10" data-bind="foreach:myRecordData.datas[myRecordData.num].children">
+                <div id="myRecord" class="margin" data-bind="event: { touchend: loadMore }">
+                    <ul class="entryList mt0 block bt0 mb10" >
+                        <!--ko foreach: record-->
                         <li>
                             <a href="activeInfor.html">
                                 <div class="couponImg">
-                                    <img data-bind="attr: { 'src': $data.cover}" class="couponImg1" alt="">
+                                    <img  data-bind="attr: { 'src': $data.cover }" class="couponImg1" alt="">
                                 </div>
                                 <span class="inforList">
                                     <span class="title clearfix">
                                         <span class="left" data-bind="text:$data.name"></span>
-                                        <div class="k_j p0">
+                                      <div class="k_j p0">
 
-                                                <!-- ko if: $data.winningState==0 -->
+                                          <!-- ko if: $data.winningState==0 -->
                                                 <div class="k_j_j">进行中</div>
-                                            <!-- /ko -->
+                                          <!-- /ko -->
 
-                                            <!-- ko if: $data.winningState==1 -->
-                                                    <div class="k_j_y bg1">未中奖</div>
-                                            <!-- /ko -->
+                                          <!-- ko if: $data.winningState==1 -->
+                                                <div class="k_j_y bg1">未中奖</div>
+                                          <!-- /ko -->
 
-                                            <!-- ko if: $data.winningState==2 -->
-                                                    <div class="k_j_k bg2">中奖了</div>
-                                            <!-- /ko -->
+                                          <!-- ko if: $data.winningState==2 -->
+                                                <div class="k_j_k bg2">中奖了</div>
+                                          <!-- /ko -->
                                         </div>
                                     </span>
                                     <div class="pross mt0 style">
@@ -101,8 +103,9 @@
                                     <span class="weui_cell_ft"></span>
                                 </a>
                             </div>
-                            <p class="clearfix">
+                            <p class="clearfix"><!--data-bind="click:$parent.clickLode"-->
                                 我的幸运号 : 10000188
+                                <button class="btnRemove" data-bind="click: $parent.btnRemove">删除</button>
                             </p>
                             <!-- ko if: $data.winningState==2 -->
                             <div class="infor p0 style">
@@ -113,12 +116,17 @@
                             </div>
                             <!-- /ko -->
                         </li>
-
+                        <!--/ko-->
                     </ul>
                 </div>
                 <!--我的记录结束-->
 
+                <div class="notData hide">
+                    无更多数据
+                </div>
+
             </div>
+            <!--内容结束-->
 
         </div>
     </div>
@@ -127,74 +135,106 @@
     <script src="../../assets/global/plugins/knockout/knockout.js"></script>
     <script src="../../assets/mobile/js/global.js"></script>
     <script>
-        $(function(){
-            var loadData = {
-                InfiniteScroll:"../../assets/mobile/data/myRecord.json",
-                init:function () {
+        let viewModel = function () {
+            let page = 0;
+            let loadNum = 3;
+            let dataArr = [];
+            let self = this;
+            let resData = null;
+            this.recordCategory = ko.observableArray([]);
+            this.record = ko.observableArray([]);
+            this.loadMore = function () {
+                let scrollTop = $(window).scrollTop();
+                let scrollHeight = $(document).height();
+                let windowHeight = $(window).height();
+
+                if (scrollTop + windowHeight == scrollHeight) {
+                    if(dataArr.length === JSON.parse(localStorage.getItem('resData')).children.length){
+                        $(".notData").removeClass("hide");
+                        return;
+                    }
                     weui.startLoading();
-                    var that = this;
+                    page = page +1;
                     setTimeout(function () {
-                        that.loadData(0);
-                    },500);
-                },
-                loadData:function (num) {
-                    var that = this;
+                        self.load(page,JSON.parse(localStorage.getItem('resData')));
+                    },500)
+                }
+            },
+            this.load = function (page,res) {
+                if(dataArr.length !== JSON.parse(localStorage.getItem('resData')).children.length){
+                    $(".notData").addClass("hide");
+                }
+                if(res.children.slice(page*loadNum,(page+1)*loadNum).length<loadNum){
+                    $(".notData").removeClass("hide");
+                }
+                weui.stopLoading();
+                dataArr = dataArr.concat(res.children.slice(page*loadNum,(page+1)*loadNum));
+                self.record(dataArr);
+            },
+            this.loadRecord = function (category,event) {
+                weui.startLoading();
+                setTimeout(function () {
                     $.ajax({
                         type : "get",
-                        url : this.InfiniteScroll,
+                        url : "../../assets/mobile/data/myRecord.json",
                         dataType : "json",
                         cache : false,
-                        success : function(data) {
-                            if(data.status == "ok"){
-                                var res = data;
-    //                            function ViewModel() {
-    //                                var self = this;
-    //                                //使用observableArray进行绑定可以动态变更option选项
-    //                                self.selectOptions = ko.observableArray([
-    //                                    res
-    //                                ]);
-    //                                self.result = ko.observable("0");//添加result监控属性，初始绑定值为0
-    //                            }
-                                var resData = data.datas;
-                                var len = resData.length;
-                                that.clickLoadData(num,res);
-
-                                res.num = num;
-                                for(var i = 0;i<len;i++){
-                                    resData[i].on = false;
-                                    var lenChild = resData[i].children;
-                                    for(var j = 0;j<lenChild.length;j++){
+                        success : function(res) {
+                            if(res.status == "ok"){
+                                let resData = res.datas;
+                                let len = resData.length;
+                                for(let i = 0;i<len;i++){
+                                    resData[i].active = false;
+                                    if($.inArray(resData[i].name, self.recordCategory()) < 0){
+                                        self.recordCategory.push(resData[i].name);
+                                    }
+                                    let lenChild = resData[i].children;
+                                    for(let j = 0;j<lenChild.length;j++){
                                         lenChild[j].prevent = (parseInt(lenChild[j].totalPeploeNum) - parseInt(lenChild[j].surplusPeploeNum))/parseInt(lenChild[j].totalPeploeNum)*100+"%" ;
                                     }
                                 }
-                                //console.log(JSON.stringify(res));
-                                resData[res.num].on = true;
+                                $(".recordMenu li a").eq(0).addClass("active");
+                                $(event.target).closest("li").siblings().find("a").removeClass("active");
+                                $(event.target).addClass("active");
+                                dataArr = [];
+                                page = 0;
+                                switch (category) {
+                                    case res.datas[0].name:
+                                      //  console.log(typeof ko.toJSON(res.datas[0]))
+                                        localStorage.setItem('resData',JSON.stringify(res.datas[0]));
+                                        self.load(page,res.datas[0]);
+                                        break;
+                                    case res.datas[1].name:
+                                        localStorage.setItem('resData',JSON.stringify(res.datas[1]));
+                                        self.load(page,res.datas[1]);
+                                        break;
+                                    case res.datas[2].name:
+                                        localStorage.setItem('resData',JSON.stringify(res.datas[2]));
+                                        self.load(page,res.datas[2]);
+                                }
 
-                                ko.applyBindings({myRecordData:res});
-                                ko.cleanNode(myRecordData);
-                                weui.stopLoading();
                             }
                         }
                     });
+                },500)
+            },
+            this.btnRemove = function (data,event) {
+                var context = ko.contextFor(event.target); //获取绑定元素的上下文;event.target绑定View Model的DOM元素
+                var index = context.$index();
+                JSON.parse(localStorage.getItem('resData')).children.splice(1,index)
+                console.log(JSON.parse(localStorage.getItem('resData')).children.splice(1,index))
+            }
+//          this.SeeInfor = function (data,event) {
+//              console.log(JSON.stringify(data))
+//              console.log(event)
+//          }
+        };
 
-                },
-                clickLoadData:function (num,res) {
-                    var that = this;
-                    addActive = function (index,datas) {
-                        num = index();
-                        res.num = num;
-                        //console.log(res.num)
-                        for(var i = 0;i<res.length;i++){
-                            res.datas[i].on = false;
-                        }
-                        res.datas[res.num].on = true;
-                        that.loadData(res.num);
-                       console.log(JSON.stringify(res));
-                    }
-                }
-            };
-            loadData.init();
-        });
+        $(document).ready(function () {
+            let vm = new viewModel();
+            vm.loadRecord("发布","");
+            ko.applyBindings(vm);
+        })
 
     </script>
 </body>

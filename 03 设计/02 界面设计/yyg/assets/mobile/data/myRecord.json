@@ -9,7 +9,7 @@
         {
           "id": 147437738726483,
           "cover":"../../assets/mobile/images/shopping1.jpg",
-          "name": "三星",
+          "name": "三星1",
           "winningPeriod":20,
           "winningState":0,
           "totalPeploeNum": 200,
@@ -19,7 +19,7 @@
         {
           "id": 147437738726482,
           "cover":"../../assets/mobile/images/shopping1.jpg",
-          "name": "三星1",
+          "name": "三星2",
           "winningPeriod":21,
           "winningState":1,
           "totalPeploeNum": 200,
@@ -29,11 +29,61 @@
         {
           "id": 147437738726484,
           "cover":"../../assets/mobile/images/shopping1.jpg",
-          "name": "三星1",
+          "name": "三星3",
           "winningPeriod":22,
           "winningState":2,
           "totalPeploeNum": 200,
           "surplusPeploeNum":50,
+          "address": "重庆市九龙坡区大坪万科景程"
+        },
+        {
+          "id": 147437738726483,
+          "cover":"../../assets/mobile/images/shopping1.jpg",
+          "name": "三星4",
+          "winningPeriod":20,
+          "winningState":0,
+          "totalPeploeNum": 200,
+          "surplusPeploeNum":180,
+          "address": "重庆市九龙坡区大坪万科景程"
+        },
+        {
+          "id": 147437738726482,
+          "cover":"../../assets/mobile/images/shopping1.jpg",
+          "name": "三星5",
+          "winningPeriod":21,
+          "winningState":1,
+          "totalPeploeNum": 200,
+          "surplusPeploeNum":101,
+          "address": "重庆市九龙坡区大坪万科景程"
+        },
+        {
+          "id": 147437738726484,
+          "cover":"../../assets/mobile/images/shopping1.jpg",
+          "name": "三星6",
+          "winningPeriod":22,
+          "winningState":2,
+          "totalPeploeNum": 200,
+          "surplusPeploeNum":50,
+          "address": "重庆市九龙坡区大坪万科景程"
+        },
+        {
+          "id": 147437738726483,
+          "cover":"../../assets/mobile/images/shopping1.jpg",
+          "name": "三星7",
+          "winningPeriod":20,
+          "winningState":0,
+          "totalPeploeNum": 200,
+          "surplusPeploeNum":180,
+          "address": "重庆市九龙坡区大坪万科景程"
+        },
+        {
+          "id": 147437738726482,
+          "cover":"../../assets/mobile/images/shopping1.jpg",
+          "name": "三星8",
+          "winningPeriod":21,
+          "winningState":1,
+          "totalPeploeNum": 200,
+          "surplusPeploeNum":101,
           "address": "重庆市九龙坡区大坪万科景程"
         }
       ]
@@ -45,19 +95,19 @@
         {
           "id": 147437738726483,
           "cover":"../../assets/mobile/images/shopping1.jpg",
-          "name": "三星2",
+          "name": "三星23",
           "winningPeriod":20,
-          "winningState":"未中奖",
+          "winningState":1,
           "totalPeploeNum": 200,
-          "surplusPeploeNum":100,
+          "surplusPeploeNum":80,
           "address": "重庆市九龙坡区大坪万科景程"
         },
         {
           "id": 147437738726482,
           "cover":"../../assets/mobile/images/shopping1.jpg",
-          "name": "三星3",
+          "name": "三星32",
           "winningPeriod":20,
-          "winningState":"未中奖",
+          "winningState":0,
           "totalPeploeNum": 200,
           "surplusPeploeNum":100,
           "address": "重庆市九龙坡区大坪万科景程"
@@ -71,9 +121,9 @@
         {
           "id": 147437738726483,
           "cover":"../../assets/mobile/images/shopping1.jpg",
-          "name": "三星4",
+          "name": "三星41",
           "winningPeriod":20,
-          "winningState":"未中奖",
+          "winningState":2,
           "totalPeploeNum": 200,
           "surplusPeploeNum":100,
           "address": "重庆市九龙坡区大坪万科景程"
@@ -81,11 +131,11 @@
         {
           "id": 147437738726482,
           "cover":"../../assets/mobile/images/shopping1.jpg",
-          "name": "三星5",
+          "name": "三星51",
           "winningPeriod":20,
-          "winningState":"未中奖",
+          "winningState":0,
           "totalPeploeNum": 200,
-          "surplusPeploeNum":100,
+          "surplusPeploeNum":150,
           "address": "重庆市九龙坡区大坪万科景程"
         }
       ]

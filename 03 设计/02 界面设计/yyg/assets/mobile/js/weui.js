@@ -235,7 +235,7 @@ var weui = function(){
 	    var tpl = '<div class="'+options.className+'">'+
 					'<div class="weui_mask_transparent"></div>'+
 					'<div class="weui_toast">'+
-						'<img src="../../../assets/mobile/images/smile_icon.png" alt="" id="smile-icon"/>'+
+						'<img src="../../assets/mobile/images/smile_icon.png" alt="" id="smile-icon"/>'+
 						'<p class="weui_toast_content">'+options.content+'</p>'+
 					'</div>'+
 				  '</div>';

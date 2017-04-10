@@ -36,22 +36,22 @@
                 <!--我的记录切换开始-->
                 <ul class="recordMenu">
                     <li>
-                        <a href="###" data="release">
+                        <a class="active" href="###">
                             发布
                         </a>
                     </li>
                     <li>
-                        <a href="###" data="participateIn">
+                        <a href="###">
                             参与
                         </a>
                     </li>
                     <li>
-                        <a href="###" data="collection">
+                        <a href="###">
                             收藏
                         </a>
                     </li>
                     <li>
-                        <a href="###" data="winning">
+                        <a href="###">
                             中奖
                         </a>
                     </li>
@@ -60,14 +60,122 @@
 
                 <!--我的记录开始-->
                 <div id="myRecord" class="margin">
+                    <!--参与开始-->
+                    <ul class="entryList mt0 block bt0 mb10">
+                        <li>
+                            <a href="activeInfor.html">
+                                <div class="couponImg">
+                                    <img src="../../assets/mobile/images/shopping1.jpg" class="couponImg1" alt="">
+                                </div>
+                                <span class="inforList">
+                    <span class="title clearfix">
+                        <span class="left">丁丁芭比丁丁芭比</span>
+                        <div class="k_j p0">
+                            <div class="k_j_j ">进行中</div>
+                            <div class="k_j_y hide bg1">未中奖</div>
+                            <div class="k_j_k hide bg2">中奖了</div>
+                        </div>
+                    </span>
+                    <div class="pross mt0 style">
+                        <div class="pross_i">
+                            <p>
+                                期号 : 001 共10期
+                            </p>
+                            <div class="fatherNum">
+                                <span class="sonNum"></span>
+                            </div>
+                            <p class="style clearfix">
+                                <span class="left">总需: <span class="fatherSpan">200</span>人</span>
+                                <span class="right">剩余: <span class="other">100</span>人</span>
+                            </p>
+                        </div>
+                    </div>
+                </span>
+                            </a>
+                            <div class="infor p0 style">
+                                <a href="###">
+                                    <span class="icon icon_address"></span>
+                                    <span class="b_s">任务地址：重庆市九龙坡区大坪万科景程</span>
+                                    <span class="weui_cell_ft"></span>
+                                </a>
+                            </div>
+                            <p class="clearfix">
+                                我的幸运号 : 10000188
+                            </p>
+                            <div class="infor p0 style">
+                                <a href="###" class="tipA">
+                                    请7个工作日内登录app完善真实地址，否则视为放弃
+                                    <span class="weui_cell_ft"></span>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="activeInfor.html">
+                                <div class="couponImg">
+                                    <img src="../../assets/mobile/images/shopping1.jpg" class="couponImg1" alt="">
+                                </div>
+                                <span class="inforList">
+                    <span class="title clearfix">
+                        <span class="left">丁丁芭比丁丁芭比</span>
+                        <div class="k_j p0">
+                            <div class="k_j_j hide">进行中</div>
+                            <div class="k_j_y  bg1">未中奖</div>
+                            <div class="k_j_k hide bg2">中奖了</div>
+                        </div>
+                    </span>
+                    <div class="pross mt0 style">
+                        <div class="pross_i">
+                            <p>
+                                期号 : 001 共10期
+                            </p>
+                            <div class="fatherNum">
+                                <span class="sonNum"></span>
+                            </div>
+                            <p class="style clearfix">
+                                <span class="left">总需: <span class="fatherSpan">200</span>人</span>
+                                <span class="right">剩余: <span class="other">10</span>人</span>
+                            </p>
+                        </div>
+                    </div>
 
+                </span>
+                            </a>
+                            <div class="infor p0 style">
+                                <a href="###">
+                                    <span class="icon icon_address"></span>
+                                    <span class="b_s">任务地址：重庆市九龙坡区大坪万科景程</span>
+                                    <span class="weui_cell_ft"></span>
+                                </a>
+                            </div>
+                            <p class="clearfix">
+                                我的幸运号 : 10000188
+                            </p>
+                            <div class="infor p0 style hide">
+                                <a href="###" class="tipA">
+                                    请7个工作日内登录app完善真实地址，否则视为放弃
+                                    <span class="weui_cell_ft"></span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!--无参与记录开始-->
+                    <div class="notConTip hide">
+                        <img src="../../assets/mobile/images/noDate.png" alt=""/>
+                        <p class="notInfor">
+                            很遗憾,暂无参与记录哦！
+                        </p>
+                    </div>
+                    <!--无参与记录结束-->
+
+                    <!--参与开始-->
 
                 </div>
                 <!--我的记录结束-->
 
                 <!--无数据提示开始-->
                 <div class="notConTip hide">
-                    <img src="../../../assets/mobile/images/noShopping.png" alt=""/>
+                    <img src="../../assets/mobile/images/noShopping.png" alt=""/>
                     <p class="notInfor hide">
                         购物车什么都没有哦! <br/>
                         <a href="index.html" style="color: #ff0004">去看看>></a>
@@ -85,47 +193,9 @@
     <script src="../../assets/mobile/js/global.js"></script>
     <script>
         $(function(){
-
-            /*我的记录初始化*/
-            var active_n = $(".recordMenu li a");
-            var data = active_n.eq(0).attr("data");
-            active_n.eq(0).addClass("active");
-            weui.startLoading();
-            setTimeout(function () {
-                $.ajax({
-                    type : "post",
-                    url : "myRecord/"+data+".html",
-                    dataType : "html",
-                    cache : false,
-                    success : function(data) {
-                        $("#myRecord").html(data);
-                        weui.stopLoading();
-                    }
-                });
-            },500);
-
-            /*我的记录状态切换*/
-            active_n.on("touchend",function(){
-                $(this).addClass("active");
-                $(this).closest("li").siblings("li").find("a").removeClass("active");
-                var data = $(this).attr("data");
-                var that = $(this);
-                weui.startLoading();
-                setTimeout(function () {
-                    $.ajax({
-                        type : "post",
-                        url : "myRecord/"+data+".html",
-                        dataType : "html",
-                        cache : false,
-                        success : function(data) {
-                            that.closest(".bd").find("#myRecord").html(data);
-                            weui.stopLoading();
-                        }
-                    });
-                },500)
-            });
+            /*进度条*/
+            $('.pross').progress({});
         });
-
     </script>
 </body>
 </html>

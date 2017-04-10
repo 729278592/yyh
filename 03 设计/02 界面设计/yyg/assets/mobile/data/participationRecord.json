@@ -58,12 +58,7 @@
       "lotteryTime":"2016-04-07 11:13:41",
       "headImg": "../../assets/mobile/images/shopping1.jpg",
       "lotteryName":"8"
-    }
-
-
-
-
-  ,
+    },
     {
       "id": 1003,
       "freNum":"100",
@@ -120,7 +115,5 @@
       "headImg": "../../assets/mobile/images/shopping1.jpg",
       "lotteryName":"16"
     }
-
-
   ]
 }
