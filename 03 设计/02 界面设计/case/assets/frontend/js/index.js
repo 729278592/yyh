@@ -10,15 +10,14 @@ $(function () {
      */
 
     ;(function(win,doc,unde){  //分号作用是多文件合并时防止上一行代码没写分号而出错
-        function anite(aninteObj){
-            this.time = 100;
+        function anite(options){
+            this.time = options.time;
             this.left = ".left";
             this.right = ".right";
             this.maskCase = ".maskCase";
-            this.aninteObj = document.querySelectorAll(aninteObj);
+            this.aninteObj = document.querySelectorAll(options.aninteObj);
             this.menuCase = document.querySelector(".menuCase");
             this.productMenu = document.querySelectorAll(".productMenu");
-
             this.menuCaseLi = this.menuCase.querySelectorAll("li");
             this.headMain = document.querySelector(".head");
             this.aninteObjSonWidth = doc.documentElement.clientWidth*0.5;
@@ -38,9 +37,7 @@ $(function () {
                 this.caseFun();
                 this.onMouseFun();
                 let len = this.menuCaseLi.length;
-                for(let i = 0; i<len; i++){
-                    this.domCaozuo(len,this,0); //合作案例
-                }
+                this.domCaozuo(len,this,0); //合作案例
             },
             move:function(obj,json,fn){  //动画实现
                 json = json || {};
@@ -97,7 +94,7 @@ $(function () {
                     }
                 }
             },
-            caseFun:function () { //合作案例
+            caseFun:function (){ //合作案例
                 let len = this.menuCaseLi.length;
                 for(let i = 0;i<len;i++){
                     this.menuCaseLi[i].index = i;
@@ -120,7 +117,6 @@ $(function () {
                 },200)
             },
             onMouseFun:function () {
-
                 $(this.productMenu).find("li").hover(
                     function () {
                         $(this).find(".maskCase").removeClass("hide");
@@ -133,8 +129,6 @@ $(function () {
                         $(this).find(".maskCase-bg").addClass("hide");
                     }
                 )
-
-
             },
             calculation:function () {  //头部动画
                 if(doc.body.scrollTop != 0){
@@ -158,5 +152,4 @@ $(function () {
         };
         win.anite = anite;
     })(window,document,undefined);
-    new anite(".aninteObj");
-})
+});

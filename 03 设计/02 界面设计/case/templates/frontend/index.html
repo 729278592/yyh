@@ -92,20 +92,20 @@
                     </div>
                     <div class="ykhFoot">
                         <p class="smallTitle">最新资讯，实时更新，让你体验最快捷的方便的办公资讯！</p>
-                        <p class="title">优客慧你的最好选择</p>
+                        <p class="title">优客汇你的最好选择</p>
                     </div>
                 </div>
                 <div class="aninte">
                     <div class="aninteObj clearfix">
-                        <div class="left">
+                        <div class="left imgHover">
                             <img src="../../assets/frontend/images/anit1.png" alt="">
                         </div>
-                        <div class="right ">
+                        <div class="right">
                             <div class="aninte1">
                                 <img src="../../assets/frontend/images/anit1-1.png" alt=""> <br>
                                 <p class="title1">微商城</p>
                                 <p class="conInfor">
-                                    优客慧微商城是基于微信端的微商城系统，面向线下实体门店和线上传统电商，适用行业覆盖全面，通过搭建商城，提供商品销售、会员服务、
+                                    优客汇微商城是基于微信端的微商城系统，面向线下实体门店和线上传统电商，适用行业覆盖全面，通过搭建商城，提供商品销售、会员服务、
                                 </p>
                                 <button class="btnNext right">NEXT <i class="fa fa-arrow-right"></i></button>
                                 <img src="../../assets/frontend/images/anit1-2.png" class="anit1-2" alt="">
@@ -113,9 +113,8 @@
                         </div>
                     </div>
                     <div class="aninteObj clearfix">
-                        <div class="right right2">
+                        <div class="right right2 imgHover">
                             <img src="../../assets/frontend/images/anit2-2.png" alt="">
-
                         </div>
                         <div class="left">
                             <div class="aninte2">
@@ -124,7 +123,7 @@
                                     <img src="../../assets/frontend/images/anit2-1.png" alt=""> <br>
                                     <p class="title1">分销商城</p>
                                     <p class="conInfor">
-                                        优客慧分销商城致力于打造一个商品快速销售及流通的平台，供货商通过分销商城上架自身商品，通过本平台再与众推客建立合作关系，将商品
+                                        优客汇分销商城致力于打造一个商品快速销售及流通的平台，供货商通过分销商城上架自身商品，通过本平台再与众推客建立合作关系，将商品
                                     </p>
                                     <button class="btnNext right">NEXT <i class="fa fa-arrow-right"></i></button>
                                 </div>
@@ -132,7 +131,7 @@
                         </div>
                     </div>
                     <div class="aninteObj clearfix">
-                        <div class="left">
+                        <div class="left imgHover">
                             <img src="../../assets/frontend/images/anit3.png" alt="">
                         </div>
                         <div class="right">
@@ -142,7 +141,7 @@
                                     <img src="../../assets/frontend/images/anit3-2.png" alt=""> <br>
                                     <p class="title1">智慧收银</p>
                                     <p class="conInfor">
-                                        优客慧微商城是基于微信端的微商城系统，面向线下实体门店和线上传统电商，适用行业覆盖全面，通过搭建商城，提供商品销售、会员服务、
+                                        优客汇微商城是基于微信端的微商城系统，面向线下实体门店和线上传统电商，适用行业覆盖全面，通过搭建商城，提供商品销售、会员服务、
                                     </p>
                                     <button class="btnNext right">NEXT <i class="fa fa-arrow-right"></i></button>
                                 </div>
@@ -150,7 +149,7 @@
                         </div>
                     </div>
                     <div class="aninteObj clearfix">
-                        <div class="right right2">
+                        <div class="right right2 imgHover">
                             <img src="../../assets/frontend/images/anit4-2.png" alt="">
                         </div>
                         <div class="left">
@@ -158,7 +157,7 @@
                                 <img src="../../assets/frontend/images/anit4.png" alt=""> <br>
                                 <p class="title1">分销商城</p>
                                 <p class="conInfor">
-                                    优客慧分销商城致力于打造一个商品快速销售及流通的平台，供货商通过分销商城上架自身商品，通过本平台再与众推客建立合作关系，将商品
+                                    优客汇分销商城致力于打造一个商品快速销售及流通的平台，供货商通过分销商城上架自身商品，通过本平台再与众推客建立合作关系，将商品
                                 </p>
                                 <button class="btnNext right">NEXT <i class="fa fa-arrow-right"></i></button>
                                 <img src="../../assets/frontend/images/anit4-1.png" class="anit4 left" alt="">
@@ -171,7 +170,7 @@
                             <img src="../../assets/frontend/images/anit5.png" class="anit5" alt=""> <br>
                             <p class="conInfor">
                                 <span class="title">营销应用</span>
-                                优客慧具备超全营销工具，强大的会员卡系统，除了基础会员管理，商家可以自定义会员权益、积分等规则，帮助商家更好经营管理自己的客户
+                                优客汇具备超全营销工具，强大的会员卡系统，除了基础会员管理，商家可以自定义会员权益、积分等规则，帮助商家更好经营管理自己的客户
                             </p>
                             <button class="btnNext right">NEXT <i class="fa fa-arrow-right"></i></button>
                         </div>
@@ -375,7 +374,10 @@
                         $(this).data('radialIndicator').animate(0);
                     }
                 );
-
+                new anite({
+                    aninteObj:".aninteObj",
+                    time:100
+                });
             });
         </script>
     </body>
