@@ -38,7 +38,7 @@ a:active{opacity: 0.6;}
 /*foot*/
 .foot{position: fixed;left: 0;right: 0;bottom: 0;height: 3rem;text-align: center;line-height: 2.5rem;background: #fafafa;border-top: 1px solid #dbdbdb;}
 .tabMenu{width: 100%;}
-.tabMenu.style li{width: 33.3%;}
+.tabMenu.style li{width: 50%;}
 .tabMenu li{width: 25%;padding: 5px 0;float: left;}
 .tabMenu.w30 li{width: 33.333%;}
 .tabMenu li a:after{content: "";position: absolute;top: 0;right: 0;width: 1px;height: 100%;border-right: 1px solid #ccc;}
@@ -227,10 +227,12 @@ a:active{opacity: 0.6;}
 .vcLibottom>div:last-child .block{display: inline-block;padding: 0.1rem 0.4rem;border-radius: 0.2rem;background: #fe685b;color: #fff;font-size: 0.875rem;}
 
 .invoice.style{padding-bottom: 50px;}
-.vkHead{background: #fff;padding: 1rem 1rem;}
+.vkHead{background: #fff;padding: 1.4rem 1rem;}
 .vhh{font-size: 0.875rem;color: #333;}
 .vhc{font-size: 1rem;color: #FB6C62;text-align: center;}
 .vhb{font-size: 0.875rem;color: #333;text-align: right;}
+.vhb.hide{display: none;}
+.vhb .fs14{font-size: 0.625rem;color: #666;}
 .vhb .color{font-size: 1rem;color: #FB6C62;}
 #pullrefresh{margin-top: 0.625rem;}
     /*底部按钮交互和颜色*/
@@ -403,8 +405,9 @@ textarea{font-family: "微软雅黑";}
 .applicatioOpetion{width: 100%;margin-bottom: 0.625rem;position: relative;z-index: 100;border-bottom: 1px solid #dbdbdb;}
 .applicatioNav{width: 100%;background: #fff;display: block;}
 .applicatioNav.style li {width: 33.3%;}
-.applicatioNav li{float: left;text-align: center;font-size: 1rem;width: 50%;position: relative;}
-.applicatioNav li:first-child:after{content: "";position: absolute;right: 0;top: 0;width: 1px;bottom: 0;border-right: 1px solid #efefef;}
+.applicatioNav li{float: left;text-align: center;font-size: 1rem;width: 33.3%;position: relative;}
+.applicatioNav li:after{content: "";position: absolute;right: 0;top: 0;width: 1px;bottom: 0;border-right: 1px solid #efefef;}
+.applicatioNav li:last-child:after{border: 0;}
 .applicatioNav.style li:after{content: "";position: absolute;right: 0;top: 0;width: 1px;bottom: 0;border-right: 1px solid #efefef;}
 .applicatioNav.style li.last-child:after{border-right: 0;}
 .applicatioNav li a{display: inline-block;width: 100%;padding: 0.6rem 0;border-bottom: 3px solid transparent;color: #333;}
