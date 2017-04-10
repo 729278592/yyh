@@ -32,7 +32,7 @@
                     Methods.addSHoppingCart($(this)); //点击规格弹窗中的加入购物车去加入购物车
                 });
 
-                opts.wrapper.on("touchend",opts.shopTypeListLi,function (e) {
+                opts.wrapper.on("touchend",".shopTypeList",function (e) {
                     if($(e.target).parent().attr("class")=="shopTypeList clearfix"){
                         Methods.chioceGg($(e.target)); //点击选择规格
                     }
@@ -61,22 +61,18 @@
                             $obj.fadeOut(300,function(){
                                 $obj.remove();
 
+
                                 var	num = Number($num.text());//数量增加
                                 $num.text(num+1);
-                                if(_this.is(".order_menu")){
-                                    $(opts.totalMoney).text($num.text()*_this.closest("li").find(".money").text());
-                                    return;
-                                }
-                                if(_this.is(".menu_infor")){
-                                    $(opts.totalMoney).text($num.text()*_this.closest(".dishInfor").find(".money").text());
-                                    return;
-                                }
 
-                                if(_this.is(".btnAddCat")){
-                                    $(opts.totalMoney).text($num.text()*_this.closest(".weui-actionsheet__menu").find(".money").text())
-                                    return;
-                                }
+                                //提交商品信息
+                                $.post(opts.interface,{shopId:opts.shoppingId},function(res){
+                                    if(res.status == "ok"){
 
+                                    }else{
+
+                                    }
+                                });
                             });
                         });
                     });
@@ -139,32 +135,25 @@
                     }
                 });
             },
-            shopAnimate:function (_this) {
-                Methods.addShoping(_this);
-                //提交商品信息
-                $.post(opts.interface,{shopId:opts.shoppingId},function(res){
-                    if(res.status == "ok"){
 
-                    }else{
-
-                    }
-                });
-            },
 
             //判断有无规格
             judgmentStandard:function (_this) {
                 if(!opts.specifications){ //无规格
-                    Methods.shopAnimate(_this); //加入购物车动画
+                    Methods.addShoping(_this); //加入购物车动画
                 }
                 else {//有规格
                     Methods.ajaxGg(); //请求规格json数据
                 }
+
+                specifications = opts.specifications;
             },
             addSHoppingCart:function (that) {
-                Methods.shopAnimate($(opts.btnAddCat));
-                // setTimeout(function () {
-                //     Methods.removeMask(that)
-                // },800)
+                Methods.addShoping(that);
+                setTimeout(function () {
+                    Methods.removeMask(that);
+                },800)
+                return;
             },
             chioceGg:function (that) { //点击选择规格
                 that.addClass("active");
