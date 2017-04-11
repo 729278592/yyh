@@ -454,7 +454,7 @@ a.num input {
 .od_list li .moneyIcon{display: inline-block;width: 1.5rem;height: 1.5rem;background: url("../images/moneyIcon.png") no-repeat;background-size: 100% 100%;position: relative;top: 0.4rem;}
 .od_list li .odl_d{flex: 1;}
 .od_list li .odl_num{width: 7rem;text-align: center;}
-.od_list li .odl_money{width: 3rem;text-align: center;}
+.od_list li .odl_money{width: 5rem;text-align: right;}
 .od_list li .odl_money.color{color: #ff3b30;}
 
 
