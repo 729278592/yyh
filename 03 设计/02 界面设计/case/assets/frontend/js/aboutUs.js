@@ -24,7 +24,7 @@ $(function () {
                 this.onmousewheel();
                 this.scroll();
                 this.coumputed();
-                //this.usMenuLiClick();
+                this.usMenuLiClick();
             },
             move:function(obj,json,fn){  //动画实现
                 json = json || {};
@@ -74,24 +74,28 @@ $(function () {
                     this.headMain.classList.remove("on");
                 }
             },
-            // usMenuLiClick:function () {
-            //     for(let i = 0;i<this.usMenuLi.length;i++){
-            //         this.usMenuLi[i].index = i;
-            //         var that = this;
-            //         this.usMenuLi[i].onclick = function () {
-            //             for(let i = 0;i<that.usMenuLi.length;i++){
-            //                 that.usMenuLi[i].className = '';
-            //             }
-            //             that.scroll = null;
-            //             that.onmousewheel = null;
-            //             var distanse = $(that.js_scroll[this.index]).offset().top+346;
-            //             $('html, body').animate({
-            //                 scrollTop: distanse
-            //             }, 1000);
-            //             that.usMenuLi[this.index].className = 'active';
-            //         }
-            //     }
-            // },
+            usMenuLiClick:function () {
+                for(let i = 0;i<this.usMenuLi.length;i++){
+                    this.usMenuLi[i].index = i;
+                    var that = this;
+                    this.usMenuLi[i].onclick = function () {
+                        for(let i = 0;i<that.usMenuLi.length;i++){
+                            that.usMenuLi[i].className = '';
+                        }
+                        that.usMenuLi[this.index].className = 'active';
+
+
+                        var distanse = $(that.js_scroll[this.index]).offset().top-100;
+                        if(this.index === 0){
+                            distanse = 0;
+                        }
+
+                        $('html, body').animate({
+                            scrollTop: distanse
+                        }, 400);
+                    }
+                }
+            },
             coumputed:function(){
                 for(let i = 0;i<this.js_scroll.length;i++){
                     if(this.js_scroll[i].getBoundingClientRect().top<this.headMain.offsetHeight+150){
