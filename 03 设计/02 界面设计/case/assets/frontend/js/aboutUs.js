@@ -15,7 +15,6 @@ $(function () {
             this.headMain  = doc.querySelector(".head");
             this.usMenu = doc.querySelector(".usMenu");
             this.usMenuLi = this.usMenu.querySelectorAll("li");
-            this.headMain = document.querySelector(".head");
             this.init();//调用函数初始化
         }
         anite.prototype = {
@@ -67,13 +66,13 @@ $(function () {
                     return getComputedStyle(obj,false)[attr];
                 }
             },
-            calculation:function () {  //头部动画
-                if(doc.body.scrollTop != 0){
-                    this.headMain.classList.add("on");
-                }else {
-                    this.headMain.classList.remove("on");
-                }
-            },
+            // calculation:function () {  //头部动画
+            //     if(doc.body.scrollTop != 0){
+            //         this.headMain.classList.add("on");
+            //     }else {
+            //         this.headMain.classList.remove("on");
+            //     }
+            // },
             usMenuLiClick:function () {
                 for(let i = 0;i<this.usMenuLi.length;i++){
                     this.usMenuLi[i].index = i;
@@ -83,16 +82,13 @@ $(function () {
                             that.usMenuLi[i].className = '';
                         }
                         that.usMenuLi[this.index].className = 'active';
-
-
                         var distanse = $(that.js_scroll[this.index]).offset().top-100;
                         if(this.index === 0){
                             distanse = 0;
                         }
-
                         $('html, body').animate({
                             scrollTop: distanse
-                        }, 400);
+                        },'swing', 400);
                     }
                 }
             },
@@ -115,13 +111,13 @@ $(function () {
             onmousewheel:function(){ //滚轮事件
                 doc.onmousewheel = (e) => {
                     this.coumputed(e);
-                    this.calculation();
+                    //this.calculation();
                 }
             },
             scroll:function(){ //鼠标事件
                 doc.onscroll = (e)=>{
                     this.coumputed(e);
-                    this.calculation();
+                    //this.calculation();
                 }
             }
         };
