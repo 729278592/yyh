@@ -82,10 +82,11 @@ $(function () {
             },
             coumputed:function(){  // 节点分别从左右进入
                 for(let i = 0;i<this.aninteObj.length;i++){
+
                     if(this.aninteObj[i].getBoundingClientRect().top<doc.documentElement.clientHeight){
                         let obj = this.aninteObj[i];
-                        $(obj.querySelector(this.left)).animate({'left': 0},500);
-                        $(obj.querySelector(this.right)).animate({'right': 0},500);
+                        $(obj.querySelector(this.left)).animate({'left': 0},700);
+                        $(obj.querySelector(this.right)).animate({'right': 0},700);
                     }
                     else{
                         // let obj = this.aninteObj[i];

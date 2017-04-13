@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>注册</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="stylesheet" href="../../assets/frontend/plugins/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/frontend/css/global.css"/>
+</head>
+<body class="overflow">
+    <div class="wrapper">
+        <div class="head">
+            <div class="head-bg"></div>
+            <div class="head-main">
+                <div class="logo left">
+                    <a href="#"></a>
+                </div>
+                <!--<ul class="menu right clearfix" id="menu">-->
+                <!--<li>-->
+                <!--<a href="index.html">-->
+                <!--首页-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="#">-->
+                <!--办公助手-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="#">-->
+                <!--招聘助手-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                <!--<a href="#">-->
+                <!--营销助手-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--<li class="active">-->
+                <!--<a href="login.html">-->
+                <!--登录-->
+                <!--</a>-->
+                <!--</li>-->
+                <!--</ul>-->
+            </div>
+        </div>
+        <div class="logBodyBg">
+            <img src="../../assets/frontend/images/logoBg.jpg">
+        </div>
+        <div class="regWrap">
+            <div class="regBox">
+                <p class="title">注 册</p>
+                <form action="#" class="form" id="form">
+                    <div class="div-form">
+                        <div class="form-group">
+                            <div class="w100">
+                                <span class="type">用户名 : </span>
+                                <input type="text" class="inputText" placeholder="请输入联系人姓名" name="personName"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="w100">
+                                <span class="type">企业名称 : </span>
+                                <input type="text" class="inputText" placeholder="请输入企业名称" name="companyName"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="w100">
+                                <span class="type">手机号码 : </span>
+                                <input type="text" class="inputText" placeholder="请输入手机号" name="phone"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="w100">
+                                <span class="type">电子邮箱 : </span>
+                                <input type="text" class="inputText" placeholder="请输入邮箱" name="email"/>
+                            </div>
+                        </div>
+                        <!--<div class="form-group">-->
+                            <!--<div class="w100">-->
+                                <!--<span class="type">验证码 : </span>-->
+                                <!--<input type="text" class="inputText w200" placeholder="请输入验证码" name="authCode"/>-->
+                                <!--<input class="getcode" type="button" id="getting" value="立即获取">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <div class="form-group">
+                            <div class="w100">
+                                <span class="type">所在城市 : </span>
+                                <select name="" class="selectText">
+                                    <option value="重庆">重庆</option>
+                                    <option value="重庆">重庆</option>
+                                    <option value="重庆">重庆</option>
+                                    <option value="重庆">重庆</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="w100">
+                                <span class="type">密　　码 : </span>
+                                <input type="password" class="inputText" placeholder="请输入密码" name="password"/>
+                            </div>
+                        </div>
+                        <div class="form-group mb0">
+                            <div class="w100">
+                                <span class="type">确认密码 : </span>
+                                <input type="password" class="inputText" placeholder="请再次输入密码" name="confirmPwd"/>
+                            </div>
+                        </div>
+                        <div class="form-group bo mb0">
+                            <div class="w100">
+                                <label>
+                                    <input type="checkbox" class="checkboxs"/> 我同意
+                                </label>
+                                <a href="###" target="_blank">服务条款</a>和<a href="###" target="_blank">隐私政策</a>
+                            </div>
+                        </div>
+                        <img src="../../assets/frontend/images/rg1.png" class="rg1" alt="">
+                        <img src="../../assets/frontend/images/rg2.png" class="rg2" alt="">
+                    </div>
+                    <div class="form-group h34">
+                        <div class="col-sm-9 col-xs-9 col-md-9 col-sm-offset-2 col-xs-offset-2 col-md-offset-2">
+                            <a class="btn btnSure style" id="btnSure">返　回</a>
+                            <input type="submit" class="btn btnReturn style" value="立即注册">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+    <script src="../../assets/frontend/js/formHeightAuto.js"></script>
+    <script src="../../assets/frontend/plugins/jquery-validate/jquery.validate.min.js"></script>
+    <script src="../../assets/frontend/plugins/jquery-validate/messages_zh.js"></script>
+    <script src="../../assets/frontend/plugins/jquery-validate/form-validation.js"></script>
+    <script type="text/javascript">
+        $(function(){
+
+            //返回
+            var $btnSure = $("#btnSure");
+            $btnSure.on("click",function () {
+                window.history.go(-1)
+            });
+
+
+            //获取验证码
+            var $getting = $("#getting");
+            $getting.click(function(){
+                var btn = $(this);
+                var count = 60;
+                var resend = setInterval(function(){
+                    count--;
+                    if (count > 0){
+                        btn.val(count+"秒后可重新获取");
+                        btn.addClass("active");
+//                        $.cookie("captcha", count, {path: '/', expires: (1/86400)*count});
+                    }else {
+                        clearInterval(resend);
+                        btn.removeClass("active");
+                        btn.val("获取验证码").removeAttr('disabled style');
+                    }
+                }, 1000);
+                btn.attr('disabled',true).css('cursor','not-allowed');
+            });
+        });
+    </script>
+</body>
+</html>
