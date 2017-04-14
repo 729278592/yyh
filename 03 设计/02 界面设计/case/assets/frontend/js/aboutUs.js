@@ -88,7 +88,7 @@ $(function () {
                         }
                         $('html, body').animate({
                             scrollTop: distanse
-                        },'swing', 400);
+                        }, 400);
                     }
                 }
             },

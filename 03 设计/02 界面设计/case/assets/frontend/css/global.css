@@ -427,9 +427,13 @@ label{font-weight: 100;color: #4B525C;}
 .caseGjList{display: flex;margin-bottom: 40px;}
 .caseGjList li{flex: 1;margin-right: 100px;}
 .caseGjList li a{width: 116px;display: block;text-align: center;}
-.caseGjList li a img{width: 116px;height: 116px;margin-bottom: 20px;}
+.caseGjList li a img{width: 116px;height: 116px;margin-bottom: 20px;border-radius: 100%;}
 
-
+.caseGjList li a img:hover {
+    -webkit-box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+}
 
 /*foot*/
 .foot{width: 100%;min-width: 1200px;background: #232323;}

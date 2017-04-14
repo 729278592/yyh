@@ -108,21 +108,21 @@ $(function () {
                     this.querySelector(".infor").classList.remove("active");
                 }
             },
-            calculation:function () {  //头部动画
-                if(doc.body.scrollTop != 0){
-                    this.headMain.classList.add("on");
-                }else {
-                    this.headMain.classList.remove("on");
-                }
-            },
+            // calculation:function () {  //头部动画
+            //     if(doc.body.scrollTop != 0){
+            //         this.headMain.classList.add("on");
+            //     }else {
+            //         this.headMain.classList.remove("on");
+            //     }
+            // },
             onmousewheel:function(){ //滚轮事件
                 doc.onmousewheel = () => {
-                    this.calculation();
+                    //this.calculation();
                 }
             },
             scroll:function(){ //鼠标事件
                 doc.onscroll = ()=>{
-                    this.calculation();
+                    //this.calculation();
                 }
             }
         };
