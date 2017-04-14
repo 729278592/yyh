@@ -101,7 +101,7 @@ img.logo{width: 170px;}
 .anit1-2{position:absolute;right:-100px;top:-12px;}
 .anit4{position:absolute;right:-10px;top:25px;}
 .aninteObj5{height: 580px;width: 100%;background:url("../images/anitbg5.jpg") no-repeat; background-size: 100% 100%;}
-.anite5{position: relative;left: 50%;width: 30%;margin-left: -15%;top: 200px;}
+.anite5{position: relative;left: 65%;width: 30%;margin-left: -15%;top: 200px;}
 .anite5 .anit5{position: absolute;left: -70px;top: -60px;}
 .anite5 .conInfor{color: #fff;}
 .anite5 .conInfor .title{font-size: 28px;color: #7B74B6;margin: 0 0 15px 0;display: block;}
@@ -285,7 +285,7 @@ label{font-weight: 100;color: #4B525C;}
 .usMenu{width: 100%;}
 .usMenu li{width: 100%;}
 .usMenu li a{border-bottom: 1px solid #dbdbdb;padding: 25px 0;color: #333;font-size: 26px;display: block;}
-.usMenu li a:hover{cursor: default;}
+
 .usMenu li:last-child a{border-bottom: 0;}
 .usMenu li.active{}
 .usMenu li.active a{color: #0eaf98;}
