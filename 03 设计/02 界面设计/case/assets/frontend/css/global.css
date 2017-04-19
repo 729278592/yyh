@@ -28,7 +28,7 @@ button:active,a:active{opacity: 0.85;}
 img.w100{width: 100%;}
 button{outline:none;border:0;background:none;}
 button:hover,a:hover{cursor:pointer;}
-.head{background: #fff;position: fixed;top: 0;z-index: 100;width:100%;min-width:1200px;
+.head{background: #fff;position: fixed;top: 0;z-index: 100;width:100%;min-width:1200px;border-bottom: 1px solid #dbdbdb;
     transition:padding 1s;
     -moz-transition:padding 1s; /* Firefox 4 */
     -webkit-transition:padding 1s; /* Safari and Chrome */
@@ -38,18 +38,18 @@ button:hover,a:hover{cursor:pointer;}
 
 
 /*index*/
-.head.on{padding: 15px 0;box-shadow: 0 2px 8px 0 rgba(0,0,0,.1);}
+.head.on{padding: 15px 0;}
 .headMain{display: block;width: 94%;padding: 10px 0;margin: 0 auto;}
 img.logo{width: 170px;}
 .headMain .right{height: 100%;top: 15px;position: relative;}
 .menu{display: block;height: 100%;}
-.menu li{float: left;width: 75px;text-align: center;margin: 0 15px;height: 34px;line-height: 34px;}
-.menu li.active a{color: #fff;background: #2dbeac;}
-.menu li a{font-size: 16px;color: #333;display: block;height: 100%;width: 100%;border-radius: 4px;}
-.menu li a.login,.menu li a.register{border-radius: 4px;}
-.menu li a.register{color: #fff;background: #33c5d2;}
-.menu li a.login{color: #333;border: 1px solid #dbdbdb;}
-.menu li:last-child{margin: 0;}
+.menu>li{float: left;width: 75px;text-align: center;margin: 0 15px;height: 34px;line-height: 34px;}
+.menu>li.active a{color: #fff;background: #2dbeac;}
+.menu>li a{font-size: 16px;color: #333;display: block;height: 100%;width: 100%;border-radius: 4px;}
+.menu>li a.login,.menu li a.register{border-radius: 4px;}
+.menu>li a.register{color: #fff;background: #33c5d2;}
+.menu>li a.login{color: #333;border: 1px solid #dbdbdb;}
+.menu>li:last-child{margin: 0;}
 .content{margin-top: 85px;}
 .ykh{}
 .ykhHead{background: #fff;text-align: center;height: 170px;overflow: hidden;}
@@ -62,13 +62,13 @@ img.logo{width: 170px;}
 .funMenu li:hover p{color: #0daf98;}
 .funMenu li.first{left:10%;bottom: 145px;}
 .funMenu li.second{left:32%;bottom: 185px;}
-.funMenu li.three{right:32%;bottom: 215px;}
+.funMenu li.three{right:30%;bottom: 215px;}
 .funMenu li.four{right:10%;top: -90px;}
 .funMenu li canvas{position: absolute;left: 0;top: 0;}
 .funMenu li .radius{width: 120px;height: 120px;background: #3a3a40;border-radius: 100%;margin-top: -60px;margin-left: -70px;z-index: 10;left: 50%;top: 50%;position: absolute;text-align: center;display: flex;
     align-items: center; /*定义body的元素垂直居中*/
     justify-content: center;}
-
+.funMenu li .radius img{ margin-top:  /*\**/30px\9;}
 .ykhCon .title{font-size: 28px;text-align: center;color: #333;position: relative;top: 50px; }
 .ykhFoot{background: #0daf98;text-align: center;height: 170px;overflow: hidden;}
 .ykhFoot .smallTitle{font-size: 16px;color: #fff;margin: 45px 0 10px;}
@@ -131,6 +131,17 @@ img.logo{width: 170px;}
 .production{text-align: center;}
 .production .title{font-size: 25px;color: #333;padding: 15px 25px;border-radius: 20px;border: 1px solid #dbdbdb;display: inline-block;margin: 50px 0 80px;}
 
+.regisType,.loginType{display: none;background: #fff;border-top: 3px solid #33c5d2;padding: 10px;width: 150px;position: absolute;left: -95px;}
+.loginType{border-top: 3px solid #dbdbdb;left: -93px;}
+.regisType li,.loginType li{border: 1px solid #dbdbdb;margin-top: 10px;}
+.regisType li a,.loginType li a{display: block;padding: 5px 0;width: auto;}
+
+.menu>li>a.type:hover{border-radius: 0;}
+
+.menu>li.hover:hover .regisType{display: block;}
+.menu>li.hover:hover .loginType{display: block;}
+
+
 /*product*/
 .productMenus{display: block;width: 90%;background: #f4f4f4;padding: 15px 5% 0;}
 .productMenus li{float: left;width: 25%;height: 540px;position: relative;overflow: hidden;
@@ -158,6 +169,7 @@ img.logo{width: 170px;}
 .productMenus li.three .productMask:hover img{width: 65px;height: 60px;}
 .productMenus li .productMask p.infor{font-size: 16px;color: #fff;text-align: center;
     position: absolute;width: 80%;left: 50%;margin-left: -40%;top: 60%;display: none;}
+.productMenus li .productMask:hover p.infor{display /*\**/:block\9;font-family: "微软雅黑";}
 .productMenus li .productMask p.infor.active{display: block;
     -webkit-animation: showSweetAlert 0.2s;
     -moz-animation: showSweetAlert 0.2s;
@@ -165,27 +177,28 @@ img.logo{width: 170px;}
 }
 @-webkit-keyframes showSweetAlert {
     0% {
-        top:0; }
+        top:100%; }
     25% {
-        top: 15%; }
+        top: 90%; }
     50% {
-        top: 30%; }
+        top: 80%; }
     75% {
-        top: 45%; }
+        top: 70%; }
     100% {
         top: 60%; }
     }
 img.w100{width: 100%;}
 
-.productMenus li.first{background: url("../images/production1.jpg") no-repeat;background-position: -100px -100px;}
+.productMenus li.first{background: url("../images/production1.jpg") no-repeat;}
 .productMenus li.second{background: url("../images/production2.jpg") no-repeat;}
-.productMenus li.three{background: url("../images/production3.jpg") no-repeat;background-position: -100px 0px;}
-.productMenus li.four{background: url("../images/production4.jpg") no-repeat;background-position: -100px 0px;}
-.productMenus li .productMask{position: absolute;background: rgba(0,0,0,0.6);left: 0;top: 0;right: 0;bottom: 0;}
+.productMenus li.three{background: url("../images/production3.jpg") no-repeat;}
+.productMenus li.four{background: url("../images/production4.jpg") no-repeat;}
+.productMenus li .productMask{position: absolute;background: black;background: rgba(0,0,0,0.6);left: 0;top: 0;right: 0;bottom: 0;filter: alpha(opacity=60);}
 .caseCon{width: 1380px;margin: 0 auto;}
 .caseMenu{display: block;width: 100%;margin-top: 50px;}
 .caseMenu li{float: left;padding: 10px 11px;border-bottom: 2px solid transparent;margin-right: 14.5%;}
 .caseMenu li:hover{border-bottom: 3px solid #0daf98;}
+.caseMenu li.mr0{margin-right: 0;}
 .caseMenu li:hover a{color: #0daf98;}
 .caseMenu li:last-child{margin-right: 0;}
 .caseMenu li.active{border-bottom: 3px solid #0daf98;}
@@ -198,6 +211,7 @@ img.w100{width: 100%;}
 .caseList li img{width: 100%;height: 440px;}
 .barImg{top: -5px;}
 .ykhsc{text-align: center;padding: 100px 0 50px;background: #f4f4f4;}
+.ykhsc img{margin-bottom: 25px;}
 .largeTitle{font-size: 39px;color: #0b0306;}
 .smallTitle{font-size: 26px;color: #0b0306;margin: 15px 0;}
 .btnFree{color: #fff;padding: 15px 70px;background: #0daf98;border-radius: 8px;font-family: "微软雅黑";font-size: 30px;}
@@ -282,7 +296,7 @@ label{font-weight: 100;color: #4B525C;}
 
 /*aboutUs*/
 .aboutUs{width: 1130px;display: block;margin: 30px auto;}
-.aboutUs .divMenu{width: 175px;text-align: center;position: fixed;}
+.aboutUs .divMenu{width: 175px;text-align: center;position: relative;}
 .aboutUs .divCase{width: 870px;}
 .usMenu{width: 100%;}
 .usMenu li{width: 100%;}
@@ -345,6 +359,9 @@ label{font-weight: 100;color: #4B525C;}
 .package{}
 .packageMenu {width: 100%;}
 .packageMenu li{width: 100%;}
+.packageMenu li.w264 .casePage{width/*\**/:264px\9;}
+.packageMenu li.first .casePaCon{width/*\**/:202px\9;}
+.packageMenu li.first .casePage.w461{width/*\**/:310px\9;}
 .pageHd{text-align: center;padding: 38px 0;background: #d7d7d7;}
 .pageHd>img{position: relative;top: 9px;left: -30px;}
 .packageMenu li:first-child .pageHd{background: transparent;}
@@ -355,8 +372,16 @@ label{font-weight: 100;color: #4B525C;}
 .pageBd>.title{color: #666;margin:  30px 0 30px;}
 .pageCon .plus{padding: 0 14px; display: flex;font-size: 24px;
     justify-content: center;
-    align-items: center;}
-.pageBd .pageCon{display: flex;}
+    align-items: center;
+    display /*\**/:block\9;
+    float /*\**/:left\9;
+    width/*\**/:45px\9;
+    line-height/*\**/:460px\9;
+    padding /*\**/:0\9;
+    text-align: center;
+
+}
+.pageBd .pageCon{display: flex;display /*\**/:block\9;}
 .casePage{border-radius: 10px;}
 .casePage:hover {
     -webkit-box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
@@ -364,7 +389,7 @@ label{font-weight: 100;color: #4B525C;}
     box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
 }
 .packageMenu li:first-child .casePage:first-child{width: 480px;}
-.casePage{position: relative;width: 370px;}
+.casePage{position: relative;width: 370px;   float: left;}
 .casePage .casePahd{background: #2dbeac;border-radius: 10px 10px 0 0;overflow: hidden;height: 146px;}
 .packageMenu li:first-child .casePage:first-child .casePahd .caseTitle{margin: 40px 0;}
 .casePahd .caseTitle{font-size: 26px;color: #fff;text-align: center;margin: 55px 0;}
@@ -373,14 +398,14 @@ label{font-weight: 100;color: #4B525C;}
 .casePahd .caseTitleCon.w100 span{width: 100%;position: relative;top: -50px;}
 .casePahd .caseTitleCon span:first-child{border-right: 1px dashed #fff;}
 .casePabd{display: flex;background: #f1f1f3;border-radius: 0 0 10px 10px;padding: 25px 15px;height: 265px;}
-.casePaCon{flex: 1;padding-left: 9px;}
+.casePaCon{flex: 1;padding-left: 9px;    display: inline-block;}
 .casePaCon p{width: 100%;color: #666;margin-bottom: 5px;line-height: 30px;display: flex;font-size: 14px;}
 .casePaCon p.title{color: #333;height: 60px;line-height: 30px;margin-bottom: 15px;overflow: hidden;font-size: 16px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     word-break: break-all;}
-.casePaCon p img{margin-right: 9px;width: 10px;height: 10px;position: relative;top: 10px;}
+.casePaCon p img{margin-right: 9px;width: 10px;height: 10px;position: relative;top: 10px;top /*\**/:0\9}
 .casePaCon p span{flex: 1;}
 .pageFoot{margin: 30px 0;text-align: center;}
 .pageFoot a{display: inline-block;padding: 10px 60px;border-radius: 4px;background: #0daf98;color: #fff;font-size: 26px;}

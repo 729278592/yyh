@@ -1,21 +1,20 @@
 /**
  * Created by WHB on 2017/4/5.
  */
-$(function () {
     /*
      * 面向对象实现;
      * init:初始化
      * move:动画库
      * getCss:获取对象样式
      */
-
+alert()
     ;(function(win,doc,unde){  //分号作用是多文件合并时防止上一行代码没写分号而出错
         function anite(options){
-            this.time = options.time;
+            this.time = 100;
             this.left = ".left";
             this.right = ".right";
             this.maskCase = ".maskCase";
-            this.aninteObj = document.querySelectorAll(options.aninteObj);
+            this.aninteObj = document.querySelectorAll(".aninteObj");
             this.menuCase = document.querySelector(".menuCase");
             this.productMenu = document.querySelectorAll(".productMenu");
             this.menuCaseLi = this.menuCase.querySelectorAll("li");
@@ -69,7 +68,7 @@ $(function () {
                     }
                     if(ismove == true){
                         clearInterval(obj.iTimer);
-                        fn&&fn.call(obj)
+                        fn&&fn.call(obj);
                     }
                 },this.time)
             },
@@ -106,16 +105,21 @@ $(function () {
                 }
             },
             domCaozuo:function (len,that,index) {//合作案例
-                for(let i = 0; i<len; i++){
-                    that.menuCaseLi[i].className = '';
-                    that.move(that.productMenu[i],{opacity:0});
-                    that.productMenu[i].classList.add("hide")
-                }
-                setTimeout(function () {
-                    that.move(that.productMenu[index],{opacity:'100'});
-                    that.menuCaseLi[index].className = 'active';
-                    that.productMenu[index].classList.remove("hide")
-                },200)
+                $(that.menuCaseLi).eq(index).addClass("active");
+                $(that.menuCaseLi).eq(index).siblings().removeClass("active");
+                $(that.productMenu).eq(index).removeClass("hide").animate({opacity:1},200);
+                $(that.productMenu).eq(index).siblings().addClass("hide").animate({opacity:0},200);
+
+                // for(let i = 0; i<len; i++){
+                //     that.menuCaseLi[i].className = '';
+                //     that.move(that.productMenu[i],{opacity:0});
+                //     that.productMenu[i].classList.add("hide")
+                // }
+                // setTimeout(function () {
+                //     that.move(that.productMenu[index],{opacity:'100'});
+                //     that.menuCaseLi[index].className = 'active';
+                //     that.productMenu[index].classList.remove("hide")
+                // },200)
             },
             onMouseFun:function () {
                 $(this.productMenu).find("li").hover(
@@ -153,4 +157,6 @@ $(function () {
         };
         win.anite = anite;
     })(window,document,undefined);
+new anite({
+
 });

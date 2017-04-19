@@ -87,16 +87,22 @@ $(function () {
                 }
             },
             domCaozuo:function (len,that,index) {//项目列表
-                for(let i = 0; i<len; i++){
-                    that.caseMenuLi[i].className = '';
-                    that.move(that.caseListLi[i],{opacity:0});
-                    that.caseListLi[i].classList.add("hide")
-                }
-                setTimeout(function () {
-                    that.move(that.caseListLi[index],{opacity:'100'});
-                    that.caseMenuLi[index].className = 'active';
-                    that.caseListLi[index].classList.remove("hide")
-                },200)
+
+                $(that.caseMenuLi).eq(index).addClass("active");
+                $(that.caseMenuLi).eq(index).siblings().removeClass("active");
+                $(that.caseListLi).eq(index).removeClass("hide").animate({opacity:1},200);
+                $(that.caseListLi).eq(index).siblings().addClass("hide").animate({opacity:0},200);
+
+                // for(let i = 0; i<len; i++){
+                //     that.caseMenuLi[i].classList.remove("active");
+                //     that.move(that.caseListLi[i],{opacity:0});
+                //     that.caseListLi[i].classList.add("hide")
+                // }
+                // setTimeout(function () {
+                //     that.move(that.caseListLi[index],{opacity:'100'});
+                //     that.caseMenuLi[index].classList.add("active");
+                //     that.caseListLi[index].classList.remove("hide")
+                // },200)
             },
             productOver:function (_this) {
                 _this.onmouseover = function () {

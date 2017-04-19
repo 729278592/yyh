@@ -95,16 +95,16 @@ $(function () {
             coumputed:function(){
                 for(let i = 0;i<this.js_scroll.length;i++){
                     if(this.js_scroll[i].getBoundingClientRect().top<this.headMain.offsetHeight+150){
-                        $(".divMenu").css({top:"20%"});
+                        $(".divMenu").css({top:"185px",position:"fixed"});
                         $(".usMenu li").eq(i).addClass("active");
                         $(".usMenu li").eq(i).siblings().removeClass("active");
                     }
                 }
 
                 if(this.js_scroll[0].getBoundingClientRect().top<this.headMain.offsetHeight+100){
-                    $(".divMenu").css({top:"15%"});
+                    $(".divMenu").css({top:"185px"});
                 }else {
-                    $(".divMenu").css({top:"inherit"});
+                    $(".divMenu").css({top:"0",position:"relative"});
                 }
                 
             },
