@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/plugins/swiper/dist/css/swiper.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="wrapper style">
+    <div class="dishContent clearfix pb50">
+        <!--<img src="../../assets/mobile/images/indexSlider1.jpg" alt="" class="w100"/>-->
+        <div class="swiper-container mt0 swiper-container-horizontal" id="swiper-container">
+            <div class="swiper-wrapper" style="transition-duration: 0ms; ">
+                <div class="swiper-slide">
+                    <img src="../../assets/mobile/plugins/swiper/dist/images/indexSlider1.jpg" alt="" class="w100"/>
+                </div>
+                <div class="swiper-slide">
+                    <img src="../../assets/mobile/plugins/swiper/dist/images/indexSlider1.jpg" alt="" class="w100"/>
+                </div>
+                <div class="swiper-slide">
+                    <img src="../../assets/mobile/plugins/swiper/dist/images/indexSlider1.jpg" alt="" class="w100"/>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <!--<div class="swiper-button-next"></div>-->
+            <!--<div class="swiper-button-prev"></div>-->
+        </div>
+        <div class="myHouse ">
+            <div class="myHouseHd">
+                <img src="../../assets/mobile/images/activeImg.png" alt=""> 
+                活动规则
+            </div>
+            <div class="myHouseBd">
+                <ul class="myHouseBdMenu">
+                    <li>
+                        <img src="../../assets/mobile/images/cusmtor.png" alt=""> <br>
+                        我的客户 <br>
+                        <span class="color verdana">20</span>
+                    </li>
+                    <li>
+                        <img src="../../assets/mobile/images/ybImg.png" alt=""> <br>
+                        我的佣金 <br>
+                        <span class="color verdana">20</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="houseList">
+            <div class="houseListHd">
+                <img src="../../assets/mobile/images/hot.png" alt="">
+                热销房源
+            </div>
+            <ul class="houseMenu">
+                <!--无参与记录开始-->
+                <div class="notConTip hide">
+                    <img src="../../assets/mobile/images/notContent.png" alt=""/>
+                    <p class="notInfor">
+                        暂无数据！
+                    </p>
+                </div>
+            </ul>
+            <!--无参与记录结束-->
+            <div class="notData hide">
+                无更多数据
+            </div>
+        </div>
+
+    </div>
+    <div class="foot">
+        <ul class="tabMenu">
+            <li class="active">
+                <a href="index.html">
+                    <span class="home"></span>
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="fillCusInfor.html">
+                    <span class="good"></span>
+                    <span>推荐客户</span>
+
+                </a>
+            </li>
+            <li>
+                <a href="personCenter.html">
+                    <span class="person"></span>
+                    <span>我的</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/mobile/plugins/swiper/dist/js/swiper.min.js"></script>
+<script src="../../assets/mobile/js/weui.js"></script>
+<script src="../../assets/mobile/js/loadMore.js"></script>
+<script src="../../assets/mobile/js/global.js"></script>
+
+<script>
+    $(function () {
+        new Swiper('#swiper-container', {
+            //        prevButton:'.swiper-button-prev',
+            //        nextButton:'.swiper-button-next',
+            slidesPerView: 1,
+            pagination:'.swiper-pagination',
+            paginationClickable: true,
+            spaceBetween: 0,
+            loop:true,
+            autoplay: 5000,
+            autoplayDisableOnInteraction: false
+        });
+
+
+        /*滚动加载*/
+        var houseMenu = $('.houseMenu');
+        houseMenu.scrollLoad({
+            limit: 6, //限制条数
+            startNum:5, //初始化显示条数
+            infers:"../../assets/mobile/data/hotHouseList.json", //接口
+            ajaxRecord:function(obj,wajxHtml){ //数据结构
+
+                wajxHtml += '<li>'+
+                                '<a href="houseInfor.html">'+
+                                    '<img src="../../assets/mobile/images/houseimg.jpg" alt="">'+
+                                '</a>'+
+                                '<div class="house_infor">'+
+                                    '<p class="title">'+obj.name+'</p>'+
+                                    '<p class="price verdana">'+obj.price+'元/㎡</p>'+
+
+                                    '<ul class="houseGgList clearfix">';
+                                for(var i = 0;i<obj.houseSpeci.length;i++){
+                                     wajxHtml +=
+                                        '<li>'+obj.houseSpeci[i]+'</li>';
+                                }
+                        wajxHtml +='</ul>'+
+                                '</div>'+
+                            '</li>';
+                return wajxHtml;
+            }
+        });
+    })
+</script>
+</body>
+</html>
+
+
+

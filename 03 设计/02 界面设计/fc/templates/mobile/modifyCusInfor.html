@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>修改客户信息</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="wrapper">
+    <div class="dishContent">
+        <div class="cusInfor style">
+            <div class="title">
+                更多客户资料
+            </div>
+            <div class="weui-cells mt0 weui-cells_form">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label"><span class="color">*</span> 姓名</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入姓名" id="personName">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label"><span class="color">*</span> 手机号</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入手机号" id="mobile">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label"><span class="color hidden">*</span> 年龄</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="number" pattern="[0-9]*" placeholder="请输入年龄" id="age">
+                    </div>
+                </div>
+                <div class="weui-cells mt0 weui-cells_checkbox">
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd">
+                            <span class="color">*</span> 性别
+                        </div>
+                        <label class="weui-cell weui-check__label" for="s11">
+                            <div class="weui-cell__bd">
+                                男
+                                <input type="radio" class="weui-check" name="checkbox" id="s11" checked="checked">
+                                <i class="weui-icon-checked"></i>
+                            </div>
+                        </label>
+                        <label class="weui-cell weui-check__label" for="s12">
+                            <div class="weui-cell__hd">
+                                女
+                                <input type="radio" name="checkbox" class="weui-check" id="s12">
+                                <i class="weui-icon-checked"></i>
+                            </div>
+                        </label>
+                    </div>
+
+
+                </div>
+
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label"><span class="color hidden">*</span> 职业</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text"  placeholder="请输入职业">
+                    </div>
+                </div>
+
+
+                <div class="weui-cell weui-cell_select">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label"><span class="color hidden">*</span> 收入范围</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <select class="weui-select" name="select1">
+                            <option selected="" value="50~80W">50~80W</option>
+                            <option value="50~80W">50~80W</option>
+                            <option value="50~80W">50~80W</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label"><span class="color hidden">*</span> 现居局域</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入现居局域">
+                    </div>
+                </div>
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label"><span class="color hidden">*</span> 单位地址</label>
+                    </div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" type="text" placeholder="请输入单位地址">
+                    </div>
+                </div>
+                <div class="weui-btn_area style">
+                    <a class="weui-btn weui-btn_primary" id="btnSure">保存</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/mobile/js/global.js"></script>
+<script src="../../assets/mobile/js/weui.js"></script>
+<script src="../../assets/mobile/js/common-validate.js"></script>
+<script>
+    $(function () {
+        let $btnSure    = $("#btnSure");
+        let $personName = $("#personName");
+        let $mobile     = $("#mobile");
+        $btnSure.on("touchend",function () {
+            if(isEmpty($personName.val())){
+                weui.showMsg("请输入昵称");
+                return ;
+            }
+
+            if(isEmpty($mobile.val())||!isPhone($mobile.val())){
+                weui.showMsg("请输入有效手机号");
+                return ;
+            }
+        })
+    })
+</script>
+</body>
+</html>
+
+
+

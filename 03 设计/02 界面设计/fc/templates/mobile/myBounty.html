@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>我的赏金</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+
+</head>
+<body>
+<div class="wrapper style">
+    <div class="dishContent relative" >
+        <div class="deal style">
+            可提现佣金
+            <span class="color">￥90.00</span>
+            <div class="weui-btn_area style mt1">
+                <a class="weui-btn weui-btn_primary" id="sureBtn">申请提现</a>
+            </div>
+        </div>
+        <div class="present">
+            <div class="weui-cells mt0">
+                <a class="weui-cell weui-cell_access" href="modifyName.html">
+                    <div class="weui-cell__bd">
+                        <span class="span_icon spa_cardT"></span>
+                        <span class="text">提现方式</span>
+                    </div>
+                    <div class="weui-cell__ft">银行卡</div>
+                </a>
+                <a class="weui-cell weui-cell_access" href="modifyPhone.html">
+                    <div class="weui-cell__bd">
+                        <span class="span_icon spa_cardS"></span>
+                        <span class="text">
+                        银行卡
+                    </span>
+                    </div>
+                    <div class="weui-cell__ft">中国工商银行</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="dealTitle style">
+            <span class="span_icon spa_cardJ"></span>
+            提现记录
+        </div>
+        <ul class="dealList style">
+
+        </ul>
+        <!--无参与记录结束-->
+        <div class="notData hide">
+            无更多数据
+        </div>
+    </div>
+    <!--无参与记录开始-->
+    <div class="notConTip hide">
+        <img src="../../assets/mobile/images/notContent.png" alt=""/>
+        <p class="notInfor">
+            暂无数据！
+        </p>
+    </div>
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/mobile/js/weui.js"></script>
+<script src="../../assets/mobile/js/loadMore.js"></script><!--上滑加载-->
+<script src="../../assets/mobile/js/global.js"></script>
+<script>
+    $(function(){
+
+        /*滚动加载*/
+        var dealList = $('.dealList');
+        dealList.scrollLoad({
+            limit: 6, //限制条数
+            startNum:8, //初始化显示条数
+            infers:"../../assets/mobile/data/presentList.json", //接口
+            ajaxRecord:function(obj,wajxHtml){
+                //模板片段
+
+                var money = Number(obj.money).toFixed(2),
+                type = null,
+                typeClass = null;
+
+                if(obj.type==0){
+                    type = "处理中";
+                    typeClass = "default";
+                }else if(obj.type==1){
+                    type = "成功";
+                    typeClass = "success";
+                }else if(obj.type==2){
+                    type = "失败";
+                    typeClass = "fail";
+                }
+
+                wajxHtml+= '<li>'+
+                                '<div class="clearfix">'+
+                                '<span class="left name">提现</span>'+
+                                '<span class="right">'+money+'</span>'+
+                                '</div>'+
+                                '<div class="clearfix">'+
+                                '<span class="right '+typeClass+'">'+type+'</span>'+
+                                '</div>'+
+                                '<div class="time">签约时间 : '+obj.time+'</div>'+
+                            '</li>';
+                return wajxHtml;
+            }
+        })
+
+    })
+</script>
+<script>
+    $(function () {
+        var $applyBtn = $(".applyBtn");
+        var $nobK = $("#nobK");
+        var $money = $("#money");
+        var $dialog = $("#dialog");
+        $applyBtn.on("touchend",function () {
+            if(!$nobK.data("Bk")){
+
+                if(parseInt($money.text())<500){
+                    weui.showMsg("提现金额不足");
+                    return ;
+                }
+                weui.confirmCashBox({
+                    name:"张三",
+                    title: '交通银行',
+                    money:"500",
+                    cardNumber:"5555",
+                    content: "确认提现?"
+                })
+            }else {
+                weui.showMsg("请绑卡")
+            }
+        })
+    })
+</script>
+</body>
+</html>

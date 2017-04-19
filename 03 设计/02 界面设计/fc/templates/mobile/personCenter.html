@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>案场个人中心</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="wrapper style">
+    <div class="dishContent clearfix pb50">
+        <div class="person_infor">
+            <div class="fcInfor">
+                <div class="fcImg">
+                    <img src="../../assets/mobile/images/default.png" alt="">
+                </div>
+                <div class="fcDetails">
+                    <p class="title">张三</p>
+                    <p>推荐人</p>
+                </div>
+            </div>
+            <div class="fcAnimate">
+                <div class="fcAnimateDiv df">
+                    <div class="flex">
+                        <img src="../../assets/mobile/images/acPer.png" alt=""> <br>
+                        <span>客户</span><br>
+                        <span class="color verdana">7</span>
+                    </div>
+
+                    <div class="flex">
+                        <img src="../../assets/mobile/images/perIcon2.png" alt=""> <br>
+                        <span>成交</span><br>
+                        <span class="color verdana">7</span>
+                    </div>
+                    <div class="flex">
+                        <img src="../../assets/mobile/images/srIcon.png" alt=""> <br>
+                        <span>收入</span><br>
+                        <span class="color verdana">6</span>
+                    </div>
+                    <a class="cz">本月</a>
+                </div>
+                <div class="fcAnimateDiv lj hide">
+                    <div class="flex">
+                        <img src="../../assets/mobile/images/acPer.png" alt=""> <br>
+                        <span>客户</span><br>
+                        <span class="color verdana">7</span>
+                    </div>
+
+                    <div class="flex">
+                        <img src="../../assets/mobile/images/perIcon2.png" alt=""> <br>
+                        <span>成交</span><br>
+                        <span class="color verdana">7</span>
+                    </div>
+                    <div class="flex">
+                        <img src="../../assets/mobile/images/srIcon.png" alt=""> <br>
+                        <span>收入</span><br>
+                        <span class="color verdana">6</span>
+                    </div>
+                    <a class="calj">累计</a>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells mt10">
+            <a class="weui-cell weui-cell_access" href="myCustomer.html">
+                <div class="weui-cell__bd">
+                    <p>
+                        <span class="span_icon spa_juan"></span>
+                        <span class="text">
+                            我的客户
+                        </span>
+                    </p>
+                </div>
+                <div class="weui-cell__ft"></div>
+            </a>
+
+            <a class="weui-cell weui-cell_access" href="">
+                <div class="weui-cell__bd">
+                    <p>
+                        <span class="span_icon spa_money"></span>
+                        <span class="text">
+                            佣金提现
+                        </span>
+                    </p>
+                </div>
+                <div class="weui-cell__ft"></div>
+            </a>
+
+            <a class="weui-cell weui-cell_access" href="myCustomer.html">
+                <div class="weui-cell__bd">
+                    <p>
+                        <span class="span_icon spa_regard"></span>
+                        <span class="text">
+                                签约记录
+                            </span>
+                    </p>
+                </div>
+                <div class="weui-cell__ft"></div>
+            </a>
+            <a class="weui-cell weui-cell_access" href="myCustomer.html">
+                <div class="weui-cell__bd">
+                    <p>
+                        <span class="span_icon spa_person"></span>
+                        <span class="text">
+                                个人资料
+                            </span>
+                    </p>
+                </div>
+                <div class="weui-cell__ft"></div>
+            </a>
+
+        </div>
+    </div>
+    <div class="foot">
+        <ul class="tabMenu">
+            <li>
+                <a href="index.html">
+                    <span class="home"></span>
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="fillCusInfor.html">
+                    <span class="good"></span>
+                    <span>推荐客户</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="">
+                    <span class="person"></span>
+                    <span>我的</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/mobile/js/global.js"></script>
+<script>
+    $(function () {
+        var $cz = $(".cz"),
+            $calj = $(".calj"),
+            $fclj = $(".fcAnimateDiv.lj"),
+            slideInRight = "slideInRight",
+            slideOutRight = "slideOutRight",
+            hide = "hide";
+
+        leftAnite($cz,$fclj,slideInRight,hide);
+        rightAnite($calj,$fclj,slideOutRight,hide);
+    })
+</script>
+</body>
+</html>
+
+
+

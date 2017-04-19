@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>累计交易</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="wrapper style">
+    <div class="hd deal">
+        可提现佣金
+        <span class="color">￥90.00</span>
+    </div>
+    <div class="dishContent relative pt50">
+        <div class="dealTitle">
+            签约记录
+        </div>
+        <ul class="dealList">
+
+        </ul>
+
+        <!--无参与记录结束-->
+        <div class="notData hide">
+            无更多数据
+        </div>
+    </div>
+    <!--无参与记录开始-->
+    <div class="notConTip hide">
+        <img src="../../assets/mobile/images/notContent.png" alt=""/>
+        <p class="notInfor">
+            暂无数据！
+        </p>
+    </div>
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/mobile/js/global.js"></script>
+<script src="../../assets/mobile/js/weui.js"></script>
+<script src="../../assets/mobile/js/loadMore.js"></script>
+<script>
+    $(function(){
+
+
+        /*滚动加载*/
+        var dealList = $('.dealList');
+        dealList.scrollLoad({
+            limit: 6, //限制条数
+            startNum:8, //初始化显示条数
+            infers:"../../assets/mobile/data/dealList.json", //接口
+            ajaxRecord:function(obj,wajxHtml){ //数据结构
+                wajxHtml += ' <li>'+
+                                '<div class="clearfix">'+
+                                '<span class="left name">'+obj.name+'</span>'+
+                                '<span class="right money">佣金 '+obj.money+'</span>'+
+                            '</div>'+
+                            '<div class="time">签约时间 : '+obj.time+'</div>'+
+                            '</li>';
+                return wajxHtml;
+            }
+        });
+
+    })
+</script>
+</body>
+</html>
+
+
+

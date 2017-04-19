@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>推荐客户</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/plugins/ion.rangeslider/css/ion.rangeSlider.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/plugins/ion.rangeslider/css/ion.rangeSlider.Metronic.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="wrapper style">
+    <div class="dishContent pb50">
+        <img src="../../assets/mobile/images/tkxx.jpg" class="w100" alt="">
+        <div class="recomond mt0">
+            <div class="title">置业类型</div>
+            <div class="recomondBd">
+                <ul class="recMenu clearfix">
+                    <li class="active">住宅</li>
+                    <li>写字楼</li>
+                    <li>商铺</li>
+                </ul>
+            </div>
+        </div>
+        <div class="recomond">
+            <div class="title">预算范围</div>
+            <div class="recomondBd">
+                <div class="recDiv">
+                    <span class="tip">单位 : w</span>
+                    <input id="range_1" type="text" name="range_1" value=""/>
+                </div>
+            </div>
+        </div>
+        <a class="next">
+            跳过
+            <i class="fa fa-angle-double-right"></i>
+        </a>
+        <div class="weui-btn_area style mt1">
+            <a class="weui-btn weui-btn_primary" id="sureBtn">提交</a>
+        </div>
+    </div>
+    <div class="foot">
+        <ul class="tabMenu">
+            <li class="active">
+                <a href="">
+                    <span class="home"></span>
+                    <span>首页</span>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="good"></span>
+                    <span>推荐客户</span>
+
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <span class="person"></span>
+                    <span>我的</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/mobile/plugins/ion.rangeslider/js/ion-rangeSlider/ion.rangeSlider.js"></script>
+<script src="../../assets/mobile/js/global.js"></script>
+<script>
+    jQuery(document).ready(function() {
+        // initiate layout and plugins
+        $("#range_1").ionRangeSlider({
+            min: 0,
+            max: 500,
+            from: 20,
+            to: 400,
+            type: 'double',
+            step: 1,
+            prefix: "$",
+            prettify: false,
+            hasGrid: true
+        });
+    });
+</script>
+</body>
+</html>

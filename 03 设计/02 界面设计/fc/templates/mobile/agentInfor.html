@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>经纪人信息</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="wrapper">
+    <div class="dishContent">
+        <div class="person_infor">
+            <ul class="customer">
+                <li>
+                    <div class="weui-cell weui-cell_access">
+                        <div class="weui-cell__hd">
+                            <img src="../../assets/mobile/images/default.png" alt="">
+                        </div>
+                        <div class="weui-cell__bd">
+                            <p class="clearfix">
+                                <span class="left">张三1</span>
+                                <span class="right">
+                                    <span href="sms:13678478463" class="span_icon spa_code mr5"></span>
+                                    <span href="tel:13678457846" class="span_icon spa_mobile"></span>
+                                </span>
+                            </p>
+                            <p class="num">本月新增客户 : <span class="colorNew">100</span></p>
+                            <p class="num">本月新增成交 : <span class="colorNew">100</span></p>
+                            <p class="time">更新时间 : 2016.5.3 15:35</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="fcAnimate">
+                <div class="fcAnimateDiv df">
+                    <div class="flex">
+                        <img src="../../assets/mobile/images/perIcon1.png" alt=""> <br>
+                        <span>到访</span><br>
+                        <span class="color">7</span>
+                    </div>
+
+                    <div class="flex">
+                        <img src="../../assets/mobile/images/perIcon2.png" alt=""> <br>
+                        <span>成交</span><br>
+                        <span class="color">7</span>
+                    </div>
+                    <a class="cz">本月</a>
+                </div>
+                <div class="fcAnimateDiv lj hide">
+                    <div class="flex">
+                        <img src="../../assets/mobile/images/perIcon1.png" alt=""> <br>
+                        <span>到访</span><br>
+                        <span class="color">7</span>
+                    </div>
+
+                    <div class="flex">
+                        <img src="../../assets/mobile/images/perIcon2.png" alt=""> <br>
+                        <span>成交</span><br>
+                        <span class="color">7</span>
+                    </div>
+                    <a class="calj">累计</a>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells mt10">
+            <a class="weui-cell weui-cell_access" href="">
+                <div class="weui-cell__bd">
+                    <p>
+                        <span class="span_icon spa_erCode"></span>
+                        <span class="text">
+                            我的二维码
+                        </span>
+                    </p>
+                </div>
+                <div class="weui-cell__ft"></div>
+            </a>
+
+            <a class="weui-cell weui-cell_access" href="myCustomer.html">
+                <div class="weui-cell__bd">
+                    <p>
+                        <span class="span_icon spa_person"></span>
+                        <span class="text">
+                                个人资料
+                            </span>
+                    </p>
+                </div>
+                <div class="weui-cell__ft"></div>
+            </a>
+
+        </div>
+    </div>
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/mobile/js/global.js"></script>
+<script>
+    $(function () {
+        var $cz = $(".cz"),
+            $calj = $(".calj"),
+            $fclj = $(".fcAnimateDiv.lj"),
+            slideInRight = "slideInRight",
+            slideOutRight = "slideOutRight",
+            hide = "hide";
+
+        leftAnite($cz,$fclj,slideInRight,hide);
+        rightAnite($calj,$fclj,slideOutRight,hide);
+    })
+</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>我的客户</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="wrapper style">
+    <div class="hd">
+        <div class="search">
+            <div class="search_div">
+                <div class="searchInput">
+                    <input type="text" class="search_input" placeholder="请输入关键词">
+                    <span class="close hide">
+                        <img src="../../assets/mobile/images/clear.png" alt="">
+                    </span>
+                </div>
+                <a class="search_bar">
+                    <img src="../../assets/mobile/images/search.png" alt="">
+                </a>
+            </div>
+            <div class="screen_div">
+                <img src="../../assets/mobile/images/screen.png" alt="">
+                筛选
+            </div>
+        </div>
+    </div>
+    <div class="dishContent absolute pt50">
+        <ul class="customer">
+
+        </ul>
+
+        <!--无参与记录结束-->
+        <div class="notData hide">
+            无更多数据
+        </div>
+    </div>
+
+
+    <!--无参与记录开始-->
+    <div class="notConTip hide">
+        <img src="../../assets/mobile/images/notContent.png" alt=""/>
+        <p class="notInfor">
+            暂无数据！
+        </p>
+    </div>
+    <div class="weui_dialog_ext hide">
+        <div class="weui_mask"></div>
+        <div class="playFlex">
+            <div class="plyFlexs">
+                <div class="condition">
+                    <ul class="conditionMenu">
+                        <li class="active">客户状态</li>
+                        <li>排序方式</li>
+                    </ul>
+                </div>
+                <div class="condition">
+                    <ul class="conditionList">
+                        <li>新客户</li>
+                        <li>已分配</li>
+                        <li>新客户</li>
+                        <li>已分配</li>
+                        <li>新客户</li>
+                        <li>已分配</li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="btnMenu">
+                <li class="sure">确认</li>
+                <li class="clear">清空</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/mobile/js/global.js"></script>
+<script src="../../assets/mobile/js/weui.js"></script>
+<script src="../../assets/mobile/js/loadMore.js"></script>
+<script>
+    $(function(){
+
+        /*滚动加载*/
+        var customer = $('.customer');
+        customer.scrollLoad({
+            limit: 6, //限制条数
+            startNum:8, //初始化显示条数
+            infers:"../../assets/mobile/data/myCustomer.json", //接口
+            ajaxRecord:function(obj,wajxHtml){ //数据结构
+
+                wajxHtml += '<li>'+
+                                '<div class="weui-cell">'+
+                                    '<div class="weui-cell__hd">'+
+                                        '<a href="customerInfor.html"><img src="'+obj.headImg+'" alt=""></a>'+
+                                    '</div>'+
+                                    '<div class="weui-cell__bd">'+
+                                        '<p>'+obj.name+'</p>'+
+                                        '<p class="clearfix">'+
+                                            '<span class="left">'+
+                                                '<a href="sms:13678478463" class="span_icon spa_code mr5"></a>'+
+                                                '<a href="tel:13678478463" class="span_icon spa_mobile"></a>'+
+                                            '</span>'+
+                                            //colorNew新客户  colorDefault默认  colorSuccess成功签约  colorXd已下定  colorFp已分配  colored已到访
+                                            '<span class="right colorNew">'+obj.type+'</span>'+
+                                        '</p>'+
+                                        '<p class="time">更新时间 : <span class="verdana">'+obj.time+'</span></p>'+
+                                    '</div>'+
+                                    '<div class="weui-cell__ft"></div>'+
+                                '</div>'+
+                            '</li>';
+                return wajxHtml;
+            }
+        });
+
+        var $screen_div = $(".screen_div");
+        var $weui_dialog_ext = $(".weui_dialog_ext");
+        var slideInRight = "slideInRight";
+        var slideOutRight = "slideOutRight";
+        var hide = "hide";
+
+        leftAnite($screen_div,$weui_dialog_ext,slideInRight,hide);
+        rightAnite($weui_dialog_ext,$weui_dialog_ext,slideOutRight,hide);
+    })
+</script>
+</body>
+</html>
+
+
+

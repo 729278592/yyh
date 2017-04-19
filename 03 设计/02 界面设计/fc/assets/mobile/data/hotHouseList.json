@@ -1,0 +1,96 @@
+{
+  "status": "ok",
+  "message": "success",
+  "datas":[
+    {
+      "id": 1001,
+      "headImg":"../../assets/mobile/images/houseimg.jpg",
+      "name": "奥林匹克花园",
+      "price":"8888",
+      "houseSpeci":[
+        "学区房","学区房","学区房","学区房"
+      ]
+    },
+    {
+      "id": 1002,
+      "headImg":"../../assets/mobile/images/houseimg.jpg",
+      "name": "奥林匹克花园1",
+      "price":"8888",
+      "houseSpeci":[
+        "学区房","学区房","学区房","学区房"
+      ]
+    },
+    {
+      "id": 1001,
+      "headImg":"../../assets/mobile/images/houseimg.jpg",
+      "name": "奥林匹克花园",
+      "price":"8888",
+      "houseSpeci":[
+        "学区房","学区房","学区房","学区房"
+      ]
+    },
+    {
+      "id": 1002,
+      "headImg":"../../assets/mobile/images/houseimg.jpg",
+      "name": "奥林匹克花园1",
+      "price":"8888",
+      "houseSpeci":[
+        "学区房","学区房","学区房","学区房"
+      ]
+    },
+    {
+      "id": 1001,
+      "headImg":"../../assets/mobile/images/houseimg.jpg",
+      "name": "奥林匹克花园",
+      "price":"8888",
+      "houseSpeci":[
+        "学区房","学区房","学区房","学区房"
+      ]
+    },
+    {
+      "id": 1002,
+      "headImg":"../../assets/mobile/images/houseimg.jpg",
+      "name": "奥林匹克花园1",
+      "price":"8888",
+      "houseSpeci":[
+        "学区房","学区房","学区房","学区房"
+      ]
+    },
+    {
+      "id": 1001,
+      "headImg":"../../assets/mobile/images/houseimg.jpg",
+      "name": "奥林匹克花园",
+      "price":"8888",
+      "houseSpeci":[
+        "学区房","学区房","学区房","学区房"
+      ]
+    },
+    {
+      "id": 1002,
+      "headImg":"../../assets/mobile/images/houseimg.jpg",
+      "name": "奥林匹克花园1",
+      "price":"8888",
+      "houseSpeci":[
+        "学区房","学区房","学区房","学区房"
+      ]
+    },
+    {
+      "id": 1001,
+      "headImg":"../../assets/mobile/images/houseimg.jpg",
+      "name": "奥林匹克花园",
+      "price":"8888",
+      "houseSpeci":[
+        "学区房","学区房","学区房","学区房"
+      ]
+    },
+    {
+      "id": 1002,
+      "headImg":"../../assets/mobile/images/houseimg.jpg",
+      "name": "奥林匹克花园1",
+      "price":"8888",
+      "houseSpeci":[
+        "学区房","学区房","学区房","学区房"
+      ]
+    }
+  ]
+}

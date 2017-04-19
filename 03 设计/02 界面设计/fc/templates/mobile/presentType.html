@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>提现方式</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/plugins/swiper/dist/css/swiper.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="wrapper">
+    <div class="dishContent">
+        <div class="presentType">
+            <div class="title">请选择提现方式</div>
+            <ul class="preList">
+                <li>
+                    <p class="title">现金</p>
+                    <p>现金提现，请到平台办公室办理</p>
+                </li>
+                <li>
+                    <p class="title">银行卡</p>
+                    <p>银行卡提现，请保证您的银行卡信息填写正确</p>
+                </li>
+                <li>
+                    <p class="title">微信红包</p>
+                    <p>微信红包提现，最高提现额为500，高于500请选择其他提现方式</p>
+                </li>
+            </ul>
+            <div class="weui-btn_area style">
+                <a class="weui-btn weui-btn_primary" id="sureBtn">确认</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/mobile/js/weui.js"></script>
+<script src="../../assets/mobile/js/global.js"></script>
+<script>
+    $(function () {
+        var $preListLi = $(".preList li");
+        var $sureBtn = $("#sureBtn");
+
+        /*提示选择提现方式*/
+        $sureBtn.on("click",function () {
+            if(!$preListLi.is(".active")){
+                weui.showMsg("请选择提现方式");
+            }
+        });
+
+        /*提现方式切换*/
+        $preListLi.on("click",function () {
+            $(this).addClass("active");
+            $(this).siblings().removeClass("active");
+        });
+    })
+</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>渠道经理个人中心</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="wrapper">
+    <div class="dishContent">
+        <div class="person_infor">
+            <div class="fcInfor">
+                <div class="fcImg">
+                    <img src="../../assets/mobile/images/default.png" alt="">
+                </div>
+                <div class="fcDetails">
+                    <p class="title">张三</p>
+                    <p>推荐人</p>
+                </div>
+            </div>
+            <div class="fcAnimate">
+                <div class="fcAnimateDiv df">
+                    <div class="flex">
+                        <img src="../../assets/mobile/images/jjrIcon.png" alt=""> <br>
+                        <span>经纪人</span><br>
+                        <span class="color">6</span>
+                    </div>
+                    <div class="flex">
+                        <img src="../../assets/mobile/images/acPer.png" alt=""> <br>
+                        <span>客户</span><br>
+                        <span class="color">7</span>
+                    </div>
+
+                    <div class="flex">
+                        <img src="../../assets/mobile/images/perIcon2.png" alt=""> <br>
+                        <span>成交</span><br>
+                        <span class="color">7</span>
+                    </div>
+
+                    <a class="cz">本月</a>
+                </div>
+                <div class="fcAnimateDiv lj hide">
+                    <div class="flex">
+                        <img src="../../assets/mobile/images/jjrIcon.png" alt=""> <br>
+                        <span>经纪人</span><br>
+                        <span class="color">6</span>
+                    </div>
+                    <div class="flex">
+                        <img src="../../assets/mobile/images/acPer.png" alt=""> <br>
+                        <span>客户</span><br>
+                        <span class="color">7</span>
+                    </div>
+
+                    <div class="flex">
+                        <img src="../../assets/mobile/images/perIcon2.png" alt=""> <br>
+                        <span>成交</span><br>
+                        <span class="color">7</span>
+                    </div>
+                    <a class="calj">累计</a>
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells mt10">
+            <a class="weui-cell weui-cell_access" href="">
+                <div class="weui-cell__bd">
+                    <p>
+                        <span class="span_icon spa_jjr"></span>
+                        <span class="text">
+                            经纪人列表
+                        </span>
+                    </p>
+                </div>
+                <div class="weui-cell__ft"></div>
+            </a>
+
+            <a class="weui-cell weui-cell_access" href="">
+                <div class="weui-cell__bd">
+                    <p>
+                        <span class="span_icon spa_erCode"></span>
+                        <span class="text">
+                            我的二维码
+                        </span>
+                    </p>
+                </div>
+                <div class="weui-cell__ft"></div>
+            </a>
+
+            <a class="weui-cell weui-cell_access" href="myCustomer.html">
+                <div class="weui-cell__bd">
+                    <p>
+                        <span class="span_icon spa_person"></span>
+                        <span class="text">
+                            个人资料
+                        </span>
+                    </p>
+                </div>
+                <div class="weui-cell__ft"></div>
+            </a>
+
+        </div>
+    </div>
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/mobile/js/global.js"></script>
+<script>
+    $(function () {
+        var $cz = $(".cz"),
+         $calj = $(".calj"),
+         $fclj = $(".fcAnimateDiv.lj"),
+         slideInRight = "slideInRight",
+         slideOutRight = "slideOutRight",
+         hide = "hide";
+
+        leftAnite($cz,$fclj,slideInRight,hide);
+        rightAnite($calj,$fclj,slideOutRight,hide);
+    })
+</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>客户信息进度</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="wrapper style">
+    <div class="dishContent relative">
+        <ul class="customer bt0">
+            <li>
+                <div class="weui-cell ">
+                    <div class="weui-cell__hd">
+                        <img src="../../assets/mobile/images/default.png" alt="">
+                    </div>
+                    <div class="weui-cell__bd">
+                        <p>张三1</p>
+                        <p class="clearfix">
+                            <span class="left">
+                                <a href="sms:19956321564" class="span_icon spa_code mr5"></a>
+                                <a href="tel:19956321564" class="span_icon spa_mobile"></a>
+                            </span>
+                            <span class="right color">成功签约</span>
+                        </p>
+                        <p class="time">更新时间 : 2016.5.3 15:35</p>
+                    </div>
+                    <div class="weui-cell__ft"></div>
+                </div>
+            </li>
+        </ul>
+        <div class="cusProInfor">
+            <ul class="cusMenu">
+                <li class="on">
+                    <a href="#lookPro">看房进度</a>
+                </li>
+                <li href="#proInfor">
+                    <a href="#proInfor">客户信息</a>
+                </li>
+            </ul>
+            <div class="cusProCon">
+                <div class="active cusPro" id="lookPro">
+                    <ul class="cusMenus">
+                        <li class="first">
+                            <div class="cusImg"></div>
+                            <div class="cusDetails">
+                                <p class="type">新客户</p>
+                                <p class="time">2016.5.3 15 : 35</p>
+                                <p class="infor"></p>
+                            </div>
+                        </li>
+                        <li class="next">
+                            <div class="cusImg"></div>
+                            <div class="cusDetails">
+                                <p class="type">已分配</p>
+                                <p class="time">2016.5.3 15 : 35</p>
+                                <p class="infor">分配到 奥林匹克花园 案场，由王丽接待</p>
+                            </div>
+                        </li>
+                        <li class="next">
+                            <div class="cusImg"></div>
+                            <div class="cusDetails">
+                                <p class="type">已分配</p>
+                                <p class="time">2016.5.3 15 : 35</p>
+                                <p class="infor">分配到 奥林匹克花园 案场，由王丽接待</p>
+                            </div>
+                        </li>
+                        <li class="last">
+                            <div class="cusImg"></div>
+                            <div class="cusDetails">
+                                <p class="type">已到访</p>
+                                <p class="time">2016.5.3 15 : 35</p>
+                                <p class="infor">客户于12日到访案场</p>
+                             </div>
+                        </li>
+                    </ul>
+                    <div class="foot">
+                        <button class="distribution">重新分配</button>
+                        <button class="distributioned">已到访</button>
+                    </div>
+                </div>
+                <div class="cusPro" id="proInfor">
+                    <div class="weui-cells mt0">
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <p><span class="color">*</span> 姓名</p>
+                            </div>
+                            <div class="weui-cell__ft">刘涛</div>
+                        </div>
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <p><span class="color">*</span> 手机号码</p>
+                            </div>
+                            <div class="weui-cell__ft">13245785463</div>
+                        </div>
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <p><span class="color hidden">*</span> 年龄</p>
+                            </div>
+                            <div class="weui-cell__ft">55</div>
+                        </div>
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <p><span class="color">*</span> 性别</p>
+                            </div>
+                            <div class="weui-cell__ft">男</div>
+                        </div>
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <p><span class="color hidden">*</span> 职业</p>
+                            </div>
+                            <div class="weui-cell__ft">设计</div>
+                        </div>
+                        <div class="weui-cell">
+                            <div class="weui-cell__bd">
+                                <p><span class="color hidden">*</span> 收入范围</p>
+                            </div>
+                            <div class="weui-cell__ft">50万/年</div>
+                        </div>
+
+
+
+
+
+                    </div>
+                    <div class="weui-btn_area style">
+                        <a href="modifyCusInfor.html" class="weui-btn weui-btn_primary" id="btnSure">编辑客户信息</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/mobile/js/global.js"></script>
+<script>
+    $(function () {
+        /*用户评价和商品介绍的切换*/
+        $(".cusMenu a").on("touchend", function(e){
+            e.preventDefault();
+            $(this).closest("li").addClass("on");
+            $(this).parent().siblings().removeClass("on");
+            let tabId = $(this).attr("href");
+            $(tabId).addClass("active");
+            $(tabId).siblings().removeClass("active");
+        });
+    })
+</script>
+</body>
+</html>
+
+
+

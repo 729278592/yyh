@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>房屋信息</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/plugins/swiper/dist/css/swiper.min.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
+</head>
+<body>
+<div class="wrapper">
+    <div class="dishContent">
+        <!--<img src="../../assets/mobile/images/indexSlider1.jpg" alt="" class="w100"/>-->
+        <div class="swiper-container mt0 swiper-container-horizontal" id="swiper-container">
+            <div class="swiper-wrapper" style="transition-duration: 0ms; ">
+                <div class="swiper-slide">
+                    <img src="../../assets/mobile/plugins/swiper/dist/images/indexSlider1.jpg" alt="" class="w100"/>
+                </div>
+                <div class="swiper-slide">
+                    <img src="../../assets/mobile/plugins/swiper/dist/images/indexSlider1.jpg" alt="" class="w100"/>
+                </div>
+                <div class="swiper-slide">
+                    <img src="../../assets/mobile/plugins/swiper/dist/images/indexSlider1.jpg" alt="" class="w100"/>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <!--<div class="swiper-button-next"></div>-->
+            <!--<div class="swiper-button-prev"></div>-->
+        </div>
+        <div class="houseInfor">
+            <div class="houseHd clearfix">
+                <span class="left">奥林匹克花园</span>
+                <span class="right color">均价 : 8888元/㎡</span>
+            </div>
+            <div class="houseBd">
+                <p >
+                    <span >销售状态 : 在售</span>
+                </p>
+                <p >
+                    <span>开盘 : 2017年1月</span>
+                </p>
+                <p>
+                    <span >售楼部地址 : 南岸区江东湖公园旁</span>
+                </p>
+                <div class="moreHouseInfor hide">
+                    <p class="clearfix">
+                        <span class="left">面积 : <span class="color">8888</span></span>
+                        <span class="right">销量 : 10</span>
+                    </p>
+                </div>
+            </div>
+            <div class="houseFt">
+                更多信息
+            </div>
+        </div>
+
+        <div class="houseDiv">
+            <div class="title">
+                在售户型(9)
+            </div>
+            <div class="swiper-container swiper-container-horizontal js-gallery" id="swiper-container1">
+                <div class="swiper-wrapper" style="transition-duration: 0ms; ">
+                    <div class="swiper-slide">
+                        <img src="../../assets/mobile/plugins/swiper/dist/images/houseImg1.jpg" alt="" class="w100"/>
+                        <p class="area">一室一厅 套内89㎡</p>
+                        <p class="price">89万元/套</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../../assets/mobile/plugins/swiper/dist/images/houseImg1.jpg" alt="" class="w100"/>
+                        <p class="area">一室一厅 套内89㎡</p>
+                        <p class="price">89万元/套</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../../assets/mobile/plugins/swiper/dist/images/houseImg1.jpg" alt="" class="w100"/>
+                        <p class="area">一室一厅 套内89㎡</p>
+                        <p class="price">89万元/套</p>
+                    </div>
+
+                </div>
+                <!--<div class="swiper-pagination"></div>-->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+
+        <div class="CaseAddress">
+            <div class="title">
+                项目地址
+            </div>
+            <div class="CaseCon">
+                <p>地址：重庆市九龙坡袁家岗奥体车市</p>
+                <div id="allmap"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="weui-gallery">
+        <span class="weui-gallery__img"></span>
+    </div>
+</div>
+<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/mobile/plugins/swiper/dist/js/swiper.min.js"></script>
+<script src="../../assets/mobile/js/global.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=q0lvjEUGF5AOzHtbjn9YFtwl"></script>
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");    // 创建Map实例
+    map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);  // 初始化地图,设置中心点坐标和地图级别
+    map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+    map.setCurrentCity("重庆");          // 设置地图显示的城市 此项是必须设置的
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+    var myGeo = new BMap.Geocoder();
+    // 将地址解析结果显示在地图上,并调整地图视野
+    myGeo.getPoint("重庆市九龙坡袁家岗奥体车市", function(point){
+        if (point) {
+            map.centerAndZoom(point, 16);
+            map.addOverlay(new BMap.Marker(point));
+        }
+    }, "重庆市");
+</script>
+<script>
+    $(function () {
+        new Swiper('#swiper-container', {
+            //        prevButton:'.swiper-button-prev',
+            //        nextButton:'.swiper-button-next',
+            slidesPerView: 1,
+            pagination:'.swiper-pagination',
+            paginationClickable: true,
+            spaceBetween: 0,
+            loop:true,
+            autoplay: 5000,
+            autoplayDisableOnInteraction: false
+        });
+
+        /*查看更多房屋信息*/
+        var $houseFt = $(".houseFt");
+        var $more = $(".moreHouseInfor");
+        $houseFt.on("touchend",function () {
+            $more.toggleClass("hide");
+            if($more.is(".hide")){
+                $(this).text("更多信息");
+            }else {
+                $(this).text("收起");
+            }
+        });
+
+        new Swiper('#swiper-container1', {
+                    prevButton:'.swiper-button-prev',
+                    nextButton:'.swiper-button-next',
+            slidesPerView: 3,
+//            pagination:'.swiper-pagination',
+            paginationClickable: true,
+            spaceBetween: 10,
+            loop:true,
+            autoplay: 5000,
+            autoplayDisableOnInteraction: false
+        });
+
+        var $jsGallery = $(".js-gallery img.w100");
+        var $weuiGallery = $(".weui-gallery .weui-gallery__img");
+        var $gallery = $(".weui-gallery");
+        $jsGallery.on("click",function () {
+            $gallery.css({display:"block"});
+            $weuiGallery.css({backgroundImage:'url('+$(this).attr("src")+')'})
+        });
+
+        $gallery.on("click",function () {
+            $gallery.css({display:"none"});
+        });
+        $weuiGallery.on("click",function (e) {
+            e.stopPropagation();
+        })
+    })
+</script>
+</body>
+</html>
+
+
+
