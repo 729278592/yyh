@@ -95,7 +95,7 @@ $(function () {
             coumputed:function(){
                 for(let i = 0;i<this.js_scroll.length;i++){
                     if(this.js_scroll[i].getBoundingClientRect().top<this.headMain.offsetHeight+150){
-                        $(".divMenu").css({top:"15%"});
+                        $(".divMenu").css({top:"20%"});
                         $(".usMenu li").eq(i).addClass("active");
                         $(".usMenu li").eq(i).siblings().removeClass("active");
                     }
