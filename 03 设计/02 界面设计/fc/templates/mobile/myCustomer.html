@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-    <div class="dishContent absolute pt50">
+    <div class="dishContent relative pt50">
         <ul class="customer">
 
         </ul>
@@ -40,16 +40,17 @@
         <div class="notData hide">
             无更多数据
         </div>
+        <!--无参与记录开始-->
+        <div class="notConTip hide">
+            <img src="../../assets/mobile/images/notContent.png" alt=""/>
+            <p class="notInfor">
+                暂无数据！
+            </p>
+        </div>
     </div>
 
 
-    <!--无参与记录开始-->
-    <div class="notConTip hide">
-        <img src="../../assets/mobile/images/notContent.png" alt=""/>
-        <p class="notInfor">
-            暂无数据！
-        </p>
-    </div>
+
     <div class="weui_dialog_ext hide">
         <div class="weui_mask"></div>
         <div class="playFlex">
@@ -64,10 +65,10 @@
                     <ul class="conditionList">
                         <li>新客户</li>
                         <li>已分配</li>
-                        <li>新客户</li>
-                        <li>已分配</li>
-                        <li>新客户</li>
-                        <li>已分配</li>
+                        <li>已到访</li>
+                        <li>已下定</li>
+                        <li>成功签约</li>
+                        <li>重新分配</li>
                     </ul>
                 </div>
             </div>
@@ -99,12 +100,8 @@
                                         '<a href="customerInfor.html"><img src="'+obj.headImg+'" alt=""></a>'+
                                     '</div>'+
                                     '<div class="weui-cell__bd">'+
-                                        '<p>'+obj.name+'</p>'+
                                         '<p class="clearfix">'+
-                                            '<span class="left">'+
-                                                '<a href="sms:13678478463" class="span_icon spa_code mr5"></a>'+
-                                                '<a href="tel:13678478463" class="span_icon spa_mobile"></a>'+
-                                            '</span>'+
+                                            '<span class="left">'+obj.name+'</span>'+
                                             //colorNew新客户  colorDefault默认  colorSuccess成功签约  colorXd已下定  colorFp已分配  colored已到访
                                             '<span class="right colorNew">'+obj.type+'</span>'+
                                         '</p>'+

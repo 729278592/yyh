@@ -16,21 +16,23 @@
         <div class="person_infor">
             <ul class="customer">
                 <li>
-                    <div class="weui-cell weui-cell_access">
+                    <div class="weui-cell">
                         <div class="weui-cell__hd">
-                            <img src="../../assets/mobile/images/default.png" alt="">
+                            <a>
+                                <img src="../../assets/mobile/images/default.png" alt="">
+                            </a>
                         </div>
                         <div class="weui-cell__bd">
                             <p class="clearfix">
                                 <span class="left">张三1</span>
                                 <span class="right">
-                                    <span href="sms:13678478463" class="span_icon spa_code mr5"></span>
-                                    <span href="tel:13678457846" class="span_icon spa_mobile"></span>
+                                    <a href="tel:13678457846" class="span_icon spa_phone"></a>
+                                    <a href="sms:13678478463" class="span_icon spa_code"></a>
                                 </span>
                             </p>
-                            <p class="num">本月新增客户 : <span class="colorNew">100</span></p>
-                            <p class="num">本月新增成交 : <span class="colorNew">100</span></p>
-                            <p class="time">更新时间 : 2016.5.3 15:35</p>
+                            <p class="num">本月新增客户 : <span class="colorNew verdana">100</span></p>
+                            <p class="num">本月新增成交 : <span class="colorNew verdana">100</span></p>
+                            <p class="time">更新时间 : <span class="verdana">2016.5.3 15:35</span></p>
                         </div>
                     </div>
                 </li>
@@ -66,38 +68,58 @@
                 </div>
             </div>
         </div>
-        <div class="weui-cells mt10">
-            <a class="weui-cell weui-cell_access" href="">
-                <div class="weui-cell__bd">
-                    <p>
-                        <span class="span_icon spa_erCode"></span>
-                        <span class="text">
-                            我的二维码
-                        </span>
-                    </p>
-                </div>
-                <div class="weui-cell__ft"></div>
-            </a>
+        <ul class="customer mt10" id="customer">
 
-            <a class="weui-cell weui-cell_access" href="myCustomer.html">
-                <div class="weui-cell__bd">
-                    <p>
-                        <span class="span_icon spa_person"></span>
-                        <span class="text">
-                                个人资料
-                            </span>
-                    </p>
-                </div>
-                <div class="weui-cell__ft"></div>
-            </a>
+        </ul>
 
+        <!--无参与记录结束-->
+        <div class="notData hide">
+            无更多数据
         </div>
+    </div>
+    <!--无参与记录开始-->
+    <div class="notConTip hide">
+        <img src="../../assets/mobile/images/notContent.png" alt=""/>
+        <p class="notInfor">
+            暂无数据！
+        </p>
     </div>
 </div>
 <script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
 <script src="../../assets/mobile/js/global.js"></script>
+<script src="../../assets/mobile/js/weui.js"></script>
+<script src="../../assets/mobile/js/loadMore.js"></script>
 <script>
-    $(function () {
+    $(function(){
+
+        /*滚动加载*/
+        var customer = $('#customer');
+        customer.scrollLoad({
+            limit: 6, //限制条数
+            startNum:8, //初始化显示条数
+            infers:"../../assets/mobile/data/myCustomer.json", //接口
+            ajaxRecord:function(obj,wajxHtml){ //数据结构
+
+                wajxHtml += '<li>'+
+                                '<div class="weui-cell">'+
+                                    '<div class="weui-cell__hd">'+
+                                        '<a href="customerInfor.html"><img src="'+obj.headImg+'" alt=""></a>'+
+                                    '</div>'+
+                                    '<div class="weui-cell__bd">'+
+                                        '<p class="clearfix">'+
+                                            '<span class="left">'+obj.name+'</span>'+
+                                            //colorNew新客户  colorDefault默认  colorSuccess成功签约  colorXd已下定  colorFp已分配  colored已到访
+                                            '<span class="right colorNew">'+obj.type+'</span>'+
+                                        '</p>'+
+                                        '<p class="time">更新时间 : <span class="verdana">'+obj.time+'</span></p>'+
+                                    '</div>'+
+                                    '<div class="weui-cell__ft"></div>'+
+                                '</div>'+
+                            '</li>';
+                return wajxHtml;
+            }
+        });
+
         var $cz = $(".cz"),
             $calj = $(".calj"),
             $fclj = $(".fcAnimateDiv.lj"),

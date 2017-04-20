@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="wrapper style">
-    <div class="dishContent pb50">
+    <div class="dishContent absolute pb50">
         <img src="../../assets/mobile/images/tkxx.jpg" class="w100" alt="">
         <div class="recomond mt0">
             <div class="title">置业类型</div>
@@ -21,8 +21,43 @@
                 <ul class="recMenu clearfix">
                     <li class="active">住宅</li>
                     <li>写字楼</li>
+                    <li class="mr0">商铺</li>
                     <li>商铺</li>
                 </ul>
+                <div class="house">
+                    <ul class="houseType clearfix">
+                        <li>
+                            单配
+                        </li>
+                        <li>一室</li>
+                        <li>两室</li>
+                        <li>三室</li>
+                    </ul>
+                    <ul class="houseType clearfix hide">
+                        <li>
+                            单配
+                        </li>
+                        <li>一室</li>
+                        <li>两室</li>
+                        <li>三室</li>
+                    </ul>
+                    <ul class="houseType clearfix hide">
+                        <li>
+                            单配
+                        </li>
+                        <li>一室</li>
+                        <li>两室</li>
+                        <li>三室</li>
+                    </ul>
+                    <ul class="houseType clearfix hide">
+                        <li>
+                            单配
+                        </li>
+                        <li>一室</li>
+                        <li>两室</li>
+                        <li>三室</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="recomond">
@@ -44,21 +79,21 @@
     </div>
     <div class="foot">
         <ul class="tabMenu">
-            <li class="active">
-                <a href="">
+            <li>
+                <a href="index.html">
                     <span class="home"></span>
                     <span>首页</span>
                 </a>
             </li>
-            <li>
-                <a href="">
+            <li class="active">
+                <a href="fillCusInfor.html">
                     <span class="good"></span>
                     <span>推荐客户</span>
 
                 </a>
             </li>
             <li>
-                <a href="">
+                <a href="personCenter.html">
                     <span class="person"></span>
                     <span>我的</span>
                 </a>
@@ -71,11 +106,11 @@
 <script src="../../assets/mobile/js/global.js"></script>
 <script>
     jQuery(document).ready(function() {
-        // initiate layout and plugins
+        // 滚动插件
         $("#range_1").ionRangeSlider({
             min: 0,
             max: 500,
-            from: 20,
+            from: 50,
             to: 400,
             type: 'double',
             step: 1,
@@ -83,6 +118,22 @@
             prettify: false,
             hasGrid: true
         });
+
+        var $recMenuLi = $(".recMenu li");
+        var $recomondBd = $(".recomondBd");
+        var $houseType = $(".houseType");
+        var $houseTypeLi = $houseType.find("li");
+        $recMenuLi.each(function (index) {
+            $(this).on("click",function () {
+                $(this).toggleClass("active");
+                $houseType.eq(index).toggleClass("hide")
+            })
+        });
+
+        $recomondBd.on("click",".houseType li",function () {
+            $(this).toggleClass("active");
+        })
+
     });
 </script>
 </body>

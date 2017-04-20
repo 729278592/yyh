@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
 </head>
 <body>
-<div class="wrapper">
+<div class="wrapper style">
     <div class="dishContent pb50">
         <img src="../../assets/mobile/images/tkBg.jpg" class="w100" alt="">
         <form action="#">
@@ -35,7 +35,7 @@
                         </label>
                     </div>
                     <div class="weui-cell__bd">
-                        <input class="weui-input" type="tel" id="mobile" placeholder="请输入您的密手机号">
+                        <input class="weui-input" type="tel" id="mobile" placeholder="请输入您的手机号">
                     </div>
                 </div>
 
@@ -66,7 +66,7 @@
 
             </div>
 
-            <div class="weui-cells mt10 weui-cells_form style" id="otherPer">
+            <div class="weui-cells mt0 weui-cells_form style" id="otherPer">
                 <div class="otherPer">
                     <div class="title">
                         其他联系人
@@ -91,7 +91,7 @@
                             </label>
                         </div>
                         <div class="weui-cell__bd">
-                            <input class="weui-input" type="tel" id="mobile" placeholder="请输入您的密手机号">
+                            <input class="weui-input" type="tel" placeholder="请输入您的手机号">
                         </div>
                     </div>
 
@@ -228,7 +228,7 @@
                         '</label>'+
                         '</div>'+
                         '<div class="weui-cell__bd">'+
-                        '<input class="weui-input" type="tel" id="mobile" placeholder="请输入您的密手机号">'+
+                        '<input class="weui-input" type="tel" placeholder="请输入您的手机号">'+
                         '</div>'+
                         '</div>'+
                         '</div>';
@@ -236,9 +236,12 @@
         var $addOrtherPer = $(".addOrtherPer");
         var $otherPer = $("#otherPer");
         var $otherPers = $(".otherPer");
-        var $remove = $(".remove");
         $addOrtherPer.on("click",function () {
-            $otherPer.append(otherhtml)
+            if($otherPer.children().size()>2){
+                weui.showMsg("最多建3个联系人");
+                return;
+            }
+            $otherPer.append(otherhtml);
         });
         $otherPer.on("click",".remove",function () {
             $(this).closest(".otherPer").remove();

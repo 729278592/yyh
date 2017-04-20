@@ -15,21 +15,21 @@
     <div class="dishContent relative" >
         <div class="deal style">
             可提现佣金
-            <span class="color">￥90.00</span>
+            <span class="color">￥ <span class="verdana" id="money">90.00</span></span>
             <div class="weui-btn_area style mt1">
-                <a class="weui-btn weui-btn_primary" id="sureBtn">申请提现</a>
+                <a class="weui-btn weui-btn_primary" id="applyBtn">申请提现</a>
             </div>
         </div>
         <div class="present">
             <div class="weui-cells mt0">
-                <a class="weui-cell weui-cell_access" href="modifyName.html">
+                <a class="weui-cell weui-cell_access" href="presentType.html">
                     <div class="weui-cell__bd">
                         <span class="span_icon spa_cardT"></span>
                         <span class="text">提现方式</span>
                     </div>
                     <div class="weui-cell__ft">银行卡</div>
                 </a>
-                <a class="weui-cell weui-cell_access" href="modifyPhone.html">
+                <a class="weui-cell weui-cell_access" href="presentChioce.html">
                     <div class="weui-cell__bd">
                         <span class="span_icon spa_cardS"></span>
                         <span class="text">
@@ -45,7 +45,7 @@
             <span class="span_icon spa_cardJ"></span>
             提现记录
         </div>
-        <ul class="dealList style">
+        <ul class="dealList style bb0">
 
         </ul>
         <!--无参与记录结束-->
@@ -72,7 +72,7 @@
         var dealList = $('.dealList');
         dealList.scrollLoad({
             limit: 6, //限制条数
-            startNum:8, //初始化显示条数
+            startNum:6, //初始化显示条数
             infers:"../../assets/mobile/data/presentList.json", //接口
             ajaxRecord:function(obj,wajxHtml){
                 //模板片段
@@ -94,12 +94,12 @@
 
                 wajxHtml+= '<li>'+
                                 '<div class="clearfix">'+
-                                '<span class="left name">提现</span>'+
-                                '<span class="right">'+money+'</span>'+
+                                    '<span class="left name">'+money+'</span>'+
+                                    '<span class="right '+typeClass+'">'+type+'</span>'+
                                 '</div>'+
-                                '<div class="clearfix">'+
-                                '<span class="right '+typeClass+'">'+type+'</span>'+
-                                '</div>'+
+//                                '<div class="clearfix">'+
+//                                    '<span class="right '+typeClass+'">'+type+'</span>'+
+//                                '</div>'+
                                 '<div class="time">签约时间 : '+obj.time+'</div>'+
                             '</li>';
                 return wajxHtml;
@@ -110,17 +110,17 @@
 </script>
 <script>
     $(function () {
-        var $applyBtn = $(".applyBtn");
+        var $applyBtn = $("#applyBtn");
         var $nobK = $("#nobK");
         var $money = $("#money");
         var $dialog = $("#dialog");
         $applyBtn.on("touchend",function () {
             if(!$nobK.data("Bk")){
-
-                if(parseInt($money.text())<500){
+                if(parseInt($money.text())<50){
                     weui.showMsg("提现金额不足");
                     return ;
                 }
+                $("body").addClass("overflowy");
                 weui.confirmCashBox({
                     name:"张三",
                     title: '交通银行',

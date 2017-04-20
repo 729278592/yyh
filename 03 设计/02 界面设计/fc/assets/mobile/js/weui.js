@@ -87,7 +87,80 @@ var weui = function(){
 			});
 		});
 	};
-	
+
+
+
+    var CashBox = function(options) {
+        var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+        if($('.weui-dialog_ext').length > 0) {
+            $('.weui-dialog_ext').remove();
+        }
+
+        options = $.extend({
+            className: 'weui-dialog_ext'
+        }, options);
+        var btns = '';
+        for(var i = 0; i < options.buttons.length; i++){
+            btns += '<a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_'+options.buttons[i]["type"]+'">'+options.buttons[i]["label"]+'</a>';
+        }
+        var tpl =   '<div class="'+options.className+'">'+
+            '<div class="weui-mask"></div>'+
+            '<div class="weui-dialog">'+
+            '<div class="weui-dialog__hd" style="color: #333">'+options.content+'</div>'+
+            '<div class="weui-dialog__bd">' +
+            '<div>持卡人： <span class="type">'+options.name+'</span></div>' +
+            '<div>银行卡： <span class="type">'+options.title+'</span></div>' +
+            '<div>金　额： ￥<span class="type">'+options.money+'</span></div>' +
+            '<div>卡　号： <span class="type">'+options.cardNumber+'</span></div>' +
+            '</div>'+
+            '<div class="weui-dialog__ft">'+
+            btns +
+            '</div>'+
+            '</div>'+
+            '</div>';
+
+        var $dialogWrap = $(tpl);
+        var $dialog = $dialogWrap.find('.weui-dialog');
+        var $mask = $dialogWrap.find('.weui-mask');
+
+        function hide(callback){
+            $mask.fadeOut('normal');
+            $dialog.fadeOut('normal',function(){
+                $dialogWrap.remove();
+                callback();
+            })
+        }
+
+        $('body').append($dialogWrap);
+        $mask.fadeIn('normal');
+        $dialog.fadeIn('normal');
+
+        $dialogWrap.on('click', '.weui_dialog_btn', function (evt) {
+            var index = $(this).index();
+            hide(function(){
+                options.buttons[index].onClick && options.buttons[index].onClick.call(this, evt);
+            });
+        });
+    };
+
+    /**
+     * 多参数弹框
+     */
+    var confirmCashBox = function(options) {
+
+        options = $.extend({
+            buttons: [{
+                label: '取消',
+                type: 'default'
+            }, {
+                label: '确定',
+                type: 'primary'
+            }]
+        }, options);
+
+        CashBox(options);
+    };
 	
 	/**
 	 * alert 警告弹框，功能类似于浏览器自带的 alert 弹框，用于提醒、警告用户简单扼要的信息，只有一个“确认”按钮，点击“确认”按钮后关闭弹框。
@@ -373,6 +446,7 @@ var weui = function(){
 		alert: alert,
 		confirm: confirm,
 		showMsg: toast,
+        confirmCashBox:confirmCashBox,
 		showTips: topTips,
 		startLoading: startLoading,
 		stopLoading: stopLoading

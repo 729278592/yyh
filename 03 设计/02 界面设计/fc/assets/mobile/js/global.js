@@ -24,7 +24,12 @@ $(function(){
     /*筛选选择条件*/
     var weui_dialog_ext = $(".weui_dialog_ext");
     var conditionMenuLi = $(".conditionMenu li");
+    var conditionListLi = $(".conditionList li");
     conditionMenuLi.on("click",function () {
+        $(this).addClass("active");
+        $(this).siblings().removeClass("active");
+    });
+    conditionListLi.on("click",function () {
         $(this).addClass("active");
         $(this).siblings().removeClass("active");
     });
