@@ -7,7 +7,6 @@
      * move:动画库
      * getCss:获取对象样式
      */
-alert()
     ;(function(win,doc,unde){  //分号作用是多文件合并时防止上一行代码没写分号而出错
         function anite(options){
             this.time = 100;

@@ -99,7 +99,6 @@ var weui = function(){
         options = $.extend({
             className: 'weui_dialog_ext'
         }, options);
-		console.log(JSON.stringify(options))
         var btns = '';
         for(var i = 0; i < options.buttons.length; i++){
             btns += '<a href="javascript:;" class="weui_dialog_btn '+options.buttons[i]["type"]+'">'+options.buttons[i]["label"]+'</a>';
@@ -136,7 +135,7 @@ var weui = function(){
         $mask.fadeIn('normal');
         $dialog.fadeIn('normal');
 
-        $dialogWrap.on('click', '.weui_dialog_btn', function (evt) {
+        $dialogWrap.on('click', '.weui_dialog__btn', function (evt) {
             var index = $(this).index();
             hide(function(){
                 options.buttons[index].onClick && options.buttons[index].onClick.call(this, evt);
