@@ -6,7 +6,7 @@
 */
 
 ;(function ($, window, document) {
-    "use strict";
+    //"use strict";
     //circumfence and quart value to start bar from top
     var circ = Math.PI * 2,
         quart = Math.PI / 2;

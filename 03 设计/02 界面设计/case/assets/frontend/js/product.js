@@ -32,24 +32,24 @@ $(function () {
                     this.productOver(this.productMenusLi[i]);
                     this.productOut(this.productMenusLi[i]);
                 }
-                let len = this.caseMenuLi.length;
+                var len = this.caseMenuLi.length;
                 this.domCaozuo(len,this,0); //合作案例
             },
             move:function(obj,json,fn){  //动画实现
                 json = json || {};
                 obj  = obj  ||{};
                 clearInterval(obj.iTimer);
-                let cur = 0;
-                obj.iTimer = setInterval(()=>{
-                    let ismove = true;
-                    for(let attr in json){
-                        let iTarge =  json[attr];
+                var cur = 0;
+                obj.iTimer = setInterval( function(){
+                    var ismove = true;
+                    for(var attr in json){
+                        var iTarge =  json[attr];
                         if(attr == "opacity"){
                             cur = Math.round(this.getCss(obj,'opacity')*100);
                         } else{
                             cur = parseInt(this.getCss(obj,attr));
                         }
-                        let speed = (iTarge-cur)/8;
+                        var speed = (iTarge-cur)/8;
                         speed = speed>0?Math.ceil(speed):Math.floor(speed);
                         if(cur != iTarge){
                             ismove = false;
@@ -77,10 +77,10 @@ $(function () {
                 }
             },
             caseFun:function () { //项目列表
-                let len = this.caseMenuLi.length;
-                for(let i = 0;i<len;i++){
+                var len = this.caseMenuLi.length;
+                for(var i = 0;i<len;i++){
                     this.caseMenuLi[i].index = i;
-                    let that = this;
+                    var that = this;
                     this.caseMenuLi[i].onclick = function () {
                         that.domCaozuo(len,that,this.index);
                     }
@@ -93,7 +93,7 @@ $(function () {
                 $(that.caseListLi).eq(index).removeClass("hide").animate({opacity:1},200);
                 $(that.caseListLi).eq(index).siblings().addClass("hide").animate({opacity:0},200);
 
-                // for(let i = 0; i<len; i++){
+                // for(var i = 0; i<len; i++){
                 //     that.caseMenuLi[i].classList.remove("active");
                 //     that.move(that.caseListLi[i],{opacity:0});
                 //     that.caseListLi[i].classList.add("hide")
@@ -106,12 +106,12 @@ $(function () {
             },
             productOver:function (_this) {
                 _this.onmouseover = function () {
-                    this.querySelector(".infor").classList.add("active");
+                    $(this).find(".infor").addClass("active");
                 }
             },
             productOut:function (_this) {
                 _this.onmouseout = function () {
-                    this.querySelector(".infor").classList.remove("active");
+                    $(this).find(".infor").removeClass("active");
                 }
             },
             // calculation:function () {  //头部动画
@@ -122,12 +122,14 @@ $(function () {
             //     }
             // },
             onmousewheel:function(){ //滚轮事件
-                doc.onmousewheel = () => {
+
+                doc.onmousewheel = function () {
                     //this.calculation();
                 }
             },
             scroll:function(){ //鼠标事件
-                doc.onscroll = ()=>{
+
+                doc.onscroll = function () {
                     //this.calculation();
                 }
             }

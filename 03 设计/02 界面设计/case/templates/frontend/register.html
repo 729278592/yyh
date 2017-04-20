@@ -134,9 +134,11 @@
     <script src="../../assets/frontend/plugins/jquery-validate/jquery.validate.min.js"></script>
     <script src="../../assets/frontend/plugins/jquery-validate/messages_zh.js"></script>
     <script src="../../assets/frontend/plugins/jquery-validate/form-validation.js"></script>
+    <script src="../../assets/frontend/plugins/placeholder.js"></script>
     <script type="text/javascript">
-        $(function(){
 
+        $(function(){
+            $('input, textarea').placeholder();
             //返回
             var $btnSure = $("#btnSure");
             $btnSure.on("click",function () {

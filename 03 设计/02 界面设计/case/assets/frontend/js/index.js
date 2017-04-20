@@ -7,8 +7,9 @@
      * move:动画库
      * getCss:获取对象样式
      */
-    ;(function(win,doc,unde){  //分号作用是多文件合并时防止上一行代码没写分号而出错
-        function anite(options){
+
+;(function(win,doc,unde){  //分号作用是多文件合并时防止上一行代码没写分号而出错
+        function anite(){
             this.time = 100;
             this.left = ".left";
             this.right = ".right";
@@ -19,11 +20,14 @@
             this.menuCaseLi = this.menuCase.querySelectorAll("li");
             this.headMain = document.querySelector(".head");
             this.aninteObjSonWidth = doc.documentElement.clientWidth*0.5;
-            for(let i = 0;i<this.aninteObj.length;i++){
-                let obj = this.aninteObj[i];
-                obj.querySelector(this.left).style.left   = -this.aninteObjSonWidth+"px";
-                obj.querySelector(this.right).style.right = -this.aninteObjSonWidth+"px";
-            }
+            // for(var i = 0;i<this.aninteObj.length;i++){
+            //     let obj = this.aninteObj[i];
+            //     obj.querySelector(this.left).style.left   = -this.aninteObjSonWidth+"px";
+            //     obj.querySelector(this.right).style.right = -this.aninteObjSonWidth+"px";
+            // }
+            $(this.aninteObj).find(".left").css({left:-this.aninteObjSonWidth+"px"});
+            $(this.aninteObj).find(".right").css({right:-this.aninteObjSonWidth+"px"});
+
             this.init();//调用函数初始化
         }
         anite.prototype = {
@@ -34,24 +38,24 @@
                 this.coumputed(e);
                 this.caseFun();
                 this.onMouseFun();
-                let len = this.menuCaseLi.length;
+                var len = $(this.menuCaseLi).size();
                 this.domCaozuo(len,this,0); //合作案例
             },
             move:function(obj,json,fn){  //动画实现
                 json = json || {};
                 obj  = obj  ||{};
                 clearInterval(obj.iTimer);
-                let cur = 0;
-                obj.iTimer = setInterval(()=>{
-                    let ismove = true;
-                    for(let attr in json){
-                       let iTarge =  json[attr];
+                var cur = 0;
+                obj.iTimer = setInterval(function (){
+                    var ismove = true;
+                    for(var attr in json){
+                       var iTarge =  json[attr];
                         if(attr == "opacity"){
                             cur = Math.round(this.getCss(obj,'opacity')*100);
                         } else{
                             cur = parseInt(this.getCss(obj,attr));
                         }
-                        let speed = (iTarge-cur)/8;
+                        var speed = (iTarge-cur)/8;
                         speed = speed>0?Math.ceil(speed):Math.floor(speed);
                         if(cur != iTarge){
                             ismove = false;
@@ -79,25 +83,25 @@
                 }
             },
             coumputed:function(){  // 节点分别从左右进入
-                for(let i = 0;i<this.aninteObj.length;i++){
+                for(var i = 0;i<this.aninteObj.length;i++){
 
                     if(this.aninteObj[i].getBoundingClientRect().top<doc.documentElement.clientHeight){
-                        let obj = this.aninteObj[i];
+                        var obj = this.aninteObj[i];
                         $(obj.querySelector(this.left)).animate({'left': 0},700);
                         $(obj.querySelector(this.right)).animate({'right': 0},700);
                     }
                     else{
-                        // let obj = this.aninteObj[i];
+                        // var obj = this.aninteObj[i];
                         // $(obj.querySelector(this.left)).animate({'left': -this.aninteObjSonWidth},500);
                         // $(obj.querySelector(this.right)).animate({'right': -this.aninteObjSonWidth},500);
                     }
                 }
             },
             caseFun:function (){ //合作案例
-                let len = this.menuCaseLi.length;
-                for(let i = 0;i<len;i++){
+                var len = this.menuCaseLi.length;
+                for(var i = 0;i<len;i++){
                     this.menuCaseLi[i].index = i;
-                    let that = this;
+                    var that = this;
                     this.menuCaseLi[i].onclick = function () {
                         that.domCaozuo(len,that,this.index);
                     }
@@ -109,7 +113,7 @@
                 $(that.productMenu).eq(index).removeClass("hide").animate({opacity:1},200);
                 $(that.productMenu).eq(index).siblings().addClass("hide").animate({opacity:0},200);
 
-                // for(let i = 0; i<len; i++){
+                // for(var i = 0; i<len; i++){
                 //     that.menuCaseLi[i].className = '';
                 //     that.move(that.productMenu[i],{opacity:0});
                 //     that.productMenu[i].classList.add("hide")
@@ -136,21 +140,23 @@
             },
             calculation:function () {  //头部动画
                 if(doc.body.scrollTop != 0){
-                    this.headMain.classList.add("on");
+                    $(this.headMain).addClass("on");
                 }else {
-                    this.headMain.classList.remove("on");
+                    $(this.headMain).removeClass("on");
                 }
             },
             onmousewheel:function(){ //滚轮事件
-                doc.onmousewheel = (e) => {
-                    this.coumputed(e);
-                    this.calculation();
+                var that = this;
+                doc.onmousewheel = function (e) {
+                    that.coumputed(e);
+                    that.calculation();
                 }
             },
             scroll:function(){ //鼠标事件
-                doc.onscroll = (e)=>{
-                    this.coumputed(e);
-                    this.calculation();
+                var that = this;
+                doc.onscroll =  function (e) {
+                    that.coumputed(e);
+                    that.calculation();
                 }
             }
         };

@@ -29,17 +29,17 @@ $(function () {
                 json = json || {};
                 obj  = obj  ||{};
                 clearInterval(obj.iTimer);
-                let cur = 0;
-                obj.iTimer = setInterval(()=>{
-                    let ismove = true;
-                    for(let attr in json){
-                        let iTarge =  json[attr];
+                var cur = 0;
+                obj.iTimer = setInterval(function(){
+                    var ismove = true;
+                    for(var attr in json){
+                        var iTarge =  json[attr];
                         if(attr == "opacity"){
                             cur = Math.round(this.getCss(obj,'opacity')*100);
                         } else{
                             cur = parseInt(this.getCss(obj,attr));
                         }
-                        let speed = (iTarge-cur)/8;
+                        var speed = (iTarge-cur)/8;
                         speed = speed>0?Math.ceil(speed):Math.floor(speed);
                         if(cur != iTarge){
                             ismove = false;
@@ -74,11 +74,11 @@ $(function () {
             //     }
             // },
             usMenuLiClick:function () {
-                for(let i = 0;i<this.usMenuLi.length;i++){
+                for(var i = 0;i<this.usMenuLi.length;i++){
                     this.usMenuLi[i].index = i;
                     var that = this;
                     this.usMenuLi[i].onclick = function () {
-                        for(let i = 0;i<that.usMenuLi.length;i++){
+                        for(var i = 0;i<that.usMenuLi.length;i++){
                             that.usMenuLi[i].className = '';
                         }
                         that.usMenuLi[this.index].className = 'active';
@@ -89,11 +89,12 @@ $(function () {
                         $('html, body').animate({
                             scrollTop: distanse
                         }, 400);
+                        that.coumputed();
                     }
                 }
             },
             coumputed:function(){
-                for(let i = 0;i<this.js_scroll.length;i++){
+                for(var i = 0;i<this.js_scroll.length;i++){
                     if(this.js_scroll[i].getBoundingClientRect().top<this.headMain.offsetHeight+150){
                         $(".divMenu").css({top:"185px",position:"fixed"});
                         $(".usMenu li").eq(i).addClass("active");
@@ -109,16 +110,19 @@ $(function () {
                 
             },
             onmousewheel:function(){ //滚轮事件
-                doc.onmousewheel = (e) => {
-                    this.coumputed(e);
+                var that = this;
+                doc.onmousewheel = function () {
+                    that.coumputed();
                     //this.calculation();
                 }
             },
             scroll:function(){ //鼠标事件
-                doc.onscroll = (e)=>{
-                    this.coumputed(e);
+                var that = this;
+                $(win).scroll(function () {
+                    that.coumputed();
                     //this.calculation();
-                }
+                })
+
             }
         };
         win.anite = anite;
