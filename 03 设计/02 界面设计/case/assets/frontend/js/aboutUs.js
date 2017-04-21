@@ -95,15 +95,15 @@ $(function () {
             },
             coumputed:function(){
                 for(var i = 0;i<this.js_scroll.length;i++){
-                    if(this.js_scroll[i].getBoundingClientRect().top<this.headMain.offsetHeight+150){
-                        $(".divMenu").css({top:"185px",position:"fixed"});
+                    if(this.js_scroll[i].getBoundingClientRect().top<this.headMain.offsetHeight){
+                        $(".divMenu").css({top:"85px",position:"fixed"});
                         $(".usMenu li").eq(i).addClass("active");
                         $(".usMenu li").eq(i).siblings().removeClass("active");
                     }
                 }
 
-                if(this.js_scroll[0].getBoundingClientRect().top<this.headMain.offsetHeight+100){
-                    $(".divMenu").css({top:"185px"});
+                if(this.js_scroll[0].getBoundingClientRect().top<this.headMain.offsetHeight){
+                    $(".divMenu").css({top:"85px"});
                 }else {
                     $(".divMenu").css({top:"0",position:"relative"});
                 }
@@ -122,7 +122,6 @@ $(function () {
                     that.coumputed();
                     //this.calculation();
                 })
-
             }
         };
         win.anite = anite;
