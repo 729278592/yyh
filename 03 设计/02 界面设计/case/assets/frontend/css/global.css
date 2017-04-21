@@ -205,8 +205,7 @@ img.w100{width: 100%;}
 .productMenus1 li.second:hover .productMask{ background: url("../images/product5.png") no-repeat;;background-size: 111% 111%;background-position: 50% 50%;}
 .productMenus1 li.three:hover .productMask{ background: url("../images/product7.png") no-repeat;;background-size: 111% 111%;background-position: 50% 50%;}
 .productMenus1 li.four:hover .productMask{ background: url("../images/product8.png") no-repeat;;background-size: 111% 111%;background-position: 50% 50%;}
-.productMenus1 li.four .productMask img{width: 50px;height: 60px;}
-.productMenus1 li.four .productMask:hover img{width: 60px;height: 60px;}
+
 .productMenus1 li.first{background: url("../images/production5.jpg") no-repeat;}
 .productMenus1 li.second{background: url("../images/production6.jpg") no-repeat;}
 .productMenus1 li.three{background: url("../images/production7.jpg") no-repeat;}
