@@ -27,13 +27,13 @@ $(function () {
             init:function(){ //函数初始化
                 this.onmousewheel();
                 this.scroll();
-                this.caseFun();
+                //this.caseFun();
                 for(var i = 0;i<this.productMenusLi.length;i++){
                     this.productOver(this.productMenusLi[i]);
                     this.productOut(this.productMenusLi[i]);
                 }
-                var len = this.caseMenuLi.length;
-                this.domCaozuo(len,this,0); //合作案例
+                //var len = this.caseMenuLi.length;
+                //this.domCaozuo(len,this,0);
             },
             move:function(obj,json,fn){  //动画实现
                 json = json || {};
@@ -76,34 +76,34 @@ $(function () {
                     return getComputedStyle(obj,false)[attr];
                 }
             },
-            caseFun:function () { //项目列表
-                var len = this.caseMenuLi.length;
-                for(var i = 0;i<len;i++){
-                    this.caseMenuLi[i].index = i;
-                    var that = this;
-                    this.caseMenuLi[i].onclick = function () {
-                        that.domCaozuo(len,that,this.index);
-                    }
-                }
-            },
-            domCaozuo:function (len,that,index) {//项目列表
-
-                $(that.caseMenuLi).eq(index).addClass("active");
-                $(that.caseMenuLi).eq(index).siblings().removeClass("active");
-                $(that.caseListLi).eq(index).removeClass("hide").animate({opacity:1},200);
-                $(that.caseListLi).eq(index).siblings().addClass("hide").animate({opacity:0},200);
-
-                // for(var i = 0; i<len; i++){
-                //     that.caseMenuLi[i].classList.remove("active");
-                //     that.move(that.caseListLi[i],{opacity:0});
-                //     that.caseListLi[i].classList.add("hide")
-                // }
-                // setTimeout(function () {
-                //     that.move(that.caseListLi[index],{opacity:'100'});
-                //     that.caseMenuLi[index].classList.add("active");
-                //     that.caseListLi[index].classList.remove("hide")
-                // },200)
-            },
+            // caseFun:function () { //项目列表
+            //     var len = this.caseMenuLi.length;
+            //     for(var i = 0;i<len;i++){
+            //         this.caseMenuLi[i].index = i;
+            //         var that = this;
+            //         this.caseMenuLi[i].onclick = function () {
+            //             that.domCaozuo(len,that,this.index);
+            //         }
+            //     }
+            // },
+            // domCaozuo:function (len,that,index) {//项目列表
+            //
+            //     $(that.caseMenuLi).eq(index).addClass("active");
+            //     $(that.caseMenuLi).eq(index).siblings().removeClass("active");
+            //     $(that.caseListLi).eq(index).removeClass("hide").animate({opacity:1},200);
+            //     $(that.caseListLi).eq(index).siblings().addClass("hide").animate({opacity:0},200);
+            //
+            //     // for(var i = 0; i<len; i++){
+            //     //     that.caseMenuLi[i].classList.remove("active");
+            //     //     that.move(that.caseListLi[i],{opacity:0});
+            //     //     that.caseListLi[i].classList.add("hide")
+            //     // }
+            //     // setTimeout(function () {
+            //     //     that.move(that.caseListLi[index],{opacity:'100'});
+            //     //     that.caseMenuLi[index].classList.add("active");
+            //     //     that.caseListLi[index].classList.remove("hide")
+            //     // },200)
+            // },
             productOver:function (_this) {
                 _this.onmouseover = function () {
                     $(this).find(".infor").addClass("active");
