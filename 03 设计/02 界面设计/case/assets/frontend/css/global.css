@@ -94,9 +94,9 @@ img.logo{width: 170px;}
 .aninte2 .title1{color: #0daf98;}
 .aninte3 .title1{color: #72CFFF;}
 .aninte4 .title1{color: #F65A3B;}
-.conInfor{font-size: 16px;color: #666;line-height: 24px;height:130px;}
+.conInfor{font-size: 16px;color: #666;line-height: 24px;height:auto;margin-bottom: 10px;}
 .btnNext{padding:10px 68px;background:#000;color:#fff;font-size:16px;}
-.btnNext .fa{font-size:12px;}
+.btnNext .fa{font-size:12px;position: relative;top: -2px;}
 .aninte1 .btnNext:hover{background:#f5d13f;}
 .aninte2 .btnNext:hover{background:#0daf98;}
 .aninte3 .btnNext:hover{background:#72CFFF;}
@@ -167,7 +167,7 @@ img.logo{width: 170px;}
 .productMenus li .productMask img{width: 60px;height: 60px;}
 
 .productMenus li .productMask:hover .clicle .clicleDiv{border: 2px solid #fff;border-radius: 100%;padding: 15px;}
-.productMenus li .productMask p.infor{font-size: 16px;color: #fff;text-align: center;
+.productMenus li .productMask p.infor{font-size: 16px;color: #fff;text-align: center;line-height: 26px;
     position: absolute;width: 80%;left: 50%;margin-left: -40%;top: 60%;display: none;}
 .productMenus li .productMask:hover p.infor{display /*\**/:block\9;font-family: "微软雅黑";}
 .productMenus li .productMask p.infor.active{display: block;
@@ -205,7 +205,8 @@ img.w100{width: 100%;}
 .productMenus1 li.second:hover .productMask{ background: url("../images/product5.png") no-repeat;;background-size: 111% 111%;background-position: 50% 50%;}
 .productMenus1 li.three:hover .productMask{ background: url("../images/product7.png") no-repeat;;background-size: 111% 111%;background-position: 50% 50%;}
 .productMenus1 li.four:hover .productMask{ background: url("../images/product8.png") no-repeat;;background-size: 111% 111%;background-position: 50% 50%;}
-
+.productMenus1 li.four .productMask img{width: 50px;height: 60px;}
+.productMenus1 li.four .productMask:hover img{width: 60px;height: 60px;}
 .productMenus1 li.first{background: url("../images/production5.jpg") no-repeat;}
 .productMenus1 li.second{background: url("../images/production6.jpg") no-repeat;}
 .productMenus1 li.three{background: url("../images/production7.jpg") no-repeat;}
@@ -255,7 +256,7 @@ img.w100{width: 100%;}
 .caseList{display: block;}
 .caseList li{}
 .caseList li.hide{overflow: hidden;}
-.caseList li .title{text-align: center;margin: 50px 0;font-size: 18px;color: #666;}
+.caseList li>.title{text-align: center;margin: 50px 65px;font-size: 18px;color: #666;line-height: 30px;}
 .caseList li img{width: 100%;}
 .barImg{top: -5px;}
 .ykhsc{text-align: center;padding: 100px 0 50px;background: #fff;}
@@ -366,6 +367,8 @@ label{font-weight: 100;color: #4B525C;}
 .fzlc p img{margin-right: 15px;}
 .llwm p{line-height: 40px;}
 .llwm p img{margin-right: 10px;position: relative;top: 4px;}
+.llwm p img.mobile{margin-right: 15px;}
+.llwm p img.email{position: relative;top: 0px;}
 .llwm .code{width: 115px;height: 115px;}
 #allmap{width: 100%;height: 480px;}
 .cjwt p{line-height: 40px;margin-bottom: 20px;}
@@ -417,7 +420,7 @@ label{font-weight: 100;color: #4B525C;}
 .pageHd .title{font-size: 26px;color: #333;position: relative;top: -16px;}
 .pageHd .color{font-size: 20px;color: #2dbeac;position: relative;top: -6px;}
 .pageBd{width: 100%;}
-.pageBd.first{width: 1200px;margin: 15px auto;}
+.pageBd.first{width: 1200px;margin: 15px auto 30px;}
 .pageBd>.title{color: #666;margin:  30px 0 30px;}
 .pageCon .plus{padding: 0 14px; display: flex;font-size: 24px;
     justify-content: center;
@@ -437,11 +440,14 @@ label{font-weight: 100;color: #4B525C;}
     -moz-box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
     box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
 }
-.packageMenu li:first-child .casePage:first-child{width: 480px;}
+/*.packageMenu li:first-child .casePage:first-child{width: 480px;}*/
 .casePage{position: relative;width: 370px;   float: left;}
 .casePage .casePahd{background: #2dbeac;border-radius: 10px 10px 0 0;overflow: hidden;height: 146px;}
 .packageMenu li:first-child .casePage:first-child .casePahd .caseTitle{margin: 40px 0;}
 .casePahd .caseTitle{font-size: 26px;color: #fff;text-align: center;margin: 55px 0;}
+
+
+.packageMenu li.first .casePahd .caseTitleCon{position: relative;top: 22px;}
 .casePahd .caseTitleCon{margin-bottom: 25px;}
 .casePahd .caseTitleCon span{color: #fff;display: inline-block;width: 49%;text-align: center;}
 .casePahd .caseTitleCon.w100 span{width: 100%;position: relative;top: -50px;}
@@ -467,8 +473,7 @@ label{font-weight: 100;color: #4B525C;}
 
 /*applicationInfor*/
 .applicationInforBg{overflow: hidden;height: 346px;background: url("../images/applionInfor.jpg") no-repeat;background-size: 100% 100%;}
-.applicationMenu{width: 1140px;margin: 80px auto;display: flex;    display/*\**/:block\9;
-}
+.applicationMenu{width: 1140px;margin: 80px auto;display: flex;    display/*\**/:block\9;  }
 .applicationMenu li{ text-align: center;background: #fff;border-right: 1px solid #dbdbdb;
     align-items: center;flex: 1;height: 188px;
 
@@ -492,11 +497,33 @@ label{font-weight: 100;color: #4B525C;}
 .applicationMenu li.active .appImg4{background: url("../images/appIcons4.png") no-repeat;background-size: 100% 100%;}
 .applicationMenu li.active .appImg5{background: url("../images/appIcons5.png") no-repeat;background-size: 100% 100%;}
 .applicationMenu li.active .appImg6{background: url("../images/appIcons6.png") no-repeat;background-size: 100% 100%;}
+
+.applicationMenu li.first:hover,
+.applicationMenu li.second:hover,
+.applicationMenu li.three:hover,
+.applicationMenu li.four:hover,
+.applicationMenu li.five:hover,
+.applicationMenu li.six:hover{background: #1baf98;}
+.applicationMenu li.first:hover a,
+.applicationMenu li.second:hover a,
+.applicationMenu li.three:hover a,
+.applicationMenu li.four:hover a,
+.applicationMenu li.five:hover a,
+.applicationMenu li.six:hover a{color: #fff;}
+
+.applicationMenu li.first:hover .appImg1{background: url("../images/appIcons1.png") no-repeat;background-size: 100% 100%;}
+.applicationMenu li.second:hover .appImg2{background: url("../images/appIcons2.png") no-repeat;background-size: 100% 100%;}
+.applicationMenu li.three:hover  .appImg3{background: url("../images/appIcons3.png") no-repeat;background-size: 100% 100%;}
+.applicationMenu li.four:hover  .appImg4{background: url("../images/appIcons4.png") no-repeat;background-size: 100% 100%;}
+.applicationMenu li.five:hover  .appImg5{background: url("../images/appIcons5.png") no-repeat;background-size: 100% 100%;}
+.applicationMenu li.six:hover  .appImg6{background: url("../images/appIcons6.png") no-repeat;background-size: 100% 100%;}
+
+
 .appInfor{}
 .appInforCen{width: 1120px;margin: 0 auto;}
 .appInforCen .title{font-size: 26px;color: #333;margin: 40px 0;}
 .appInforMenu{display: block;}
-.appInforMenu li{width: 49%;margin-right: 1%;margin-bottom: 1%;position: relative;height: 195px;text-align: center;float: left;line-height: 194px;color: #fff;}
+.appInforMenu>li{width: 49%;margin-right: 1%;margin-bottom: 1%;position: relative;height: 195px;text-align: center;float: left;line-height: 194px;color: #fff;}
 .appInforMenu li>img{width: 100%;height: 100%;}
 .appInforMenu li img.star{width: 44px;height: 44px;position: relative;top: 1px;}
 .appInforMenu li.mr0{margin-right: 0;}
@@ -522,6 +549,32 @@ label{font-weight: 100;color: #4B525C;}
     box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
 }
 
+
+.qqgroup-show.hide,.telphone-show.hide,.weibo-show.hide,.qrcode.hide{display: none;}
+.we{margin-right: 10px;position: fixed;right: 20px;z-index: 9999;bottom: 80px;}
+.we li{width: 60px;height: 60px;margin-bottom: 12px;}
+.we li:hover{cursor: pointer;}
+.we li>div{display: inline-block;text-align: center;line-height: 60px;width: 100%;height: 100%;color: #33ff00;border: 2px solid #33ff00;border-radius: 5px;}
+.we li>div:hover{background: #feaf19;color: #fff;border: 2px solid transparent;}
+.we li .fa{position: relative;top: -8px;font-size: 22px;}
+.we li .qq{position: relative;top: -13px;}
+.miaoshu{position: relative;top: -51px;font-size: 13px;}
+.qqgroup-show {display: block;width: 195px;height: 90px;position: absolute;right: 39px;bottom: 122px;}
+.qqgroup-show-content {width: 185px;height: 90px;line-height: 20px;padding: 9px 15px 9px 7px;text-align: left;background: url(../images/scrolltop-telphone-bg.png) 0 0 no-repeat; background-position:  10px 0;
+}
+.weibo-show-content,.telphone-show-content,.qqgroup-show-content {display: block;text-align: center;color: #3bade2;font-size: 12px;font-style: normal;}
+dt{position: relative;left: -50px;top: 25px;}
+dd {margin-left: 45px;color: #3bade2;margin-top: 8px;}
+.t {margin: 0;padding: 0;text-align: center;height: 20px;line-height: 20px;color: #3bade2;}
+h4 {font-size: 1em;margin: 1.33em 0;}
+.telphone-show {display: block;width: 180px;height: 55px;position: absolute;right: 51px;bottom: 93px;}
+.weibo-show {display: block;width: 180px;height: 55px;position: absolute;right: 51px;bottom: 95px;}
+.weibo-show-content,.telphone-show-content {width: 159px;height: 55px;line-height: 20px;margin: 10px 16px 11px 8px;background: url(../images/scrolltop-telphone-bg.png) 0 0 no-repeat;}
+b {line-height: 30px;font-weight: 700;}
+.qrcode {background: url(../images/qrcode-bg.png) no-repeat;width: 150px;height: 150px;position: fixed;right: 90px;bottom: 80px;z-index: -1;text-align: center;}
+.qrcode-pic{position: relative;top: 15px;background: #5b5858;left: -3px;}
+
+
 /*foot*/
 .foot{width: 100%;min-width: 1200px;background: #232323;}
 .footMain{padding: 30px 0;display: block;width: 1000px;margin: 0 auto;}
@@ -540,13 +593,18 @@ label{font-weight: 100;color: #4B525C;}
 .copyright a:hover{color: #fff;}
 .footMain .code{width: 156px;height: 156px;position: relative;right: 50px;}
 @media screen and (max-width: 1500px) {
+
+
     .case{width: 1200px;margin: 40px auto;}
-    .product{height: 190px;}
-    .maskCase-bg>img{margin-top: 30px;}
-    .productMenu li a{width: 386px;height: 190px;}
-    .productMenus li{height: 450px;}
+    .product{height: 256px;}
+    .maskCase-bg>img{margin-top: 60px;}
+    .productMenu li a{width: 386px;height: 256px;}
+    .productMenus li{height: 400px;}
+    .productMenus li{    background: url("../images/production2.jpg") no-repeat;background-size: 100% 100% !important;}
     .caseCon{width: 1200px;}
     .caseMenu li{margin-right: 13%;}
+    .applicationInforBg{height: 260px;}
+    .applicationMenu{margin: 35px auto 25px;}
 }
 @media screen and (max-width: 1200px) {
 

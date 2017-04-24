@@ -31,7 +31,7 @@ ul li,ul{margin:0;padding:0;list-style:none;}
 
 @media screen and (max-width: 1400px) {
     .nav{height: 600px;}
-    .nav .slider li img{margin-top: -100px;}
+    .nav .slider li img{margin-top: -150px;}
 }
 
 
