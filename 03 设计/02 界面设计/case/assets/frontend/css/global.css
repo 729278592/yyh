@@ -201,8 +201,8 @@ img.w100{width: 100%;}
 .productMenus0 li.three{background: url("../images/production3.jpg") no-repeat;}
 .productMenus0 li.four{background: url("../images/production4.jpg") no-repeat;}
 
-.productMenus1 li.first:hover .productMask{ background: url("../images/product6.png") no-repeat;;background-size: 111% 111%;background-position: 50% 50%;}
-.productMenus1 li.second:hover .productMask{ background: url("../images/product5.png") no-repeat;;background-size: 111% 111%;background-position: 50% 50%;}
+.productMenus1 li.first:hover .productMask{ background: url("../images/product5.png") no-repeat;;background-size: 111% 111%;background-position: 50% 50%;}
+.productMenus1 li.second:hover .productMask{ background: url("../images/product6.png") no-repeat;;background-size: 111% 111%;background-position: 50% 50%;}
 .productMenus1 li.three:hover .productMask{ background: url("../images/product7.png") no-repeat;;background-size: 111% 111%;background-position: 50% 50%;}
 .productMenus1 li.four:hover .productMask{ background: url("../images/product8.png") no-repeat;;background-size: 111% 111%;background-position: 50% 50%;}
 .productMenus1 li.four .productMask img{width: 50px;height: 60px;}
