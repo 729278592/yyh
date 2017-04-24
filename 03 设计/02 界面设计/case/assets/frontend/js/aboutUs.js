@@ -82,7 +82,7 @@ $(function () {
                             that.usMenuLi[i].className = '';
                         }
                         that.usMenuLi[this.index].className = 'active';
-                        var distanse = $(that.js_scroll[this.index]).offset().top-100;
+                        var distanse = $(that.js_scroll[this.index]).offset().top-50;
                         if(this.index === 0){
                             distanse = 0;
                         }
