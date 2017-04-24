@@ -47,7 +47,7 @@ img.logo{width: 170px;}
 .menu>li.active a{color: #fff;background: #2dbeac;}
 .menu>li a{font-size: 16px;color: #333;display: block;height: 100%;width: 100%;border-radius: 4px;}
 .menu>li a.login,.menu li a.register{border-radius: 4px;}
-.menu>li a.register{color: #fff;background: #33c5d2;}
+.menu>li a.register{color: #fff;background: #f8723e;}
 .menu>li a.login{color: #333;border: 1px solid #dbdbdb;}
 .menu>li:last-child{margin: 0;}
 .content{margin-top: 85px;}
@@ -134,11 +134,18 @@ img.logo{width: 170px;}
 .production{text-align: center;}
 .production .title{font-size: 25px;color: #333;padding: 15px 25px;border-radius: 20px;border: 1px solid #dbdbdb;display: inline-block;margin: 50px 0 80px;}
 
-.regisType,.loginType{display: none;background: #fff;border-top: 3px solid #33c5d2;padding: 10px;width: 150px;position: absolute;left: -95px;}
-.loginType{border-top: 3px solid #dbdbdb;left: -93px;}
-.regisType li,.loginType li{border: 1px solid #dbdbdb;margin-top: 10px;}
-.regisType li a,.loginType li a{display: block;padding: 5px 0;width: auto;}
+.regisType,.loginType{
+    background: #fff;
+    display: none;
+    width: 150px;
+    position: absolute;
+    left: -37px;
+    padding-top: 40px;
+    top: 18px;z-index: 0}
 
+.regisType li,.loginType li{border-top: 1px solid #dbdbdb;}
+.regisType li a,.loginType li a{display: block;padding: 5px 0;width: auto;}
+.menu>li>a.type{position: relative;z-index: 5;}
 .menu>li>a.type:hover{border-radius: 0;}
 
 .menu>li.hover:hover .regisType{display: block;}
@@ -350,7 +357,7 @@ label{font-weight: 100;color: #4B525C;}
 .usMenu{width: 100%;}
 .usMenu li{width: 100%;}
 .usMenu li.bb0 a{border-bottom: 0;}
-.usMenu li a{border-bottom: 1px solid #dbdbdb;padding: 25px 0;color: #333;font-size: 26px;display: block;}
+.usMenu li a{border-bottom: 1px solid #dbdbdb;padding: 25px 0;color: #333;font-size: 25px;display: block;}
 
 .usMenu li:last-child a{border-bottom: 0;}
 .usMenu li.active{}
@@ -360,7 +367,7 @@ label{font-weight: 100;color: #4B525C;}
 .flexDiv>.flex{width: 50%;}
 .flexDiv>.flex.right{width: 50%;text-align: right;}
 .cjwt{border-bottom: 0;}
-.hjj .title,.fzlc .title,.llwm .title,.cjwt .title{font-size: 30px;color: #333;margin-bottom: 25px;}
+.hjj .title,.fzlc .title,.llwm .title,.cjwt .title{font-size: 29px;color: #333;margin-bottom: 25px;}
 .hjj .infor{font-size: 16px;line-height: 31px;margin-top: 15px;}
 .fzlc .smallTitles{margin-bottom: 5px;line-height: 24px;}
 .fzlc p{line-height: 50px;}
@@ -523,7 +530,10 @@ label{font-weight: 100;color: #4B525C;}
 .appInforCen{width: 1120px;margin: 0 auto;}
 .appInforCen .title{font-size: 26px;color: #333;margin: 40px 0;}
 .appInforMenu{display: block;}
-.appInforMenu>li{width: 49%;margin-right: 1%;margin-bottom: 1%;position: relative;height: 195px;text-align: center;float: left;line-height: 194px;color: #fff;}
+.appInforMenu>li{width: 49%;margin-right: 1%;margin-bottom: 1%;position: relative;height: 195px;text-align: center;float: left;color: #fff;  }
+.appInforMenu>li .maskCase-bg{ display: flex;padding: 0 50px;
+    justify-content: center;
+    align-items: center;}
 .appInforMenu li>img{width: 100%;height: 100%;}
 .appInforMenu li img.star{width: 44px;height: 44px;position: relative;top: 1px;}
 .appInforMenu li.mr0{margin-right: 0;}
@@ -554,7 +564,7 @@ label{font-weight: 100;color: #4B525C;}
 .we{margin-right: 10px;position: fixed;right: 20px;z-index: 9999;bottom: 80px;}
 .we li{width: 60px;height: 60px;margin-bottom: 12px;}
 .we li:hover{cursor: pointer;}
-.we li>div{display: inline-block;text-align: center;line-height: 60px;width: 100%;height: 100%;color: #33ff00;border: 2px solid #33ff00;border-radius: 5px;}
+.we li>div{display: inline-block;text-align: center;line-height: 60px;width: 100%;height: 100%;color: #2dbeac;border: 2px solid #2dbeac;border-radius: 5px;}
 .we li>div:hover{background: #feaf19;color: #fff;border: 2px solid transparent;}
 .we li .fa{position: relative;top: -8px;font-size: 22px;}
 .we li .qq{position: relative;top: -13px;}
@@ -600,7 +610,7 @@ b {line-height: 30px;font-weight: 700;}
     .maskCase-bg>img{margin-top: 60px;}
     .productMenu li a{width: 386px;height: 256px;}
     .productMenus li{height: 400px;}
-    .productMenus li{    background: url("../images/production2.jpg") no-repeat;background-size: 100% 100% !important;}
+    .productMenus li{background-size: 100% 100% !important;}
     .caseCon{width: 1200px;}
     .caseMenu li{margin-right: 13%;}
     .applicationInforBg{height: 260px;}
