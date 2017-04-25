@@ -79,10 +79,10 @@
                 </div>
                 <ul class="btnMenu">
                     <li class="sure">
-                        <button>确认</button>
+                        <button type="button">确认</button>
                     </li>
                     <li class="clear">
-                        <button>清空</button>
+                        <button type="button">清空</button>
                     </li>
                 </ul>
             </form>
@@ -96,16 +96,6 @@
 <script>
     $(function(){
 
-
-        /*用户评价和商品介绍的切换*/
-        $(".conditionMenu a").on("click", function(e){
-            e.preventDefault();
-            $(this).closest("li").addClass("on");
-            $(this).parent().siblings().removeClass("on");
-            let tabId = $(this).attr("href");
-            $(tabId).addClass("active");
-            $(tabId).siblings().removeClass("active");
-        });
 
         /*滚动加载*/
         var customer = $('.customer');

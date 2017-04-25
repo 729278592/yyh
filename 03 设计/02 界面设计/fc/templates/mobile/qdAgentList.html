@@ -49,28 +49,40 @@
     <div class="weui_dialog_ext hide">
         <div class="weui_mask"></div>
         <div class="playFlex">
-            <div class="plyFlexs">
-                <div class="condition">
-                    <ul class="conditionMenu">
-                        <li class="active">客户状态</li>
-                        <li>排序方式</li>
-                    </ul>
+            <form action="">
+                <div class="plyFlexs">
+                    <div class="condition">
+                        <ul class="conditionMenu">
+                            <li class="active">
+                                <a href="#type">客户状态</a>
+                            </li>
+                            <li><a href="#time">排序方式</a></li>
+                        </ul>
+                    </div>
+                    <div class="condition">
+                        <ul class="conditionList active" id="type">
+                            <li>新客户</li>
+                            <li>已分配</li>
+                            <li>已到访</li>
+                            <li>已下定</li>
+                            <li>成功签约</li>
+                            <li>重新分配</li>
+                        </ul>
+                        <ul class="conditionList" id="time">
+                            <li>提交时间 由近到远</li>
+                            <li>提交时间 由远到近</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="condition">
-                    <ul class="conditionList">
-                        <li>新客户</li>
-                        <li>已分配</li>
-                        <li>新客户</li>
-                        <li>已分配</li>
-                        <li>新客户</li>
-                        <li>已分配</li>
-                    </ul>
-                </div>
-            </div>
-            <ul class="btnMenu">
-                <li class="sure">确认</li>
-                <li class="clear">清空</li>
-            </ul>
+                <ul class="btnMenu">
+                    <li class="sure">
+                        <button type="button">确认</button>
+                    </li>
+                    <li class="clear">
+                        <button type="button">清空</button>
+                    </li>
+                </ul>
+            </form>
         </div>
     </div>
 </div>
@@ -115,41 +127,14 @@
             }
         });
 
-        /*筛选选择条件*/
-        var weui_dialog_ext = $(".weui_dialog_ext");
-        var conditionMenuLi = $(".conditionMenu li");
-        conditionMenuLi.on("touchend",function () {
-            $(this).addClass("active");
-            $(this).siblings().removeClass("active");
-        });
-
-//        /*开启筛选条件*/
         var $screen_div = $(".screen_div");
-        $screen_div.on("touchend",function () {
-            weui_dialog_ext.removeClass("hide");
-        });
-//
-//        /*关闭筛选条件*/
-        weui_dialog_ext.on("touchend",function (e) {
-            e.preventDefault();
-            weui_dialog_ext.addClass("hide");
-        });
+        var $weui_dialog_ext = $(".weui_dialog_ext");
+        var slideInRight = "slideInRight";
+        var slideOutRight = "slideOutRight";
+        var hide = "hide";
 
-        /**/
-//        var $screen_div = $(".screen_div");
-//        $screen_div.on("touchend",function(){
-//            var weui_dialog_ext = $(".weui_dialog_ext");
-//            weui_dialog_ext.removeClass("hide");
-//            weui_dialog_ext.addClass('slideInRight');
-//            weui_dialog_ext.on('webkitAnimationEnd', function (){
-//                weui_dialog_ext.removeClass("slideInRight");
-//                weui_dialog_ext.removeClass("hide");
-//            }).on('animationend', function (){
-//                weui_dialog_ext.removeClass("slideInRight");
-//                weui_dialog_ext.removeClass("hide");
-//            });
-//        });
-
+        leftAnite($screen_div,$weui_dialog_ext,slideInRight,hide);
+        rightAnite($weui_dialog_ext,$weui_dialog_ext,slideOutRight,hide);
     })
 </script>
 </body>

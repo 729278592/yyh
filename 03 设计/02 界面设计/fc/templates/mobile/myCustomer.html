@@ -54,28 +54,40 @@
     <div class="weui_dialog_ext hide">
         <div class="weui_mask"></div>
         <div class="playFlex">
-            <div class="plyFlexs">
-                <div class="condition">
-                    <ul class="conditionMenu">
-                        <li class="active">客户状态</li>
-                        <li>排序方式</li>
-                    </ul>
+            <form action="">
+                <div class="plyFlexs">
+                    <div class="condition">
+                        <ul class="conditionMenu">
+                            <li class="active">
+                                <a href="#type">客户状态</a>
+                            </li>
+                            <li><a href="#time">排序方式</a></li>
+                        </ul>
+                    </div>
+                    <div class="condition">
+                        <ul class="conditionList active" id="type">
+                            <li>新客户</li>
+                            <li>已分配</li>
+                            <li>已到访</li>
+                            <li>已下定</li>
+                            <li>成功签约</li>
+                            <li>重新分配</li>
+                        </ul>
+                        <ul class="conditionList" id="time">
+                            <li>提交时间 由近到远</li>
+                            <li>提交时间 由远到近</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="condition">
-                    <ul class="conditionList">
-                        <li>新客户</li>
-                        <li>已分配</li>
-                        <li>已到访</li>
-                        <li>已下定</li>
-                        <li>成功签约</li>
-                        <li>重新分配</li>
-                    </ul>
-                </div>
-            </div>
-            <ul class="btnMenu">
-                <li class="sure">确认</li>
-                <li class="clear">清空</li>
-            </ul>
+                <ul class="btnMenu">
+                    <li class="sure">
+                        <button type="button">确认</button>
+                    </li>
+                    <li class="clear">
+                        <button type="button">清空</button>
+                    </li>
+                </ul>
+            </form>
         </div>
     </div>
 </div>

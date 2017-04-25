@@ -3,9 +3,7 @@
  */
 $(function(){
 
-
-
-    /*搜索条*/
+    /*搜索条件*/
     var inputGroup = $(".searchInput");
     var searchInput = $(".search_input");
     var search_clear = $(".close");
@@ -23,18 +21,28 @@ $(function(){
 
     /*筛选选择条件*/
     var weui_dialog_ext = $(".weui_dialog_ext");
-    var conditionMenuLi = $(".conditionMenu li");
+    var conditionMenua = $(".conditionMenu a");
     var conditionListLi = $(".conditionList li");
-    conditionMenuLi.on("click",function () {
-        $(this).addClass("active");
-        $(this).siblings().removeClass("active");
+
+    conditionMenua.on("click", function(e){
+        e.preventDefault();
+        $(this).closest("li").addClass("active");
+        $(this).parent().siblings().removeClass("active");
+        let tabId = $(this).attr("href");
+        $(tabId).addClass("active");
+        $(tabId).siblings().removeClass("active");
     });
+
     conditionListLi.on("click",function () {
         $(this).addClass("active");
         $(this).siblings().removeClass("active");
     });
-
 });
+
+
+
+
+/*筛选选择结构动画*/
 var $wrapper = $("body");
 function leftAnite(obj,slideObj,slideType,hide) {
     obj.on("click",function(){
