@@ -120,7 +120,7 @@ a:link{text-decoration: none;}
 .product ul li:hover{cursor: pointer;}
 .myCarousel .item{width: 31.9%;float: left;margin: 0 1.9% 0.4% 0;position: relative;}
 
-
+.qqgroup-show.hide,.telphone-show.hide,.weibo-show.hide,.qrcode.hide{}
 .we{margin-right: 10px;position: fixed;right: 20px;z-index: 9999;bottom: 80px;}
 .we li{width: 60px;height: 60px;margin-bottom: 12px;}
 .we li:hover{cursor: pointer;}

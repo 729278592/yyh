@@ -280,7 +280,7 @@ a:active{opacity: 0.8;}
 
 .pb48>.bgfff{background: #fff;}
 .person-head .portrait{border-radius: 100%;}
-.person-head.style .portrait{width: 20%;}
+.person-head.style .portrait{width: 5rem;height: 5rem;}
 .person-head.style p{margin: 5% 0;font-size: 1rem;}
 .person-head.style p.name{color: #000;}
 .person-head.style .personIfor{width: 50%;}
