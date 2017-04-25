@@ -2,10 +2,10 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>渠道经纪人列表</title>
+    <title>渠道推荐人列表</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/global/plugins/font-awesome/css/font-awesome.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
@@ -74,7 +74,7 @@
         </div>
     </div>
 </div>
-<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/global/plugins/jquery.min.js"></script>
 <script src="../../assets/mobile/js/global.js"></script>
 <script src="../../assets/mobile/js/weui.js"></script>
 <script src="../../assets/mobile/js/loadMore.js"></script>
@@ -88,25 +88,28 @@
             startNum:4, //初始化显示条数
             infers:"../../assets/mobile/data/qdAgentList.json", //接口
             ajaxRecord:function(obj,wajxHtml){ //数据结构
-                wajxHtml += '<li>'+
-                                '<div class="weui-cell">'+
+                wajxHtml += '<li style="position: relative;">'+
+                                '<a class="weui-cell" href="agentInfor.html">'+
                                     '<div class="weui-cell__hd">'+
-                                        '<a  href="customerInfor.html"><img src="'+obj.headImg+'" alt=""></a>'+
+                                        '<img src="'+obj.headImg+'" alt="">'+
                                     '</div>'+
                                     '<div class="weui-cell__bd">'+
-                                        '<p class="clearfix">'+
-                                            '<span class="left name">'+obj.name+'</span>'+
-                                            '<span class="right">'+
-                                                '<a href="tel:13678457846" class="span_icon spa_phone"></a>'+
-                                                '<a href="sms:13678478463" class="span_icon spa_code"></a>'+
-                                            '</span>'+
+                                        '<p class="clearfix" style="height: 1.5rem;">'+
+
                                         '</p>'+
                                         '<p class="num">本月新增客户 : <span class="colorNew verdana">'+obj.cusNum+'</span></p>'+
                                         '<p class="num">本月新增成交 : <span class="colorNew verdana">'+obj.successM+'</p>'+
                                         '<p class="time">更新时间 : <span class="verdana">'+obj.time+'</span> </p>'+
                                     '</div>'+
                                     '<div class="weui-cell__ft"></div>'+
-                                '</div>'+
+                                '</a>'+
+                                '<p style="position: absolute;left: 5.5rem;top: 0.5rem;display: block;right: 1rem;">' +
+                                    '<span class="left name">'+obj.name+'</span>'+
+                                    '<span class="right">'+
+                                        '<a href="tel:13678457846" class="span_icon spa_phone"></a>'+
+                                        '<a href="sms:13678478463" class="span_icon spa_code"></a>'+
+                                    '</span>'+
+                                '</p>'+
                             '</li>';
                 return wajxHtml;
             }

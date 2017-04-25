@@ -172,7 +172,7 @@ body{background: #fcf9f4;}
 .customer li  .weui-cell__hd img{width: 4rem;height: 4rem;}
 .customer li  .weui-cell__bd{height: 100%;}
 .customer li  .weui-cell__bd p{display: block;margin: 0.3rem 0;}
-.customer li  .weui-cell__bd p.time{text-align: right;color: #999;}
+.customer li  .weui-cell__bd p.time{text-align: right;color: #999;font-size: 0.625rem;}
 .customer li  .weui-cell__bd p.num{color: #999;}
 .customer li  .weui-cell__bd p .colorNew{color: #f9b23e;}
 .customer li  .weui-cell__bd p .colorDefault{color: #999;}
@@ -217,7 +217,7 @@ body{background: #fcf9f4;}
 /*customerInfor*/
 .fcDetails p{display: block;}
 .fcDetails p span.color{color: #f9b23e;}
-.fcDetails p.time{color: #999;text-align: right;}
+.fcDetails p.time{color: #999;text-align: right;font-size: 0.625rem;}
 .cusInfor{margin-top: 0.625rem;border-top: 1px solid #efefef;}
 .cusInfor .title{color: #333;border-bottom: 1px solid #efefef;font-size: 0.875rem;border-left: 3px solid #f9b23e;padding: 0.625rem 0.625rem;background: #fff;}
 .cusInfor .weui-cells{background: transparent;}
@@ -268,8 +268,8 @@ body{background: #fcf9f4;}
 .foot button.distributioned{background: #ff8941;}
 .cusProInfor{overflow: hidden;}
 .cusMenu{display: flex;border-top: 1px solid #efefef;margin-top: 0.625rem;}
-.cusMenu li{flex: 1;color: #333;border-bottom: 1px solid #dbdbdb;padding: 0.5rem 0;text-align: center;background: #fff;border-right: 1px solid #efefef;}
-.cusMenu li a{display: block;height: 100%;color: #333;}
+.cusMenu li{flex: 1;color: #333;border-bottom: 1px solid #dbdbdb;text-align: center;background: #fff;border-right: 1px solid #efefef;}
+.cusMenu li a{display: block;height: 100%;color: #333;padding: 0.5rem 0;}
 .cusMenu li:last-child{border-right: none;}
 .cusMenu li.on{border-bottom:2px solid #fab13e;}
 .cusMenu li.on a{color: #fab13e;}

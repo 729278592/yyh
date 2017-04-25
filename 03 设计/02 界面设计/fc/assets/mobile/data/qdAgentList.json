@@ -5,7 +5,7 @@
     {
       "id": 1000,
       "name":"张三1",
-      "headImg": "../../assets/mobile/images/default.png",
+      "headImg": "../../assets/mobile/images/man.jpg",
       "type":"新客户",
       "cusNum":"100",
       "successM":"100",
@@ -14,7 +14,7 @@
     {
       "id": 1001,
       "name":"张三1",
-      "headImg": "../../assets/mobile/images/default.png",
+      "headImg": "../../assets/mobile/images/woman.jpg",
       "type":"新客户",
       "cusNum":"100",
       "successM":"100",
@@ -23,7 +23,7 @@
     {
       "id": 1002,
       "name":"张三2",
-      "headImg": "../../assets/mobile/images/default.png",
+      "headImg": "../../assets/mobile/images/woman.jpg",
       "type":"新客户",
       "cusNum":"100",
       "successM":"100",
@@ -32,7 +32,7 @@
     {
       "id": 1003,
       "name":"张三3",
-      "headImg": "../../assets/mobile/images/default.png",
+      "headImg": "../../assets/mobile/images/woman.jpg",
       "type":"新客户",
       "cusNum":"100",
       "successM":"100",
@@ -41,7 +41,7 @@
     {
       "id": 1000,
       "name":"张三",
-      "headImg": "../../assets/mobile/images/default.png",
+      "headImg": "../../assets/mobile/images/woman.jpg",
       "type":"新客户",
       "cusNum":"100",
       "successM":"100",
@@ -50,7 +50,7 @@
     {
       "id": 1001,
       "name":"张三1",
-      "headImg": "../../assets/mobile/images/default.png",
+      "headImg": "../../assets/mobile/images/woman.jpg",
       "type":"新客户",
       "cusNum":"100",
       "successM":"100",
@@ -59,7 +59,7 @@
     {
       "id": 1002,
       "name":"张三2",
-      "headImg": "../../assets/mobile/images/default.png",
+      "headImg": "../../assets/mobile/images/woman.jpg",
       "type":"新客户",
       "cusNum":"100",
       "successM":"100",
@@ -68,7 +68,7 @@
     {
       "id": 1003,
       "name":"张三3",
-      "headImg": "../../assets/mobile/images/default.png",
+      "headImg": "../../assets/mobile/images/woman.jpg",
       "type":"新客户",
       "cusNum":"100",
       "successM":"100",
@@ -77,7 +77,7 @@
     {
       "id": 1000,
       "name":"张三",
-      "headImg": "../../assets/mobile/images/default.png",
+      "headImg": "../../assets/mobile/images/woman.jpg",
       "type":"新客户",
       "cusNum":"100",
       "successM":"100",
@@ -86,7 +86,7 @@
     {
       "id": 1001,
       "name":"张三1",
-      "headImg": "../../assets/mobile/images/default.png",
+      "headImg": "../../assets/mobile/images/woman.jpg",
       "type":"新客户",
       "cusNum":"100",
       "successM":"100",
@@ -95,7 +95,7 @@
     {
       "id": 1002,
       "name":"张三2",
-      "headImg": "../../assets/mobile/images/default.png",
+      "headImg": "../../assets/mobile/images/woman.jpg",
       "type":"新客户",
       "cusNum":"100",
       "successM":"100",
@@ -104,7 +104,7 @@
     {
       "id": 1003,
       "name":"张三3",
-      "headImg": "../../assets/mobile/images/default.png",
+      "headImg": "../../assets/mobile/images/woman.jpg",
       "type":"新客户",
       "cusNum":"100",
       "successM":"100",

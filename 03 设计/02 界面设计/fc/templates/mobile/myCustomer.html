@@ -5,7 +5,7 @@
     <title>我的客户</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/global/plugins/font-awesome/css/font-awesome.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
@@ -79,7 +79,7 @@
         </div>
     </div>
 </div>
-<script src="../../assets/global/plugins/jquery/jquery-1.11.3.min.js"></script>
+<script src="../../assets/global/plugins/jquery.min.js"></script>
 <script src="../../assets/mobile/js/global.js"></script>
 <script src="../../assets/mobile/js/weui.js"></script>
 <script src="../../assets/mobile/js/loadMore.js"></script>
@@ -95,20 +95,20 @@
             ajaxRecord:function(obj,wajxHtml){ //数据结构
 
                 wajxHtml += '<li>'+
-                                '<div class="weui-cell">'+
+                                '<a href="customerInfor.html" class="weui-cell">'+
                                     '<div class="weui-cell__hd">'+
-                                        '<a href="customerInfor.html"><img src="'+obj.headImg+'" alt=""></a>'+
+                                        '<img src="'+obj.headImg+'" alt="">'+
                                     '</div>'+
                                     '<div class="weui-cell__bd">'+
                                         '<p class="clearfix">'+
                                             '<span class="left">'+obj.name+'</span>'+
-                                            //colorNew新客户  colorDefault默认  colorSuccess成功签约  colorXd已下定  colorFp已分配  colored已到访
+                                            //colorNew新客户  colorDefault重新分配  colorSuccess成功签约  colorXd已下定  colorFp已分配  colored已到访
                                             '<span class="right colorNew">'+obj.type+'</span>'+
                                         '</p>'+
                                         '<p class="time">更新时间 : <span class="verdana">'+obj.time+'</span></p>'+
                                     '</div>'+
                                     '<div class="weui-cell__ft"></div>'+
-                                '</div>'+
+                                '</a>'+
                             '</li>';
                 return wajxHtml;
             }
