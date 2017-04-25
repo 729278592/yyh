@@ -551,6 +551,7 @@ img.w100{width: 100%;}
 .recDiv .tip{font-size: 0.875rem;color: #fab13e;}
 .irs-with-grid{margin: 0.625rem 0;}
 .irs-slider{width: 8px;background: #ffb848;}
+.irs-bar {background: #ffb848;  }
 .irs-line-left{border-radius: 0.2rem 0 0 0.2rem ;}
 .irs-line-right{border-radius: 0 0.2rem 0.2rem 0;}
 a.next{font-size: 0.875rem;display: block;padding: 0.625rem 0.625rem 0 0.625rem;color: #333;text-align: right;}
@@ -918,7 +919,7 @@ a.num input {
 
 
 /*底部*/
-.foot{position: fixed;bottom: 0;left: 0;right: 0;height: 3rem;;line-height: 3rem;background: #fff;border-top: 1px solid #dbdbdb;}
+.foot{z-index: 2;position: fixed;bottom: 0;left: 0;right: 0;height: 3rem;;line-height: 3rem;background: #fff;border-top: 1px solid #dbdbdb;}
 .foot.flex{display: flex;}
 .foot .totalMoney{-webkit-box-flex: 1;-webkit-flex: 1;flex: 1; padding-right: 1rem;text-align: right;}
 .foot .btnPay{font-size: 1rem;height: 3rem;padding: 0 2rem;background: #ee393e;color: #fff;display: block;outline: 0;border: 0;}
