@@ -204,12 +204,18 @@ body{background: #fcf9f4;}
 .plyFlexs{display: flex;background: rgba(255,255,255,0.6);}
 .condition{flex: 1;font-size: 0.875rem;}
 .conditionMenu,.conditionList{width: 100%;background: #ffffff;}
-.conditionMenu li{border-bottom: 1px solid #dbdbdb;border-right: 1px solid #dbdbdb;text-align: center;padding: 0.5rem 0;}
-.conditionMenu li.active{color: #f9b23e;border-bottom: 1px solid #f9b23e;border-right: 1px solid #f9b23e;}
+
+.conditionList{display: none;}
+.conditionList.active{display: block;}
+.conditionMenu li{border-bottom: 1px solid #dbdbdb;border-right: 1px solid #dbdbdb;text-align: center;}
+.conditionMenu li a{display: block;padding: 0.5rem 0;}
+.conditionMenu li.active{border-bottom: 1px solid #f9b23e;border-right: 1px solid #f9b23e;}
+.conditionMenu li.active a{color: #f9b23e;}
 .conditionList li{text-align: center;padding: 0.5rem 0;border-bottom: 1px solid #dbdbdb;}
 .conditionList li.active{color: #f9b23e;border-bottom-color:#f9b23e; }
 .btnMenu{display: flex;}
-.btnMenu li{flex: 1;text-align: center;padding: 0.625rem 0;color: #fff;font-size: 1rem;}
+.btnMenu li{flex: 1;text-align: center;color: #fff;font-size: 1rem;}
+.btnMenu li button{display: block;width: 100%;padding: 0.8rem 0;background: transparent;color: #fff;text-align: center;}
 .btnMenu li.sure{background: #ff8941;}
 .btnMenu li.clear{background: #888888;}
 .weui_dialog_ext{position: fixed;left: 0;right: 0;top: 0;bottom: 0;z-index: 2;}
@@ -276,13 +282,13 @@ body{background: #fcf9f4;}
 #lookPro{background: #fff;}
 .cusProCon .cusPro{display: none;}
 .cusProCon .cusPro.active{display: block;}
-.cusMenus{padding: 1rem ;}
+.cusMenus{padding: 1rem 1rem 3rem;}
 .cusMenus li{display: flex;}
 .cusMenus li.first{}
 .cusMenus li .cusImg{margin-right: 0.5rem;}
 .cusMenus li.first .cusImg{width: 1.125rem;height: 6.25rem;background: url(../images/cusIcon1.png) no-repeat;background-size: 100% 100%;}
 .cusMenus li .cusDetails{flex: 1;position: relative;top: -5px;}
-.cusMenus li.first p.type,.cusMenus li.first p.type{font-size: 1rem;color: #fab13e;}
+.cusMenus li.first p.type,.cusMenus li.last p.type{font-size: 1rem;color: #fab13e;}
 .cusMenus li p{font-size: 0.875rem;color: #999;}
 .cusMenus li p.type{font-size: 1rem;color: #333;}
 .cusMenus li.next .cusImg{width: 1.125rem;height: 6.25rem;background: url(../images/cusIcon.png) no-repeat;background-size: 100% 100%;}
