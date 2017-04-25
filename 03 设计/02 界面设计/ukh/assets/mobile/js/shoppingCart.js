@@ -59,13 +59,9 @@
                             }
                             //console.log(JSON.stringify(opts.list))
                             _this.append(that.ajaxRecord(opts.list,opts.wajxHtml));//商品结构加入页面
-                            for(let i = 0;i<opts.list.length;i++){
-                                var totalPrice = 0;
-                                setTimeout(function () {
-                                    totalPrice += opts.list[i].num*opts.list[i].price;
-                                    _this.closest("#order").find(".totalPrice .color2").text(totalPrice);
-                                })
-                            }
+                            var buycount = $(".buycount");
+                            var number = parseInt(buycount.val());
+                            Methods.updateTotalPrice(_this,$(".num"),number);
                         }else{
 
                         }

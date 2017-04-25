@@ -1345,7 +1345,7 @@ img.shopInfor.w100{width: 100%;margin-bottom: 0.625rem;}
 .shop_infors.style p{width: 95%;}
 /*.shopsshoppingName,.shopsshoppingInfor{width: 100%;}*/
 
-.bd.absolute.pb48>img.w100{height: 12rem;}
+.bd.absolute.pb48>img.w100{}
 .w100{width: 100%;}
 .shoppingMenu {
      position: static;

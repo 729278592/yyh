@@ -148,7 +148,7 @@
                 let scrollHeight = $(document).height();
                 let windowHeight = $(window).height();
 
-                if (scrollTop + windowHeight == scrollHeight) {
+                if (scrollTop + windowHeight +50 > scrollHeight) {
                     if(dataArr.length === JSON.parse(localStorage.getItem('resData')).children.length){
                         $(".notData").removeClass("hide");
                         return;

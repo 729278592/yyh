@@ -3,6 +3,7 @@
  */
 
 ;(function ($,window,document,undefined) {
+    "use script"
     $.fn.scrollLoad = function (options) {
         var defaults = {
             startNum:7,
@@ -75,7 +76,7 @@
                     var scrollHeight = $(document).height();
                     var windowHeight = $(this).height();
 
-                    if (scrollTop + windowHeight == scrollHeight) {
+                    if (scrollTop + windowHeight + 50 > scrollHeight) {
                         if(opts.timeOutFlag){
                             return;
                         }
