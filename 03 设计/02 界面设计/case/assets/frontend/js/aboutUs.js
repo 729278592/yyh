@@ -25,54 +25,6 @@ $(function () {
                 this.coumputed();
                 this.usMenuLiClick();
             },
-            move:function(obj,json,fn){  //动画实现
-                json = json || {};
-                obj  = obj  ||{};
-                clearInterval(obj.iTimer);
-                var cur = 0;
-                obj.iTimer = setInterval(function(){
-                    var ismove = true;
-                    for(var attr in json){
-                        var iTarge =  json[attr];
-                        if(attr == "opacity"){
-                            cur = Math.round(this.getCss(obj,'opacity')*100);
-                        } else{
-                            cur = parseInt(this.getCss(obj,attr));
-                        }
-                        var speed = (iTarge-cur)/8;
-                        speed = speed>0?Math.ceil(speed):Math.floor(speed);
-                        if(cur != iTarge){
-                            ismove = false;
-                            if(attr == 'opacity'){
-                                obj.style.opacity = (cur+speed)/100;
-                                obj.style.filter = 'alpha(opacity='+(cur+speed)+')';
-                            }
-                            else{
-                                obj.style[attr] = cur + speed + "px";
-                            }
-                        }
-                        obj.style[attr] = cur + speed + "px";
-                    }
-                    if(ismove == true){
-                        clearInterval(obj.iTimer);
-                        fn&&fn.call(obj)
-                    }
-                },this.time)
-            },
-            getCss:function(obj,attr){ //获取对象样式
-                if(obj.currentStyle){
-                    return obj.currentStyle[attr];
-                }else{
-                    return getComputedStyle(obj,false)[attr];
-                }
-            },
-            // calculation:function () {  //头部动画
-            //     if(doc.body.scrollTop != 0){
-            //         this.headMain.classList.add("on");
-            //     }else {
-            //         this.headMain.classList.remove("on");
-            //     }
-            // },
             usMenuLiClick:function () {
                 for(var i = 0;i<this.usMenuLi.length;i++){
                     this.usMenuLi[i].index = i;
@@ -96,14 +48,14 @@ $(function () {
             coumputed:function(){
                 for(var i = 0;i<this.js_scroll.length;i++){
                     if(this.js_scroll[i].getBoundingClientRect().top<this.headMain.offsetHeight){
-                        $(".divMenu").css({top:"85px",position:"fixed"});
+                        $(".divMenu").css({top:"80px",position:"fixed"});
                         $(".usMenu li").eq(i).addClass("active");
                         $(".usMenu li").eq(i).siblings().removeClass("active");
                     }
                 }
 
                 if(this.js_scroll[0].getBoundingClientRect().top<this.headMain.offsetHeight){
-                    $(".divMenu").css({top:"85px"});
+                    $(".divMenu").css({top:"80px"});
                 }else {
                     $(".divMenu").css({top:"0",position:"relative"});
                 }
