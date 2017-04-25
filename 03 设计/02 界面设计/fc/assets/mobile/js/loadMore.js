@@ -11,26 +11,22 @@
             wajxHtml:'',
             notData:".notData",
             notConTip:".notConTip",
-            firstLoad:true,//第一次加载为true
-            timeOutFlag : undefined //控制加载时上拉再次加载
+            firstLoad:true//第一次加载为true
+
         };
         
         var opts = $.extend({}, defaults, options);
         
         var Methods = {
             init: function (_this) {
-                opts.timeOutFlag = setTimeout(function(){
-                    $.post(opts.infers,{},function(data){
-                        opts.res = data.datas;
-                        if(data.status == "ok"){
-                            Methods.loading(true,opts.res,_this);
-                        }else {
-                            weui.showMsg("加载失败");
-                        }
-                       // opts.timeOutFlag = undefined;
-                    },"json");
-                    setTimeout(function(){opts.timeOutFlag = undefined;},2000);
-                },100);
+                $.post(opts.infers,{},function(data){
+                    opts.res = data.datas;
+                    if(data.status == "ok"){
+                        Methods.loading(true,opts.res,_this);
+                    }else {
+                        weui.showMsg("加载失败");
+                    }
+                },"json");
                 Methods.scrollLoad(_this)
             },
             loading : function(flag,res,_this){
@@ -88,6 +84,7 @@
                     var windowHeight = $(this).height();
 
                     if (scrollTop + windowHeight == scrollHeight) {
+
                         if(opts.timeOutFlag){
                             return;
                         }
@@ -109,9 +106,9 @@
                                     weui.showMsg("加载失败");
                                 }
                             }, "json");
-                            setTimeout(function(){opts.timeOutFlag = undefined;},2000);
+                            setTimeout(function(){opts.timeOutFlag = undefined;},200);
 
-                        },100)
+                        })
                     }
                 });
             }
