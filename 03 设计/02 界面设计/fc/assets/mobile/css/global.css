@@ -282,8 +282,12 @@ body{background: #fcf9f4;}
 #lookPro{background: #fff;}
 .cusProCon .cusPro{display: none;}
 .cusProCon .cusPro.active{display: block;}
-.cusMenus{padding: 1rem 1rem 3rem;}
+.cusMenus{padding: 1rem 1rem 0;}
 .cusMenus li{display: flex;}
+.divFlex{height: 3rem;line-height: 3rem;display: flex;}
+.divFlex button{flex: 1;color: #fff;font-size: 1.125rem;}
+.divFlex button.distribution{background: #888;}
+.divFlex button.distributioned{background: #ff8941;}
 .cusMenus li.first{}
 .cusMenus li .cusImg{margin-right: 0.5rem;}
 .cusMenus li.first .cusImg{width: 1.125rem;height: 6.25rem;background: url(../images/cusIcon1.png) no-repeat;background-size: 100% 100%;}
