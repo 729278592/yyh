@@ -133,8 +133,34 @@
         var slideOutRight = "slideOutRight";
         var hide = "hide";
 
-        leftAnite($screen_div,$weui_dialog_ext,slideInRight,hide);
-        rightAnite($weui_dialog_ext,$weui_dialog_ext,slideOutRight,hide);
+        /*打开筛选选条件*/
+        $screen_div.on("click",function(){
+            leftAnite($weui_dialog_ext,slideInRight,hide);
+        });
+
+        /*关闭筛选选条件*/
+        $weui_dialog_ext.on("click",function(e){
+            e.preventDefault();
+            rightAnite($weui_dialog_ext,slideOutRight,hide);
+        });
+
+        /*确定筛选选条件*/
+        var $sure = $(".sure");
+        $sure.on("click",function (e) {
+            e.preventDefault();
+            rightAnite($weui_dialog_ext,slideOutRight,hide);
+        });
+
+        /*清空筛选选条件*/
+        var conditionMenuli = $(".conditionMenu li");
+        var conditionListLi = $(".conditionList li");
+        var $clear = $(".clear");
+        $clear.on("click",function (e) {
+            e.preventDefault();
+            conditionMenuli.removeClass("active");
+            conditionListLi.removeClass("active");
+            rightAnite($weui_dialog_ext,slideOutRight,hide);
+        })
     })
 </script>
 </body>

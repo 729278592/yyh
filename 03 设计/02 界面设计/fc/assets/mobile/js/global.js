@@ -44,38 +44,35 @@ $(function(){
 
 /*筛选选择结构动画*/
 var $wrapper = $("body");
-function leftAnite(obj,slideObj,slideType,hide) {
-    obj.on("click",function(){
+function leftAnite(slideObj,slideType,hide) {
+    slideObj.removeClass(hide);
+    slideObj.addClass(slideType);
+    slideObj.on('webkitAnimationEnd', function (){
+        slideObj.removeClass(slideType);
         slideObj.removeClass(hide);
-        slideObj.addClass(slideType);
-        slideObj.on('webkitAnimationEnd', function (){
-            slideObj.removeClass(slideType);
-            slideObj.removeClass(hide);
-            $wrapper.addClass("overflowy");
-        }).on('animationend', function (){
-            slideObj.removeClass(slideType);
-            slideObj.removeClass(hide);
-            $wrapper.addClass("overflowy");
-        });
+        $wrapper.addClass("overflowy");
+    }).on('animationend', function (){
+        slideObj.removeClass(slideType);
+        slideObj.removeClass(hide);
+        $wrapper.addClass("overflowy");
     });
 }
 
 
-function rightAnite(obj,slideObj,slideType,hide) {
-    obj.on("click",function(e){
-        e.preventDefault();
-        slideObj.addClass(slideType);
-        slideObj.on('webkitAnimationEnd', function (){
-            slideObj.removeClass(slideType);
-            slideObj.addClass(hide);
-            $wrapper.removeClass(slideType);
-        }).on('animationend', function (){
-            slideObj.removeClass(slideType);
-            slideObj.addClass(hide);
-            $wrapper.removeClass("overflowy");
-        });
+function rightAnite(slideObj,slideType,hide) {
+    slideObj.addClass(slideType);
+    slideObj.on('webkitAnimationEnd', function (){
+        slideObj.removeClass(slideType);
+        slideObj.addClass(hide);
+        $wrapper.removeClass(slideType);
+    }).on('animationend', function (){
+        slideObj.removeClass(slideType);
+        slideObj.addClass(hide);
+        $wrapper.removeClass("overflowy");
     });
-    $(".playFlex").on("click",function (e) {
-        e.stopPropagation();
-    });
+
 }
+$(".playFlex").on("click",function (e) {
+    e.stopPropagation();
+});
+

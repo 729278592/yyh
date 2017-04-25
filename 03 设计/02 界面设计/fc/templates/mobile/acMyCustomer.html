@@ -5,7 +5,7 @@
     <title>案场我的客户</title>
     <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" href="../../assets/global/plugins/font/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="../../assets/global/plugins/font-awesome/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
@@ -96,7 +96,6 @@
 <script>
     $(function(){
 
-
         /*滚动加载*/
         var customer = $('.customer');
         customer.scrollLoad({
@@ -140,8 +139,34 @@
         var slideOutRight = "slideOutRight";
         var hide = "hide";
 
-        leftAnite($screen_div,$weui_dialog_ext,slideInRight,hide);
-        rightAnite($weui_dialog_ext,$weui_dialog_ext,slideOutRight,hide);
+        /*打开筛选选条件*/
+        $screen_div.on("click",function(){
+            leftAnite($weui_dialog_ext,slideInRight,hide);
+        });
+
+        /*关闭筛选选条件*/
+        $weui_dialog_ext.on("click",function(e){
+            e.preventDefault();
+            rightAnite($weui_dialog_ext,slideOutRight,hide);
+        });
+
+        /*确定筛选选条件*/
+        var $sure = $(".sure");
+        $sure.on("click",function (e) {
+            e.preventDefault();
+            rightAnite($weui_dialog_ext,slideOutRight,hide);
+        });
+
+        /*清空筛选选条件*/
+        var conditionMenuli = $(".conditionMenu li");
+        var conditionListLi = $(".conditionList li");
+        var $clear = $(".clear");
+        $clear.on("click",function (e) {
+            e.preventDefault();
+            conditionMenuli.removeClass("active");
+            conditionListLi.removeClass("active");
+            rightAnite($weui_dialog_ext,slideOutRight,hide);
+        })
     })
 </script>
 </body>
