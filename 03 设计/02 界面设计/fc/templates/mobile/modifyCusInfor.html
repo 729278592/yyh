@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0; user-scalable=no;">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="../../assets/global/plugins/font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/plugins/ion.rangeslider/css/ion.rangeSlider.css"/>
+    <link rel="stylesheet" href="../../assets/mobile/plugins/ion.rangeslider/css/ion.rangeSlider.skinNice.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/weui.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/example.css"/>
     <link rel="stylesheet" href="../../assets/mobile/css/global.css"/>
@@ -47,47 +49,100 @@
                         <div class="weui-cell__hd">
                             <span class="color">*</span> 性别
                         </div>
-                        <label class="weui-cell weui-check__label" for="s11">
-                            <div class="weui-cell__bd">
-                                男
-                                <input type="radio" class="weui-check" name="checkbox" id="s11" checked="checked">
-                                <i class="weui-icon-checked"></i>
-                            </div>
-                        </label>
-                        <label class="weui-cell weui-check__label" for="s12">
-                            <div class="weui-cell__hd">
-                                女
-                                <input type="radio" name="checkbox" class="weui-check" id="s12">
-                                <i class="weui-icon-checked"></i>
-                            </div>
-                        </label>
+                        <div class="clearfix w100">
+                            <label class="weui-cell p0 weui-check__label" for="s11">
+                                <div class="weui-cell__bd">
+                                    男
+                                    <input type="radio" class="weui-check" name="checkbox" id="s11" checked="checked">
+                                    <i class="weui-icon-checked"></i>
+                                </div>
+                            </label>
+                            <label class="weui-cell p0 weui-check__label" for="s12">
+                                <div class="weui-cell__hd">
+                                    女
+                                    <input type="radio" name="checkbox" class="weui-check" id="s12">
+                                    <i class="weui-icon-checked"></i>
+                                </div>
+                            </label>
+                        </div>
                     </div>
-
-
                 </div>
+
+
+                <div class="weui-cells mt0 weui-cells_checkbox">
+                    <div class="weui-cell ">
+                        <div class="weui-cell__hd">
+                            <span class="color hidden">*</span> 置业
+                        </div>
+
+                        <div class="clearfix w100">
+                            <label class="weui-cell p0 weui-check__label" for="s13">
+                                <div class="weui-cell__bd">
+                                    住宅
+                                    <input type="checkbox" class="weui-check" name="checkbox" id="s13" checked="checked">
+                                    <i class="weui-icon-checked"></i>
+                                </div>
+                            </label>
+                            <label class="weui-cell p0 weui-check__label" for="s14">
+                                <div class="weui-cell__hd">
+                                    写字楼
+                                    <input type="checkbox" name="checkbox" class="weui-check" id="s14">
+                                    <i class="weui-icon-checked"></i>
+                                </div>
+                            </label>
+                            <label class="weui-cell p0 weui-check__label" for="s15">
+                                <div class="weui-cell__hd">
+                                    商铺
+                                    <input type="checkbox" name="checkbox" class="weui-check" id="s15">
+                                    <i class="weui-icon-checked"></i>
+                                </div>
+                            </label>
+                            <label class="weui-cell p0 weui-check__label" for="s16">
+                                <div class="weui-cell__hd">
+                                    商铺
+                                    <input type="checkbox" name="checkbox" class="weui-check" id="s16">
+                                    <i class="weui-icon-checked"></i>
+                                </div>
+                            </label>
+                            <label class="weui-cell p0 weui-check__label" for="s17">
+                                <div class="weui-cell__hd">
+                                    商铺
+                                    <input type="checkbox" name="checkbox" class="weui-check" id="s17">
+                                    <i class="weui-icon-checked"></i>
+                                </div>
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+                <!--<div class="weui-cell weui-cell_select">-->
+                    <!--<div class="weui-cell__hd">-->
+                        <!--<label class="weui-label"><span class="color hidden">*</span> 收入范围</label>-->
+                    <!--</div>-->
+                    <!--<div class="weui-cell__bd">-->
+                        <!--<select class="weui-select" name="select1">-->
+                            <!--<option selected="" value="50~80W">50~80W</option>-->
+                            <!--<option value="50~80W">50~80W</option>-->
+                            <!--<option value="50~80W">50~80W</option>-->
+                        <!--</select>-->
+                    <!--</div>-->
+                <!--</div>-->
 
                 <div class="weui-cell">
-                    <div class="weui-cell__hd">
-                        <label class="weui-label"><span class="color hidden">*</span> 置业</label>
-                    </div>
-                    <div class="weui-cell__bd">
-                        <input class="weui-input" type="text"  placeholder="请输入置业">
-                    </div>
-                </div>
-
-
-                <div class="weui-cell weui-cell_select">
                     <div class="weui-cell__hd">
                         <label class="weui-label"><span class="color hidden">*</span> 收入范围</label>
                     </div>
                     <div class="weui-cell__bd">
-                        <select class="weui-select" name="select1">
-                            <option selected="" value="50~80W">50~80W</option>
-                            <option value="50~80W">50~80W</option>
-                            <option value="50~80W">50~80W</option>
-                        </select>
-                    </div>
+                        <div class="recomond style">
+                            <div class="recomondBd">
+                                <div class="recDiv">
+                                    <span class="tip">单位 : w</span>
+                                    <input id="range_1" type="text" name="range_1" value=""/>
+                                </div>
+                            </div>
+                        </div>                    </div>
                 </div>
+
 
                 <div class="weui-cell">
                     <div class="weui-cell__hd">
@@ -115,8 +170,23 @@
 <script src="../../assets/global/plugins/jquery.min.js"></script>
 <script src="../../assets/mobile/js/weui.js"></script>
 <script src="../../assets/mobile/js/common-validate.js"></script>
+<script src="../../assets/mobile/plugins/ion.rangeslider/js/ion-rangeSlider/ion.rangeSlider.js"></script>
 <script>
     $(function () {
+
+        // 滚动插件
+        $("#range_1").ionRangeSlider({
+            min: 0,
+            max: 500,
+            from: 50,
+            to: 400,
+            type: 'double',
+            step: 1,
+            prefix: "$",
+            prettify: false,
+            hasGrid: true
+        });
+
         let $btnSure    = $("#btnSure");
         let $personName = $("#personName");
         let $mobile     = $("#mobile");
@@ -133,6 +203,7 @@
         })
     })
 </script>
+
 </body>
 </html>
 

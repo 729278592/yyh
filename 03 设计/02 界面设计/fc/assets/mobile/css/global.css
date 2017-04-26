@@ -228,14 +228,21 @@ body{background: #fcf9f4;}
 .cusInfor .title{color: #333;border-bottom: 1px solid #efefef;font-size: 0.875rem;border-left: 3px solid #f9b23e;padding: 0.625rem 0.625rem;background: #fff;}
 .cusInfor .weui-cells{background: transparent;}
 .cusInfor .weui-cell{padding:0.5rem 0.875rem;background: #fff;}
-.cusInfor.style .weui-cell{    padding:0.75rem;}
+.cusInfor.style .weui-cell{ padding:0.75rem;}
+.cusInfor.style .weui-cell.pt0{padding: 0 0.75rem;}
+.cusInfor.style .weui-cell.p0{padding: 0;width: 50%;float: left;margin-bottom: 0.25rem;}
+.recomond.style{margin-top: 0;border-top: 0;border-bottom: 0;}
+.recomond.style .recomondBd{padding: 0;}
 .cusInfor .weui-cell .weui-cell__bd{flex: inherit;width: 5.4rem;}
 .cusInfor .weui-cell .weui-cell__ft{color: #333;}
 .cusInfor .weui-cell .weui-cell__bd span.color{color: #f9b23e;position: relative;top: 0.1rem;}
+.cusInfor .weui-cell>div.w100{width: 75%;display: block;}
 .weui-cell.mb10{margin-bottom: 0.625rem;}
 .personLx{border-bottom: 1px solid #dbdbdb;}
 .personLx.bt1{border-top: 1px solid #dbdbdb;}
-
+.weui-cells_checkbox .weui-icon-checked:before {
+    font-size: 1.25rem;
+}
 
 /*dealList*/
 .deal{height: 60px;width: 100%;background: url("../images/dealBg.jpg") no-repeat;background-size: 100% 100%;line-height: 60px;text-align: center;font-size: 1.125rem;}
