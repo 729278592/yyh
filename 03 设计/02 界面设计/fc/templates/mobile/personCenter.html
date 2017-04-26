@@ -147,9 +147,12 @@
             slideInRight = "slideInRight",
             slideOutRight = "slideOutRight",
             hide = "hide";
-
-        leftAnite($cz,$fclj,slideInRight,hide);
-        rightAnite($calj,$fclj,slideOutRight,hide);
+        $cz.on("click",function(){
+            leftAnite($fclj,slideInRight,hide);
+        });
+        $calj.on("click",function(){
+            rightAnite($fclj,slideOutRight,hide);
+        });
     })
 </script>
 </body>

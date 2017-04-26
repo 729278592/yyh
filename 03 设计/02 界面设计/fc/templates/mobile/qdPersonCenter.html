@@ -110,14 +110,17 @@
 <script>
     $(function () {
         var $cz = $(".cz"),
-         $calj = $(".calj"),
-         $fclj = $(".fcAnimateDiv.lj"),
-         slideInRight = "slideInRight",
-         slideOutRight = "slideOutRight",
-         hide = "hide";
-
-        leftAnite($cz,$fclj,slideInRight,hide);
-        rightAnite($calj,$fclj,slideOutRight,hide);
+            $calj = $(".calj"),
+            $fclj = $(".fcAnimateDiv.lj"),
+            slideInRight = "slideInRight",
+            slideOutRight = "slideOutRight",
+            hide = "hide";
+        $cz.on("click",function(){
+            leftAnite($fclj,slideInRight,hide);
+        });
+        $calj.on("click",function(){
+            rightAnite($fclj,slideOutRight,hide);
+        });
     })
 </script>
 </body>
