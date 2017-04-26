@@ -16,23 +16,34 @@
             <img src="../../assets/mobile/images/man.jpg" alt="" class="defaultImg"/>
         </div>
         <div class="personInfor">
-            <div class="weui-cells mt0">
-                <a class="weui-cell weui-cell_access" href="modifyName.html">
-                    <div class="weui-cell__bd">
-                        <span class="span_icon spa_juan"></span>
-                        <span class="text">姓　名</span>
+            <div class="weui-cells weui-cells_form style mt0">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">
+                            <span class="span_icon spa_juan"></span>
+                            姓　名
+                        </label>
                     </div>
-                    <div class="weui-cell__ft">张三</div>
-                </a>
-                <a class="weui-cell weui-cell_access" href="modifyPhone.html">
-                    <div class="weui-cell__bd">
-                        <span class="span_icon spa_mobile"></span>
-                        <span class="text">
-                                    手机号
-                            </span>
+                    <div class="weui-cell__fd">
+                        <input class="weui-input" type="text" id="personName" placeholder="请输入您的姓名">
                     </div>
-                    <div class="weui-cell__ft"><span class="verdana">15015122542</span></div>
-                </a>
+                </div>
+
+                <div class="weui-cell">
+                    <div class="weui-cell__hd">
+                        <label class="weui-label">
+                            <span class="span_icon spa_mobile"></span>
+                            手机号
+                        </label>
+                    </div>
+                    <div class="weui-cell__fd">
+                        <input class="weui-input" type="text" id="mobile" placeholder="请输入您的手机号">
+                    </div>
+                </div>
+
+            </div>
+            <div class="weui-btn_area style">
+                <a class="weui-btn weui-btn_primary" id="sureBtn">保存</a>
             </div>
         </div>
     </div>
